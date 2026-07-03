@@ -21,6 +21,8 @@
 # misc
 .DS_Store
 *.pem
+.vscode/
+.idea/
 
 # debug
 npm-debug.log*
@@ -30,6 +32,11 @@ pnpm-debug.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+
+# deployment / tooling
+.vercel/
+.turbo/
+.sanity/
 
 # typescript
 *.tsbuildinfo
