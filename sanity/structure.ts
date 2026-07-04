@@ -1,7 +1,2 @@
-import type {StructureResolver} from 'sanity/structure'
-
-// https://www.sanity.io/docs/structure-builder-cheat-sheet
-export const structure: StructureResolver = (S) =>
-  S.list()
-    .title('Content')
-    .items(S.documentTypeListItems())
+import type { StructureResolver } from "sanity/structure";
+export const structure: StructureResolver = (S) => S.list().title("LetssAI Content").items([S.documentTypeListItem("siteSettings").title("Site Settings"),S.documentTypeListItem("servicePage").title("Service Pages"),S.documentTypeListItem("industryPage").title("Industry Pages"),S.documentTypeListItem("faqItem").title("FAQ Items"),S.documentTypeListItem("chatbotKnowledgeItem").title("Chatbot Knowledge")]);

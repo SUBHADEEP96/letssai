@@ -126,4 +126,4 @@
   html {
     @apply font-sans;
     }
-}
+}html{scroll-behavior:smooth}body{overflow-x:hidden}::selection{background:#bbf7d0;color:#052e16}.section{padding:4rem 1rem}@media (min-width:768px){.section{padding:6rem 1.5rem}}@media (prefers-reduced-motion:reduce){*,::before,::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}

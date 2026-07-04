@@ -1,30 +1,3 @@
-import { Geist, Geist_Mono, Noto_Sans } from "next/font/google"
-
-import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils";
-
-const notoSans = Noto_Sans({subsets:['latin'],variable:'--font-sans'})
-
-const fontMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-})
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
-  return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", notoSans.variable)}
-    >
-      <body>
-        <ThemeProvider>{children}</ThemeProvider>
-      </body>
-    </html>
-  )
-}
+import type { Metadata } from "next";import "./globals.css";import { ThemeProvider } from "@/components/theme-provider";import { Header } from "@/components/site/Header";import { Footer } from "@/components/site/Footer";import { ChatbotWidget } from "@/components/site/ChatbotWidget";import { JsonLd } from "@/components/seo/JsonLd";import { organizationSchema, websiteSchema } from "@/lib/seo";import { siteConfig } from "@/lib/site";
+export const metadata:Metadata={metadataBase:new URL(siteConfig.url),title:{default:"LetssAI | Practical AI Solutions for Growing Businesses",template:"%s"},description:siteConfig.description};
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en" suppressHydrationWarning className="antialiased"><body><ThemeProvider><Header/><main>{children}</main><Footer/><ChatbotWidget/><JsonLd data={organizationSchema}/><JsonLd data={websiteSchema}/></ThemeProvider></body></html>}
