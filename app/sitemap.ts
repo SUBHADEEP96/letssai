@@ -1,2 +1,20 @@
-import type { MetadataRoute } from "next";import{absoluteUrl}from"@/lib/seo";import{industries,services}from"@/lib/site";
-export default function sitemap():MetadataRoute.Sitemap{const routes=["/","/services","/industries","/why-letssai","/contact",...services.map(s=>s.href),...industries.map(i=>i.href)];return routes.map(url=>({url:absoluteUrl(url),lastModified:new Date(),changeFrequency:"monthly",priority:url==="/"?1:.8}))}
+import type { MetadataRoute } from "next"
+import { absoluteUrl } from "@/lib/seo"
+import { industries, services } from "@/lib/site"
+export default function sitemap(): MetadataRoute.Sitemap {
+  const routes = [
+    "/",
+    "/services",
+    "/industries",
+    "/why-letssai",
+    "/contact",
+    ...services.map((s) => s.href),
+    ...industries.map((i) => i.href),
+  ]
+  return routes.map((url) => ({
+    url: absoluteUrl(url),
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: url === "/" ? 1 : 0.8,
+  }))
+}

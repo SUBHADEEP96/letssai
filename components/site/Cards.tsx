@@ -1,3 +1,48 @@
-import Link from "next/link";
-export function ServiceCard({title,description,href}:{title:string;description:string;href:string}){return <Link href={href} className="group rounded-3xl border border-emerald-950/10 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-950/10"><h3 className="text-xl font-semibold tracking-tight text-slate-950">{title}</h3><p className="mt-3 leading-relaxed text-slate-600">{description}</p><span className="mt-5 inline-flex text-sm font-semibold text-emerald-700">Learn more →</span></Link>}
-export function IndustryCard({title,description,href}:{title:string;description:string;href:string}){return <Link href={href} className="rounded-3xl bg-emerald-50 p-6 transition hover:bg-emerald-100"><h3 className="text-xl font-semibold tracking-tight text-emerald-950">{title}</h3><p className="mt-3 text-base leading-relaxed text-slate-700">{description}</p></Link>}
+import Link from "next/link"
+export function ServiceCard({
+  title,
+  description,
+  href,
+}: {
+  title: string
+  description: string
+  href: string
+}) {
+  return (
+    <Link
+      href={href}
+      className="group rounded-3xl border border-emerald-950/10 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-950/10"
+    >
+      <h3 className="text-xl font-semibold tracking-tight text-slate-950">
+        {title}
+      </h3>
+      <p className="mt-3 leading-relaxed text-slate-600">{description}</p>
+      <span className="mt-5 inline-flex text-sm font-semibold text-emerald-700">
+        Learn more →
+      </span>
+    </Link>
+  )
+}
+export function IndustryCard({
+  title,
+  description,
+  href,
+}: {
+  title: string
+  description: string
+  href: string
+}) {
+  return (
+    <Link
+      href={href}
+      className="rounded-3xl bg-emerald-50 p-6 transition hover:bg-emerald-100"
+    >
+      <h3 className="text-xl font-semibold tracking-tight text-emerald-950">
+        {title}
+      </h3>
+      <p className="mt-3 text-base leading-relaxed text-slate-700">
+        {description}
+      </p>
+    </Link>
+  )
+}

@@ -1,1 +1,21 @@
-import Link from"next/link";export function Breadcrumbs({items}:{items:{label:string;href:string}[]}){return <nav aria-label="Breadcrumb" className="text-sm text-slate-500"><ol className="flex flex-wrap gap-2">{items.map((i,idx)=><li key={i.href} className="flex gap-2">{idx>0&&<span>/</span>}<Link className="hover:text-emerald-700" href={i.href}>{i.label}</Link></li>)}</ol></nav>}
+import Link from "next/link"
+export function Breadcrumbs({
+  items,
+}: {
+  items: { label: string; href: string }[]
+}) {
+  return (
+    <nav aria-label="Breadcrumb" className="text-sm text-slate-500">
+      <ol className="flex flex-wrap gap-2">
+        {items.map((i, idx) => (
+          <li key={i.href} className="flex gap-2">
+            {idx > 0 && <span>/</span>}
+            <Link className="hover:text-emerald-700" href={i.href}>
+              {i.label}
+            </Link>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  )
+}

@@ -1,3 +1,39 @@
-import{IndustryCard}from"@/components/site/Cards";import{CTASection}from"@/components/site/CTASection";import{pageMetadata}from"@/lib/seo";import{industries}from"@/lib/site";
-export const metadata=pageMetadata("AI Solutions by Industry | LetssAI","See how LetssAI supports real estate, healthcare clinics, legal firms, education, retail, finance, and accounting teams.","/industries");
-export default function Industries(){return <><section className="section bg-emerald-50"><div className="mx-auto max-w-5xl"><h1 className="text-4xl font-semibold leading-tight tracking-tight md:text-6xl">AI solutions explained in your industry’s language</h1><p className="mt-5 text-lg leading-relaxed text-slate-600">LetssAI helps teams apply AI to familiar daily work: inquiries, bookings, reminders, documents, and reports.</p></div></section><section className="section"><div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 lg:grid-cols-3">{industries.map(i=><IndustryCard key={i.slug} title={i.title} description={i.useCase} href={i.href}/>)}</div></section><CTASection/></>}
+import { IndustryCard } from "@/components/site/Cards"
+import { CTASection } from "@/components/site/CTASection"
+import { pageMetadata } from "@/lib/seo"
+import { industries } from "@/lib/site"
+export const metadata = pageMetadata(
+  "AI Solutions by Industry | LetssAI",
+  "See how LetssAI supports real estate, healthcare clinics, legal firms, education, retail, finance, and accounting teams.",
+  "/industries"
+)
+export default function Industries() {
+  return (
+    <>
+      <section className="section bg-emerald-50">
+        <div className="mx-auto max-w-5xl">
+          <h1 className="text-4xl leading-tight font-semibold tracking-tight md:text-6xl">
+            AI solutions explained in your industry’s language
+          </h1>
+          <p className="mt-5 text-lg leading-relaxed text-slate-600">
+            LetssAI helps teams apply AI to familiar daily work: inquiries,
+            bookings, reminders, documents, and reports.
+          </p>
+        </div>
+      </section>
+      <section className="section">
+        <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {industries.map((i) => (
+            <IndustryCard
+              key={i.slug}
+              title={i.title}
+              description={i.useCase}
+              href={i.href}
+            />
+          ))}
+        </div>
+      </section>
+      <CTASection />
+    </>
+  )
+}

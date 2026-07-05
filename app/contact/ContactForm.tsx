@@ -1,2 +1,59 @@
-"use client";import{useState}from"react";
-export function ContactForm(){const[done,setDone]=useState(false);return <section className="section"><form onSubmit={e=>{e.preventDefault();setDone(true)}} className="mx-auto grid max-w-3xl gap-5 rounded-[2rem] border border-emerald-950/10 bg-white p-6 shadow-xl shadow-emerald-950/5"><div className="grid gap-5 md:grid-cols-2">{["Name","Email","Company","Phone optional"].map((l,i)=><label className="grid gap-2 text-sm font-semibold tracking-tight" key={l}>{l}<input required={i<3} type={l==="Email"?"email":"text"} className="rounded-2xl border border-emerald-950/15 px-4 py-3 text-base outline-emerald-600"/></label>)}</div><label className="grid gap-2 text-sm font-semibold tracking-tight">What do you want to automate?<textarea required className="min-h-32 rounded-2xl border border-emerald-950/15 px-4 py-3 text-base outline-emerald-600"/></label><label className="grid gap-2 text-sm font-semibold tracking-tight">Preferred contact method<select required className="rounded-2xl border border-emerald-950/15 px-4 py-3 text-base outline-emerald-600"><option>Email</option><option>Phone</option><option>WhatsApp</option></select></label><button className="rounded-full bg-emerald-700 px-6 py-4 font-semibold tracking-tight text-white">Request a free AI workflow review</button>{done&&<p className="rounded-2xl bg-emerald-50 p-4 leading-relaxed text-emerald-900">Thanks. This demo form is ready for backend connection, and your request has been acknowledged on this page.</p>}</form></section>}
+"use client"
+import { useState } from "react"
+export function ContactForm() {
+  const [done, setDone] = useState(false)
+  return (
+    <section className="section">
+      <form
+        onSubmit={(e) => {
+          e.preventDefault()
+          setDone(true)
+        }}
+        className="mx-auto grid max-w-3xl gap-5 rounded-[2rem] border border-emerald-950/10 bg-white p-6 shadow-xl shadow-emerald-950/5"
+      >
+        <div className="grid gap-5 md:grid-cols-2">
+          {["Name", "Email", "Company", "Phone optional"].map((l, i) => (
+            <label
+              className="grid gap-2 text-sm font-semibold tracking-tight"
+              key={l}
+            >
+              {l}
+              <input
+                required={i < 3}
+                type={l === "Email" ? "email" : "text"}
+                className="rounded-2xl border border-emerald-950/15 px-4 py-3 text-base outline-emerald-600"
+              />
+            </label>
+          ))}
+        </div>
+        <label className="grid gap-2 text-sm font-semibold tracking-tight">
+          What do you want to automate?
+          <textarea
+            required
+            className="min-h-32 rounded-2xl border border-emerald-950/15 px-4 py-3 text-base outline-emerald-600"
+          />
+        </label>
+        <label className="grid gap-2 text-sm font-semibold tracking-tight">
+          Preferred contact method
+          <select
+            required
+            className="rounded-2xl border border-emerald-950/15 px-4 py-3 text-base outline-emerald-600"
+          >
+            <option>Email</option>
+            <option>Phone</option>
+            <option>WhatsApp</option>
+          </select>
+        </label>
+        <button className="rounded-full bg-emerald-700 px-6 py-4 font-semibold tracking-tight text-white">
+          Request a free AI workflow review
+        </button>
+        {done && (
+          <p className="rounded-2xl bg-emerald-50 p-4 leading-relaxed text-emerald-900">
+            Thanks. This demo form is ready for backend connection, and your
+            request has been acknowledged on this page.
+          </p>
+        )}
+      </form>
+    </section>
+  )
+}

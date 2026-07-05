@@ -3,29 +3,684 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://letssai.com",
   description: "Practical AI solutions for growing businesses.",
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "hello@letssai.com",
-};
+}
 
-export type FAQ = { question: string; answer: string };
-export type Service = { slug: string; title: string; href: string; description: string; seoTitle: string; metaDescription: string; icon: string; tools: string[]; problems: string[]; does: string[]; workflow: string[]; benefits: string[]; industries: string[]; faqs: FAQ[] };
-export type Industry = { slug: string; title: string; href: string; useCase: string; seoTitle: string; metaDescription: string; icon: string; problems: string[]; services: string[]; workflows: string[]; benefits: string[]; faqs: FAQ[] };
+export type FAQ = { question: string; answer: string }
+export type Service = {
+  slug: string
+  title: string
+  href: string
+  description: string
+  seoTitle: string
+  metaDescription: string
+  icon: string
+  tools: string[]
+  problems: string[]
+  does: string[]
+  workflow: string[]
+  benefits: string[]
+  industries: string[]
+  faqs: FAQ[]
+}
+export type Industry = {
+  slug: string
+  title: string
+  href: string
+  useCase: string
+  seoTitle: string
+  metaDescription: string
+  icon: string
+  problems: string[]
+  services: string[]
+  workflows: string[]
+  benefits: string[]
+  faqs: FAQ[]
+}
 
 export const services: Service[] = [
-  { slug:"ai-customer-support", title:"AI Customer Support", href:"/services/ai-customer-support", description:"Automate website, WhatsApp, and email support with human handoff.", seoTitle:"AI Customer Support for Website, WhatsApp & Email | LetssAI", metaDescription:"Use LetssAI to answer repeated customer questions across website chat, WhatsApp, and email with safe human handoff.", icon:"ChatCircleText", tools:["Website chat","WhatsApp","Email","FAQ pages","Ticket tools","CRM"], problems:["Repeated questions slow your team down","Customers wait too long for simple answers","Support conversations are spread across channels","Important requests need a clear human handoff"], does:["Answers FAQs from approved business content","Creates tickets or summaries for your team","Collects order, appointment, or inquiry details","Hands off sensitive or complex conversations"], workflow:["A customer asks a question on your website, WhatsApp, or email.","The assistant checks approved answers and replies in clear language.","If the request needs a person, it collects context and alerts your team.","Conversation notes can be sent to your CRM, inbox, or dashboard."], benefits:["Faster replies for common questions","Less manual answering for your team","More consistent support quality","Clear escalation when humans are needed"], industries:["Retail & E-commerce","Healthcare & Clinics","Education & Coaching","Real Estate"], faqs:[{question:"Can AI answer WhatsApp and website questions?",answer:"Yes. LetssAI can support website chat, WhatsApp, and email when those channels are connected and approved answers are available."},{question:"Will it replace my support team?",answer:"No. It helps reduce repeated questions and prepares better handoffs so your team can focus on sensitive or complex work."}]},
-  { slug:"ai-sales-lead-follow-up", title:"AI Sales & Lead Follow-up", href:"/services/ai-sales-lead-follow-up", description:"Qualify leads, follow up automatically, and update CRM records.", seoTitle:"AI Sales Follow-up Assistant for Lead Qualification & CRM Updates | LetssAI", metaDescription:"Improve lead response time with AI follow-up, qualification, reminders, appointment booking, and CRM updates.", icon:"TrendUp", tools:["Forms","WhatsApp","Email","CRM","Calendars","Google Sheets"], problems:["New leads wait too long for a reply","Sales teams miss follow-up reminders","CRM records are incomplete","Old leads are not re-engaged"], does:["Responds quickly after lead capture","Asks qualifying questions","Books calls or site visits","Updates CRM fields and reminders"], workflow:["A lead submits a form or sends a message.","The assistant replies, qualifies the lead, and suggests next steps.","Qualified leads are routed to sales with notes.","CRM records and reminders are updated for follow-up."], benefits:["Better lead follow-up","Fewer missed opportunities","Cleaner CRM records","Faster appointment scheduling"], industries:["Real Estate","Education & Coaching","Finance & Accounting","Retail & E-commerce"], faqs:[{question:"Can LetssAI follow up with old leads?",answer:"Yes. It can help re-engage older leads with approved messaging and route interested prospects back to your sales team."},{question:"Can it update my CRM?",answer:"Yes, when your CRM supports integration, LetssAI can update fields, notes, and reminders."}]},
-  { slug:"ai-knowledge-assistant", title:"AI Knowledge Assistant", href:"/services/ai-knowledge-assistant", description:"Let teams ask questions across documents, SOPs, policies, and company docs.", seoTitle:"AI Knowledge Assistant for SOPs, Policies & Company Documents | LetssAI", metaDescription:"Give teams an AI assistant that answers from approved SOPs, policies, training docs, and company documents.", icon:"FileSearch", tools:["SOPs","Policies","Training docs","PDFs","Google Drive","Internal portals"], problems:["Teams waste time searching documents","New staff ask the same internal questions","Policies and SOPs are hard to find","Important answers need approved sources"], does:["Answers from approved company documents","Shows source-style references where available","Helps teams understand SOPs and policies","Escalates unclear questions for human review"], workflow:["Your approved documents are organized for retrieval.","A team member asks a question in plain language.","The assistant answers from relevant company content.","Unclear or sensitive questions are routed for review."], benefits:["Smarter document handling","Less repeated internal support","Faster onboarding","More consistent answers"], industries:["Legal Firms","Finance & Accounting","Healthcare & Clinics","Education & Coaching"], faqs:[{question:"Does this give answers from approved documents?",answer:"Yes. The assistant is designed to answer from the content your business approves and provides."},{question:"Can it be used for legal, medical, or financial advice?",answer:"No. It supports admin and knowledge workflows and should not replace qualified professional advice."}]},
-  { slug:"ai-marketing-assistant", title:"AI Marketing Assistant", href:"/services/ai-marketing-assistant", description:"Plan, draft, approve, and track marketing campaigns faster.", seoTitle:"AI Marketing Assistant for Campaigns, Content & Follow-ups | LetssAI", metaDescription:"Plan campaigns, draft content, create approval flows, and track marketing work with practical AI support.", icon:"Megaphone", tools:["Content calendars","Email","Social posts","Approval docs","Dashboards","CRM"], problems:["Campaign planning takes too long","Drafts and approvals are scattered","Follow-up messages are inconsistent","Reporting requires manual copy-paste"], does:["Creates campaign plans and drafts","Prepares social and email content","Supports approval workflows","Organizes tracking updates"], workflow:["Your team shares a campaign goal.","The assistant drafts ideas, copy, and a simple plan.","A human reviews and approves content.","Performance notes can be gathered into a dashboard."], benefits:["Faster content drafts","Clearer approval steps","More consistent campaign follow-up","Less manual reporting"], industries:["Education & Coaching","Real Estate","Retail & E-commerce","Healthcare & Clinics"], faqs:[{question:"Will the marketing assistant publish without approval?",answer:"LetssAI recommends human approval before publishing so messaging stays accurate and brand-safe."}]},
-  { slug:"ai-calling-appointment-booking", title:"AI Calling & Appointment Booking", href:"/services/ai-calling-appointment-booking", description:"Automate outbound calls, appointment booking, and feedback collection.", seoTitle:"AI Calling and Appointment Booking Assistant | LetssAI", metaDescription:"Automate appointment requests, reminders, feedback collection, call summaries, and calendar updates with LetssAI.", icon:"PhoneCall", tools:["Phone calls","Calendars","WhatsApp","CRM","Feedback forms","Dashboards"], problems:["Front desk teams handle repeated booking calls","No-shows increase without reminders","Feedback collection is manual","Call notes are not captured"], does:["Handles booking requests","Sends reminders and confirmations","Collects feedback","Creates summaries for review"], workflow:["A customer requests an appointment or receives an approved outbound call.","The assistant confirms details and checks available slots.","The appointment is booked or routed to a person.","Summaries and updates are sent to your tools."], benefits:["Easier appointment booking","Reduced front desk workload","Better reminder follow-through","Clear call summaries"], industries:["Healthcare & Clinics","Real Estate","Education & Coaching","Finance & Accounting"], faqs:[{question:"Can sensitive calls be reviewed by a person?",answer:"Yes. Sensitive or unclear conversations should be routed for human review."}]},
-  { slug:"ai-workflow-automation", title:"AI Workflow Automation", href:"/services/ai-workflow-automation", description:"Automate business workflows across teams, tools, and daily operations.", seoTitle:"AI Workflow Automation for Repetitive Business Tasks | LetssAI", metaDescription:"Move routine work from email to spreadsheets, CRM, documents, and dashboards without manual copy-paste.", icon:"FlowArrow", tools:["Email","Spreadsheets","CRM","Documents","Dashboards","APIs"], problems:["Teams copy data between tools","Routine tasks depend on manual reminders","Reports take too long to prepare","Work gets stuck between departments"], does:["Moves work from one step to the next","Reads structured business inputs","Creates summaries and updates","Alerts humans when decisions are needed"], workflow:["A request arrives in email, form, CRM, or spreadsheet.","The assistant extracts the useful details.","It updates the next tool or prepares a task.","Your team reviews exceptions and final decisions."], benefits:["Less manual work","Cleaner daily operations","Faster reporting","Better follow-through"], industries:["Finance & Accounting","Retail & E-commerce","Legal Firms","Education & Coaching"], faqs:[{question:"What workflows can be automated?",answer:"Common examples include email-to-CRM updates, document collection, report preparation, lead routing, reminders, and dashboard updates."}]},
-  { slug:"ai-system-integration", title:"AI System Integration", href:"/services/ai-system-integration", description:"Connect AI with CRM, email, dashboards, databases, and APIs.", seoTitle:"AI System Integration for CRM, Email, Dashboards & Business Tools | LetssAI", metaDescription:"Make AI work with the tools you already use, including CRM, email, databases, Google Sheets, WhatsApp, calendars, and dashboards.", icon:"PlugsConnected", tools:["CRM","Email","Databases","Google Sheets","WhatsApp","Calendars","Dashboards"], problems:["AI tools are disconnected from daily work","Teams switch between too many systems","Data entry is repeated","Reports are not updated automatically"], does:["Connects AI to existing tools","Maps safe data flows","Creates practical automations","Supports dashboards and handoffs"], workflow:["We review your current tools and workflow.","Integration points are mapped with safety limits.","The assistant is connected to the systems it needs.","Your team tests outputs before wider use."], benefits:["Connected business tools","Less duplicate data entry","Clearer reporting","AI inside existing workflows"], industries:["Real Estate","Healthcare & Clinics","Finance & Accounting","Retail & E-commerce"], faqs:[{question:"Do I need to change my current software?",answer:"Usually no. LetssAI is designed to work around the tools your team already uses where integration is available."}]},
-];
+  {
+    slug: "ai-customer-support",
+    title: "AI Customer Support",
+    href: "/services/ai-customer-support",
+    description:
+      "Automate website, WhatsApp, and email support with human handoff.",
+    seoTitle: "AI Customer Support for Website, WhatsApp & Email | LetssAI",
+    metaDescription:
+      "Use LetssAI to answer repeated customer questions across website chat, WhatsApp, and email with safe human handoff.",
+    icon: "ChatCircleText",
+    tools: [
+      "Website chat",
+      "WhatsApp",
+      "Email",
+      "FAQ pages",
+      "Ticket tools",
+      "CRM",
+    ],
+    problems: [
+      "Repeated questions slow your team down",
+      "Customers wait too long for simple answers",
+      "Support conversations are spread across channels",
+      "Important requests need a clear human handoff",
+    ],
+    does: [
+      "Answers FAQs from approved business content",
+      "Creates tickets or summaries for your team",
+      "Collects order, appointment, or inquiry details",
+      "Hands off sensitive or complex conversations",
+    ],
+    workflow: [
+      "A customer asks a question on your website, WhatsApp, or email.",
+      "The assistant checks approved answers and replies in clear language.",
+      "If the request needs a person, it collects context and alerts your team.",
+      "Conversation notes can be sent to your CRM, inbox, or dashboard.",
+    ],
+    benefits: [
+      "Faster replies for common questions",
+      "Less manual answering for your team",
+      "More consistent support quality",
+      "Clear escalation when humans are needed",
+    ],
+    industries: [
+      "Retail & E-commerce",
+      "Healthcare & Clinics",
+      "Education & Coaching",
+      "Real Estate",
+    ],
+    faqs: [
+      {
+        question: "Can AI answer WhatsApp and website questions?",
+        answer:
+          "Yes. LetssAI can support website chat, WhatsApp, and email when those channels are connected and approved answers are available.",
+      },
+      {
+        question: "Will it replace my support team?",
+        answer:
+          "No. It helps reduce repeated questions and prepares better handoffs so your team can focus on sensitive or complex work.",
+      },
+    ],
+  },
+  {
+    slug: "ai-sales-lead-follow-up",
+    title: "AI Sales & Lead Follow-up",
+    href: "/services/ai-sales-lead-follow-up",
+    description:
+      "Qualify leads, follow up automatically, and update CRM records.",
+    seoTitle:
+      "AI Sales Follow-up Assistant for Lead Qualification & CRM Updates | LetssAI",
+    metaDescription:
+      "Improve lead response time with AI follow-up, qualification, reminders, appointment booking, and CRM updates.",
+    icon: "TrendUp",
+    tools: ["Forms", "WhatsApp", "Email", "CRM", "Calendars", "Google Sheets"],
+    problems: [
+      "New leads wait too long for a reply",
+      "Sales teams miss follow-up reminders",
+      "CRM records are incomplete",
+      "Old leads are not re-engaged",
+    ],
+    does: [
+      "Responds quickly after lead capture",
+      "Asks qualifying questions",
+      "Books calls or site visits",
+      "Updates CRM fields and reminders",
+    ],
+    workflow: [
+      "A lead submits a form or sends a message.",
+      "The assistant replies, qualifies the lead, and suggests next steps.",
+      "Qualified leads are routed to sales with notes.",
+      "CRM records and reminders are updated for follow-up.",
+    ],
+    benefits: [
+      "Better lead follow-up",
+      "Fewer missed opportunities",
+      "Cleaner CRM records",
+      "Faster appointment scheduling",
+    ],
+    industries: [
+      "Real Estate",
+      "Education & Coaching",
+      "Finance & Accounting",
+      "Retail & E-commerce",
+    ],
+    faqs: [
+      {
+        question: "Can LetssAI follow up with old leads?",
+        answer:
+          "Yes. It can help re-engage older leads with approved messaging and route interested prospects back to your sales team.",
+      },
+      {
+        question: "Can it update my CRM?",
+        answer:
+          "Yes, when your CRM supports integration, LetssAI can update fields, notes, and reminders.",
+      },
+    ],
+  },
+  {
+    slug: "ai-knowledge-assistant",
+    title: "AI Knowledge Assistant",
+    href: "/services/ai-knowledge-assistant",
+    description:
+      "Let teams ask questions across documents, SOPs, policies, and company docs.",
+    seoTitle:
+      "AI Knowledge Assistant for SOPs, Policies & Company Documents | LetssAI",
+    metaDescription:
+      "Give teams an AI assistant that answers from approved SOPs, policies, training docs, and company documents.",
+    icon: "FileSearch",
+    tools: [
+      "SOPs",
+      "Policies",
+      "Training docs",
+      "PDFs",
+      "Google Drive",
+      "Internal portals",
+    ],
+    problems: [
+      "Teams waste time searching documents",
+      "New staff ask the same internal questions",
+      "Policies and SOPs are hard to find",
+      "Important answers need approved sources",
+    ],
+    does: [
+      "Answers from approved company documents",
+      "Shows source-style references where available",
+      "Helps teams understand SOPs and policies",
+      "Escalates unclear questions for human review",
+    ],
+    workflow: [
+      "Your approved documents are organized for retrieval.",
+      "A team member asks a question in plain language.",
+      "The assistant answers from relevant company content.",
+      "Unclear or sensitive questions are routed for review.",
+    ],
+    benefits: [
+      "Smarter document handling",
+      "Less repeated internal support",
+      "Faster onboarding",
+      "More consistent answers",
+    ],
+    industries: [
+      "Legal Firms",
+      "Finance & Accounting",
+      "Healthcare & Clinics",
+      "Education & Coaching",
+    ],
+    faqs: [
+      {
+        question: "Does this give answers from approved documents?",
+        answer:
+          "Yes. The assistant is designed to answer from the content your business approves and provides.",
+      },
+      {
+        question: "Can it be used for legal, medical, or financial advice?",
+        answer:
+          "No. It supports admin and knowledge workflows and should not replace qualified professional advice.",
+      },
+    ],
+  },
+  {
+    slug: "ai-marketing-assistant",
+    title: "AI Marketing Assistant",
+    href: "/services/ai-marketing-assistant",
+    description: "Plan, draft, approve, and track marketing campaigns faster.",
+    seoTitle:
+      "AI Marketing Assistant for Campaigns, Content & Follow-ups | LetssAI",
+    metaDescription:
+      "Plan campaigns, draft content, create approval flows, and track marketing work with practical AI support.",
+    icon: "Megaphone",
+    tools: [
+      "Content calendars",
+      "Email",
+      "Social posts",
+      "Approval docs",
+      "Dashboards",
+      "CRM",
+    ],
+    problems: [
+      "Campaign planning takes too long",
+      "Drafts and approvals are scattered",
+      "Follow-up messages are inconsistent",
+      "Reporting requires manual copy-paste",
+    ],
+    does: [
+      "Creates campaign plans and drafts",
+      "Prepares social and email content",
+      "Supports approval workflows",
+      "Organizes tracking updates",
+    ],
+    workflow: [
+      "Your team shares a campaign goal.",
+      "The assistant drafts ideas, copy, and a simple plan.",
+      "A human reviews and approves content.",
+      "Performance notes can be gathered into a dashboard.",
+    ],
+    benefits: [
+      "Faster content drafts",
+      "Clearer approval steps",
+      "More consistent campaign follow-up",
+      "Less manual reporting",
+    ],
+    industries: [
+      "Education & Coaching",
+      "Real Estate",
+      "Retail & E-commerce",
+      "Healthcare & Clinics",
+    ],
+    faqs: [
+      {
+        question: "Will the marketing assistant publish without approval?",
+        answer:
+          "LetssAI recommends human approval before publishing so messaging stays accurate and brand-safe.",
+      },
+    ],
+  },
+  {
+    slug: "ai-calling-appointment-booking",
+    title: "AI Calling & Appointment Booking",
+    href: "/services/ai-calling-appointment-booking",
+    description:
+      "Automate outbound calls, appointment booking, and feedback collection.",
+    seoTitle: "AI Calling and Appointment Booking Assistant | LetssAI",
+    metaDescription:
+      "Automate appointment requests, reminders, feedback collection, call summaries, and calendar updates with LetssAI.",
+    icon: "PhoneCall",
+    tools: [
+      "Phone calls",
+      "Calendars",
+      "WhatsApp",
+      "CRM",
+      "Feedback forms",
+      "Dashboards",
+    ],
+    problems: [
+      "Front desk teams handle repeated booking calls",
+      "No-shows increase without reminders",
+      "Feedback collection is manual",
+      "Call notes are not captured",
+    ],
+    does: [
+      "Handles booking requests",
+      "Sends reminders and confirmations",
+      "Collects feedback",
+      "Creates summaries for review",
+    ],
+    workflow: [
+      "A customer requests an appointment or receives an approved outbound call.",
+      "The assistant confirms details and checks available slots.",
+      "The appointment is booked or routed to a person.",
+      "Summaries and updates are sent to your tools.",
+    ],
+    benefits: [
+      "Easier appointment booking",
+      "Reduced front desk workload",
+      "Better reminder follow-through",
+      "Clear call summaries",
+    ],
+    industries: [
+      "Healthcare & Clinics",
+      "Real Estate",
+      "Education & Coaching",
+      "Finance & Accounting",
+    ],
+    faqs: [
+      {
+        question: "Can sensitive calls be reviewed by a person?",
+        answer:
+          "Yes. Sensitive or unclear conversations should be routed for human review.",
+      },
+    ],
+  },
+  {
+    slug: "ai-workflow-automation",
+    title: "AI Workflow Automation",
+    href: "/services/ai-workflow-automation",
+    description:
+      "Automate business workflows across teams, tools, and daily operations.",
+    seoTitle: "AI Workflow Automation for Repetitive Business Tasks | LetssAI",
+    metaDescription:
+      "Move routine work from email to spreadsheets, CRM, documents, and dashboards without manual copy-paste.",
+    icon: "FlowArrow",
+    tools: ["Email", "Spreadsheets", "CRM", "Documents", "Dashboards", "APIs"],
+    problems: [
+      "Teams copy data between tools",
+      "Routine tasks depend on manual reminders",
+      "Reports take too long to prepare",
+      "Work gets stuck between departments",
+    ],
+    does: [
+      "Moves work from one step to the next",
+      "Reads structured business inputs",
+      "Creates summaries and updates",
+      "Alerts humans when decisions are needed",
+    ],
+    workflow: [
+      "A request arrives in email, form, CRM, or spreadsheet.",
+      "The assistant extracts the useful details.",
+      "It updates the next tool or prepares a task.",
+      "Your team reviews exceptions and final decisions.",
+    ],
+    benefits: [
+      "Less manual work",
+      "Cleaner daily operations",
+      "Faster reporting",
+      "Better follow-through",
+    ],
+    industries: [
+      "Finance & Accounting",
+      "Retail & E-commerce",
+      "Legal Firms",
+      "Education & Coaching",
+    ],
+    faqs: [
+      {
+        question: "What workflows can be automated?",
+        answer:
+          "Common examples include email-to-CRM updates, document collection, report preparation, lead routing, reminders, and dashboard updates.",
+      },
+    ],
+  },
+  {
+    slug: "ai-system-integration",
+    title: "AI System Integration",
+    href: "/services/ai-system-integration",
+    description: "Connect AI with CRM, email, dashboards, databases, and APIs.",
+    seoTitle:
+      "AI System Integration for CRM, Email, Dashboards & Business Tools | LetssAI",
+    metaDescription:
+      "Make AI work with the tools you already use, including CRM, email, databases, Google Sheets, WhatsApp, calendars, and dashboards.",
+    icon: "PlugsConnected",
+    tools: [
+      "CRM",
+      "Email",
+      "Databases",
+      "Google Sheets",
+      "WhatsApp",
+      "Calendars",
+      "Dashboards",
+    ],
+    problems: [
+      "AI tools are disconnected from daily work",
+      "Teams switch between too many systems",
+      "Data entry is repeated",
+      "Reports are not updated automatically",
+    ],
+    does: [
+      "Connects AI to existing tools",
+      "Maps safe data flows",
+      "Creates practical automations",
+      "Supports dashboards and handoffs",
+    ],
+    workflow: [
+      "We review your current tools and workflow.",
+      "Integration points are mapped with safety limits.",
+      "The assistant is connected to the systems it needs.",
+      "Your team tests outputs before wider use.",
+    ],
+    benefits: [
+      "Connected business tools",
+      "Less duplicate data entry",
+      "Clearer reporting",
+      "AI inside existing workflows",
+    ],
+    industries: [
+      "Real Estate",
+      "Healthcare & Clinics",
+      "Finance & Accounting",
+      "Retail & E-commerce",
+    ],
+    faqs: [
+      {
+        question: "Do I need to change my current software?",
+        answer:
+          "Usually no. LetssAI is designed to work around the tools your team already uses where integration is available.",
+      },
+    ],
+  },
+]
 
 export const industries: Industry[] = [
-  {slug:"real-estate",title:"Real Estate",href:"/industries/real-estate",useCase:"Follow up property inquiries, book site visits, and update CRM records.",seoTitle:"AI Solutions for Real Estate Lead Follow-up | LetssAI",metaDescription:"AI support for real estate lead follow-up, property inquiries, site visit reminders, CRM updates, calls, and WhatsApp follow-up.",icon:"HouseLine",problems:["Property inquiries need fast follow-up","Site visits require reminders","CRM records fall behind","WhatsApp and calling follow-up takes time"],services:["AI Sales & Lead Follow-up","AI Customer Support","AI Calling & Appointment Booking"],workflows:["New property inquiry → WhatsApp follow-up → qualifying questions → site visit booking → CRM update","Missed lead list → approved follow-up → interested leads routed to sales"],benefits:["Faster lead response","Better site visit coordination","Cleaner sales records"],faqs:[{question:"Can LetssAI help real estate teams follow up on leads?",answer:"Yes. It can qualify inquiries, send approved follow-ups, book site visits, and update CRM records."}]},
-  {slug:"healthcare-clinics",title:"Healthcare & Clinics",href:"/industries/healthcare-clinics",useCase:"Reduce front desk workload with appointment support, FAQs, reminders, and feedback.",seoTitle:"AI Solutions for Healthcare Clinics | LetssAI",metaDescription:"AI workflow support for clinics: appointment booking, patient FAQs, reminders, feedback collection, and front desk workload reduction.",icon:"FirstAidKit",problems:["Appointment calls overload the front desk","Patients ask repeated admin questions","Reminders and feedback are manual","Sensitive conversations need human review"],services:["AI Calling & Appointment Booking","AI Customer Support","AI Knowledge Assistant"],workflows:["Patient request → appointment options → confirmation → reminder → feedback collection","FAQ question → approved admin answer → human handoff if medical"],benefits:["Less front desk pressure","Easier booking","Safer handoff for sensitive topics"],faqs:[{question:"Does LetssAI provide medical diagnosis?",answer:"No. LetssAI supports administrative workflows and patient FAQs, not medical diagnosis or clinical advice."}]},
-  {slug:"legal-firms",title:"Legal Firms",href:"/industries/legal-firms",useCase:"Support client intake, scheduling, document organization, and internal document search.",seoTitle:"AI Workflow Support for Legal Firms | LetssAI",metaDescription:"Administrative AI support for legal firms: client intake, appointment scheduling, document organization, and knowledge search without legal advice.",icon:"Scales",problems:["Client intake details are scattered","Document search takes time","Appointment scheduling is repetitive","FAQs need careful handoff"],services:["AI Knowledge Assistant","AI Workflow Automation","AI Customer Support"],workflows:["New inquiry → intake questions → appointment scheduling → admin summary","Team question → approved document search → source-based answer"],benefits:["Better intake organization","Faster document lookup","Clear admin handoff"],faqs:[{question:"Does LetssAI give legal advice?",answer:"No. It supports admin and knowledge workflows and should not provide legal advice."}]},
-  {slug:"education-coaching",title:"Education & Coaching",href:"/industries/education-coaching",useCase:"Automate admission inquiries, student FAQs, payment reminders, and demo class booking.",seoTitle:"AI Solutions for Education and Coaching | LetssAI",metaDescription:"AI assistants for admission inquiry follow-up, student support, course FAQs, payment reminders, demo class booking, and WhatsApp automation.",icon:"GraduationCap",problems:["Admission inquiries need quick replies","Course FAQs repeat daily","Payment reminders are manual","Demo class booking needs coordination"],services:["AI Sales & Lead Follow-up","AI Customer Support","AI Calling & Appointment Booking"],workflows:["Inquiry → course FAQ answer → qualification → demo booking → reminder","Student question → approved answer → staff handoff"],benefits:["Faster admission follow-up","Less repeated admin work","Better student communication"],faqs:[{question:"Can LetssAI book demo classes?",answer:"Yes. It can collect details, check available slots when connected, and send reminders."}]},
-  {slug:"retail-ecommerce",title:"Retail & E-commerce",href:"/industries/retail-ecommerce",useCase:"Answer order questions, product FAQs, returns, exchanges, and review requests.",seoTitle:"AI Customer Support for Retail and E-commerce | LetssAI",metaDescription:"AI support for retail and e-commerce order questions, product FAQs, returns and exchange support, review collection, and inventory inquiries when connected.",icon:"ShoppingCart",problems:["Order status questions repeat often","Return and exchange steps need clarity","Product FAQs slow the support team","Review collection is inconsistent"],services:["AI Customer Support","AI Workflow Automation","AI System Integration"],workflows:["Customer question → approved order or product response → ticket if needed","Delivery completed → review request → dashboard update"],benefits:["Faster customer replies","Reduced repeated questions","More organized support"],faqs:[{question:"Can LetssAI answer inventory questions?",answer:"Yes, if it is connected to a reliable inventory or product system."}]},
-  {slug:"finance-accounting",title:"Finance & Accounting",href:"/industries/finance-accounting",useCase:"Support invoice handling, document collection, client reminders, and report preparation.",seoTitle:"AI Workflow Support for Finance and Accounting | LetssAI",metaDescription:"AI workflow support for finance and accounting teams: invoice handling, document collection, client reminders, internal knowledge, and reports.",icon:"Receipt",problems:["Document collection needs repeated reminders","Invoice details need organization","Internal process questions repeat","Report preparation includes manual steps"],services:["AI Workflow Automation","AI Knowledge Assistant","AI System Integration"],workflows:["Client reminder → document collection → checklist update → team alert","Invoice email → detail extraction → spreadsheet or dashboard update"],benefits:["Less manual follow-up","Better document organization","Faster admin reporting"],faqs:[{question:"Does LetssAI provide financial advice?",answer:"No. It supports workflow and document tasks, not financial advice or regulated recommendations."}]},
-];
+  {
+    slug: "real-estate",
+    title: "Real Estate",
+    href: "/industries/real-estate",
+    useCase:
+      "Follow up property inquiries, book site visits, and update CRM records.",
+    seoTitle: "AI Solutions for Real Estate Lead Follow-up | LetssAI",
+    metaDescription:
+      "AI support for real estate lead follow-up, property inquiries, site visit reminders, CRM updates, calls, and WhatsApp follow-up.",
+    icon: "HouseLine",
+    problems: [
+      "Property inquiries need fast follow-up",
+      "Site visits require reminders",
+      "CRM records fall behind",
+      "WhatsApp and calling follow-up takes time",
+    ],
+    services: [
+      "AI Sales & Lead Follow-up",
+      "AI Customer Support",
+      "AI Calling & Appointment Booking",
+    ],
+    workflows: [
+      "New property inquiry → WhatsApp follow-up → qualifying questions → site visit booking → CRM update",
+      "Missed lead list → approved follow-up → interested leads routed to sales",
+    ],
+    benefits: [
+      "Faster lead response",
+      "Better site visit coordination",
+      "Cleaner sales records",
+    ],
+    faqs: [
+      {
+        question: "Can LetssAI help real estate teams follow up on leads?",
+        answer:
+          "Yes. It can qualify inquiries, send approved follow-ups, book site visits, and update CRM records.",
+      },
+    ],
+  },
+  {
+    slug: "healthcare-clinics",
+    title: "Healthcare & Clinics",
+    href: "/industries/healthcare-clinics",
+    useCase:
+      "Reduce front desk workload with appointment support, FAQs, reminders, and feedback.",
+    seoTitle: "AI Solutions for Healthcare Clinics | LetssAI",
+    metaDescription:
+      "AI workflow support for clinics: appointment booking, patient FAQs, reminders, feedback collection, and front desk workload reduction.",
+    icon: "FirstAidKit",
+    problems: [
+      "Appointment calls overload the front desk",
+      "Patients ask repeated admin questions",
+      "Reminders and feedback are manual",
+      "Sensitive conversations need human review",
+    ],
+    services: [
+      "AI Calling & Appointment Booking",
+      "AI Customer Support",
+      "AI Knowledge Assistant",
+    ],
+    workflows: [
+      "Patient request → appointment options → confirmation → reminder → feedback collection",
+      "FAQ question → approved admin answer → human handoff if medical",
+    ],
+    benefits: [
+      "Less front desk pressure",
+      "Easier booking",
+      "Safer handoff for sensitive topics",
+    ],
+    faqs: [
+      {
+        question: "Does LetssAI provide medical diagnosis?",
+        answer:
+          "No. LetssAI supports administrative workflows and patient FAQs, not medical diagnosis or clinical advice.",
+      },
+    ],
+  },
+  {
+    slug: "legal-firms",
+    title: "Legal Firms",
+    href: "/industries/legal-firms",
+    useCase:
+      "Support client intake, scheduling, document organization, and internal document search.",
+    seoTitle: "AI Workflow Support for Legal Firms | LetssAI",
+    metaDescription:
+      "Administrative AI support for legal firms: client intake, appointment scheduling, document organization, and knowledge search without legal advice.",
+    icon: "Scales",
+    problems: [
+      "Client intake details are scattered",
+      "Document search takes time",
+      "Appointment scheduling is repetitive",
+      "FAQs need careful handoff",
+    ],
+    services: [
+      "AI Knowledge Assistant",
+      "AI Workflow Automation",
+      "AI Customer Support",
+    ],
+    workflows: [
+      "New inquiry → intake questions → appointment scheduling → admin summary",
+      "Team question → approved document search → source-based answer",
+    ],
+    benefits: [
+      "Better intake organization",
+      "Faster document lookup",
+      "Clear admin handoff",
+    ],
+    faqs: [
+      {
+        question: "Does LetssAI give legal advice?",
+        answer:
+          "No. It supports admin and knowledge workflows and should not provide legal advice.",
+      },
+    ],
+  },
+  {
+    slug: "education-coaching",
+    title: "Education & Coaching",
+    href: "/industries/education-coaching",
+    useCase:
+      "Automate admission inquiries, student FAQs, payment reminders, and demo class booking.",
+    seoTitle: "AI Solutions for Education and Coaching | LetssAI",
+    metaDescription:
+      "AI assistants for admission inquiry follow-up, student support, course FAQs, payment reminders, demo class booking, and WhatsApp automation.",
+    icon: "GraduationCap",
+    problems: [
+      "Admission inquiries need quick replies",
+      "Course FAQs repeat daily",
+      "Payment reminders are manual",
+      "Demo class booking needs coordination",
+    ],
+    services: [
+      "AI Sales & Lead Follow-up",
+      "AI Customer Support",
+      "AI Calling & Appointment Booking",
+    ],
+    workflows: [
+      "Inquiry → course FAQ answer → qualification → demo booking → reminder",
+      "Student question → approved answer → staff handoff",
+    ],
+    benefits: [
+      "Faster admission follow-up",
+      "Less repeated admin work",
+      "Better student communication",
+    ],
+    faqs: [
+      {
+        question: "Can LetssAI book demo classes?",
+        answer:
+          "Yes. It can collect details, check available slots when connected, and send reminders.",
+      },
+    ],
+  },
+  {
+    slug: "retail-ecommerce",
+    title: "Retail & E-commerce",
+    href: "/industries/retail-ecommerce",
+    useCase:
+      "Answer order questions, product FAQs, returns, exchanges, and review requests.",
+    seoTitle: "AI Customer Support for Retail and E-commerce | LetssAI",
+    metaDescription:
+      "AI support for retail and e-commerce order questions, product FAQs, returns and exchange support, review collection, and inventory inquiries when connected.",
+    icon: "ShoppingCart",
+    problems: [
+      "Order status questions repeat often",
+      "Return and exchange steps need clarity",
+      "Product FAQs slow the support team",
+      "Review collection is inconsistent",
+    ],
+    services: [
+      "AI Customer Support",
+      "AI Workflow Automation",
+      "AI System Integration",
+    ],
+    workflows: [
+      "Customer question → approved order or product response → ticket if needed",
+      "Delivery completed → review request → dashboard update",
+    ],
+    benefits: [
+      "Faster customer replies",
+      "Reduced repeated questions",
+      "More organized support",
+    ],
+    faqs: [
+      {
+        question: "Can LetssAI answer inventory questions?",
+        answer:
+          "Yes, if it is connected to a reliable inventory or product system.",
+      },
+    ],
+  },
+  {
+    slug: "finance-accounting",
+    title: "Finance & Accounting",
+    href: "/industries/finance-accounting",
+    useCase:
+      "Support invoice handling, document collection, client reminders, and report preparation.",
+    seoTitle: "AI Workflow Support for Finance and Accounting | LetssAI",
+    metaDescription:
+      "AI workflow support for finance and accounting teams: invoice handling, document collection, client reminders, internal knowledge, and reports.",
+    icon: "Receipt",
+    problems: [
+      "Document collection needs repeated reminders",
+      "Invoice details need organization",
+      "Internal process questions repeat",
+      "Report preparation includes manual steps",
+    ],
+    services: [
+      "AI Workflow Automation",
+      "AI Knowledge Assistant",
+      "AI System Integration",
+    ],
+    workflows: [
+      "Client reminder → document collection → checklist update → team alert",
+      "Invoice email → detail extraction → spreadsheet or dashboard update",
+    ],
+    benefits: [
+      "Less manual follow-up",
+      "Better document organization",
+      "Faster admin reporting",
+    ],
+    faqs: [
+      {
+        question: "Does LetssAI provide financial advice?",
+        answer:
+          "No. It supports workflow and document tasks, not financial advice or regulated recommendations.",
+      },
+    ],
+  },
+]
 
-export const homeFaqs: FAQ[] = [{question:"What does LetssAI help businesses automate?",answer:"LetssAI helps with customer replies, lead follow-up, document questions, appointment booking, reminders, reports, and routine workflows across existing business tools."},{question:"Is LetssAI built for small and growing businesses?",answer:"Yes. The website and services are designed for teams that want practical AI inside tools they already use."},{question:"Can LetssAI include human handoff?",answer:"Yes. Human handoff is part of the design for sensitive, complex, or high-value conversations."}];
+export const homeFaqs: FAQ[] = [
+  {
+    question: "What does LetssAI help businesses automate?",
+    answer:
+      "LetssAI helps with customer replies, lead follow-up, document questions, appointment booking, reminders, reports, and routine workflows across existing business tools.",
+  },
+  {
+    question: "Is LetssAI built for small and growing businesses?",
+    answer:
+      "Yes. The website and services are designed for teams that want practical AI inside tools they already use.",
+  },
+  {
+    question: "Can LetssAI include human handoff?",
+    answer:
+      "Yes. Human handoff is part of the design for sensitive, complex, or high-value conversations.",
+  },
+]

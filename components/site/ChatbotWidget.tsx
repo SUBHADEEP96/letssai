@@ -1,3 +1,146 @@
-"use client";import{useEffect,useRef,useState}from"react";import{X,PaperPlaneTilt}from"@phosphor-icons/react";
-type Msg={role:"assistant"|"user";content:string};const chips=["What can LetssAI automate?","Help me choose a service","Can you help with real estate leads?","How does appointment booking work?","How do I contact LetssAI?"];
-export function ChatbotWidget(){const[open,setOpen]=useState(false);const[input,setInput]=useState("");const[msgs,setMsgs]=useState<Msg[]>([{role:"assistant",content:"Hi, I’m LetssAI. Tell me what your team wants to automate, and I’ll point you to the right service."}]);const ref=useRef<HTMLTextAreaElement>(null);useEffect(()=>{const h=()=>setOpen(true);window.addEventListener("letssai:open-chatbot",h);return()=>window.removeEventListener("letssai:open-chatbot",h)},[]);useEffect(()=>{document.body.style.overflow=open?"hidden":"";return()=>{document.body.style.overflow=""}},[open]);async function send(text=input){if(!text.trim())return;setInput("");setMsgs(m=>[...m,{role:"user",content:text}]);try{const r=await fetch("/api/chat",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({messages:[...msgs,{role:"user",content:text}]})});const data=await r.json();setMsgs(m=>[...m,{role:"assistant",content:data.message||"I can help with LetssAI services and contact options."}])}catch{setMsgs(m=>[...m,{role:"assistant",content:"I’m in demo mode right now. LetssAI can help with support, lead follow-up, documents, appointments, and workflow automation. For a custom scope, please schedule a call."}])}}return open?<div className="fixed inset-0 z-[60] bg-emerald-950/50"><aside role="dialog" aria-modal="true" aria-label="LetssAI chatbot" className="ml-auto flex h-dvh w-full max-w-2xl flex-col bg-emerald-950 text-white shadow-2xl md:m-4 md:h-[calc(100dvh-2rem)] md:rounded-[2rem]"><div className="flex items-center justify-between p-5"><div><b className="text-lg font-semibold tracking-tight">Talk to LetssAI</b><p className="font-mono text-xs uppercase tracking-[0.16em] text-emerald-50/70">AI Assistant · Online</p></div><button className="rounded-full bg-white/10 p-3" aria-label="Close chatbot" onClick={()=>setOpen(false)}><X/></button></div><div className="mx-4 flex-1 overflow-y-auto rounded-3xl bg-white p-4 text-slate-900">{msgs.map((m,i)=><div key={i} className={`mb-3 max-w-[85%] rounded-2xl p-3 text-sm leading-relaxed ${m.role==="user"?"ml-auto bg-emerald-700 text-white":"bg-emerald-50 text-slate-800"}`}>{m.content}</div>)}</div><div className="p-4"><div className="mb-3 flex gap-2 overflow-x-auto pb-1">{chips.map(c=><button key={c} onClick={()=>send(c)} className="shrink-0 rounded-full bg-white/10 px-3 py-2 font-mono text-xs text-emerald-50 hover:bg-white/20">{c}</button>)}</div><div className="flex gap-2 rounded-3xl bg-white p-2"><textarea ref={ref} value={input} onChange={e=>setInput(e.target.value)} onKeyDown={e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();send()}}} className="min-h-11 flex-1 resize-none rounded-2xl px-3 py-2 text-sm leading-relaxed text-slate-900 outline-none" placeholder="Ask about services, industries, or contact..."/><button onClick={()=>send()} className="grid size-11 place-items-center rounded-2xl bg-emerald-700 text-white" aria-label="Send message"><PaperPlaneTilt/></button></div><a href="/contact" className="mt-3 block text-center text-sm text-emerald-100 underline">Schedule a call</a></div></aside></div>:null}
+"use client"
+import { useEffect, useRef, useState } from "react"
+import { X, PaperPlaneTilt } from "@phosphor-icons/react"
+type Msg = { role: "assistant" | "user"; content: string }
+const chips = [
+  "What can LetssAI automate?",
+  "Help me choose a service",
+  "Can you help with real estate leads?",
+  "How does appointment booking work?",
+  "How do I contact LetssAI?",
+]
+export function ChatbotWidget() {
+  const [open, setOpen] = useState(false)
+  const [input, setInput] = useState("")
+  const [msgs, setMsgs] = useState<Msg[]>([
+    {
+      role: "assistant",
+      content:
+        "Hi, I’m LetssAI. Tell me what your team wants to automate, and I’ll point you to the right service.",
+    },
+  ])
+  const ref = useRef<HTMLTextAreaElement>(null)
+  useEffect(() => {
+    const h = () => setOpen(true)
+    window.addEventListener("letssai:open-chatbot", h)
+    return () => window.removeEventListener("letssai:open-chatbot", h)
+  }, [])
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : ""
+    return () => {
+      document.body.style.overflow = ""
+    }
+  }, [open])
+  async function send(text = input) {
+    if (!text.trim()) return
+    setInput("")
+    setMsgs((m) => [...m, { role: "user", content: text }])
+    try {
+      const r = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          messages: [...msgs, { role: "user", content: text }],
+        }),
+      })
+      const data = await r.json()
+      setMsgs((m) => [
+        ...m,
+        {
+          role: "assistant",
+          content:
+            data.message ||
+            "I can help with LetssAI services and contact options.",
+        },
+      ])
+    } catch {
+      setMsgs((m) => [
+        ...m,
+        {
+          role: "assistant",
+          content:
+            "I’m in demo mode right now. LetssAI can help with support, lead follow-up, documents, appointments, and workflow automation. For a custom scope, please schedule a call.",
+        },
+      ])
+    }
+  }
+  return open ? (
+    <div className="fixed inset-0 z-[60] bg-emerald-950/50">
+      <aside
+        role="dialog"
+        aria-modal="true"
+        aria-label="LetssAI chatbot"
+        className="ml-auto flex h-dvh w-full max-w-2xl flex-col bg-emerald-950 text-white shadow-2xl md:m-4 md:h-[calc(100dvh-2rem)] md:rounded-[2rem]"
+      >
+        <div className="flex items-center justify-between p-5">
+          <div>
+            <b className="text-lg font-semibold tracking-tight">
+              Talk to LetssAI
+            </b>
+            <p className="font-mono text-xs tracking-[0.16em] text-emerald-50/70 uppercase">
+              AI Assistant · Online
+            </p>
+          </div>
+          <button
+            className="rounded-full bg-white/10 p-3"
+            aria-label="Close chatbot"
+            onClick={() => setOpen(false)}
+          >
+            <X />
+          </button>
+        </div>
+        <div className="mx-4 flex-1 overflow-y-auto rounded-3xl bg-white p-4 text-slate-900">
+          {msgs.map((m, i) => (
+            <div
+              key={i}
+              className={`mb-3 max-w-[85%] rounded-2xl p-3 text-sm leading-relaxed ${m.role === "user" ? "ml-auto bg-emerald-700 text-white" : "bg-emerald-50 text-slate-800"}`}
+            >
+              {m.content}
+            </div>
+          ))}
+        </div>
+        <div className="p-4">
+          <div className="mb-3 flex gap-2 overflow-x-auto pb-1">
+            {chips.map((c) => (
+              <button
+                key={c}
+                onClick={() => send(c)}
+                className="shrink-0 rounded-full bg-white/10 px-3 py-2 font-mono text-xs text-emerald-50 hover:bg-white/20"
+              >
+                {c}
+              </button>
+            ))}
+          </div>
+          <div className="flex gap-2 rounded-3xl bg-white p-2">
+            <textarea
+              ref={ref}
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey) {
+                  e.preventDefault()
+                  send()
+                }
+              }}
+              className="min-h-11 flex-1 resize-none rounded-2xl px-3 py-2 text-sm leading-relaxed text-slate-900 outline-none"
+              placeholder="Ask about services, industries, or contact..."
+            />
+            <button
+              onClick={() => send()}
+              className="grid size-11 place-items-center rounded-2xl bg-emerald-700 text-white"
+              aria-label="Send message"
+            >
+              <PaperPlaneTilt />
+            </button>
+          </div>
+          <a
+            href="/contact"
+            className="mt-3 block text-center text-sm text-emerald-100 underline"
+          >
+            Schedule a call
+          </a>
+        </div>
+      </aside>
+    </div>
+  ) : null
+}
