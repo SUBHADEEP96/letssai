@@ -27,10 +27,10 @@ export default function Contact() {
             Tell us what you want to automate. We’ll help you identify the
             safest and most useful first step.
           </p>
-          <p className="mt-3 font-mono text-xs leading-relaxed text-slate-500">
+          {/* <p className="mt-3 font-mono text-xs leading-relaxed text-slate-500">
             Contact email can be configured with NEXT_PUBLIC_CONTACT_EMAIL.
             Current: {siteConfig.contactEmail}
-          </p>
+          </p> */}
         </div>
       </section>
       <ContactForm />

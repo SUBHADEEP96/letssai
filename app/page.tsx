@@ -23,7 +23,7 @@ export default function Home() {
             <p className="mb-4 inline-flex rounded-full border border-emerald-200 bg-white px-4 py-2 font-mono text-xs font-semibold tracking-[0.18em] text-emerald-800 uppercase">
               Applied AI for growing businesses
             </p>
-            <h1 className="text-4xl leading-tight font-semibold tracking-tight text-slate-950 md:text-6xl lg:text-7xl">
+            <h1 className="text-4xl leading-tight font-semibold tracking-tight text-slate-950 md:text-5xl lg:text-5xl">
               AI solutions that help your business respond faster, follow up
               better, and work smarter.
             </h1>
@@ -92,13 +92,13 @@ export default function Home() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             {[
-              "Website",
+              "Website/Web App",
+              "Dashboards",
               "WhatsApp",
               "Email",
               "CRM",
               "Google Sheets",
               "Calendars",
-              "Dashboards",
               "Business documents",
             ].map((t) => (
               <span

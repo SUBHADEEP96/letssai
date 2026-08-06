@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "LetssAI",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://letssai.com",
   description: "Practical AI solutions for growing businesses.",
-  contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "hello@letssai.com",
+  contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL,
 }
 
 export type FAQ = { question: string; answer: string }

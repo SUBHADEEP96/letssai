@@ -15,7 +15,7 @@ export function CTASection({
         <p className="mt-4 max-w-2xl text-lg leading-relaxed text-emerald-50/75">
           {text}
         </p>
-        <CTAButton className="mt-8 bg-white text-emerald-950 hover:bg-emerald-50" />
+        <CTAButton className="mt-8  text-emerald-950 hover:bg-emerald-50" />
       </div>
     </section>
   )
