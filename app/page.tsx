@@ -7,6 +7,7 @@ import { CTASection } from "@/components/site/CTASection"
 import { JsonLd } from "@/components/seo/JsonLd"
 import { faqSchema, pageMetadata } from "@/lib/seo"
 import { homeFaqs, industries, services } from "@/lib/site"
+
 export const metadata = pageMetadata(
   "LetssAI | Practical AI Solutions for Growing Businesses",
   "LetssAI helps growing businesses use AI inside existing tools to reply faster, follow up better, and reduce manual work.",

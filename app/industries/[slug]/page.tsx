@@ -10,6 +10,7 @@ import {
   pageMetadata,
 } from "@/lib/seo"
 import { industries } from "@/lib/site"
+
 export function generateStaticParams() {
   return industries.map((i) => ({ slug: i.slug }))
 }

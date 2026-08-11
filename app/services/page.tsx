@@ -3,6 +3,7 @@ import { CTASection } from "@/components/site/CTASection"
 import { JsonLd } from "@/components/seo/JsonLd"
 import { faqSchema, pageMetadata } from "@/lib/seo"
 import { services } from "@/lib/site"
+
 const faqs = [
   {
     question: "What AI service should my business start with?",

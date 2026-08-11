@@ -11,6 +11,7 @@ import {
   serviceSchema,
 } from "@/lib/seo"
 import { services } from "@/lib/site"
+
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }))
 }
