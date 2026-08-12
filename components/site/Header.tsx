@@ -58,10 +58,10 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-emerald-950/10 bg-white/85 backdrop-blur-xl">
       <nav
         aria-label="Main"
-        className="mx-auto flex h-18 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
+        className="mx-auto flex h-16 max-w-7xl min-w-0 items-center justify-between gap-3 px-4 sm:gap-5 sm:px-6 lg:h-18 lg:px-8"
       >
-        <Logo />
-        <div className="hidden items-center gap-1 lg:flex">
+        <Logo size="md" priority />
+        <div className="hidden min-w-0 items-center gap-1 lg:flex">
           {navigation.map((item) => (
             <div
               key={item.href}
@@ -117,7 +117,7 @@ export function Header() {
             </div>
           ))}
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-2">
           <CTAButton className="hidden sm:inline-flex" />
           <button
             onClick={() => setMobile(true)}
@@ -132,8 +132,8 @@ export function Header() {
       {mobile && (
         <div className="fixed inset-0 z-50 bg-emerald-950/40 lg:hidden">
           <div className="ml-auto flex h-dvh w-full max-w-md animate-in flex-col bg-white p-5 shadow-2xl slide-in-from-right">
-            <div className="flex items-center justify-between">
-              <b className="text-xl text-emerald-950">LetssAI</b>
+            <div className="flex min-w-0 items-center justify-between gap-4">
+              <Logo size="sm" />
               <button
                 onClick={() => setMobile(false)}
                 className="rounded-full p-3"

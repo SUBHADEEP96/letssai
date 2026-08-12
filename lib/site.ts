@@ -6,12 +6,16 @@ export const siteConfig = {
     "LetssAI builds practical AI assistants for customer support, sales follow-up, knowledge, appointments, workflows, and system integrations.",
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL,
   contactCta: "Talk to LetssAI",
-  logos: {
-    primary: "/media/letssai-logo.svg",
-    white: "/media/letssai-logo-white.svg",
+  brand: {
+    color: "#006452",
+  },
+  assets: {
+    logoPrimary: "/media/letssai_logo.png",
+    logoWhite: "/media/letssai_logo_footer.png",
     icon: "/media/letssai-icon.svg",
-    chatbot: "/media/letssai-icon.svg",
-    social: "/media/letssai-logo.svg",
+    buttonIcon: "/media/letssai-icon.svg",
+    favicon: "/media/letssai-icon.svg",
+    ogImage: "/media/letssai_logo.png",
   },
   deliveryLocations: [
     { label: "India", x: 69, y: 58 },

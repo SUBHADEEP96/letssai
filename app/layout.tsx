@@ -18,9 +18,9 @@ export const metadata: Metadata = {
   applicationName: siteConfig.name,
   alternates: { canonical: "/" },
   icons: {
-    icon: [{ url: siteConfig.logos.icon, type: "image/svg+xml" }],
-    shortcut: siteConfig.logos.icon,
-    apple: siteConfig.logos.icon,
+    icon: [{ url: siteConfig.assets.favicon, type: "image/svg+xml" }],
+    shortcut: siteConfig.assets.favicon,
+    apple: siteConfig.assets.icon,
   },
   manifest: "/manifest.webmanifest",
   openGraph: {
@@ -29,9 +29,21 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: siteConfig.title,
     description: siteConfig.description,
-    images: [{ url: siteConfig.logos.social, width: 1200, height: 630, alt: "LetssAI — practical AI solutions" }],
+    images: [
+      {
+        url: siteConfig.assets.ogImage,
+        width: 1377,
+        height: 355,
+        alt: "LetssAI — practical AI solutions",
+      },
+    ],
   },
-  twitter: { card: "summary_large_image", title: siteConfig.title, description: siteConfig.description, images: [siteConfig.logos.social] },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: [siteConfig.assets.ogImage],
+  },
 }
 
 export default function RootLayout({
