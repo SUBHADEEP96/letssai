@@ -18,9 +18,9 @@ export const metadata: Metadata = {
   applicationName: siteConfig.name,
   alternates: { canonical: "/" },
   icons: {
-    icon: [{ url: siteConfig.logos.icon, type: "image/svg+xml" }],
-    shortcut: siteConfig.logos.icon,
-    apple: siteConfig.logos.icon,
+    icon: [{ url: "/favicon.ico", type: "image/x-icon" }],
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
   manifest: "/manifest.webmanifest",
   openGraph: {
