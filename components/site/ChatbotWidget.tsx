@@ -76,14 +76,21 @@ export function ChatbotWidget() {
       >
         <div className="flex items-center justify-between p-5">
           <div className="flex items-center gap-3">
-            <Image src={siteConfig.logos.chatbot} alt="" width={40} height={40} className="rounded-xl" />
+            <Image
+              src={siteConfig.assets.icon}
+              alt=""
+              aria-hidden="true"
+              width={40}
+              height={40}
+              className="size-10 shrink-0 rounded-xl bg-white object-contain p-1"
+            />
             <div>
-            <b className="text-lg font-semibold tracking-tight">
-              Talk to LetssAI
-            </b>
-            <p className="font-mono text-xs tracking-[0.16em] text-emerald-50/70 uppercase">
-              AI Assistant · Online
-            </p>
+              <b className="text-lg font-semibold tracking-tight">
+                Talk to LetssAI
+              </b>
+              <p className="font-mono text-xs tracking-[0.16em] text-emerald-50/70 uppercase">
+                AI Assistant · Online
+              </p>
             </div>
           </div>
           <button

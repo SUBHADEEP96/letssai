@@ -5,8 +5,8 @@ export function Footer() {
   return (
     <footer className="border-t border-emerald-950/10 bg-emerald-950 text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-4 lg:px-8">
-        <div>
-          <Logo inverse />
+        <div className="min-w-0 lg:col-span-1">
+          <Logo variant="white" size="lg" />
           <p className="mt-4 text-sm leading-6 text-emerald-50/75">
             Practical AI solutions for growing businesses.
           </p>
@@ -54,7 +54,8 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 px-4 py-6 text-center text-sm text-emerald-50/70">
-        © {new Date().getFullYear()} LetssAI. Built for teams that want AI inside their existing tools.
+        © {new Date().getFullYear()} LetssAI. Built for teams that want AI
+        inside their existing tools.
       </div>
     </footer>
   )
