@@ -11,6 +11,8 @@ import {
   serviceSchema,
 } from "@/lib/seo"
 import { services } from "@/lib/site"
+import { WorkflowShowcase } from "@/components/workflows/WorkflowShowcase"
+import { workflowFor } from "@/components/workflows/workflow-data"
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }))
@@ -66,7 +68,7 @@ export default async function ServicePage({
       />
       <Grid title="What business problems does it solve?" items={s.problems} />
       <Grid title="What does the AI assistant do?" items={s.does} />
-      <Grid title="What is an example workflow?" items={s.workflow} ordered />
+      <WorkflowShowcase workflow={workflowFor(s)} />
       <Grid title="Which channels and tools can it support?" items={s.tools} />
       <Info
         title="How does human handoff and safety work?"

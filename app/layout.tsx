@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Header } from "@/components/site/Header"
@@ -9,27 +8,30 @@ import { JsonLd } from "@/components/seo/JsonLd"
 import { organizationSchema, websiteSchema } from "@/lib/seo"
 import { siteConfig } from "@/lib/site"
 
-const geistSans = Geist({
-  subsets: ["latin"],
-  variable: "--font-geist-sans",
-  display: "swap",
-  preload: true,
-})
-
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-geist-mono",
-  display: "swap",
-  preload: false,
-})
-
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "LetssAI | Practical AI Solutions for Growing Businesses",
-    template: "%s",
+    default: siteConfig.title,
+    template: "%s | LetssAI",
   },
   description: siteConfig.description,
+  applicationName: siteConfig.name,
+  alternates: { canonical: "/" },
+  icons: {
+    icon: [{ url: siteConfig.logos.icon, type: "image/svg+xml" }],
+    shortcut: siteConfig.logos.icon,
+    apple: siteConfig.logos.icon,
+  },
+  manifest: "/manifest.webmanifest",
+  openGraph: {
+    type: "website",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: [{ url: siteConfig.logos.social, width: 1200, height: 630, alt: "LetssAI — practical AI solutions" }],
+  },
+  twitter: { card: "summary_large_image", title: siteConfig.title, description: siteConfig.description, images: [siteConfig.logos.social] },
 }
 
 export default function RootLayout({
@@ -39,9 +41,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
-      >
+      <body className="font-sans antialiased">
         <ThemeProvider>
           <Header />
           <main>{children}</main>
