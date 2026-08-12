@@ -19,8 +19,9 @@ export function pageMetadata(
       url,
       siteName: siteConfig.name,
       type: "website",
+      images: [{ url: siteConfig.logos.social, alt: `${siteConfig.name} — practical AI solutions` }],
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: { card: "summary_large_image", title, description, images: [siteConfig.logos.social] },
   }
 }
 export function faqSchema(faqs: { question: string; answer: string }[]) {
@@ -67,6 +68,7 @@ export const organizationSchema = {
   url: siteConfig.url,
   description: siteConfig.description,
   email: siteConfig.contactEmail,
+  logo: absoluteUrl(siteConfig.logos.icon),
 }
 export const websiteSchema = {
   "@context": "https://schema.org",

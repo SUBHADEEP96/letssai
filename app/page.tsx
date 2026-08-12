@@ -7,6 +7,7 @@ import { CTASection } from "@/components/site/CTASection"
 import { JsonLd } from "@/components/seo/JsonLd"
 import { faqSchema, pageMetadata } from "@/lib/seo"
 import { homeFaqs, industries, services } from "@/lib/site"
+import { GlobalDeliveryMap } from "@/components/site/GlobalDeliveryMap"
 
 export const metadata = pageMetadata(
   "LetssAI | Practical AI Solutions for Growing Businesses",
@@ -157,6 +158,7 @@ export default function Home() {
         </div>
       </section>
       <FAQSection faqs={homeFaqs} />
+      <GlobalDeliveryMap />
       <CTASection />
     </>
   )

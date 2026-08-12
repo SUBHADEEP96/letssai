@@ -10,6 +10,7 @@ import {
   pageMetadata,
 } from "@/lib/seo"
 import { industries } from "@/lib/site"
+import { ProductGallery } from "@/components/sections/ProductGallery"
 
 export function generateStaticParams() {
   return industries.map((i) => ({ slug: i.slug }))
@@ -71,6 +72,7 @@ export default async function IndustryPage({
         items={i.workflows}
         ordered
       />
+      <ProductGallery industry={i.title} items={i.gallery ?? [`${i.title} operations dashboard`, `${i.title} assistant`, "Workflow review panel", "Activity summary"]} />
       <Grid title="What benefits can this create?" items={i.benefits} />
       <FAQSection faqs={i.faqs} />
       <CTASection title={`Ready to explore AI for ${i.title}?`} />

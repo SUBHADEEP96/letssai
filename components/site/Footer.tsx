@@ -1,14 +1,14 @@
 import Link from "next/link"
 import { services, industries } from "@/lib/site"
+import { Logo } from "./Logo"
 export function Footer() {
   return (
     <footer className="border-t border-emerald-950/10 bg-emerald-950 text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div>
-          <div className="text-2xl font-semibold tracking-tight">LetssAI</div>
+          <Logo inverse />
           <p className="mt-4 text-sm leading-6 text-emerald-50/75">
-            Practical AI solutions for growing businesses. Reply faster, follow
-            up better, and reduce manual work.
+            Practical AI solutions for growing businesses.
           </p>
         </div>
         <div>
@@ -54,8 +54,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 px-4 py-6 text-center text-sm text-emerald-50/70">
-        © {new Date().getFullYear()} LetssAI. Practical AI solutions for growing
-        businesses.
+        © {new Date().getFullYear()} LetssAI. Built for teams that want AI inside their existing tools.
       </div>
     </footer>
   )

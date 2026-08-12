@@ -21,6 +21,7 @@ import {
 } from "@phosphor-icons/react"
 import { navigation } from "@/lib/navigation"
 import { CTAButton } from "./CTAButton"
+import { Logo } from "./Logo"
 const icons = [
   ChatCircleText,
   TrendUp,
@@ -59,15 +60,7 @@ export function Header() {
         aria-label="Main"
         className="mx-auto flex h-18 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
       >
-        <Link
-          href="/"
-          className="flex items-center gap-2 font-bold tracking-tight text-emerald-950"
-        >
-          <span className="grid size-9 place-items-center rounded-2xl bg-emerald-700 font-mono text-xs font-semibold tracking-tight text-white shadow-lg shadow-emerald-800/20">
-            AI
-          </span>
-          <span className="text-xl tracking-tight">LetssAI</span>
-        </Link>
+        <Logo />
         <div className="hidden items-center gap-1 lg:flex">
           {navigation.map((item) => (
             <div
