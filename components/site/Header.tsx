@@ -60,7 +60,19 @@ export function Header() {
         aria-label="Main"
         className="mx-auto flex h-16 max-w-7xl min-w-0 items-center justify-between gap-3 px-4 sm:gap-5 sm:px-6 lg:h-18 lg:px-8"
       >
-        <Logo size="md" priority />
+        {/* <Logo size="md" priority /> */}
+            <Link
+      href="/"
+      aria-label="LetssAI home"
+      className={`inline-flex shrink-0 items-center focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-500 `}
+    >
+<img
+      src="/media/letssai_logo.png"
+      alt="LetssAI logo"
+      className="h-auto max-h-10 w-full object-contain"
+      />
+    </Link>
+      
         <div className="hidden min-w-0 items-center gap-1 lg:flex">
           {navigation.map((item) => (
             <div

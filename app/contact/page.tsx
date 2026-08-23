@@ -33,6 +33,11 @@ export default function Contact() {
           </p> */}
         </div>
       </section>
+      <img
+      src="/media/letssai_logo.png"
+      alt="Contact illustration"
+      className="mx-auto mt-10 max-w-[600px] rounded-lg"
+      />
       <ContactForm />
     </>
   )

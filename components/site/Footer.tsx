@@ -6,7 +6,20 @@ export function Footer() {
     <footer className="border-t border-emerald-950/10 bg-emerald-950 text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div className="min-w-0 lg:col-span-1">
-          <Logo variant="white" size="lg" />
+           <Link
+      href="/"
+      aria-label="LetssAI home"
+      className={`inline-flex shrink-0 items-center focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-500 `}
+    >
+
+  <img
+      src="/media/letssai_logo_footer.png"
+      alt="LetssAI footer logo"
+      className="h-auto max-h-10 w-full object-contain"
+      />
+    </Link>
+          
+          {/* <Logo variant="white" size="lg" /> */}
           <p className="mt-4 text-sm leading-6 text-emerald-50/75">
             Practical AI solutions for growing businesses.
           </p>
