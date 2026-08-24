@@ -1,6 +1,7 @@
 "use client"
 import Link from "next/link"
 import { useEffect, useState } from "react"
+import Image from "next/image"
 import {
   List,
   X,
@@ -21,7 +22,6 @@ import {
 } from "@phosphor-icons/react"
 import { navigation } from "@/lib/navigation"
 import { CTAButton } from "./CTAButton"
-import { Logo } from "./Logo"
 const icons = [
   ChatCircleText,
   TrendUp,
@@ -60,19 +60,22 @@ export function Header() {
         aria-label="Main"
         className="mx-auto flex h-16 max-w-7xl min-w-0 items-center justify-between gap-3 px-4 sm:gap-5 sm:px-6 lg:h-18 lg:px-8"
       >
-        {/* <Logo size="md" priority /> */}
-            <Link
-      href="/"
-      aria-label="LetssAI home"
-      className={`inline-flex shrink-0 items-center focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-500 `}
-    >
-<img
-      src="/media/letssai_logo.png"
-      alt="LetssAI logo"
-      className="h-auto max-h-10 w-full object-contain"
-      />
-    </Link>
-      
+
+        <Link
+          href="/"
+          aria-label="LetssAI home"
+          className={`inline-flex shrink-0 items-center focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-500 `}
+        >
+          <Image
+            src="/media/letssai_logo.png"
+            alt="LetssAI logo"
+            width={1536}
+            height={1024}
+            priority
+            className="h-auto max-h-10 w-full object-contain"
+            />  
+        </Link>
+
         <div className="hidden min-w-0 items-center gap-1 lg:flex">
           {navigation.map((item) => (
             <div
@@ -144,8 +147,7 @@ export function Header() {
       {mobile && (
         <div className="fixed inset-0 z-50 bg-emerald-950/40 lg:hidden">
           <div className="ml-auto flex h-dvh w-full max-w-md animate-in flex-col bg-white p-5 shadow-2xl slide-in-from-right">
-            <div className="flex min-w-0 items-center justify-between gap-4">
-              <Logo size="sm" />
+            <div className="flex min-w-0 items-center justify-between gap-4">              
               <button
                 onClick={() => setMobile(false)}
                 className="rounded-full p-3"

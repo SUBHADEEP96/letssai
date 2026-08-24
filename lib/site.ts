@@ -12,9 +12,8 @@ export const siteConfig = {
   assets: {
     logoPrimary: "/media/letssai_logo.png",
     logoWhite: "/media/letssai_logo_footer.png",
-    icon: "/media/letssai-icon.svg",
-    buttonIcon: "/media/letssai-icon.svg",
-    favicon: "/media/letssai-icon.svg",
+    icon: "/media/letssai_icon.png",
+    buttonIcon: "/media/letssai-button-icon-white.png",
     ogImage: "/media/letssai_logo.png",
   },
   deliveryLocations: [

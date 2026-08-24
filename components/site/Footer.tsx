@@ -1,25 +1,27 @@
 import Link from "next/link"
 import { services, industries } from "@/lib/site"
-import { Logo } from "./Logo"
+import Image from "next/image"
 export function Footer() {
   return (
     <footer className="border-t border-emerald-950/10 bg-emerald-950 text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div className="min-w-0 lg:col-span-1">
-           <Link
-      href="/"
-      aria-label="LetssAI home"
-      className={`inline-flex shrink-0 items-center focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-500 `}
-    >
+          <Link
+            href="/"
+            aria-label="LetssAI home"
+            className={`inline-flex shrink-0 items-center focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-500 `}
+          >
+            <Image
+              src="/media/letssai_logo_footer.png"
+              alt="LetssAI logo"
+              width={1536}
+              height={1024}
+              priority
+              className="h-auto max-h-10 w-full object-contain"
+            />
+          </Link>
 
-  <img
-      src="/media/letssai_logo_footer.png"
-      alt="LetssAI footer logo"
-      className="h-auto max-h-10 w-full object-contain"
-      />
-    </Link>
-          
-          {/* <Logo variant="white" size="lg" /> */}
+
           <p className="mt-4 text-sm leading-6 text-emerald-50/75">
             Practical AI solutions for growing businesses.
           </p>
