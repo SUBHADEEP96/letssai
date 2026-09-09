@@ -5,21 +5,110 @@ import { IndustryUseCaseGrid } from "@/components/industry/IndustryUseCaseGrid"
 import { FAQSection } from "@/components/site/FAQSection"
 import { CTASection } from "@/components/site/CTASection"
 import { JsonLd } from "@/components/seo/JsonLd"
-import { fallbackIndustries } from "@/lib/content/fallback-industries"
-import { getIndustryPage } from "@/lib/sanity/page-data"
-import { absoluteUrl, breadcrumbsSchema, faqSchema, pageMetadata, serviceSchema } from "@/lib/seo"
+import {
+  absoluteUrl,
+  breadcrumbsSchema,
+  faqSchema,
+  pageMetadata,
+} from "@/lib/seo"
+import { industries } from "@/lib/site"
+import { ProductGallery } from "@/components/sections/ProductGallery"
 
-export function generateStaticParams() { return fallbackIndustries.map(({ slug }) => ({ slug })) }
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) { const industry = await getIndustryPage((await params).slug); return industry ? pageMetadata(industry.metaTitle, industry.metaDescription, industry.href, industry.ogImage, industry.canonicalUrl) : {} }
-export default async function IndustryPage({ params }: { params: Promise<{ slug: string }> }) {
-  const industry = await getIndustryPage((await params).slug); if (!industry) notFound()
-  return <><JsonLd data={serviceSchema(`AI solutions for ${industry.title}`, industry.useCase, industry.href)} /><JsonLd data={faqSchema(industry.faqs)} /><JsonLd data={breadcrumbsSchema([{ name: "Home", url: absoluteUrl("/") }, { name: "Industries", url: absoluteUrl("/industries") }, { name: industry.title, url: absoluteUrl(industry.href) }])} />
-    <IndustryHero industry={industry} />
-    <IndustryUseCaseGrid title={`What slows down ${industry.title.toLowerCase()} teams?`} intro="The strongest starting points are repetitive, rules-based tasks where information already exists and a clear owner can review exceptions." items={industry.commonProblems} />
-    <IndustryGallery title={industry.title} items={industry.galleryItems} />
-    <IndustryUseCaseGrid title="Which LetssAI services fit best?" intro="Choose a service around the business outcome first. The technology and integrations follow from that goal." items={industry.bestFitServices} />
-    <IndustryUseCaseGrid title="How could the first workflow work?" intro="These examples show a practical sequence with a visible handoff—not an unmonitored replacement for your team." items={industry.exampleWorkflowsText} />
-    <IndustryUseCaseGrid title="What outcomes should the team review?" intro="Measure whether work becomes clearer, faster and easier to hand off, without making unsupported performance claims." items={industry.benefits} />
-    <FAQSection faqs={industry.faqs} /><CTASection title={industry.finalCta.heading} text={industry.finalCta.text} />
-  </>
+export function generateStaticParams() {
+  return industries.map((i) => ({ slug: i.slug }))
+}
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}) {
+  const { slug } = await params
+  const i = industries.find((x) => x.slug === slug)
+  return i ? pageMetadata(i.seoTitle, i.metaDescription, i.href) : {}
+}
+export default async function IndustryPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}) {
+  const { slug } = await params
+  const i = industries.find((x) => x.slug === slug)
+  if (!i) notFound()
+  return (
+    <>
+      <JsonLd data={faqSchema(i.faqs)} />
+      <JsonLd
+        data={breadcrumbsSchema([
+          { name: "Home", url: absoluteUrl("/") },
+          { name: "Industries", url: absoluteUrl("/industries") },
+          { name: i.title, url: absoluteUrl(i.href) },
+        ])}
+      />
+      <section className="section bg-emerald-50">
+        <div className="mx-auto max-w-6xl">
+          <Breadcrumbs
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Industries", href: "/industries" },
+              { label: i.title, href: i.href },
+            ]}
+          />
+          <h1 className="mt-6 text-4xl leading-tight font-semibold tracking-tight md:text-6xl">
+            AI solutions for {i.title}
+          </h1>
+          <p className="mt-5 max-w-3xl text-lg leading-relaxed text-slate-600">
+            {i.metaDescription}
+          </p>
+        </div>
+      </section>
+      <Grid
+        title={`What common problems do ${i.title.toLowerCase()} teams face?`}
+        items={i.problems}
+      />
+      <Grid
+        title="Which LetssAI services are the best fit?"
+        items={i.services}
+      />
+      <Grid
+        title="What example workflows can LetssAI support?"
+        items={i.workflows}
+        ordered
+      />
+      <ProductGallery industry={i.title} items={i.gallery ?? [`${i.title} operations dashboard`, `${i.title} assistant`, "Workflow review panel", "Activity summary"]} />
+      <Grid title="What benefits can this create?" items={i.benefits} />
+      <FAQSection faqs={i.faqs} />
+      <CTASection title={`Ready to explore AI for ${i.title}?`} />
+    </>
+  )
+}
+function Grid({
+  title,
+  items,
+  ordered,
+}: {
+  title: string
+  items: string[]
+  ordered?: boolean
+}) {
+  const Tag = ordered ? "ol" : "ul"
+  return (
+    <section className="section">
+      <div className="mx-auto max-w-6xl">
+        <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
+          {title}
+        </h2>
+        <Tag className="mt-8 grid gap-4 md:grid-cols-2">
+          {items.map((x, idx) => (
+            <li
+              className="rounded-3xl border border-emerald-950/10 bg-white p-6 leading-relaxed"
+              key={x}
+            >
+              {ordered && <b className="mr-2 text-emerald-700">{idx + 1}.</b>}
+              {x}
+            </li>
+          ))}
+        </Tag>
+      </div>
+    </section>
+  )
 }

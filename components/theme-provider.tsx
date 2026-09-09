@@ -47,7 +47,8 @@ function ThemeHotkey() {
         return
       }
 
-      if (event.key.toLowerCase() !== "d") {
+      // Prevent runtime crash when event.key is undefined/null
+      if (typeof event.key !== "string" || event.key.toLowerCase() !== "d") {
         return
       }
 

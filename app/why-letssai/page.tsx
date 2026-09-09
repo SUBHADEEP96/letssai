@@ -1,5 +1,7 @@
 import { CTASection } from "@/components/site/CTASection"
 import { pageMetadata } from "@/lib/seo"
+import { GlobalDeliveryMap } from "@/components/site/GlobalDeliveryMap"
+
 export const metadata = pageMetadata(
   "Why LetssAI | Practical AI Built Around Your Business",
   "Learn why LetssAI focuses on practical AI adoption, human handoff, reporting, and existing business workflows.",
@@ -42,6 +44,7 @@ export default function Why() {
           ))}
         </div>
       </section>
+      <GlobalDeliveryMap />
       <CTASection />
     </>
   )

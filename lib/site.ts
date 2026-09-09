@@ -1,8 +1,27 @@
 export const siteConfig = {
   name: "LetssAI",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://letssai.com",
-  description: "Practical AI solutions for growing businesses.",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.letssai.com",
+  title: "LetssAI | Practical AI Solutions for Growing Businesses",
+  description:
+    "LetssAI builds practical AI assistants for customer support, sales follow-up, knowledge, appointments, workflows, and system integrations.",
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL,
+  contactCta: "Talk to LetssAI",
+  brand: {
+    color: "#006452",
+  },
+  assets: {
+    logoPrimary: "/media/letssai_logo.png",
+    logoWhite: "/media/letssai_logo_footer.png",
+    icon: "/media/letssai_icon.png",
+    buttonIcon: "/media/letssai-button-icon-white.png",
+    ogImage: "/media/letssai_logo.png",
+  },
+  deliveryLocations: [
+    { label: "India", x: 69, y: 58 },
+    { label: "Global Remote Delivery", x: 49, y: 39 },
+    { label: "Client Teams", x: 22, y: 44 },
+    { label: "Partner Locations", x: 84, y: 40 },
+  ],
 }
 
 export type FAQ = { question: string; answer: string }
@@ -35,6 +54,7 @@ export type Industry = {
   workflows: string[]
   benefits: string[]
   faqs: FAQ[]
+  gallery?: string[]
 }
 
 export const services: Service[] = [

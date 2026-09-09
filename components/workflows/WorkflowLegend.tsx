@@ -1,2 +1,5 @@
-const items = [["bg-emerald-500", "Automated step"], ["bg-amber-400", "Decision or review"], ["bg-slate-500", "Connected system"]]
-export function WorkflowLegend() { return <div className="flex flex-wrap gap-4 text-xs text-slate-600">{items.map(([color, label]) => <span className="flex items-center gap-2" key={label}><i className={`size-2 rounded-full ${color}`} />{label}</span>)}</div> }
+import type { WorkflowKind } from "./types"
+const labels: WorkflowKind[] = ["Trigger", "AI Assistant", "Decision", "Human Review", "Integration", "Output", "Report"]
+export function WorkflowLegend() {
+  return <div className="flex flex-wrap gap-2" aria-label="Workflow node types">{labels.map((label) => <span key={label} className="rounded-full border border-emerald-200 bg-white px-3 py-1 text-xs text-emerald-900">{label}</span>)}</div>
+}

@@ -2,6 +2,7 @@ import { IndustryCard } from "@/components/site/Cards"
 import { CTASection } from "@/components/site/CTASection"
 import { pageMetadata } from "@/lib/seo"
 import { industries } from "@/lib/site"
+
 export const metadata = pageMetadata(
   "AI Solutions by Industry | LetssAI",
   "See how LetssAI supports real estate, healthcare clinics, legal firms, education, retail, finance, and accounting teams.",

@@ -1,6 +1,8 @@
 "use client"
 import { useEffect, useRef, useState } from "react"
 import { X, PaperPlaneTilt } from "@phosphor-icons/react"
+import Image from "next/image"
+import { siteConfig } from "@/lib/site"
 type Msg = { role: "assistant" | "user"; content: string }
 const chips = [
   "What can LetssAI automate?",
@@ -73,13 +75,23 @@ export function ChatbotWidget() {
         className="ml-auto flex h-dvh w-full max-w-2xl flex-col bg-emerald-950 text-white shadow-2xl md:m-4 md:h-[calc(100dvh-2rem)] md:rounded-[2rem]"
       >
         <div className="flex items-center justify-between p-5">
-          <div>
-            <b className="text-lg font-semibold tracking-tight">
-              Talk to LetssAI
-            </b>
-            <p className="font-mono text-xs tracking-[0.16em] text-emerald-50/70 uppercase">
-              AI Assistant · Online
-            </p>
+          <div className="flex items-center gap-3">
+            <Image
+              src={siteConfig.assets.icon}
+              alt=""
+              aria-hidden="true"
+              width={40}
+              height={40}
+              className="size-10 shrink-0 rounded-xl bg-white object-contain p-1"
+            />
+            <div>
+              <b className="text-lg font-semibold tracking-tight">
+                Talk to LetssAI
+              </b>
+              <p className="font-mono text-xs tracking-[0.16em] text-emerald-50/70 uppercase">
+                AI Assistant · Online
+              </p>
+            </div>
           </div>
           <button
             className="rounded-full bg-white/10 p-3"
