@@ -6,9 +6,11 @@ export function absoluteUrl(path = "") {
 export function pageMetadata(
   title: string,
   description: string,
-  path: string
+  path: string,
+  image?: string,
+  canonicalUrl?: string
 ): Metadata {
-  const url = absoluteUrl(path)
+  const url = canonicalUrl || absoluteUrl(path)
   return {
     title,
     description,

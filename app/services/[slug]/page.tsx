@@ -1,4 +1,6 @@
+import Link from "next/link"
 import { notFound } from "next/navigation"
+import { ArrowRight, CheckCircle } from "@phosphor-icons/react/dist/ssr"
 import { Breadcrumbs } from "@/components/site/Breadcrumbs"
 import { FAQSection } from "@/components/site/FAQSection"
 import { CTASection } from "@/components/site/CTASection"
@@ -124,3 +126,4 @@ function Grid({
     </section>
   )
 }
+function ContentGrid({ title, answer, items, tone = false }: { title: string; answer: string; items: string[]; tone?: boolean }) { return <section className={`section ${tone ? "bg-slate-50" : ""}`}><div className="mx-auto max-w-7xl"><h2 className="max-w-4xl text-3xl font-semibold tracking-tight md:text-5xl">{title}</h2><p className="mt-4 max-w-3xl text-lg leading-8 text-slate-600">{answer}</p><ul className="mt-9 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{items.map((item) => <li className="flex gap-3 rounded-2xl border border-emerald-950/10 bg-white p-5 leading-7 shadow-sm" key={item}><CheckCircle className="mt-1 shrink-0 text-emerald-700" aria-hidden />{item}</li>)}</ul></div></section> }

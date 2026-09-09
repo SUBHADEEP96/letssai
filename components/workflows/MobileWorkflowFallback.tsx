@@ -1,0 +1,2 @@
+import type { WorkflowNodeData } from "@/lib/workflows/types"
+export function MobileWorkflowFallback({ nodes }: { nodes: WorkflowNodeData[] }) { return <ol className="grid gap-3 md:hidden">{nodes.map((node, index) => <li className="relative rounded-2xl border border-emerald-950/10 bg-white p-5 shadow-sm" key={node.id}><span className="text-xs font-semibold tracking-widest text-emerald-700 uppercase">Step {index + 1} · {node.type}</span><h3 className="mt-2 font-semibold">{node.label}</h3><p className="mt-1 text-sm leading-6 text-slate-600">{node.detail}</p></li>)}</ol> }

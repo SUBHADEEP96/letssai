@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation"
-import { Breadcrumbs } from "@/components/site/Breadcrumbs"
+import { IndustryHero } from "@/components/industry/IndustryHero"
+import { IndustryGallery } from "@/components/industry/IndustryGallery"
+import { IndustryUseCaseGrid } from "@/components/industry/IndustryUseCaseGrid"
 import { FAQSection } from "@/components/site/FAQSection"
 import { CTASection } from "@/components/site/CTASection"
 import { JsonLd } from "@/components/seo/JsonLd"
