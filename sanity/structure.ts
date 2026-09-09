@@ -3,9 +3,8 @@ export const structure: StructureResolver = (S) =>
   S.list()
     .title("LetssAI Content")
     .items([
-      S.documentTypeListItem("siteSettings").title("Site Settings"),
+      S.listItem().title("Site Settings").child(S.document().schemaType("siteSettings").documentId("siteSettings")),
       S.documentTypeListItem("servicePage").title("Service Pages"),
       S.documentTypeListItem("industryPage").title("Industry Pages"),
-      S.documentTypeListItem("faqItem").title("FAQ Items"),
       S.documentTypeListItem("chatbotKnowledgeItem").title("Chatbot Knowledge"),
     ])

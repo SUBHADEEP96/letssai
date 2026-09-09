@@ -1,0 +1,2 @@
+import { defineField, defineType } from "sanity"
+export const workflowEdgeObject = defineType({ name: "workflowEdgeObject", title: "Workflow edge", type: "object", fields: [defineField({ name: "id", type: "string", validation: (r) => r.required() }), defineField({ name: "source", type: "string", validation: (r) => r.required() }), defineField({ name: "target", type: "string", validation: (r) => r.required() }), defineField({ name: "label", type: "string" })] })
