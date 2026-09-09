@@ -1,15 +1,44 @@
 import { NextResponse } from "next/server"
-import { demoChatResponse, retrieveRelevantSiteContent } from "@/lib/chatbot"
-const system =
-  "You represent LetssAI. Answer only about LetssAI services, industries, business automation, and contacting LetssAI. Avoid unsupported claims. Recommend booking a call for pricing, custom estimates, integration scoping, or business-specific analysis. Do not provide legal, medical, or financial advice."
-export async function POST(req: Request) {
-  const body = await req.json().catch(() => ({}))
-  const messages = (body.messages || []) as { role: string; content: string }[]
-  const last = messages.at(-1)?.content || ""
-  const snippets = await retrieveRelevantSiteContent(last)
+import { z } from "zod"
+import { runLetssAIAgent } from "@/lib/ai/letssai-agent/graph"
+
+export const runtime = "nodejs"
+const requestSchema = z.object({
+  messages: z
+    .array(
+      z.object({
+        role: z.enum(["user", "assistant"]),
+        content: z.string().trim().min(1).max(2000),
+      })
+    )
+    .min(1)
+    .max(20),
+})
+
+export async function POST(request: Request) {
+  const parsed = requestSchema.safeParse(await request.json().catch(() => null))
+  if (!parsed.success)
+    return NextResponse.json(
+      { message: "Please enter a shorter question and try again." },
+      { status: 400 }
+    )
   if (!process.env.OPENAI_API_KEY)
-    return NextResponse.json({ message: demoChatResponse(last, snippets) })
-  return NextResponse.json({
-    message: `${system}\n\n${demoChatResponse(last, snippets)}`,
-  })
+    return NextResponse.json({
+      demo: true,
+      message:
+        "The LetssAI assistant is currently in demo mode because AI access is not configured. I can still point you to our services or you can contact LetssAI for help with your workflow.",
+      suggestContact: true,
+    })
+  try {
+    return NextResponse.json(await runLetssAIAgent(parsed.data.messages))
+  } catch {
+    return NextResponse.json(
+      {
+        message:
+          "The assistant is temporarily unavailable. Please try again or contact LetssAI.",
+        suggestContact: true,
+      },
+      { status: 503 }
+    )
+  }
 }

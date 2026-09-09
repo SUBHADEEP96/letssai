@@ -10,4 +10,22 @@ import { servicePage } from "./documents/servicePage"
 import { industryPage } from "./documents/industryPage"
 import { siteSettings } from "./documents/siteSettings"
 import { chatbotKnowledgeItem } from "./documents/chatbotKnowledgeItem"
-export const schema: { types: SchemaTypeDefinition[] } = { types: [seoFields, faqObject, ctaObject, workflowNodeObject, workflowEdgeObject, workflowObject, galleryItemObject, servicePage, industryPage, siteSettings, chatbotKnowledgeItem] }
+import { contactSubmission } from "./documents/contactSubmission"
+import { faqItem } from "./documents/faqItem"
+export const schema: { types: SchemaTypeDefinition[] } = {
+  types: [
+    seoFields,
+    faqObject,
+    ctaObject,
+    workflowNodeObject,
+    workflowEdgeObject,
+    workflowObject,
+    galleryItemObject,
+    servicePage,
+    industryPage,
+    siteSettings,
+    chatbotKnowledgeItem,
+    contactSubmission,
+    faqItem,
+  ],
+}
