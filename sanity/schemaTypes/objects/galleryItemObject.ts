@@ -1,0 +1,2 @@
+import { defineField, defineType } from "sanity"
+export const galleryItemObject = defineType({ name: "galleryItemObject", title: "Product mockup", type: "object", fields: [defineField({ name: "title", type: "string", validation: (r) => r.required() }), defineField({ name: "description", type: "text" }), defineField({ name: "visualType", type: "string", options: { list: ["pipeline", "chat", "calendar", "timeline", "checklist", "documents", "dashboard"] } }), defineField({ name: "labels", type: "array", of: [{ type: "string" }] })] })

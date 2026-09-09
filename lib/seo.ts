@@ -6,9 +6,11 @@ export function absoluteUrl(path = "") {
 export function pageMetadata(
   title: string,
   description: string,
-  path: string
+  path: string,
+  image?: string,
+  canonicalUrl?: string
 ): Metadata {
-  const url = absoluteUrl(path)
+  const url = canonicalUrl || absoluteUrl(path)
   return {
     title,
     description,
@@ -19,6 +21,7 @@ export function pageMetadata(
       url,
       siteName: siteConfig.name,
       type: "website",
+      images: image ? [{ url: image }] : undefined,
     },
     twitter: { card: "summary_large_image", title, description },
   }

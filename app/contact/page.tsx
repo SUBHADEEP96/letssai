@@ -1,7 +1,6 @@
 import { ContactForm } from "./ContactForm"
 import { JsonLd } from "@/components/seo/JsonLd"
 import { absoluteUrl, pageMetadata } from "@/lib/seo"
-import { siteConfig } from "@/lib/site"
 export const metadata = pageMetadata(
   "Contact LetssAI | Request an AI Workflow Review",
   "Contact LetssAI to request a free AI workflow review for customer support, lead follow-up, documents, appointments, and workflow automation.",
