@@ -21,7 +21,6 @@ import {
   Receipt,
 } from "@phosphor-icons/react"
 import { navigation } from "@/lib/navigation"
-import { CTAButton } from "./CTAButton"
 const icons = [
   ChatCircleText,
   TrendUp,
@@ -60,11 +59,10 @@ export function Header() {
         aria-label="Main"
         className="mx-auto flex h-16 max-w-7xl min-w-0 items-center justify-between gap-3 px-4 sm:gap-5 sm:px-6 lg:h-18 lg:px-8"
       >
-
         <Link
           href="/"
           aria-label="LetssAI home"
-          className={`inline-flex shrink-0 items-center focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-500 `}
+          className={`inline-flex shrink-0 items-center focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-500`}
         >
           <Image
             src="/media/letssai_logo.png"
@@ -73,7 +71,7 @@ export function Header() {
             height={1024}
             priority
             className="h-auto max-h-10 w-full object-contain"
-            />  
+          />
         </Link>
 
         <div className="hidden min-w-0 items-center gap-1 lg:flex">
@@ -133,7 +131,6 @@ export function Header() {
           ))}
         </div>
         <div className="flex shrink-0 items-center gap-2">
-          <CTAButton className="hidden sm:inline-flex" />
           <button
             onClick={() => setMobile(true)}
             className="rounded-full border border-emerald-950/10 p-3 lg:hidden"
@@ -147,7 +144,7 @@ export function Header() {
       {mobile && (
         <div className="fixed inset-0 z-50 bg-emerald-950/40 lg:hidden">
           <div className="ml-auto flex h-dvh w-full max-w-md animate-in flex-col bg-white p-5 shadow-2xl slide-in-from-right">
-            <div className="flex min-w-0 items-center justify-between gap-4">              
+            <div className="flex min-w-0 items-center justify-between gap-4">
               <button
                 onClick={() => setMobile(false)}
                 className="rounded-full p-3"
@@ -210,7 +207,6 @@ export function Header() {
                 </div>
               ))}
             </div>
-            <CTAButton className="mt-6 w-full justify-center" />
           </div>
         </div>
       )}
