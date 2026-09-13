@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react"
 import { ChatCircleDots, PaperPlaneTilt, X } from "@phosphor-icons/react"
 import Image from "next/image"
 import Link from "next/link"
+import ReactMarkdown from "react-markdown"
+import remarkGfm from "remark-gfm"
 import { siteConfig } from "@/lib/site"
 
 type Message = { role: "assistant" | "user"; content: string }
@@ -29,6 +31,7 @@ export function ChatbotWidget() {
   ])
   const inputRef = useRef<HTMLTextAreaElement>(null)
   const endRef = useRef<HTMLDivElement>(null)
+  const abortRef = useRef<AbortController>(null)
 
   useEffect(() => {
     const handler = () => setOpen(true)
@@ -52,6 +55,7 @@ export function ChatbotWidget() {
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: "smooth" })
   }, [messages, loading])
+  useEffect(() => () => abortRef.current?.abort(), [])
 
   async function send(text = input) {
     const content = text.trim()
@@ -60,32 +64,35 @@ export function ChatbotWidget() {
     setMessages(nextMessages)
     setInput("")
     setLoading(true)
+    setMessages((current) => [...current, { role: "assistant", content: "" }])
+    const controller = new AbortController()
+    abortRef.current = controller
     try {
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ messages: nextMessages }),
+        signal: controller.signal,
       })
-      const data = (await response.json()) as { message?: string }
-      setMessages((current) => [
-        ...current,
-        {
-          role: "assistant",
-          content:
-            data.message ||
-            "I couldn’t prepare an answer. Please try again or contact LetssAI.",
-        },
-      ])
+      if (!response.body) throw new Error("Streaming is unavailable")
+      const reader = response.body.pipeThrough(new TextDecoderStream()).getReader()
+      let buffer = ""
+      while (true) {
+        const { value, done } = await reader.read()
+        if (done) break
+        buffer += value
+        const lines = buffer.split("\n"); buffer = lines.pop() || ""
+        for (const line of lines) {
+          if (!line) continue
+          const event = JSON.parse(line) as { type: string; token?: string; message?: string }
+          if (event.type === "token" && event.token) setMessages((current) => current.map((message, index) => index === current.length - 1 ? { ...message, content: message.content + event.token } : message))
+          if (event.type === "error") throw new Error(event.message)
+        }
+      }
     } catch {
-      setMessages((current) => [
-        ...current,
-        {
-          role: "assistant",
-          content:
-            "The assistant is temporarily unavailable. You can still contact LetssAI about your workflow.",
-        },
-      ])
+      if (!controller.signal.aborted) setMessages((current) => current.map((message, index) => index === current.length - 1 && !message.content ? { ...message, content: "The assistant is temporarily unavailable. You can still contact LetssAI about your workflow." } : message))
     } finally {
+      if (abortRef.current === controller) abortRef.current = null
       setLoading(false)
     }
   }
@@ -152,12 +159,12 @@ export function ChatbotWidget() {
               {messages.map((message, index) => (
                 <div
                   key={index}
-                  className={`mb-3 max-w-[88%] rounded-2xl px-4 py-3 text-sm leading-6 whitespace-pre-wrap ${message.role === "user" ? "ml-auto bg-[#006452] text-white" : "border border-emerald-950/5 bg-white shadow-sm"}`}
+                  className={`mb-3 max-w-[88%] rounded-2xl px-4 py-3 text-sm leading-6 ${message.role === "user" ? "ml-auto whitespace-pre-wrap bg-[#006452] text-white" : "border border-emerald-950/5 bg-white shadow-sm"}`}
                 >
-                  {message.content}
+                  {message.role === "user" ? message.content : <div className="space-y-2 [&_a]:font-medium [&_a]:text-emerald-700 [&_a]:underline [&_li]:ml-5 [&_li]:list-disc [&_p]:leading-6"><ReactMarkdown remarkPlugins={[remarkGfm]} components={{ a: ({ children, ...props }) => <a {...props} target="_blank" rel="noopener noreferrer">{children}</a> }}>{message.content}</ReactMarkdown>{loading && index === messages.length - 1 && <span aria-hidden className="ml-0.5 inline-block h-4 w-0.5 animate-pulse bg-emerald-700" />}</div>}
                 </div>
               ))}
-              {loading && (
+              {loading && !messages.at(-1)?.content && (
                 <div className="mb-3 inline-flex rounded-2xl bg-white px-4 py-3 text-sm text-slate-600 shadow-sm">
                   <span className="animate-pulse">Thinking…</span>
                 </div>
