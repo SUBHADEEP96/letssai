@@ -224,11 +224,9 @@ export function ChatbotWidget() {
                   className="size-10 rounded-xl bg-white object-contain p-1"
                 />
                 <div>
-                  <h2 className="font-semibold tracking-tight">
-                    LetssAI AI Advisor
-                  </h2>
+                  <h2 className="font-semibold tracking-tight">Nora 👧🏻</h2>
                   <p className="text-xs text-emerald-100/75">
-                    Business automation assistant
+                    LetssAI CX-Agent
                   </p>
                 </div>
               </div>
