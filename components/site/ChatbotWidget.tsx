@@ -8,7 +8,12 @@ import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import { siteConfig } from "@/lib/site"
 
-type Message = { role: "assistant" | "user"; content: string }
+type Source = { title: string; url: string }
+type Message = {
+  role: "assistant" | "user"
+  content: string
+  sources?: Source[]
+}
 const chips = [
   "What can LetssAI automate?",
   "Help me choose a service",
@@ -26,14 +31,16 @@ export function ChatbotWidget() {
     {
       role: "assistant",
       content:
-        "Hi, I’m the LetssAI assistant. Tell me what your team wants to automate, and I’ll help you find the right next step.",
+        "Hi, I’m LetssAI’s AI business advisor. Tell me what your team wants to automate, and I’ll help you find the right next step.",
     },
   ])
   const inputRef = useRef<HTMLTextAreaElement>(null)
   const endRef = useRef<HTMLDivElement>(null)
   const abortRef = useRef<AbortController>(null)
+  const conversationStartedAt = useRef(0)
 
   useEffect(() => {
+    conversationStartedAt.current = Date.now()
     const handler = () => setOpen(true)
     window.addEventListener("letssai:open-chatbot", handler)
     return () => window.removeEventListener("letssai:open-chatbot", handler)
@@ -91,6 +98,19 @@ export function ChatbotWidget() {
             type: string
             token?: string
             message?: string
+            sources?: Source[]
+            lead?: {
+              name: string
+              company: string
+              email: string
+              phone?: string
+              automationNeed: string
+              preferredContactMethod: "email" | "phone" | "whatsapp"
+              recommendedService?: string
+              currentTools?: string
+              timeline?: string
+              conversationSummary: string
+            }
           }
           if (event.type === "token" && event.token)
             setMessages((current) =>
@@ -100,6 +120,49 @@ export function ChatbotWidget() {
                   : message
               )
             )
+          if (event.type === "sources" && event.sources?.length)
+            setMessages((current) =>
+              current.map((message, index) =>
+                index === current.length - 1
+                  ? { ...message, sources: event.sources }
+                  : message
+              )
+            )
+          if (event.type === "lead_submission" && event.lead) {
+            const submitted = await fetch("/api/contact", {
+              method: "POST",
+              headers: { "content-type": "application/json" },
+              body: JSON.stringify({
+                ...event.lead,
+                sourcePage: window.location.pathname,
+                website: "",
+                formStartedAt: conversationStartedAt.current,
+                chatbot: {
+                  source: "chatbot",
+                  conversationSummary: event.lead.conversationSummary,
+                  identifiedBusinessChallenge: event.lead.automationNeed,
+                  recommendedService: event.lead.recommendedService,
+                  currentTools: event.lead.currentTools,
+                  timeline: event.lead.timeline,
+                  visitorPageUrl: window.location.href,
+                  consentTimestamp: new Date(
+                    conversationStartedAt.current
+                  ).toISOString(),
+                },
+              }),
+            })
+            const result = (await submitted.json()) as { message?: string }
+            setMessages((current) =>
+              current.map((message, index) =>
+                index === current.length - 1
+                  ? {
+                      ...message,
+                      content: `${message.content}\n\n${submitted.ok ? "Your request has been submitted. The LetssAI team will review the context and contact you using your preferred method." : result.message || "I couldn’t submit the request. Please use the Contact LetssAI link below."}`,
+                    }
+                  : message
+              )
+            )
+          }
           if (event.type === "error") throw new Error(event.message)
         }
       }
@@ -127,7 +190,7 @@ export function ChatbotWidget() {
       {!open && (
         <button
           onClick={() => setOpen(true)}
-          aria-label="Open LetssAI support assistant"
+          aria-label="Open LetssAI AI business advisor"
           className="fixed right-4 bottom-4 z-50 flex items-center gap-2 rounded-full bg-[#006452] px-4 py-3 text-sm font-semibold text-white shadow-2xl shadow-emerald-950/30 transition hover:-translate-y-0.5 hover:bg-emerald-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 sm:right-6 sm:bottom-6"
         >
           <Image
@@ -147,7 +210,7 @@ export function ChatbotWidget() {
           <aside
             role="dialog"
             aria-modal="true"
-            aria-label="LetssAI customer support"
+            aria-label="LetssAI AI business advisor"
             className="pointer-events-auto absolute inset-0 flex flex-col bg-[#062c25] text-white shadow-2xl md:inset-auto md:right-6 md:bottom-6 md:h-[min(680px,calc(100dvh-3rem))] md:w-[min(430px,calc(100vw-3rem))] md:rounded-[1.75rem]"
           >
             <header className="flex items-center justify-between border-b border-white/10 p-4">
@@ -187,7 +250,7 @@ export function ChatbotWidget() {
                   {message.role === "user" ? (
                     message.content
                   ) : (
-                    <div className="space-y-2 [&_a]:font-medium [&_a]:text-emerald-700 [&_a]:underline [&_li]:ml-5 [&_li]:list-disc [&_p]:leading-6">
+                    <div className="space-y-2 [&_a]:cursor-pointer [&_a]:font-medium [&_a]:text-emerald-700 [&_a]:no-underline [&_a:focus-visible]:rounded-sm [&_a:focus-visible]:outline-2 [&_a:focus-visible]:outline-offset-2 [&_a:focus-visible]:outline-emerald-700 [&_a:hover]:text-emerald-900 [&_li]:ml-5 [&_li]:list-disc [&_p]:leading-6">
                       <ReactMarkdown
                         remarkPlugins={[remarkGfm]}
                         components={{
@@ -204,6 +267,25 @@ export function ChatbotWidget() {
                       >
                         {message.content}
                       </ReactMarkdown>
+                      {message.sources?.length ? (
+                        <div className="pt-1">
+                          <strong>Sources:</strong>
+                          <ul className="mt-1 space-y-1">
+                            {message.sources.map((source) => (
+                              <li key={source.url} className="!ml-0 !list-none">
+                                <a
+                                  href={source.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  aria-label={source.title}
+                                >
+                                  {source.title}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ) : null}
                       {loading && index === messages.length - 1 && (
                         <span
                           aria-hidden
@@ -263,7 +345,7 @@ export function ChatbotWidget() {
               <Link
                 href="/contact"
                 onClick={() => setOpen(false)}
-                className="mt-3 block text-center text-sm font-medium text-emerald-100 underline underline-offset-4"
+                className="mt-3 block cursor-pointer text-center text-sm font-medium text-emerald-100 no-underline hover:text-white focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 Contact LetssAI
               </Link>

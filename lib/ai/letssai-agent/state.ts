@@ -1,5 +1,11 @@
 import { Annotation } from "@langchain/langgraph"
-import type { ChatMessage, Intent, KnowledgeSnippet } from "./types"
+import type {
+  ChatMessage,
+  ConversationStage,
+  Intent,
+  KnowledgeSnippet,
+  LeadProfile,
+} from "./types"
 
 export const LetssAIState = Annotation.Root({
   messages: Annotation<ChatMessage[]>({
@@ -12,7 +18,7 @@ export const LetssAIState = Annotation.Root({
   }),
   intent: Annotation<Intent>({
     reducer: (_current, update) => update,
-    default: () => "service_explainer",
+    default: () => "needs_discovery",
   }),
   knowledge: Annotation<KnowledgeSnippet[]>({
     reducer: (_current, update) => update,
@@ -33,6 +39,14 @@ export const LetssAIState = Annotation.Root({
   blocked: Annotation<boolean>({
     reducer: (_current, update) => update,
     default: () => false,
+  }),
+  stage: Annotation<ConversationStage>({
+    reducer: (_current, update) => update,
+    default: () => "exploring",
+  }),
+  leadProfile: Annotation<LeadProfile>({
+    reducer: (current, update) => ({ ...current, ...update }),
+    default: () => ({}),
   }),
 })
 
