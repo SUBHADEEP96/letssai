@@ -75,22 +75,47 @@ export function ChatbotWidget() {
         signal: controller.signal,
       })
       if (!response.body) throw new Error("Streaming is unavailable")
-      const reader = response.body.pipeThrough(new TextDecoderStream()).getReader()
+      const reader = response.body
+        .pipeThrough(new TextDecoderStream())
+        .getReader()
       let buffer = ""
       while (true) {
         const { value, done } = await reader.read()
         if (done) break
         buffer += value
-        const lines = buffer.split("\n"); buffer = lines.pop() || ""
+        const lines = buffer.split("\n")
+        buffer = lines.pop() || ""
         for (const line of lines) {
           if (!line) continue
-          const event = JSON.parse(line) as { type: string; token?: string; message?: string }
-          if (event.type === "token" && event.token) setMessages((current) => current.map((message, index) => index === current.length - 1 ? { ...message, content: message.content + event.token } : message))
+          const event = JSON.parse(line) as {
+            type: string
+            token?: string
+            message?: string
+          }
+          if (event.type === "token" && event.token)
+            setMessages((current) =>
+              current.map((message, index) =>
+                index === current.length - 1
+                  ? { ...message, content: message.content + event.token }
+                  : message
+              )
+            )
           if (event.type === "error") throw new Error(event.message)
         }
       }
     } catch {
-      if (!controller.signal.aborted) setMessages((current) => current.map((message, index) => index === current.length - 1 && !message.content ? { ...message, content: "The assistant is temporarily unavailable. You can still contact LetssAI about your workflow." } : message))
+      if (!controller.signal.aborted)
+        setMessages((current) =>
+          current.map((message, index) =>
+            index === current.length - 1 && !message.content
+              ? {
+                  ...message,
+                  content:
+                    "The assistant is temporarily unavailable. You can still contact LetssAI about your workflow.",
+                }
+              : message
+          )
+        )
     } finally {
       if (abortRef.current === controller) abortRef.current = null
       setLoading(false)
@@ -136,11 +161,9 @@ export function ChatbotWidget() {
                   className="size-10 rounded-xl bg-white object-contain p-1"
                 />
                 <div>
-                  <h2 className="font-semibold tracking-tight">
-                    LetssAI support
-                  </h2>
+                  <h2 className="font-semibold tracking-tight">Nora 👧🏻</h2>
                   <p className="text-xs text-emerald-100/75">
-                    Website assistant
+                    LetssAI CX-Agent
                   </p>
                 </div>
               </div>
@@ -159,9 +182,36 @@ export function ChatbotWidget() {
               {messages.map((message, index) => (
                 <div
                   key={index}
-                  className={`mb-3 max-w-[88%] rounded-2xl px-4 py-3 text-sm leading-6 ${message.role === "user" ? "ml-auto whitespace-pre-wrap bg-[#006452] text-white" : "border border-emerald-950/5 bg-white shadow-sm"}`}
+                  className={`mb-3 max-w-[88%] rounded-2xl px-4 py-3 text-sm leading-6 ${message.role === "user" ? "ml-auto bg-[#006452] whitespace-pre-wrap text-white" : "border border-emerald-950/5 bg-white shadow-sm"}`}
                 >
-                  {message.role === "user" ? message.content : <div className="space-y-2 [&_a]:font-medium [&_a]:text-emerald-700 [&_a]:underline [&_li]:ml-5 [&_li]:list-disc [&_p]:leading-6"><ReactMarkdown remarkPlugins={[remarkGfm]} components={{ a: ({ children, ...props }) => <a {...props} target="_blank" rel="noopener noreferrer">{children}</a> }}>{message.content}</ReactMarkdown>{loading && index === messages.length - 1 && <span aria-hidden className="ml-0.5 inline-block h-4 w-0.5 animate-pulse bg-emerald-700" />}</div>}
+                  {message.role === "user" ? (
+                    message.content
+                  ) : (
+                    <div className="space-y-2 [&_a]:font-medium [&_a]:text-emerald-700 [&_a]:underline [&_li]:ml-5 [&_li]:list-disc [&_p]:leading-6">
+                      <ReactMarkdown
+                        remarkPlugins={[remarkGfm]}
+                        components={{
+                          a: ({ children, ...props }) => (
+                            <a
+                              {...props}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              {children}
+                            </a>
+                          ),
+                        }}
+                      >
+                        {message.content}
+                      </ReactMarkdown>
+                      {loading && index === messages.length - 1 && (
+                        <span
+                          aria-hidden
+                          className="ml-0.5 inline-block h-4 w-0.5 animate-pulse bg-emerald-700"
+                        />
+                      )}
+                    </div>
+                  )}
                 </div>
               ))}
               {loading && !messages.at(-1)?.content && (
