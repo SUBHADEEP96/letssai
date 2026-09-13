@@ -49,10 +49,9 @@ export function ChatbotWidget() {
       window.removeEventListener("keydown", escape)
     }
   }, [open])
-  useEffect(
-    () => endRef.current?.scrollIntoView({ behavior: "smooth" }),
-    [messages, loading]
-  )
+  useEffect(() => {
+    endRef.current?.scrollIntoView({ behavior: "smooth" })
+  }, [messages, loading])
 
   async function send(text = input) {
     const content = text.trim()
