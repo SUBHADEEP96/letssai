@@ -1,12 +1,14 @@
 import { createHash } from "node:crypto"
+import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters"
 
 export type KnowledgeDocument = {
   id: string
   sourceType: string
   title: string
-  slug: string
   url: string
-  updatedAt: string
+  source: string
+  pageNumber?: number
+  ingestionTimestamp: string
   text: string
 }
 export type KnowledgeChunk = KnowledgeDocument & {
@@ -15,31 +17,19 @@ export type KnowledgeChunk = KnowledgeDocument & {
   chunkIndex: number
 }
 
-export function chunkDocuments(
-  documents: KnowledgeDocument[],
-  maxCharacters = 1400
-): KnowledgeChunk[] {
-  return documents.flatMap((document) => {
-    const paragraphs = document.text
-      .split(/\n{2,}/)
-      .map((value) => value.trim())
-      .filter(Boolean)
-    const groups: string[] = []
-    for (const paragraph of paragraphs) {
-      if (
-        !groups.length ||
-        groups.at(-1)!.length + paragraph.length + 2 > maxCharacters
-      )
-        groups.push(paragraph)
-      else groups[groups.length - 1] += `\n\n${paragraph}`
-    }
-    return groups.map((text, chunkIndex) => ({
+export async function chunkDocuments(documents: KnowledgeDocument[]): Promise<KnowledgeChunk[]> {
+  const splitter = new RecursiveCharacterTextSplitter({ chunkSize: 1000, chunkOverlap: 150 })
+  const output: KnowledgeChunk[] = []
+  for (const document of documents) {
+    const groups = await splitter.splitText(document.text)
+    output.push(...groups.map((text, chunkIndex) => ({
       ...document,
       text,
       chunkIndex,
       id: createHash("sha256")
-        .update(`${document.id}:${chunkIndex}:${text}`)
+        .update(`${document.sourceType}:${document.url}:${document.pageNumber || 0}:${chunkIndex}:${text}`)
         .digest("hex"),
-    }))
-  })
+    })))
+  }
+  return output
 }

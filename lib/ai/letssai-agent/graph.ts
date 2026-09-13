@@ -35,6 +35,8 @@ const generateAnswer = async (state: LetssAIStateType) => {
       draft:
         "I can only help with LetssAI services, business automation, and contacting our team. I can’t provide legal, medical, financial, or tax advice.",
     }
+  if (!state.knowledge.length)
+    return { draft: "I couldn't find that in LetssAI's website or business brochure. Please contact our team for help." }
   const context = state.knowledge.length
     ? state.knowledge
         .map(
