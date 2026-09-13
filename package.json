@@ -10,6 +10,7 @@
     "lint": "eslint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
     "seed:sanity": "tsx scripts/seed-sanity-content.ts",
     "ingest:chatbot": "tsx scripts/ingest-chatbot-knowledge.ts"
   },
@@ -37,6 +38,8 @@
     "radix-ui": "^1.6.1",
     "react": "19.2.8",
     "react-dom": "19.2.8",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
     "resend": "^6.27.0",
     "sanity": "^5.31.1",
     "server-only": "^0.0.1",

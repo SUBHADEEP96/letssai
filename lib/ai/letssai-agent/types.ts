@@ -14,10 +14,18 @@ export type KnowledgeSnippet = {
   url: string
   content: string
   sourceType: string
+  distance: number
 }
+export type Source = { title: string; url: string }
+export type StreamEvent =
+  | { type: "metadata"; intent: Intent; cacheHit: boolean }
+  | { type: "token"; token: string }
+  | { type: "sources"; sources: Source[] }
+  | { type: "done" }
+  | { type: "error"; message: string }
 export type AgentResponse = {
   message: string
   intent: Intent
-  sources: Array<{ title: string; url: string }>
+  sources: Source[]
   suggestContact: boolean
 }
