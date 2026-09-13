@@ -10,7 +10,6 @@ export const structure: StructureResolver = (S) =>
         ),
       S.documentTypeListItem("servicePage").title("Service Pages"),
       S.documentTypeListItem("industryPage").title("Industry Pages"),
-      S.documentTypeListItem("chatbotKnowledgeItem").title("Chatbot Knowledge"),
       S.documentTypeListItem("contactSubmission").title("Contact Submissions"),
       S.documentTypeListItem("faqItem").title("FAQ Items"),
     ])

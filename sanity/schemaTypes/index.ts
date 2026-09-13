@@ -9,7 +9,6 @@ import { galleryItemObject } from "./objects/galleryItemObject"
 import { servicePage } from "./documents/servicePage"
 import { industryPage } from "./documents/industryPage"
 import { siteSettings } from "./documents/siteSettings"
-import { chatbotKnowledgeItem } from "./documents/chatbotKnowledgeItem"
 import { contactSubmission } from "./documents/contactSubmission"
 import { faqItem } from "./documents/faqItem"
 export const schema: { types: SchemaTypeDefinition[] } = {
@@ -24,7 +23,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     servicePage,
     industryPage,
     siteSettings,
-    chatbotKnowledgeItem,
     contactSubmission,
     faqItem,
   ],
