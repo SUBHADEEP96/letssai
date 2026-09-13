@@ -20,6 +20,7 @@ export async function saveContactSubmission(
     preferredContactMethod: input.preferredContactMethod,
     automationNeed: input.automationNeed,
     sourcePage: input.sourcePage,
+    chatbot: input.chatbot,
     userAgent: userAgent.slice(0, 500),
     status: "new",
     createdAt: new Date().toISOString(),

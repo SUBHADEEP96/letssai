@@ -35,6 +35,25 @@ export const contactSubmission = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({ name: "sourcePage", type: "string" }),
+    defineField({
+      name: "chatbot",
+      title: "Chatbot lead context",
+      type: "object",
+      fields: [
+        defineField({ name: "source", type: "string", readOnly: true }),
+        defineField({ name: "conversationSummary", type: "text", rows: 4 }),
+        defineField({
+          name: "identifiedBusinessChallenge",
+          type: "text",
+          rows: 3,
+        }),
+        defineField({ name: "recommendedService", type: "string" }),
+        defineField({ name: "currentTools", type: "string" }),
+        defineField({ name: "timeline", type: "string" }),
+        defineField({ name: "visitorPageUrl", type: "url" }),
+        defineField({ name: "consentTimestamp", type: "datetime" }),
+      ],
+    }),
     defineField({ name: "userAgent", type: "string", readOnly: true }),
     defineField({
       name: "status",
