@@ -1,5 +1,41 @@
-import Link from "next/link"
-import { ArrowRight } from "@phosphor-icons/react/dist/ssr"
+import Image from "next/image"
+import heroImage from "@/public/media/services/hero-letssai.webp"
 import { Breadcrumbs } from "@/components/site/Breadcrumbs"
 import type { IndustryPageData } from "@/lib/content/types"
-export function IndustryHero({ industry }: { industry: IndustryPageData }) { return <section className="section relative overflow-hidden bg-emerald-950 text-white"><div className="absolute inset-0 bg-[linear-gradient(120deg,transparent_40%,rgba(52,211,153,.18))]"/><div className="relative mx-auto max-w-7xl"><Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Industries", href: "/industries" }, { label: industry.title, href: industry.href }]} /><p className="mt-10 text-sm font-semibold tracking-[.18em] text-emerald-300 uppercase">AI for {industry.title}</p><h1 className="mt-4 max-w-5xl text-4xl leading-[1.05] font-semibold tracking-tight md:text-6xl lg:text-7xl">{industry.heroHeadline}</h1><p className="mt-6 max-w-3xl text-lg leading-8 text-emerald-50/75 md:text-xl">{industry.heroSubheadline}</p><Link href="/contact" className="mt-8 inline-flex items-center gap-2 rounded-full bg-emerald-300 px-6 py-3 font-semibold text-emerald-950">Explore your use case <ArrowRight aria-hidden /></Link></div></section> }
+
+export function IndustryHero({ industry }: { industry: IndustryPageData }) {
+  return (
+    <section className="relative isolate min-h-[590px] overflow-hidden bg-emerald-950 text-white sm:min-h-[620px]">
+      <Image
+        src={heroImage}
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="-z-20 object-cover object-center"
+      />
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(2,44,34,0.97)_0%,rgba(2,44,34,0.90)_42%,rgba(2,44,34,0.45)_72%,rgba(2,44,34,0.62)_100%)]" />
+      <div className="mx-auto flex min-h-[590px] max-w-7xl flex-col justify-center px-4 py-16 sm:min-h-[620px] sm:px-6 lg:px-8">
+        <Breadcrumbs
+          light
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Industries", href: "/industries" },
+            { label: industry.title, href: industry.href },
+          ]}
+        />
+        <div className="mt-10 max-w-3xl">
+          <p className="text-sm font-semibold tracking-[0.16em] text-emerald-200 uppercase">
+            AI for {industry.title}
+          </p>
+          <h1 className="mt-5 text-4xl leading-[1.08] font-semibold tracking-[-0.035em] text-balance sm:text-5xl md:text-6xl lg:text-7xl">
+            {industry.heroHeadline}
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-emerald-50/85 sm:text-xl">
+            {industry.heroSubheadline}
+          </p>
+        </div>
+      </div>
+    </section>
+  )
+}
