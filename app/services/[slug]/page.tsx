@@ -111,7 +111,10 @@ export default async function ServicePage({
             items={s.industries}
           />
           <FAQSection faqs={s.faqs} />
-          <CTASection title={`Want to explore ${s.title}?`} />
+          <CTASection
+            title={`Find the right starting point for ${s.title.toLowerCase()}`}
+            text="Share the process that takes too much time today. We’ll map a practical, reviewable first workflow, the approved information it needs, and where your team should stay involved."
+          />
         </>
       )}
     </>
