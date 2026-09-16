@@ -1,10 +1,12 @@
-import Link from "next/link"
 import { notFound } from "next/navigation"
-import { ArrowRight, CheckCircle } from "@phosphor-icons/react/dist/ssr"
-import { Breadcrumbs } from "@/components/site/Breadcrumbs"
 import { FAQSection } from "@/components/site/FAQSection"
 import { CTASection } from "@/components/site/CTASection"
 import { JsonLd } from "@/components/seo/JsonLd"
+import {
+  CallingServicePage,
+  callingFaqs,
+} from "@/components/services/CallingServicePage"
+import { ServiceHero } from "@/components/services/ServiceHero"
 import {
   absoluteUrl,
   breadcrumbsSchema,
@@ -26,7 +28,16 @@ export async function generateMetadata({
 }) {
   const { slug } = await params
   const s = services.find((x) => x.slug === slug)
-  return s ? pageMetadata(s.seoTitle, s.metaDescription, s.href) : {}
+  return s
+    ? pageMetadata(
+        s.seoTitle,
+        s.metaDescription,
+        s.href,
+        s.slug === "ai-calling-appointment-booking"
+          ? "/media/services/hero-letssai.webp"
+          : undefined
+      )
+    : {}
 }
 export default async function ServicePage({
   params,
@@ -39,7 +50,11 @@ export default async function ServicePage({
   return (
     <>
       <JsonLd data={serviceSchema(s.title, s.description, s.href)} />
-      <JsonLd data={faqSchema(s.faqs)} />
+      <JsonLd
+        data={faqSchema(
+          s.slug === "ai-calling-appointment-booking" ? callingFaqs : s.faqs
+        )}
+      />
       <JsonLd
         data={breadcrumbsSchema([
           { name: "Home", url: absoluteUrl("/") },
@@ -47,39 +62,46 @@ export default async function ServicePage({
           { name: s.title, url: absoluteUrl(s.href) },
         ])}
       />
-      <section className="section bg-emerald-50">
-        <div className="mx-auto max-w-6xl">
-          <Breadcrumbs
-            items={[
-              { label: "Home", href: "/" },
-              { label: "Services", href: "/services" },
-              { label: s.title, href: s.href },
-            ]}
+      {s.slug === "ai-calling-appointment-booking" ? (
+        <CallingServicePage service={s} />
+      ) : (
+        <>
+          <ServiceHero
+            eyebrow={s.title}
+            title={`${s.title} for faster, clearer business communication`}
+            description={s.metaDescription}
+            href={s.href}
           />
-          <h1 className="mt-6 text-4xl leading-tight font-semibold tracking-tight md:text-6xl">
-            {s.title} for faster, clearer business communication
-          </h1>
-          <p className="mt-5 max-w-3xl text-lg leading-relaxed text-slate-600">
-            {s.metaDescription}
-          </p>
-        </div>
-      </section>
-      <Info
-        title="What is this service in simple terms?"
-        text={s.description}
-      />
-      <Grid title="What business problems does it solve?" items={s.problems} />
-      <Grid title="What does the AI assistant do?" items={s.does} />
-      <WorkflowShowcase workflow={workflowFor(s)} />
-      <Grid title="Which channels and tools can it support?" items={s.tools} />
-      <Info
-        title="How does human handoff and safety work?"
-        text="LetssAI is designed to route sensitive, unclear, or high-value conversations to a person. The assistant supports business workflows and does not replace professional legal, medical, or financial judgment."
-      />
-      <Grid title="What business benefits can you expect?" items={s.benefits} />
-      <Grid title="Which industries use this service?" items={s.industries} />
-      <FAQSection faqs={s.faqs} />
-      <CTASection title={`Want to explore ${s.title}?`} />
+          <Info
+            title="What is this service in simple terms?"
+            text={s.description}
+          />
+          <Grid
+            title="What business problems does it solve?"
+            items={s.problems}
+          />
+          <Grid title="What does the AI assistant do?" items={s.does} />
+          <WorkflowShowcase workflow={workflowFor(s)} />
+          <Grid
+            title="Which channels and tools can it support?"
+            items={s.tools}
+          />
+          <Info
+            title="How does human handoff and safety work?"
+            text="LetssAI is designed to route sensitive, unclear, or high-value conversations to a person. The assistant supports business workflows and does not replace professional legal, medical, or financial judgment."
+          />
+          <Grid
+            title="What business benefits can you expect?"
+            items={s.benefits}
+          />
+          <Grid
+            title="Which industries use this service?"
+            items={s.industries}
+          />
+          <FAQSection faqs={s.faqs} />
+          <CTASection title={`Want to explore ${s.title}?`} />
+        </>
+      )}
     </>
   )
 }
@@ -126,4 +148,3 @@ function Grid({
     </section>
   )
 }
-function ContentGrid({ title, answer, items, tone = false }: { title: string; answer: string; items: string[]; tone?: boolean }) { return <section className={`section ${tone ? "bg-slate-50" : ""}`}><div className="mx-auto max-w-7xl"><h2 className="max-w-4xl text-3xl font-semibold tracking-tight md:text-5xl">{title}</h2><p className="mt-4 max-w-3xl text-lg leading-8 text-slate-600">{answer}</p><ul className="mt-9 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{items.map((item) => <li className="flex gap-3 rounded-2xl border border-emerald-950/10 bg-white p-5 leading-7 shadow-sm" key={item}><CheckCircle className="mt-1 shrink-0 text-emerald-700" aria-hidden />{item}</li>)}</ul></div></section> }
