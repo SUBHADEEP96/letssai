@@ -1,5 +1,4 @@
 import Image from "next/image"
-import Link from "next/link"
 import { CheckCircle } from "@phosphor-icons/react/dist/ssr"
 import voice1 from "@/public/media/services/ai-calling-appointment-booking/voice1-letssai.webp"
 import voice2 from "@/public/media/services/ai-calling-appointment-booking/voice2-letssai.webp"
@@ -11,6 +10,7 @@ import vstep4 from "@/public/media/services/ai-calling-appointment-booking/vstep
 import vstep5 from "@/public/media/services/ai-calling-appointment-booking/vstep5-letssai.webp"
 import vstep6 from "@/public/media/services/ai-calling-appointment-booking/vstep6-letssai.webp"
 import { FAQSection } from "@/components/site/FAQSection"
+import { CTASection } from "@/components/site/CTASection"
 import { ServiceHero } from "./ServiceHero"
 import { VoiceFeatureRow } from "./VoiceFeatureRow"
 import type { Service } from "@/lib/site"
@@ -291,35 +291,10 @@ export function CallingServicePage({ service }: { service: Service }) {
         />
       </div>
 
-      <section className="px-4 py-16 sm:px-6 md:py-20 lg:px-8">
-        <div className="relative mx-auto overflow-hidden rounded-[2rem] bg-emerald-950 px-6 py-10 text-white sm:px-10 md:px-14 md:py-14">
-          <div
-            className="absolute -top-24 -right-20 size-64 rounded-full bg-emerald-500/15 blur-3xl"
-            aria-hidden
-          />
-          <div className="relative max-w-4xl">
-            <p className="text-sm font-semibold tracking-[0.14em] text-emerald-200 uppercase">
-              Start with one practical workflow
-            </p>
-            <h2 className="mt-4 text-3xl leading-tight font-semibold tracking-[-0.03em] sm:text-5xl">
-              Turn more customer conversations into clear next steps
-            </h2>
-            <p className="mt-5 max-w-3xl text-lg leading-8 text-emerald-50/75">
-              Tell us how your team currently handles enquiries, follow-ups, and
-              bookings. LetssAI will help identify a practical first workflow
-              and the systems it needs to connect with.
-            </p>
-            <div className="mt-8">
-              <Link
-                href="/contact"
-                className="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-emerald-950 hover:bg-emerald-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-              >
-                Request a free AI workflow review
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTASection
+        title="Turn more customer conversations into clear next steps"
+        text="Tell us how your team currently handles enquiries, follow-ups, and bookings. LetssAI will help identify a practical first workflow and the systems it needs to connect with."
+      />
     </>
   )
 }

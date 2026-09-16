@@ -1,5 +1,4 @@
 import Image, { type StaticImageData } from "next/image"
-import Link from "next/link"
 import cs1 from "@/public/media/services/ai-customer-support/cs1.webp"
 import cs2 from "@/public/media/services/ai-customer-support/cs2.webp"
 import cs3 from "@/public/media/services/ai-customer-support/cs3.webp"
@@ -8,8 +7,9 @@ import csstep2 from "@/public/media/services/ai-customer-support/csstep2.webp"
 import csstep3 from "@/public/media/services/ai-customer-support/csstep3.webp"
 import csstep4 from "@/public/media/services/ai-customer-support/csstep4.webp"
 import csstep5 from "@/public/media/services/ai-customer-support/csstep5.webp"
-import { Breadcrumbs } from "@/components/site/Breadcrumbs"
+import { CTASection } from "@/components/site/CTASection"
 import { FAQSection } from "@/components/site/FAQSection"
+import { ServiceHero } from "./ServiceHero"
 import type { Service } from "@/lib/site"
 
 const benefits = [
@@ -131,39 +131,12 @@ export const customerSupportFaqs = [
 export function CustomerSupportServicePage({ service }: { service: Service }) {
   return (
     <>
-      <section className="bg-[#f5faf7] px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-20">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-          <div>
-            <Breadcrumbs
-              items={[
-                { label: "Home", href: "/" },
-                { label: "Services", href: "/services" },
-                { label: service.title, href: service.href },
-              ]}
-            />
-            <p className="mt-10 text-sm font-semibold tracking-[0.16em] text-[#016630] uppercase">
-              AI Customer Support
-            </p>
-            <h1 className="mt-5 max-w-3xl text-4xl leading-[1.06] font-semibold tracking-[-0.04em] text-balance text-slate-950 sm:text-5xl lg:text-6xl">
-              Give customers a faster answer—and your team a better handoff
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
-              Reduce repeated support work across website chat, WhatsApp, and
-              email while keeping sensitive, unclear, or high-value
-              conversations with your people.
-            </p>
-          </div>
-          <div className="overflow-hidden rounded-[2rem] border border-emerald-950/10 bg-emerald-100 shadow-[0_24px_70px_rgba(2,44,34,0.12)]">
-            <Image
-              src={csstep5}
-              alt="LetssAI customer support assistants configured for different workflows"
-              priority
-              sizes="(max-width: 1023px) calc(100vw - 32px), 52vw"
-              className="h-auto w-full"
-            />
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="AI Customer Support"
+        title="Give customers a faster answer—and your team a better handoff"
+        description="Reduce repeated support work across website chat, WhatsApp, and email while keeping sensitive, unclear, or high-value conversations with your people."
+        href={service.href}
+      />
 
       <section className="px-4 py-20 sm:px-6 md:py-28 lg:px-8">
         <div className="mx-auto max-w-7xl">
@@ -248,29 +221,10 @@ export function CustomerSupportServicePage({ service }: { service: Service }) {
           intro="Practical answers about knowledge, channels, handoff, and finding the right place to begin."
         />
       </div>
-      <section className="px-4 py-16 sm:px-6 md:py-20 lg:px-8">
-        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] bg-emerald-950 px-6 py-10 text-white sm:px-10 md:px-14 md:py-14">
-          <div className="max-w-4xl">
-            <p className="text-sm font-semibold tracking-[0.14em] text-emerald-200 uppercase">
-              Start with one practical workflow
-            </p>
-            <h2 className="mt-4 text-3xl leading-tight font-semibold tracking-[-0.03em] sm:text-5xl">
-              Find the right starting point for customer support
-            </h2>
-            <p className="mt-5 max-w-3xl text-lg leading-8 text-emerald-50/75">
-              Share the repeated questions and handoffs that take time today.
-              We’ll help map a practical first workflow, the approved knowledge
-              it needs, and where people should stay involved.
-            </p>
-            <Link
-              href="/contact"
-              className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-emerald-950 hover:bg-emerald-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-            >
-              Request a free AI workflow review
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CTASection
+        title="Find the right starting point for customer support"
+        text="Share the repeated questions and handoffs that take time today. We’ll help map a practical first workflow, the approved knowledge it needs, and where people should stay involved."
+      />
     </>
   )
 }
