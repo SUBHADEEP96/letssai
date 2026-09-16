@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, CheckCircle } from "@phosphor-icons/react/dist/ssr"
+import { CheckCircle } from "@phosphor-icons/react/dist/ssr"
 import voice1 from "@/public/media/services/ai-calling-appointment-booking/voice1-letssai.webp"
 import voice2 from "@/public/media/services/ai-calling-appointment-booking/voice2-letssai.webp"
 import voice3 from "@/public/media/services/ai-calling-appointment-booking/voice3-letssai.webp"
@@ -10,7 +10,6 @@ import vstep3 from "@/public/media/services/ai-calling-appointment-booking/vstep
 import vstep4 from "@/public/media/services/ai-calling-appointment-booking/vstep4-letssai.webp"
 import vstep5 from "@/public/media/services/ai-calling-appointment-booking/vstep5-letssai.webp"
 import vstep6 from "@/public/media/services/ai-calling-appointment-booking/vstep6-letssai.webp"
-import { CTAButton } from "@/components/site/CTAButton"
 import { FAQSection } from "@/components/site/FAQSection"
 import { ServiceHero } from "./ServiceHero"
 import { VoiceFeatureRow } from "./VoiceFeatureRow"
@@ -178,11 +177,6 @@ export function CallingServicePage({ service }: { service: Service }) {
         title="AI conversations that move customers forward"
         description="Handle inbound and outbound conversations, qualify enquiries, answer approved questions, book appointments, and escalate sensitive cases to people—with a workflow shaped around your business."
         href={service.href}
-        primaryCta={{
-          label: "Request a free AI workflow review",
-          href: "/contact",
-        }}
-        secondaryCta={{ label: "Talk to LetssAI", opensChat: true }}
       />
 
       <section className="px-4 py-20 sm:px-6 md:py-28 lg:px-8">
@@ -315,16 +309,13 @@ export function CallingServicePage({ service }: { service: Service }) {
               bookings. LetssAI will help identify a practical first workflow
               and the systems it needs to connect with.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <div className="mt-8">
               <Link
                 href="/contact"
                 className="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-emerald-950 hover:bg-emerald-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 Request a free AI workflow review
               </Link>
-              <CTAButton className="justify-center border border-white/30 bg-transparent shadow-none hover:bg-white/10">
-                Contact LetssAI <ArrowRight aria-hidden />
-              </CTAButton>
             </div>
           </div>
         </div>

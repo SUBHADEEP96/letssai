@@ -1,4 +1,4 @@
-import { CTAButton } from "./CTAButton"
+import Link from "next/link"
 export function CTASection({
   title = "Ready to see where AI can save time in your business?",
   text = "Tell us what your team does manually today. We’ll help identify practical places AI can support your workflow.",
@@ -15,7 +15,12 @@ export function CTASection({
         <p className="mt-4 max-w-2xl text-lg leading-relaxed text-emerald-50/75">
           {text}
         </p>
-        <CTAButton className="mt-8  text-emerald-950 hover:bg-emerald-50" />
+        <Link
+          href="/contact"
+          className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-emerald-950 transition hover:bg-emerald-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        >
+          Request a free AI workflow review
+        </Link>
       </div>
     </section>
   )
