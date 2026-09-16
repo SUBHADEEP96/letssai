@@ -3,6 +3,7 @@ import { CTASection } from "@/components/site/CTASection"
 import { JsonLd } from "@/components/seo/JsonLd"
 import { faqSchema, pageMetadata } from "@/lib/seo"
 import { services } from "@/lib/site"
+import { ServiceHero } from "@/components/services/ServiceHero"
 
 const faqs = [
   {
@@ -25,17 +26,12 @@ export default function Services() {
   return (
     <>
       <JsonLd data={faqSchema(faqs)} />
-      <section className="section bg-emerald-50">
-        <div className="mx-auto max-w-5xl">
-          <h1 className="text-4xl leading-tight font-semibold tracking-tight md:text-6xl">
-            AI services built around real business workflows
-          </h1>
-          <p className="mt-5 text-lg leading-relaxed text-slate-600">
-            Choose practical AI assistants that help your team reply faster,
-            follow up better, and reduce repeated manual work.
-          </p>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="LetssAI services"
+        title="AI services built around real business workflows"
+        description="Choose practical AI assistants that help your team reply faster, follow up better, and reduce repeated manual work."
+        href="/services"
+      />
       <section className="section">
         <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 lg:grid-cols-3">
           {services.map((s) => (

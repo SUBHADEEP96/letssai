@@ -11,6 +11,7 @@ export function pageMetadata(
   canonicalUrl?: string
 ): Metadata {
   const url = canonicalUrl || absoluteUrl(path)
+  const socialImage = image || siteConfig.assets.ogImage
   return {
     title,
     description,
@@ -23,8 +24,10 @@ export function pageMetadata(
       type: "website",
       images: [
         {
-          url: siteConfig.assets.ogImage,
-          alt: `${siteConfig.name} — practical AI solutions`,
+          url: socialImage,
+          alt: image
+            ? `${siteConfig.name} ${title}`
+            : `${siteConfig.name} — practical AI solutions`,
         },
       ],
     },
@@ -32,7 +35,7 @@ export function pageMetadata(
       card: "summary_large_image",
       title,
       description,
-      images: [siteConfig.assets.ogImage],
+      images: [socialImage],
     },
   }
 }

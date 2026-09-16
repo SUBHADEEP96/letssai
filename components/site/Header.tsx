@@ -84,7 +84,7 @@ export function Header() {
             >
               <Link
                 href={item.href}
-                className="flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium tracking-tight text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 focus-visible:outline-2 focus-visible:outline-emerald-500"
+                className="text-md flex items-center gap-1 rounded-full px-4 py-2 font-medium tracking-tight text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 focus-visible:outline-2 focus-visible:outline-emerald-500"
               >
                 {item.label}
                 {item.children && <CaretDown size={14} />}
