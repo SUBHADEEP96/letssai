@@ -9,7 +9,7 @@ export function Footer() {
           <Link
             href="/"
             aria-label="LetssAI home"
-            className={`inline-flex shrink-0 items-center focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-500 `}
+            className={`inline-flex shrink-0 items-center focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-500`}
           >
             <Image
               src="/media/letssai_logo_footer.png"
@@ -21,9 +21,8 @@ export function Footer() {
             />
           </Link>
 
-
           <p className="mt-4 text-sm leading-6 text-emerald-50/75">
-            Practical AI solutions for growing businesses.
+            Applied AI for growing businesses.
           </p>
         </div>
         <div>

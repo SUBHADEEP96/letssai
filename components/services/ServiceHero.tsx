@@ -1,30 +1,17 @@
 import Image from "next/image"
-import Link from "next/link"
-import { ArrowRight } from "@phosphor-icons/react/dist/ssr"
 import heroImage from "@/public/media/services/hero-letssai.webp"
 import { Breadcrumbs } from "@/components/site/Breadcrumbs"
-import { CTAButton } from "@/components/site/CTAButton"
-
-type HeroAction = {
-  label: string
-  href?: string
-  opensChat?: boolean
-}
 
 export function ServiceHero({
   eyebrow,
   title,
   description,
   href,
-  primaryCta = { label: "Talk to LetssAI", opensChat: true },
-  secondaryCta = { label: "Contact LetssAI", href: "/contact" },
 }: {
   eyebrow: string
   title: string
   description: string
   href: string
-  primaryCta?: HeroAction
-  secondaryCta?: HeroAction
 }) {
   return (
     <section className="relative isolate min-h-[590px] overflow-hidden bg-emerald-950 text-white sm:min-h-[620px]">
@@ -56,33 +43,6 @@ export function ServiceHero({
           <p className="mt-6 max-w-2xl text-lg leading-8 text-emerald-50/85 sm:text-xl">
             {description}
           </p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            {primaryCta.opensChat ? (
-              <CTAButton className="justify-center bg-white text-emerald-950 shadow-none hover:bg-emerald-50">
-                {primaryCta.label}
-              </CTAButton>
-            ) : (
-              <Link
-                href={primaryCta.href ?? "/contact"}
-                className="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-emerald-950 transition hover:bg-emerald-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-              >
-                {primaryCta.label}
-              </Link>
-            )}
-            {secondaryCta.opensChat ? (
-              <CTAButton className="justify-center border border-white/35 bg-transparent shadow-none hover:bg-white/10">
-                {secondaryCta.label}
-              </CTAButton>
-            ) : (
-              <Link
-                href={secondaryCta.href ?? "/contact"}
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/35 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-              >
-                {secondaryCta.label}
-                <ArrowRight aria-hidden />
-              </Link>
-            )}
-          </div>
         </div>
       </div>
     </section>

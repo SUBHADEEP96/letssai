@@ -8,6 +8,10 @@ import {
 } from "@/components/services/CallingServicePage"
 import { ServiceHero } from "@/components/services/ServiceHero"
 import {
+  CustomerSupportServicePage,
+  customerSupportFaqs,
+} from "@/components/services/CustomerSupportServicePage"
+import {
   absoluteUrl,
   breadcrumbsSchema,
   faqSchema,
@@ -33,9 +37,11 @@ export async function generateMetadata({
         s.seoTitle,
         s.metaDescription,
         s.href,
-        s.slug === "ai-calling-appointment-booking"
-          ? "/media/services/hero-letssai.webp"
-          : undefined
+        s.slug === "ai-customer-support"
+          ? "/media/services/ai-customer-support/csstep5.webp"
+          : s.slug === "ai-calling-appointment-booking"
+            ? "/media/services/hero-letssai.webp"
+            : undefined
       )
     : {}
 }
@@ -52,7 +58,11 @@ export default async function ServicePage({
       <JsonLd data={serviceSchema(s.title, s.description, s.href)} />
       <JsonLd
         data={faqSchema(
-          s.slug === "ai-calling-appointment-booking" ? callingFaqs : s.faqs
+          s.slug === "ai-calling-appointment-booking"
+            ? callingFaqs
+            : s.slug === "ai-customer-support"
+              ? customerSupportFaqs
+              : s.faqs
         )}
       />
       <JsonLd
@@ -64,6 +74,8 @@ export default async function ServicePage({
       />
       {s.slug === "ai-calling-appointment-booking" ? (
         <CallingServicePage service={s} />
+      ) : s.slug === "ai-customer-support" ? (
+        <CustomerSupportServicePage service={s} />
       ) : (
         <>
           <ServiceHero
