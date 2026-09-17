@@ -8,6 +8,7 @@ import { JsonLd } from "@/components/seo/JsonLd"
 import { faqSchema, pageMetadata } from "@/lib/seo"
 import { homeFaqs, industries, services } from "@/lib/site"
 import { GlobalDeliveryMap } from "@/components/site/GlobalDeliveryMap"
+import { VoiceConversationShowcase } from "@/components/sections/VoiceConversationShowcase"
 
 export const metadata = pageMetadata(
   "LetssAI | Practical AI Solutions for Growing Businesses",
@@ -47,6 +48,7 @@ export default function Home() {
           <HeroVisual />
         </div>
       </section>
+      <VoiceConversationShowcase />
       <section className="section">
         <div className="mx-auto max-w-7xl">
           <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
