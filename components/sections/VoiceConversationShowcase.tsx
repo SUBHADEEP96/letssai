@@ -234,14 +234,14 @@ export function VoiceConversationShowcase() {
     >
       <div className="mx-auto max-w-7xl">
         <motion.div {...entrance} className="mx-auto max-w-3xl text-center">
-          <p className="font-mono text-xs font-semibold tracking-[0.18em] text-emerald-700 uppercase">
-            Welcome to LetssAI
+          <p className="font-mono text-sm font-semibold tracking-[0.18em] text-emerald-700 uppercase">
+            SEE LetssAI AI AGENTS IN ACTION
           </p>
           <h2
             id="voice-showcase-heading"
             className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl"
           >
-            Hear an AI conversation move work forward.
+            Real conversations. Real outcomes 🚀
           </h2>
           <p className="mx-auto mt-4 max-w-2xl leading-7 text-slate-600">
             Choose a business scenario and listen to an example AI-assisted
