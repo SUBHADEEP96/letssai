@@ -47,43 +47,9 @@ export default function Home() {
           <HeroVisual />
         </div>
       </section>
+
       <VoiceConversationShowcase />
-      <section className="section">
-        <div className="mx-auto max-w-7xl">
-          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-            What LetssAI helps you automate
-          </h2>
-          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              "Customer questions",
-              "Lead follow-up",
-              "Business documents",
-              "Appointments and calls",
-              "Internal knowledge",
-              "Repetitive workflows",
-            ].map((x) => (
-              <div
-                className="rounded-3xl bg-emerald-50 p-6 text-lg font-semibold tracking-tight text-emerald-950"
-                key={x}
-              >
-                {x}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="section bg-slate-50">
-        <div className="mx-auto max-w-7xl">
-          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-            Which AI services are most useful first?
-          </h2>
-          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {featured.map((s) => (
-              <ServiceCard key={s.slug} {...s} />
-            ))}
-          </div>
-        </div>
-      </section>
+
       <section className="section">
         <div className="mx-auto max-w-7xl">
           <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
@@ -110,50 +76,6 @@ export default function Home() {
               >
                 {t}
               </span>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="section bg-emerald-950 text-white">
-        <div className="mx-auto max-w-7xl">
-          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-            Industries LetssAI supports
-          </h2>
-          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {industries.slice(0, 4).map((i) => (
-              <IndustryCard
-                key={i.slug}
-                title={i.title}
-                description={i.useCase}
-                href={i.href}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="section">
-        <div className="mx-auto max-w-7xl">
-          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-            Why do teams choose LetssAI?
-          </h2>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
-            {[
-              "Business-first approach",
-              "Human handoff where needed",
-              "Clear reporting",
-              "Built around existing workflows",
-              "Designed for small and growing businesses",
-            ].map((x) => (
-              <article
-                className="rounded-3xl border border-emerald-950/10 p-6"
-                key={x}
-              >
-                <h3 className="text-xl font-semibold tracking-tight">{x}</h3>
-                <p className="mt-3 text-base leading-relaxed text-slate-600">
-                  Practical implementation focused on clear business outcomes,
-                  safe adoption, and daily usability.
-                </p>
-              </article>
             ))}
           </div>
         </div>
