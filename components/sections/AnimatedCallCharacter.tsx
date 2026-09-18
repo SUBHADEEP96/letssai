@@ -11,6 +11,8 @@ type Props = {
   kind: "customer" | "agent"
   label: string
   state: CharacterState
+  image: string
+  imageAlt: string
 }
 
 const stateLabels: Record<CharacterState, string> = {
@@ -21,7 +23,13 @@ const stateLabels: Record<CharacterState, string> = {
   completed: "Conversation complete",
 }
 
-export function AnimatedCallCharacter({ kind, label, state }: Props) {
+export function AnimatedCallCharacter({
+  kind,
+  label,
+  state,
+  image,
+  imageAlt,
+}: Props) {
   const reduceMotion = useReducedMotion()
   const speaking = state === "speaking"
 
@@ -49,11 +57,11 @@ export function AnimatedCallCharacter({ kind, label, state }: Props) {
         {speaking && (
           <span className="absolute -inset-2 -z-10 rounded-full bg-emerald-300/35 motion-safe:animate-pulse" />
         )}
-        {kind === "customer" ? (
-          <CustomerPortrait speaking={speaking && !reduceMotion} />
-        ) : (
-          <AgentPortrait speaking={speaking && !reduceMotion} />
-        )}
+        <CharacterPortrait
+          image={image}
+          alt={imageAlt}
+          speaking={speaking && !reduceMotion}
+        />
         {speaking && (
           <motion.span
             aria-hidden="true"
@@ -75,7 +83,15 @@ export function AnimatedCallCharacter({ kind, label, state }: Props) {
   )
 }
 
-function CustomerPortrait({ speaking }: { speaking: boolean }) {
+function CharacterPortrait({
+  speaking,
+  image,
+  alt,
+}: {
+  speaking: boolean
+  image: string
+  alt: string
+}) {
   return (
     <div
       className={`relative size-full transition-all duration-300 ${
@@ -83,29 +99,11 @@ function CustomerPortrait({ speaking }: { speaking: boolean }) {
       } `}
     >
       <Image
-        src="/media/conversation/customer.jpeg"
-        alt="Customer"
+        src={image}
+        alt={alt}
         fill
         className="rounded-full object-contain"
-        sizes="140px"
-      />
-    </div>
-  )
-}
-
-function AgentPortrait({ speaking }: { speaking: boolean }) {
-  return (
-    <div
-      className={`relative size-full transition-all duration-300 ${
-        speaking ? "scale-[1.04]" : "scale-100"
-      } `}
-    >
-      <Image
-        src="/media/conversation/agent.webp"
-        alt="AI Agent"
-        fill
-        className="object-contain"
-        sizes="140px"
+        sizes="(min-width: 640px) 128px, 112px"
       />
     </div>
   )
