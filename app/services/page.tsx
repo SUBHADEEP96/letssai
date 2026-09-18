@@ -18,8 +18,8 @@ const faqs = [
   },
 ]
 export const metadata = pageMetadata(
-  "AI Services for Customer Support, Sales, Documents & Appointments | LetssAI",
-  "Explore practical AI services for customer support, sales follow-up, documents, appointments, workflows, and system integration.",
+  "AI Services for Customer Support, Calling, CRM & Automation | LetssAI",
+  "Explore practical AI services for customer support, calling, CRM development, sales follow-up, workflows, and system integration.",
   "/services"
 )
 export default function Services() {
