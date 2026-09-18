@@ -8,13 +8,18 @@ export type SpeakerCue = {
 }
 
 export type VoiceScenario = {
-  id: string
+  id: VoiceScenarioId
   label: string
   title: string
   audioPath: string
   description?: string
+  customerImage: string
+  agentImage: string
   cues: SpeakerCue[]
 }
+
+export type VoiceScenarioId =
+  "automotive" | "finance" | "real-estate" | "ecommerce" | "hospitality"
 
 // Timings follow the turn boundaries in the current showcase recordings. They are
 // intentionally data-driven so replacement calls can be retimed without changing UI.
@@ -26,6 +31,8 @@ export const voiceScenarios: VoiceScenario[] = [
     audioPath: "/media/voice/01-automotive-drop-off-recovery-call.mp3",
     description:
       "A helpful follow-up that gets a delayed service visit moving again.",
+    customerImage: "/media/conversation/automotive-customer.jpeg",
+    agentImage: "/media/conversation/automotive-agent.png",
     cues: [
       { start: 0, end: 12.4, speaker: "agent" },
       { start: 12.4, end: 21.8, speaker: "customer" },
@@ -43,6 +50,8 @@ export const voiceScenarios: VoiceScenario[] = [
     audioPath: "/media/voice/02-finance-policy-renewal-reminder-call.mp3",
     description:
       "A proactive reminder that makes the next step clear and convenient.",
+    customerImage: "/media/conversation/finance-customer.png",
+    agentImage: "/media/conversation/finance-agent.png",
     cues: [
       { start: 0, end: 10.8, speaker: "agent" },
       { start: 10.8, end: 18.9, speaker: "customer" },
@@ -60,6 +69,8 @@ export const voiceScenarios: VoiceScenario[] = [
     audioPath: "/media/voice/03-real-estate-lead-qualification-call.mp3",
     description:
       "An initial conversation that captures intent before a human follow-up.",
+    customerImage: "/media/conversation/real-estate-customer.png",
+    agentImage: "/media/conversation/real-estate-agent.png",
     cues: [
       { start: 0, end: 13.2, speaker: "agent" },
       { start: 13.2, end: 24.1, speaker: "customer" },
@@ -78,6 +89,8 @@ export const voiceScenarios: VoiceScenario[] = [
     audioPath: "/media/voice/04-ecommerce-abandoned-checkout-recovery.mp3",
     description:
       "A considerate recovery call that helps resolve a checkout blocker.",
+    customerImage: "/media/conversation/ecommerce-customer.png",
+    agentImage: "/media/conversation/ecommerce-agent.png",
     cues: [
       { start: 0, end: 14.1, speaker: "agent" },
       { start: 14.1, end: 26.8, speaker: "customer" },
@@ -97,6 +110,8 @@ export const voiceScenarios: VoiceScenario[] = [
     audioPath: "/media/voice/05-hospitality-concierge-assistance-call.mp3",
     description:
       "A guest gets quick, practical help without waiting at the front desk.",
+    customerImage: "/media/conversation/hospitability-customer.webp",
+    agentImage: "/media/conversation/hospitability-agent.png",
     cues: [
       { start: 0, end: 11.6, speaker: "agent" },
       { start: 11.6, end: 23.5, speaker: "customer" },
@@ -108,6 +123,18 @@ export const voiceScenarios: VoiceScenario[] = [
     ],
   },
 ]
+
+export const industryConversationScenarios = {
+  "real-estate": "real-estate",
+  "finance-accounting": "finance",
+  "retail-ecommerce": "ecommerce",
+} as const satisfies Record<string, VoiceScenarioId>
+
+export function getIndustryConversationScenario(slug: string) {
+  return industryConversationScenarios[
+    slug as keyof typeof industryConversationScenarios
+  ]
+}
 
 export function resolveActiveSpeaker(cues: SpeakerCue[], time: number) {
   return (
