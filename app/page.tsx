@@ -36,7 +36,6 @@ export default function Home() {
               connected to the tools your team already uses.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <CTAButton />
               <Link
                 className="rounded-full border border-emerald-950/15 px-5 py-3 text-sm font-semibold"
                 href="/services"
