@@ -3,7 +3,7 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.letssai.com",
   title: "LetssAI | Practical AI Solutions for Growing Businesses",
   description:
-    "LetssAI builds practical AI assistants for customer support, sales follow-up, knowledge, appointments, workflows, and system integrations.",
+    "LetssAI builds practical AI assistants for customer support, calling, CRM development, sales follow-up, workflows, and system integrations.",
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL,
   contactCta: "Talk to LetssAI",
   brand: {
@@ -120,6 +120,62 @@ export const services: Service[] = [
     ],
   },
   {
+    slug: "ai-calling-appointment-booking",
+    title: "AI Calling & Appointment Booking",
+    href: "/services/ai-calling-appointment-booking",
+    description:
+      "Automate outbound calls, appointment booking, and feedback collection.",
+    seoTitle: "AI Calling and Appointment Booking Assistant | LetssAI",
+    metaDescription:
+      "Automate appointment requests, reminders, feedback collection, call summaries, and calendar updates with LetssAI.",
+    icon: "PhoneCall",
+    tools: [
+      "Phone calls",
+      "Calendars",
+      "WhatsApp",
+      "CRM",
+      "Feedback forms",
+      "Dashboards",
+    ],
+    problems: [
+      "Front desk teams handle repeated booking calls",
+      "No-shows increase without reminders",
+      "Feedback collection is manual",
+      "Call notes are not captured",
+    ],
+    does: [
+      "Handles booking requests",
+      "Sends reminders and confirmations",
+      "Collects feedback",
+      "Creates summaries for review",
+    ],
+    workflow: [
+      "A customer requests an appointment or receives an approved outbound call.",
+      "The assistant confirms details and checks available slots.",
+      "The appointment is booked or routed to a person.",
+      "Summaries and updates are sent to your tools.",
+    ],
+    benefits: [
+      "Easier appointment booking",
+      "Reduced front desk workload",
+      "Better reminder follow-through",
+      "Clear call summaries",
+    ],
+    industries: [
+      "Healthcare & Clinics",
+      "Real Estate",
+      "Education & Coaching",
+      "Finance & Accounting",
+    ],
+    faqs: [
+      {
+        question: "Can sensitive calls be reviewed by a person?",
+        answer:
+          "Yes. Sensitive or unclear conversations should be routed for human review.",
+      },
+    ],
+  },
+  {
     slug: "ai-sales-lead-follow-up",
     title: "AI Sales & Lead Follow-up",
     href: "/services/ai-sales-lead-follow-up",
@@ -175,176 +231,61 @@ export const services: Service[] = [
     ],
   },
   {
-    slug: "ai-knowledge-assistant",
-    title: "AI Knowledge Assistant",
-    href: "/services/ai-knowledge-assistant",
+    slug: "ai-crm-development",
+    title: "AI CRM Development",
+    href: "/services/ai-crm-development",
     description:
-      "Let teams ask questions across documents, SOPs, policies, and company docs.",
-    seoTitle:
-      "AI Knowledge Assistant for SOPs, Policies & Company Documents | LetssAI",
+      "Build an AI-ready CRM around your sales, service, and follow-up workflows.",
+    seoTitle: "AI CRM Development for Sales & Customer Operations | LetssAI",
     metaDescription:
-      "Give teams an AI assistant that answers from approved SOPs, policies, training docs, and company documents.",
-    icon: "FileSearch",
-    tools: [
-      "SOPs",
-      "Policies",
-      "Training docs",
-      "PDFs",
-      "Google Drive",
-      "Internal portals",
-    ],
+      "Design and develop an AI-ready CRM that unifies leads, customer conversations, follow-ups, reporting, and team workflows.",
+    icon: "Database",
+    tools: ["CRM", "Email", "WhatsApp", "Calendars", "Forms", "Dashboards"],
     problems: [
-      "Teams waste time searching documents",
-      "New staff ask the same internal questions",
-      "Policies and SOPs are hard to find",
-      "Important answers need approved sources",
+      "Customer information is scattered across tools",
+      "Teams rely on spreadsheets and manual updates",
+      "Follow-ups are missed or difficult to track",
+      "Reports do not reflect current customer activity",
     ],
     does: [
-      "Answers from approved company documents",
-      "Shows source-style references where available",
-      "Helps teams understand SOPs and policies",
-      "Escalates unclear questions for human review",
+      "Creates a CRM around your actual workflow",
+      "Centralizes leads, contacts, and conversations",
+      "Automates routing, reminders, and record updates",
+      "Adds AI assistance with clear permissions and review",
     ],
     workflow: [
-      "Your approved documents are organized for retrieval.",
-      "A team member asks a question in plain language.",
-      "The assistant answers from relevant company content.",
-      "Unclear or sensitive questions are routed for review.",
+      "We map your sales and customer-service process.",
+      "The CRM data model, roles, and integrations are defined.",
+      "Automations and AI assistance are built and tested.",
+      "Your team reviews the workflow before rollout.",
     ],
     benefits: [
-      "Smarter document handling",
-      "Less repeated internal support",
-      "Faster onboarding",
-      "More consistent answers",
+      "One reliable customer record",
+      "Faster and more consistent follow-up",
+      "Less manual data entry",
+      "Clearer pipeline and service reporting",
     ],
     industries: [
-      "Legal Firms",
-      "Finance & Accounting",
+      "Real Estate",
       "Healthcare & Clinics",
       "Education & Coaching",
-    ],
-    faqs: [
-      {
-        question: "Does this give answers from approved documents?",
-        answer:
-          "Yes. The assistant is designed to answer from the content your business approves and provides.",
-      },
-      {
-        question: "Can it be used for legal, medical, or financial advice?",
-        answer:
-          "No. It supports admin and knowledge workflows and should not replace qualified professional advice.",
-      },
-    ],
-  },
-  {
-    slug: "ai-marketing-assistant",
-    title: "AI Marketing Assistant",
-    href: "/services/ai-marketing-assistant",
-    description: "Plan, draft, approve, and track marketing campaigns faster.",
-    seoTitle:
-      "AI Marketing Assistant for Campaigns, Content & Follow-ups | LetssAI",
-    metaDescription:
-      "Plan campaigns, draft content, create approval flows, and track marketing work with practical AI support.",
-    icon: "Megaphone",
-    tools: [
-      "Content calendars",
-      "Email",
-      "Social posts",
-      "Approval docs",
-      "Dashboards",
-      "CRM",
-    ],
-    problems: [
-      "Campaign planning takes too long",
-      "Drafts and approvals are scattered",
-      "Follow-up messages are inconsistent",
-      "Reporting requires manual copy-paste",
-    ],
-    does: [
-      "Creates campaign plans and drafts",
-      "Prepares social and email content",
-      "Supports approval workflows",
-      "Organizes tracking updates",
-    ],
-    workflow: [
-      "Your team shares a campaign goal.",
-      "The assistant drafts ideas, copy, and a simple plan.",
-      "A human reviews and approves content.",
-      "Performance notes can be gathered into a dashboard.",
-    ],
-    benefits: [
-      "Faster content drafts",
-      "Clearer approval steps",
-      "More consistent campaign follow-up",
-      "Less manual reporting",
-    ],
-    industries: [
-      "Education & Coaching",
-      "Real Estate",
       "Retail & E-commerce",
-      "Healthcare & Clinics",
     ],
     faqs: [
       {
-        question: "Will the marketing assistant publish without approval?",
+        question: "Can LetssAI build a CRM around our existing process?",
         answer:
-          "LetssAI recommends human approval before publishing so messaging stays accurate and brand-safe.",
+          "Yes. We begin with your current sales, service, and reporting workflow, then design the CRM, permissions, integrations, and automations around the approved process.",
       },
-    ],
-  },
-  {
-    slug: "ai-calling-appointment-booking",
-    title: "AI Calling & Appointment Booking",
-    href: "/services/ai-calling-appointment-booking",
-    description:
-      "Automate outbound calls, appointment booking, and feedback collection.",
-    seoTitle: "AI Calling and Appointment Booking Assistant | LetssAI",
-    metaDescription:
-      "Automate appointment requests, reminders, feedback collection, call summaries, and calendar updates with LetssAI.",
-    icon: "PhoneCall",
-    tools: [
-      "Phone calls",
-      "Calendars",
-      "WhatsApp",
-      "CRM",
-      "Feedback forms",
-      "Dashboards",
-    ],
-    problems: [
-      "Front desk teams handle repeated booking calls",
-      "No-shows increase without reminders",
-      "Feedback collection is manual",
-      "Call notes are not captured",
-    ],
-    does: [
-      "Handles booking requests",
-      "Sends reminders and confirmations",
-      "Collects feedback",
-      "Creates summaries for review",
-    ],
-    workflow: [
-      "A customer requests an appointment or receives an approved outbound call.",
-      "The assistant confirms details and checks available slots.",
-      "The appointment is booked or routed to a person.",
-      "Summaries and updates are sent to your tools.",
-    ],
-    benefits: [
-      "Easier appointment booking",
-      "Reduced front desk workload",
-      "Better reminder follow-through",
-      "Clear call summaries",
-    ],
-    industries: [
-      "Healthcare & Clinics",
-      "Real Estate",
-      "Education & Coaching",
-      "Finance & Accounting",
-    ],
-    faqs: [
       {
-        question: "Can sensitive calls be reviewed by a person?",
+        question: "Can the CRM connect with our existing tools?",
         answer:
-          "Yes. Sensitive or unclear conversations should be routed for human review.",
+          "Yes, where suitable integrations are available. Common connections include forms, email, WhatsApp, calendars, calling workflows, spreadsheets, and dashboards.",
+      },
+      {
+        question: "Can AI update and summarize CRM records?",
+        answer:
+          "Yes. AI can prepare summaries, classify enquiries, suggest next steps, and update approved fields while important decisions remain with your team.",
       },
     ],
   },
@@ -514,7 +455,7 @@ export const industries: Industry[] = [
     services: [
       "AI Calling & Appointment Booking",
       "AI Customer Support",
-      "AI Knowledge Assistant",
+      "AI CRM Development",
     ],
     workflows: [
       "Patient request → appointment options → confirmation → reminder → feedback collection",
@@ -550,7 +491,7 @@ export const industries: Industry[] = [
       "FAQs need careful handoff",
     ],
     services: [
-      "AI Knowledge Assistant",
+      "AI CRM Development",
       "AI Workflow Automation",
       "AI Customer Support",
     ],
@@ -665,7 +606,7 @@ export const industries: Industry[] = [
     ],
     services: [
       "AI Workflow Automation",
-      "AI Knowledge Assistant",
+      "AI CRM Development",
       "AI System Integration",
     ],
     workflows: [
