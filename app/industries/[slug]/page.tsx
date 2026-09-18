@@ -1,4 +1,6 @@
 import { IndustryHero } from "@/components/industry/IndustryHero"
+import { IndustryConversationSection } from "@/components/sections/VoiceConversationShowcase"
+import { getIndustryConversationScenario } from "@/components/sections/voice-conversation-data"
 import { IndustryGallery } from "@/components/industry/IndustryGallery"
 import { IndustryUseCaseGrid } from "@/components/industry/IndustryUseCaseGrid"
 import { FAQSection } from "@/components/site/FAQSection"
@@ -26,7 +28,8 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string }>
 }) {
-  const industry = await getIndustryPage((await params).slug)
+  const slug = (await params).slug
+  const industry = await getIndustryPage(slug)
   return industry
     ? pageMetadata(
         industry.metaTitle,
@@ -42,7 +45,9 @@ export default async function IndustryPage({
 }: {
   params: Promise<{ slug: string }>
 }) {
-  const industry = await getIndustryPage((await params).slug)
+  const slug = (await params).slug
+  const industry = await getIndustryPage(slug)
+  const conversationScenario = getIndustryConversationScenario(slug)
   if (!industry) return notFound()
   return (
     <>
@@ -62,6 +67,9 @@ export default async function IndustryPage({
         ])}
       />
       <IndustryHero industry={industry} />
+      {conversationScenario ? (
+        <IndustryConversationSection scenarioId={conversationScenario} />
+      ) : null}
       <IndustryUseCaseGrid
         title={`What slows down ${industry.title.toLowerCase()} teams?`}
         intro="The strongest starting points are repetitive, rules-based tasks where information already exists and a clear owner can review exceptions."
