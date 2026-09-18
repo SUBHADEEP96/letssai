@@ -4,13 +4,21 @@ import type { WorkflowDefinition, WorkflowKind } from "./types"
 const titles: Record<string, string> = {
   "ai-customer-support": "From repeated questions to faster customer replies",
   "ai-sales-lead-follow-up": "From new lead to booked conversation",
-  "ai-knowledge-assistant": "From scattered documents to clear internal answers",
-  "ai-marketing-assistant": "From campaign idea to ready-to-review content",
-  "ai-calling-appointment-booking": "From contact list to confirmed appointment",
+  "ai-calling-appointment-booking":
+    "From contact list to confirmed appointment",
+  "ai-crm-development": "From scattered customer data to one reliable CRM",
   "ai-workflow-automation": "From manual handoffs to connected daily work",
   "ai-system-integration": "From disconnected tools to one connected AI layer",
 }
-const kinds: WorkflowKind[] = ["Trigger", "AI Assistant", "Decision", "Human Review", "Integration", "Output", "Report"]
+const kinds: WorkflowKind[] = [
+  "Trigger",
+  "AI Assistant",
+  "Decision",
+  "Human Review",
+  "Integration",
+  "Output",
+  "Report",
+]
 
 export function workflowFor(service: Service): WorkflowDefinition {
   const steps = service.workflow
@@ -29,7 +37,8 @@ export function workflowFor(service: Service): WorkflowDefinition {
   })
   return {
     title: titles[service.slug] ?? `How ${service.title} works`,
-    explanation: "A clear example of how information moves through the workflow, where AI helps, and where your team stays in control.",
+    explanation:
+      "A clear example of how information moves through the workflow, where AI helps, and where your team stays in control.",
     outcome: service.benefits.join(" · "),
     tools: service.tools,
     nodes,

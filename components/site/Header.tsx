@@ -8,11 +8,10 @@ import {
   CaretDown,
   ChatCircleText,
   TrendUp,
-  FileMagnifyingGlass,
-  Megaphone,
   PhoneCall,
   FlowArrow,
   PlugsConnected,
+  Database,
   HouseLine,
   FirstAidKit,
   Scales,
@@ -21,21 +20,20 @@ import {
   Receipt,
 } from "@phosphor-icons/react"
 import { navigation } from "@/lib/navigation"
-const icons = [
+const icons = {
   ChatCircleText,
   TrendUp,
-  FileMagnifyingGlass,
-  Megaphone,
   PhoneCall,
   FlowArrow,
   PlugsConnected,
+  Database,
   HouseLine,
   FirstAidKit,
   Scales,
   GraduationCap,
   ShoppingCart,
   Receipt,
-]
+} as const
 export function Header() {
   const [mobile, setMobile] = useState(false)
   const [open, setOpen] = useState<string | null>(null)
@@ -93,8 +91,9 @@ export function Header() {
                 <div className="absolute top-full left-1/2 w-[760px] -translate-x-1/2 pt-4">
                   <div className="rounded-3xl border border-emerald-950/10 bg-white p-4 shadow-2xl shadow-emerald-950/10">
                     <div className="grid grid-cols-2 gap-2">
-                      {item.children.map((c, i) => {
-                        const I = icons[i % icons.length]
+                      {item.children.map((c) => {
+                        const I =
+                          icons[c.icon as keyof typeof icons] ?? FlowArrow
                         return (
                           <Link
                             key={c.href}
@@ -187,21 +186,30 @@ export function Header() {
                       id={`mobile-${item.label}`}
                       className="space-y-2 border-t border-emerald-950/10 p-3"
                     >
-                      {item.children.map((c) => (
-                        <Link
-                          onClick={() => setMobile(false)}
-                          className="block rounded-2xl bg-emerald-50 p-4"
-                          key={c.href}
-                          href={c.href}
-                        >
-                          <span className="font-semibold tracking-tight">
-                            {c.label}
-                          </span>
-                          <span className="mt-1 block text-sm leading-6 text-slate-600">
-                            {c.description}
-                          </span>
-                        </Link>
-                      ))}
+                      {item.children.map((c) => {
+                        const I =
+                          icons[c.icon as keyof typeof icons] ?? FlowArrow
+                        return (
+                          <Link
+                            onClick={() => setMobile(false)}
+                            className="flex gap-3 rounded-2xl bg-emerald-50 p-4"
+                            key={c.href}
+                            href={c.href}
+                          >
+                            <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-emerald-100 text-emerald-800">
+                              <I size={18} aria-hidden />
+                            </span>
+                            <span>
+                              <span className="font-semibold tracking-tight">
+                                {c.label}
+                              </span>
+                              <span className="mt-1 block text-sm leading-6 text-slate-600">
+                                {c.description}
+                              </span>
+                            </span>
+                          </Link>
+                        )
+                      })}
                     </div>
                   )}
                 </div>
