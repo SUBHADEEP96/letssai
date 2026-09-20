@@ -37,7 +37,7 @@ export function ServiceHero({
           <p className="text-sm font-semibold tracking-[0.16em] text-emerald-200 uppercase">
             {eyebrow}
           </p>
-          <h1 className="mt-5 text-4xl leading-[1.08] font-semibold tracking-[-0.035em] text-balance sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="mt-5 text-4xl leading-[1.08] font-semibold tracking-[-0.035em] text-balance sm:text-4xl md:text-5xl lg:text-5xl">
             {title}
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-emerald-50/85 sm:text-xl">
