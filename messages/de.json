@@ -1,0 +1,88 @@
+{
+  "language": "Deutsch",
+  "selectLanguage": "Sprache auswählen",
+  "nav": {
+    "home": "Start",
+    "services": "Leistungen",
+    "industries": "Branchen",
+    "why": "Warum LetssAI",
+    "contact": "Kontakt",
+    "main": "Hauptnavigation",
+    "open": "Menü öffnen",
+    "close": "Menü schließen",
+    "explore": "Alle ansehen"
+  },
+  "home": {
+    "metaTitle": "Individuelle AI-Systeme für Geschäftsergebnisse | LetssAI",
+    "metaDescription": "LetssAI entwickelt individuelle AI-Systeme, die mit bestehenden Prozessen und Werkzeugen messbare Ergebnisse erzielen.",
+    "hero": {
+      "titleBefore": "Wir liefern",
+      "titleHighlight": "ERGEBNISSE",
+      "titleAfter": "statt Software.",
+      "description": "Vergessen Sie komplizierte Plattformen, die Ihr Team erst erlernen und einführen muss. LetssAI entwickelt individuelle AI-Systeme, die sich direkt in Ihre Abläufe einfügen und vom ersten Tag an echte Geschäftsergebnisse liefern.",
+      "cta": "Kostenlose AI-Workflow-Analyse anfragen"
+    },
+    "toolsTitle": "Für Ihre vorhandenen Werkzeuge entwickelt",
+    "toolsText": "LetssAI bringt AI-Unterstützung in die alltäglichen Kanäle, in denen die Arbeit bereits stattfindet."
+  },
+  "common": {
+    "learnMore": "Mehr erfahren →",
+    "ctaEyebrow": "MIT EINEM PRAKTISCHEN WORKFLOW STARTEN",
+    "ctaTitle": "Möchten Sie wissen, wo AI in Ihrem Unternehmen Zeit spart?",
+    "ctaText": "Beschreiben Sie uns Ihre heutigen manuellen Abläufe. Wir zeigen sinnvolle Einsatzmöglichkeiten.",
+    "faqTitle": "Häufige Fragen von Unternehmen",
+    "cta": "Kostenlose AI-Workflow-Analyse anfragen",
+    "breadcrumb": "Brotkrümelnavigation"
+  },
+  "footer": {
+    "tagline": "Angewandte AI für wachsende Unternehmen.",
+    "company": "Unternehmen",
+    "copyright": "Für Teams, die AI in ihren bestehenden Werkzeugen nutzen möchten."
+  },
+  "services": {
+    "title": "AI-Leistungen für echte Geschäftsabläufe",
+    "description": "Praktische AI-Assistenten für schnellere Antworten, bessere Nachverfolgung und weniger manuelle Arbeit."
+  },
+  "industries": {
+    "title": "AI-Lösungen in der Sprache Ihrer Branche",
+    "description": "LetssAI unterstützt vertraute Aufgaben wie Anfragen, Buchungen, Erinnerungen, Dokumente und Berichte."
+  },
+  "why": {
+    "title": "Praktische AI, passend zu Ihrem Unternehmen",
+    "description": "LetssAI konzentriert sich auf Ergebnisse: schnellere Antworten, bessere Nachverfolgung, vernetzte Werkzeuge und weniger Handarbeit."
+  },
+  "contact": {
+    "title": "Kostenlose AI-Workflow-Analyse anfragen",
+    "description": "Sagen Sie uns, was Sie automatisieren möchten. Wir helfen beim sichersten und sinnvollsten ersten Schritt.",
+    "formTitle": "Erzählen Sie uns von Ihrem Workflow",
+    "formIntro": "Beschreiben Sie den manuellen Prozess, den Sie verbessern möchten. * kennzeichnet Pflichtfelder.",
+    "name": "Name *",
+    "email": "E-Mail *",
+    "company": "Unternehmen *",
+    "phone": "Telefon (optional)",
+    "need": "Was möchten Sie automatisieren? *",
+    "method": "Bevorzugter Kontaktweg *",
+    "submit": "Anfrage senden",
+    "sending": "Wird gesendet…",
+    "success": "Vielen Dank — Ihre Anfrage wurde gesendet.",
+    "error": "Ihre Anfrage konnte nicht gesendet werden. Bitte erneut versuchen."
+  },
+  "chat": {
+    "open": "AI-Assistenten öffnen",
+    "close": "AI-Assistenten schließen",
+    "title": "LetssAI-Assistent",
+    "status": "Online",
+    "placeholder": "Fragen Sie nach LetssAI-Leistungen…",
+    "send": "Nachricht senden"
+  },
+  "voice": {
+    "title": "AI-Gespräche in Aktion hören",
+    "play": "Abspielen",
+    "pause": "Pause",
+    "mute": "Stummschalten",
+    "unmute": "Ton einschalten"
+  },
+  "delivery": {
+    "title": "In Indien entwickelt, weltweit bereitgestellt"
+  }
+}

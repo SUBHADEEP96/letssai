@@ -1,0 +1,88 @@
+{
+  "language": "Español",
+  "selectLanguage": "Seleccionar idioma",
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "industries": "Sectores",
+    "why": "Por qué LetssAI",
+    "contact": "Contacto",
+    "main": "Navegación principal",
+    "open": "Abrir menú",
+    "close": "Cerrar menú",
+    "explore": "Ver todo"
+  },
+  "home": {
+    "metaTitle": "Sistemas de AI a medida para resultados empresariales | LetssAI",
+    "metaDescription": "LetssAI crea sistemas de AI a medida que se integran con sus procesos y herramientas para generar resultados.",
+    "hero": {
+      "titleBefore": "Entregamos",
+      "titleHighlight": "RESULTADOS",
+      "titleAfter": "no software.",
+      "description": "Olvídese de plataformas complicadas que su equipo debe aprender e implantar. LetssAI crea sistemas de AI a medida que se integran directamente en su forma de trabajar y generan resultados reales desde el primer día.",
+      "cta": "Solicitar una revisión gratuita del flujo de AI"
+    },
+    "toolsTitle": "Creado para sus herramientas actuales",
+    "toolsText": "LetssAI lleva la asistencia de AI a los canales cotidianos donde ya se realiza el trabajo."
+  },
+  "common": {
+    "learnMore": "Más información →",
+    "ctaEyebrow": "EMPIECE CON UN FLUJO PRÁCTICO",
+    "ctaTitle": "¿Quiere descubrir dónde puede ahorrar tiempo la AI?",
+    "ctaText": "Cuéntenos qué tareas realiza manualmente su equipo. Identificaremos usos prácticos de la AI.",
+    "faqTitle": "Preguntas frecuentes de empresarios",
+    "cta": "Solicitar una revisión gratuita del flujo de AI",
+    "breadcrumb": "Migas de pan"
+  },
+  "footer": {
+    "tagline": "AI aplicada para empresas en crecimiento.",
+    "company": "Empresa",
+    "copyright": "Para equipos que quieren AI dentro de sus herramientas actuales."
+  },
+  "services": {
+    "title": "Servicios de AI basados en flujos empresariales reales",
+    "description": "Elija asistentes prácticos para responder antes, mejorar el seguimiento y reducir el trabajo manual."
+  },
+  "industries": {
+    "title": "Soluciones de AI en el lenguaje de su sector",
+    "description": "LetssAI aplica AI al trabajo diario: consultas, reservas, recordatorios, documentos e informes."
+  },
+  "why": {
+    "title": "AI práctica adaptada a su empresa",
+    "description": "LetssAI se centra en resultados útiles: respuestas rápidas, mejor seguimiento, herramientas conectadas y menos trabajo manual."
+  },
+  "contact": {
+    "title": "Solicitar una revisión gratuita del flujo de AI",
+    "description": "Cuéntenos qué desea automatizar. Le ayudaremos a identificar el primer paso más seguro y útil.",
+    "formTitle": "Cuéntenos sobre su flujo de trabajo",
+    "formIntro": "Comparta el proceso manual que quiere mejorar. Los campos con * son obligatorios.",
+    "name": "Nombre *",
+    "email": "Correo electrónico *",
+    "company": "Empresa *",
+    "phone": "Teléfono (opcional)",
+    "need": "¿Qué desea automatizar? *",
+    "method": "Método de contacto preferido *",
+    "submit": "Enviar solicitud",
+    "sending": "Enviando…",
+    "success": "Gracias: su solicitud se ha enviado.",
+    "error": "No pudimos enviar su solicitud. Inténtelo de nuevo."
+  },
+  "chat": {
+    "open": "Abrir asistente de AI",
+    "close": "Cerrar asistente de AI",
+    "title": "Asistente de LetssAI",
+    "status": "En línea",
+    "placeholder": "Pregunte por los servicios de LetssAI…",
+    "send": "Enviar mensaje"
+  },
+  "voice": {
+    "title": "Escuche conversaciones de AI en acción",
+    "play": "Reproducir",
+    "pause": "Pausar",
+    "mute": "Silenciar",
+    "unmute": "Activar sonido"
+  },
+  "delivery": {
+    "title": "Creado en India, entregado en todo el mundo"
+  }
+}
