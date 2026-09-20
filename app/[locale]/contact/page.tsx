@@ -7,7 +7,9 @@ export const metadata = pageMetadata(
   "Contact LetssAI to request a free AI workflow review for customer support, lead follow-up, documents, appointments, and workflow automation.",
   "/contact"
 )
-export default function Contact() {
+export default async function Contact() {
+  const {getTranslations}=await import("next-intl/server")
+  const t=await getTranslations("contact")
   return (
     <>
       <JsonLd
@@ -33,11 +35,10 @@ export default function Contact() {
       <section className="section bg-emerald-50">
         <div className="mx-auto max-w-5xl">
           <h1 className="text-4xl leading-tight font-semibold tracking-tight md:text-6xl">
-            Request a free AI workflow review
+            {t("title")}
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-slate-600">
-            Tell us what you want to automate. We’ll help you identify the
-            safest and most useful first step.
+            {t("description")}
           </p>
           {/* <p className="mt-3 font-mono text-xs leading-relaxed text-slate-500">
             Contact email can be configured with NEXT_PUBLIC_CONTACT_EMAIL.
