@@ -290,55 +290,6 @@ export const services: Service[] = [
     ],
   },
   {
-    slug: "ai-workflow-automation",
-    title: "AI Workflow Automation",
-    href: "/services/ai-workflow-automation",
-    description:
-      "Automate business workflows across teams, tools, and daily operations.",
-    seoTitle: "AI Workflow Automation for Repetitive Business Tasks | LetssAI",
-    metaDescription:
-      "Move routine work from email to spreadsheets, CRM, documents, and dashboards without manual copy-paste.",
-    icon: "FlowArrow",
-    tools: ["Email", "Spreadsheets", "CRM", "Documents", "Dashboards", "APIs"],
-    problems: [
-      "Teams copy data between tools",
-      "Routine tasks depend on manual reminders",
-      "Reports take too long to prepare",
-      "Work gets stuck between departments",
-    ],
-    does: [
-      "Moves work from one step to the next",
-      "Reads structured business inputs",
-      "Creates summaries and updates",
-      "Alerts humans when decisions are needed",
-    ],
-    workflow: [
-      "A request arrives in email, form, CRM, or spreadsheet.",
-      "The assistant extracts the useful details.",
-      "It updates the next tool or prepares a task.",
-      "Your team reviews exceptions and final decisions.",
-    ],
-    benefits: [
-      "Less manual work",
-      "Cleaner daily operations",
-      "Faster reporting",
-      "Better follow-through",
-    ],
-    industries: [
-      "Finance & Accounting",
-      "Retail & E-commerce",
-      "Legal Firms",
-      "Education & Coaching",
-    ],
-    faqs: [
-      {
-        question: "What workflows can be automated?",
-        answer:
-          "Common examples include email-to-CRM updates, document collection, report preparation, lead routing, reminders, and dashboard updates.",
-      },
-    ],
-  },
-  {
     slug: "ai-system-integration",
     title: "AI System Integration",
     href: "/services/ai-system-integration",
@@ -490,11 +441,7 @@ export const industries: Industry[] = [
       "Appointment scheduling is repetitive",
       "FAQs need careful handoff",
     ],
-    services: [
-      "AI CRM Development",
-      "AI Workflow Automation",
-      "AI Customer Support",
-    ],
+    services: ["AI CRM Development", "AI Customer Support"],
     workflows: [
       "New inquiry → intake questions → appointment scheduling → admin summary",
       "Team question → approved document search → source-based answer",
@@ -566,11 +513,7 @@ export const industries: Industry[] = [
       "Product FAQs slow the support team",
       "Review collection is inconsistent",
     ],
-    services: [
-      "AI Customer Support",
-      "AI Workflow Automation",
-      "AI System Integration",
-    ],
+    services: ["AI Customer Support", "AI System Integration"],
     workflows: [
       "Customer question → approved order or product response → ticket if needed",
       "Delivery completed → review request → dashboard update",
@@ -604,11 +547,7 @@ export const industries: Industry[] = [
       "Internal process questions repeat",
       "Report preparation includes manual steps",
     ],
-    services: [
-      "AI Workflow Automation",
-      "AI CRM Development",
-      "AI System Integration",
-    ],
+    services: ["AI CRM Development", "AI System Integration"],
     workflows: [
       "Client reminder → document collection → checklist update → team alert",
       "Invoice email → detail extraction → spreadsheet or dashboard update",
