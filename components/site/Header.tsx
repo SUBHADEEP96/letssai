@@ -9,7 +9,6 @@ import {
   ChatCircleText,
   TrendUp,
   PhoneCall,
-  FlowArrow,
   PlugsConnected,
   Database,
   HouseLine,
@@ -24,7 +23,6 @@ const icons = {
   ChatCircleText,
   TrendUp,
   PhoneCall,
-  FlowArrow,
   PlugsConnected,
   Database,
   HouseLine,
@@ -92,8 +90,7 @@ export function Header() {
                   <div className="rounded-3xl border border-emerald-950/10 bg-white p-4 shadow-2xl shadow-emerald-950/10">
                     <div className="grid grid-cols-2 gap-2">
                       {item.children.map((c) => {
-                        const I =
-                          icons[c.icon as keyof typeof icons] ?? FlowArrow
+                        const I = icons[c.icon as keyof typeof icons]
                         return (
                           <Link
                             key={c.href}
@@ -102,7 +99,7 @@ export function Header() {
                           >
                             <div className="flex gap-3">
                               <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-emerald-100 text-emerald-800 transition group-hover:bg-emerald-700 group-hover:text-white">
-                                <I size={20} />
+                                {I && <I size={20} />}
                               </span>
                               <span>
                                 <span className="block text-lg font-semibold tracking-tight text-slate-950">
@@ -187,8 +184,7 @@ export function Header() {
                       className="space-y-2 border-t border-emerald-950/10 p-3"
                     >
                       {item.children.map((c) => {
-                        const I =
-                          icons[c.icon as keyof typeof icons] ?? FlowArrow
+                        const I = icons[c.icon as keyof typeof icons]
                         return (
                           <Link
                             onClick={() => setMobile(false)}
@@ -197,7 +193,7 @@ export function Header() {
                             href={c.href}
                           >
                             <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-emerald-100 text-emerald-800">
-                              <I size={18} aria-hidden />
+                              {I && <I size={18} aria-hidden />}
                             </span>
                             <span>
                               <span className="font-semibold tracking-tight">

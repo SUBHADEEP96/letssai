@@ -3,10 +3,16 @@ import test from "node:test"
 import { navigation } from "../lib/navigation"
 import { services } from "../lib/site"
 
-test("service catalog prioritizes support and calling as the first menu row", () => {
+test("service catalog contains the expected services in order", () => {
   assert.deepEqual(
-    services.slice(0, 2).map(({ slug }) => slug),
-    ["ai-customer-support", "ai-calling-appointment-booking"]
+    services.map(({ slug }) => slug),
+    [
+      "ai-customer-support",
+      "ai-calling-appointment-booking",
+      "ai-sales-lead-follow-up",
+      "ai-crm-development",
+      "ai-system-integration",
+    ]
   )
 })
 
@@ -15,10 +21,23 @@ test("retired assistants are replaced by AI CRM Development", () => {
   assert.ok(slugs.includes("ai-crm-development"))
   assert.ok(!slugs.includes("ai-knowledge-assistant"))
   assert.ok(!slugs.includes("ai-marketing-assistant"))
+  assert.ok(!slugs.includes("ai-workflow-automation"))
 })
 
-test("every service menu entry exposes its related icon", () => {
+test("every service menu entry exposes the correct explicit icon", () => {
   const serviceMenu = navigation.find(({ label }) => label === "Services")
   assert.equal(serviceMenu?.children?.length, services.length)
-  assert.ok(serviceMenu?.children?.every(({ icon }) => icon))
+  assert.deepEqual(
+    serviceMenu?.children?.map(({ href, icon }) => [
+      href.split("/").at(-1),
+      icon,
+    ]),
+    [
+      ["ai-customer-support", "ChatCircleText"],
+      ["ai-calling-appointment-booking", "PhoneCall"],
+      ["ai-sales-lead-follow-up", "TrendUp"],
+      ["ai-crm-development", "Database"],
+      ["ai-system-integration", "PlugsConnected"],
+    ]
+  )
 })

@@ -57,16 +57,6 @@ The images use LetssAI's emerald green, dark green, white, and silver visual lan
 | `ai-appointment-reminders.webp` | Reminders and attendance | Automated appointment reminder workflow helping reduce missed bookings |
 | `ai-calling-human-escalation.webp` | Human escalation | AI calling workflow transferring a complex conversation to a human specialist |
 
-## AI Workflow Automation
-
-| Filename | Suggested section | Alt text |
-| --- | --- | --- |
-| `ai-workflow-automation-connected-process.webp` | Hero or overview | Connected AI workflow moving work between business systems and teams |
-| `ai-workflow-document-processing.webp` | Document automation | AI workflow extracting and organizing information from business documents |
-| `ai-workflow-approval-process.webp` | Approvals | Automated business process routing a request through approval stages |
-| `ai-workflow-team-handoffs.webp` | Team collaboration | Automated workflow coordinating reliable handoffs between business teams |
-| `ai-workflow-monitoring.webp` | Monitoring and control | Workflow monitoring dashboard tracking automated process health and exceptions |
-
 ## AI System Integration
 
 | Filename | Suggested section | Alt text |

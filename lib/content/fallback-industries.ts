@@ -12,12 +12,10 @@ const bestFit: Record<string, string[]> = {
   "healthcare-clinics": [
     "AI Calling & Appointment Booking",
     "AI Customer Support",
-    "AI Workflow Automation",
     "AI CRM Development",
   ],
   "legal-firms": [
     "AI CRM Development",
-    "AI Workflow Automation",
     "AI Customer Support",
     "AI System Integration",
   ],
@@ -29,12 +27,10 @@ const bestFit: Record<string, string[]> = {
   ],
   "retail-ecommerce": [
     "AI Customer Support",
-    "AI Workflow Automation",
     "AI CRM Development",
     "AI System Integration",
   ],
   "finance-accounting": [
-    "AI Workflow Automation",
     "AI CRM Development",
     "AI System Integration",
     "AI Customer Support",
