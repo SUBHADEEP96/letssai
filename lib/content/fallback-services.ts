@@ -19,10 +19,6 @@ const hero: Record<string, [string, string]> = {
     "Build a CRM that works the way your team does",
     "Unify customer records, conversations, follow-ups and reporting in one AI-ready system.",
   ],
-  "ai-workflow-automation": [
-    "Connect the routine work that slows down every business day",
-    "Move information between inboxes, forms, files and business tools—with approvals where they matter.",
-  ],
   "ai-system-integration": [
     "Bring useful AI into the systems your team already trusts",
     "Connect approved data and actions across your CRM, inbox, documents, calendars and dashboards.",

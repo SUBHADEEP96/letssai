@@ -72,20 +72,6 @@ const flows: Record<
       ["Pipeline reporting", "Monitor outcomes and exceptions", "dashboard"],
     ],
   },
-  "ai-workflow-automation": {
-    title: "From manual handoffs to connected daily work",
-    description:
-      "A practical control tower for repetitive work, defined rules and deliberate approvals.",
-    steps: [
-      ["Work arrives", "Email, form, CRM or file", "trigger"],
-      ["Extract details", "Read the useful fields", "assistant"],
-      ["Business rules", "Choose the permitted next step", "decision"],
-      ["Approval queue", "Ask a person where required", "human"],
-      ["Tool update", "CRM, sheet, document or email", "integration"],
-      ["Team alert", "Notify the right owner", "output"],
-      ["Task report", "Create an auditable summary", "dashboard"],
-    ],
-  },
   "ai-system-integration": {
     title: "From disconnected tools to one connected AI layer",
     description:
@@ -113,12 +99,10 @@ export function getWorkflow(slug: string) {
       y: i % 2 ? 125 : 20,
     })
   )
-  const edges: WorkflowEdgeData[] = nodes
-    .slice(1)
-    .map((node, i) => ({
-      id: `e${i + 1}-${i + 2}`,
-      source: `${i + 1}`,
-      target: node.id,
-    }))
+  const edges: WorkflowEdgeData[] = nodes.slice(1).map((node, i) => ({
+    id: `e${i + 1}-${i + 2}`,
+    source: `${i + 1}`,
+    target: node.id,
+  }))
   return { title: flow.title, description: flow.description, nodes, edges }
 }

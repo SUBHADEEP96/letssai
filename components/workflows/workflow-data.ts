@@ -7,7 +7,6 @@ const titles: Record<string, string> = {
   "ai-calling-appointment-booking":
     "From contact list to confirmed appointment",
   "ai-crm-development": "From scattered customer data to one reliable CRM",
-  "ai-workflow-automation": "From manual handoffs to connected daily work",
   "ai-system-integration": "From disconnected tools to one connected AI layer",
 }
 const kinds: WorkflowKind[] = [
