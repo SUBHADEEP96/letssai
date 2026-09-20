@@ -105,7 +105,7 @@ export const voiceScenarios: VoiceScenario[] = [
     title: "Helping a shopper complete checkout",
     audioPath: "/media/voice/04-ecommerce-abandoned-checkout-recovery.mp3",
     description:
-      "A considerate recovery call that helps resolve a checkout blocker.",
+      "A considerate recovery call in Hinglish that helps resolve a checkout blocker.",
     customerImage: "/media/conversation/ecommerce-customer.png",
     agentImage: "/media/conversation/ecommerce-agent.png",
     cues: [
