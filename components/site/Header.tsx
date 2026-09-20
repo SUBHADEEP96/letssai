@@ -1,6 +1,8 @@
 "use client"
-import Link from "next/link"
+import {Link} from "@/i18n/navigation"
 import { useEffect, useState } from "react"
+import {useTranslations} from "next-intl"
+import {LanguageSwitcher} from "./LanguageSwitcher"
 import Image from "next/image"
 import {
   List,
@@ -33,6 +35,7 @@ const icons = {
   Receipt,
 } as const
 export function Header() {
+  const t=useTranslations("nav")
   const [mobile, setMobile] = useState(false)
   const [open, setOpen] = useState<string | null>(null)
   useEffect(() => {
@@ -52,7 +55,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-emerald-950/10 bg-white/85 backdrop-blur-xl">
       <nav
-        aria-label="Main"
+        aria-label={t("main")}
         className="mx-auto flex h-16 max-w-7xl min-w-0 items-center justify-between gap-3 px-4 sm:gap-5 sm:px-6 lg:h-18 lg:px-8"
       >
         <Link
@@ -82,7 +85,7 @@ export function Header() {
                 href={item.href}
                 className="text-md flex items-center gap-1 rounded-full px-4 py-2 font-medium tracking-tight text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 focus-visible:outline-2 focus-visible:outline-emerald-500"
               >
-                {item.label}
+                {item.href === '/' ? t('home') : item.href === '/services' ? t('services') : item.href === '/industries' ? t('industries') : item.href === '/why-letssai' ? t('why') : t('contact')}
                 {item.children && <CaretDown size={14} />}
               </Link>
               {item.children && open === item.label && (
@@ -118,7 +121,7 @@ export function Header() {
                       href={item.href}
                       className="mt-3 inline-flex rounded-full bg-emerald-950 px-4 py-2 text-sm font-semibold tracking-tight text-white"
                     >
-                      Explore all {item.label.toLowerCase()}
+                      {t('explore')} {item.href === '/services' ? t('services') : t('industries')}
                     </Link>
                   </div>
                 </div>
@@ -127,10 +130,11 @@ export function Header() {
           ))}
         </div>
         <div className="flex shrink-0 items-center gap-2">
+          <LanguageSwitcher />
           <button
             onClick={() => setMobile(true)}
             className="rounded-full border border-emerald-950/10 p-3 lg:hidden"
-            aria-label="Open menu"
+            aria-label={t("open")}
             aria-expanded={mobile}
           >
             <List size={22} />
@@ -144,7 +148,7 @@ export function Header() {
               <button
                 onClick={() => setMobile(false)}
                 className="rounded-full p-3"
-                aria-label="Close menu"
+                aria-label={t("close")}
               >
                 <X size={22} />
               </button>
@@ -161,7 +165,7 @@ export function Header() {
                       href={item.href}
                       className="block flex-1 px-5 py-4 font-semibold tracking-tight"
                     >
-                      {item.label}
+                      {item.href === '/' ? t('home') : item.href === '/services' ? t('services') : item.href === '/industries' ? t('industries') : item.href === '/why-letssai' ? t('why') : t('contact')}
                     </Link>
                     {item.children && (
                       <button

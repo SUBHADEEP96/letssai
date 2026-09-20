@@ -1,6 +1,7 @@
 "use client"
 
 import { useRef, useState } from "react"
+import {useTranslations} from "next-intl"
 
 type Status = {
   kind: "idle" | "sending" | "success" | "error"
@@ -8,6 +9,7 @@ type Status = {
 }
 
 export function ContactForm() {
+  const t=useTranslations("contact")
   const [status, setStatus] = useState<Status>({ kind: "idle" })
   const startedAt = useRef(0)
 
@@ -57,16 +59,15 @@ export function ContactForm() {
             id="contact-form-title"
             className="text-2xl font-semibold tracking-tight"
           >
-            Tell us about your workflow
+            {t("formTitle")}
           </h2>
           <p className="mt-2 text-sm leading-6 text-slate-600">
-            Share the manual process you want to improve. Fields marked * are
-            required.
+            {t("formIntro")}
           </p>
         </div>
         <div className="grid gap-5 md:grid-cols-2">
           <label className="grid gap-2 text-sm font-semibold">
-            Name *
+            {t("name")}
             <input
               name="name"
               required
@@ -75,7 +76,7 @@ export function ContactForm() {
             />
           </label>
           <label className="grid gap-2 text-sm font-semibold">
-            Email *
+            {t("email")}
             <input
               name="email"
               required
@@ -85,7 +86,7 @@ export function ContactForm() {
             />
           </label>
           <label className="grid gap-2 text-sm font-semibold">
-            Company *
+            {t("company")}
             <input
               name="company"
               required
@@ -94,7 +95,7 @@ export function ContactForm() {
             />
           </label>
           <label className="grid gap-2 text-sm font-semibold">
-            Phone (optional)
+            {t("phone")}
             <input
               name="phone"
               type="tel"
@@ -104,7 +105,7 @@ export function ContactForm() {
           </label>
         </div>
         <label className="grid gap-2 text-sm font-semibold">
-          What do you want to automate? *
+          {t("need")}
           <textarea
             name="automationNeed"
             required
@@ -113,7 +114,7 @@ export function ContactForm() {
           />
         </label>
         <label className="grid gap-2 text-sm font-semibold">
-          Preferred contact method *
+          {t("method")}
           <select
             name="preferredContactMethod"
             required

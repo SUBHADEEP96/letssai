@@ -1,0 +1,88 @@
+{
+  "language": "English",
+  "selectLanguage": "Select language",
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "industries": "Industries",
+    "why": "Why LetssAI",
+    "contact": "Contact",
+    "main": "Main navigation",
+    "open": "Open menu",
+    "close": "Close menu",
+    "explore": "Explore all"
+  },
+  "home": {
+    "metaTitle": "Custom AI Systems for Business Outcomes | LetssAI",
+    "metaDescription": "LetssAI builds custom AI systems that work with your existing processes and tools to deliver measurable business outcomes.",
+    "hero": {
+      "titleBefore": "We deliver",
+      "titleHighlight": "OUTCOMES",
+      "titleAfter": "not software.",
+      "description": "Forget complicated platforms your team has to learn and implement. LetssAI builds custom AI systems that plug directly into how you already work—generating real business results from day one.",
+      "cta": "Request a free AI workflow review"
+    },
+    "toolsTitle": "Built for your existing tools",
+    "toolsText": "LetssAI connects AI support to the everyday channels where work already happens."
+  },
+  "common": {
+    "learnMore": "Learn more →",
+    "ctaEyebrow": "START WITH ONE PRACTICAL WORKFLOW",
+    "ctaTitle": "Ready to see where AI can save time in your business?",
+    "ctaText": "Tell us what your team does manually today. We’ll help identify practical places AI can support your workflow.",
+    "faqTitle": "Questions business owners ask",
+    "cta": "Request a free AI workflow review",
+    "breadcrumb": "Breadcrumb"
+  },
+  "footer": {
+    "tagline": "Applied AI for growing businesses.",
+    "company": "Company",
+    "copyright": "Built for teams that want AI inside their existing tools."
+  },
+  "services": {
+    "title": "AI services built around real business workflows",
+    "description": "Choose practical AI assistants that help your team reply faster, follow up better, and reduce repeated manual work."
+  },
+  "industries": {
+    "title": "AI solutions explained in your industry’s language",
+    "description": "LetssAI helps teams apply AI to familiar daily work: inquiries, bookings, reminders, documents, and reports."
+  },
+  "why": {
+    "title": "Practical AI built around your business",
+    "description": "LetssAI focuses on useful outcomes: faster replies, better follow-up, connected tools, safer handoff, and less manual work."
+  },
+  "contact": {
+    "title": "Request a free AI workflow review",
+    "description": "Tell us what you want to automate. We’ll help you identify the safest and most useful first step.",
+    "formTitle": "Tell us about your workflow",
+    "formIntro": "Share the manual process you want to improve. Fields marked * are required.",
+    "name": "Name *",
+    "email": "Email *",
+    "company": "Company *",
+    "phone": "Phone (optional)",
+    "need": "What do you want to automate? *",
+    "method": "Preferred contact method *",
+    "submit": "Send request",
+    "sending": "Sending…",
+    "success": "Thanks — your request has been sent.",
+    "error": "We could not send your request. Please try again."
+  },
+  "chat": {
+    "open": "Open AI assistant",
+    "close": "Close AI assistant",
+    "title": "LetssAI assistant",
+    "status": "Online",
+    "placeholder": "Ask about LetssAI services…",
+    "send": "Send message"
+  },
+  "voice": {
+    "title": "Listen to AI conversations in action",
+    "play": "Play",
+    "pause": "Pause",
+    "mute": "Mute",
+    "unmute": "Unmute"
+  },
+  "delivery": {
+    "title": "Built in India, delivered globally"
+  }
+}

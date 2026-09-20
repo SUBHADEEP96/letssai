@@ -22,14 +22,16 @@ export const metadata = pageMetadata(
   "Explore practical AI services for customer support, calling, CRM development, sales follow-up, workflows, and system integration.",
   "/services"
 )
-export default function Services() {
+export default async function Services() {
+  const {getTranslations}=await import("next-intl/server")
+  const t=await getTranslations("services")
   return (
     <>
       <JsonLd data={faqSchema(faqs)} />
       <ServiceHero
         eyebrow="LetssAI services"
-        title="AI services built around real business workflows"
-        description="Choose practical AI assistants that help your team reply faster, follow up better, and reduce repeated manual work."
+        title={t("title")}
+        description={t("description")}
         href="/services"
       />
       <section className="section">

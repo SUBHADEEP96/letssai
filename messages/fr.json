@@ -1,0 +1,88 @@
+{
+  "language": "Français",
+  "selectLanguage": "Choisir la langue",
+  "nav": {
+    "home": "Accueil",
+    "services": "Services",
+    "industries": "Secteurs",
+    "why": "Pourquoi LetssAI",
+    "contact": "Contact",
+    "main": "Navigation principale",
+    "open": "Ouvrir le menu",
+    "close": "Fermer le menu",
+    "explore": "Tout voir"
+  },
+  "home": {
+    "metaTitle": "Systèmes d’AI sur mesure pour des résultats concrets | LetssAI",
+    "metaDescription": "LetssAI crée des systèmes d’AI sur mesure intégrés à vos processus et outils pour produire des résultats.",
+    "hero": {
+      "titleBefore": "Nous livrons des",
+      "titleHighlight": "RÉSULTATS",
+      "titleAfter": "pas des logiciels.",
+      "description": "Oubliez les plateformes complexes que votre équipe doit apprendre et déployer. LetssAI crée des systèmes d’AI sur mesure qui s’intègrent directement à vos méthodes de travail et produisent des résultats concrets dès le premier jour.",
+      "cta": "Demander un audit gratuit de workflow AI"
+    },
+    "toolsTitle": "Conçu pour vos outils actuels",
+    "toolsText": "LetssAI apporte l’assistance AI dans les canaux quotidiens où le travail se fait déjà."
+  },
+  "common": {
+    "learnMore": "En savoir plus →",
+    "ctaEyebrow": "COMMENCEZ PAR UN WORKFLOW CONCRET",
+    "ctaTitle": "Prêt à découvrir où l’AI peut vous faire gagner du temps ?",
+    "ctaText": "Décrivez-nous les tâches encore manuelles. Nous identifierons les usages pratiques de l’AI.",
+    "faqTitle": "Questions fréquentes des dirigeants",
+    "cta": "Demander un audit gratuit de workflow AI",
+    "breadcrumb": "Fil d’Ariane"
+  },
+  "footer": {
+    "tagline": "L’AI appliquée aux entreprises en croissance.",
+    "company": "Entreprise",
+    "copyright": "Pour les équipes qui veulent intégrer l’AI à leurs outils actuels."
+  },
+  "services": {
+    "title": "Des services d’AI adaptés aux vrais workflows métier",
+    "description": "Choisissez des assistants pratiques pour répondre plus vite, mieux relancer et réduire le travail manuel."
+  },
+  "industries": {
+    "title": "Des solutions d’AI dans le langage de votre secteur",
+    "description": "LetssAI applique l’AI aux tâches quotidiennes : demandes, réservations, rappels, documents et rapports."
+  },
+  "why": {
+    "title": "Une AI pratique, adaptée à votre entreprise",
+    "description": "LetssAI vise des résultats utiles : réponses rapides, meilleur suivi, outils connectés et moins de tâches manuelles."
+  },
+  "contact": {
+    "title": "Demander un audit gratuit de workflow AI",
+    "description": "Dites-nous ce que vous souhaitez automatiser. Nous vous aiderons à choisir une première étape sûre et utile.",
+    "formTitle": "Parlez-nous de votre workflow",
+    "formIntro": "Décrivez le processus manuel à améliorer. Les champs * sont obligatoires.",
+    "name": "Nom *",
+    "email": "E-mail *",
+    "company": "Entreprise *",
+    "phone": "Téléphone (facultatif)",
+    "need": "Que souhaitez-vous automatiser ? *",
+    "method": "Moyen de contact préféré *",
+    "submit": "Envoyer la demande",
+    "sending": "Envoi en cours…",
+    "success": "Merci — votre demande a été envoyée.",
+    "error": "Impossible d’envoyer votre demande. Veuillez réessayer."
+  },
+  "chat": {
+    "open": "Ouvrir l’assistant AI",
+    "close": "Fermer l’assistant AI",
+    "title": "Assistant LetssAI",
+    "status": "En ligne",
+    "placeholder": "Posez une question sur les services LetssAI…",
+    "send": "Envoyer le message"
+  },
+  "voice": {
+    "title": "Écoutez des conversations AI en action",
+    "play": "Lire",
+    "pause": "Pause",
+    "mute": "Couper le son",
+    "unmute": "Activer le son"
+  },
+  "delivery": {
+    "title": "Conçu en Inde, déployé dans le monde entier"
+  }
+}
