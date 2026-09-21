@@ -1,9 +1,10 @@
 "use client"
-import {Link} from "@/i18n/navigation"
+import { Link } from "@/i18n/navigation"
 import { useEffect, useState } from "react"
-import {useTranslations} from "next-intl"
-import {LanguageSwitcher} from "./LanguageSwitcher"
+import { useTranslations } from "next-intl"
+import { LanguageSwitcher } from "./LanguageSwitcher"
 import Image from "next/image"
+import headerLogo from "@/public/media/letssai-logo-header.svg"
 import {
   List,
   X,
@@ -35,7 +36,7 @@ const icons = {
   Receipt,
 } as const
 export function Header() {
-  const t=useTranslations("nav")
+  const t = useTranslations("nav")
   const [mobile, setMobile] = useState(false)
   const [open, setOpen] = useState<string | null>(null)
   useEffect(() => {
@@ -64,12 +65,11 @@ export function Header() {
           className={`inline-flex shrink-0 items-center focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-500`}
         >
           <Image
-            src="/media/letssai_logo.png"
+            src={headerLogo}
             alt="LetssAI logo"
-            width={1536}
-            height={1024}
-            priority
-            className="h-auto max-h-10 w-full object-contain"
+            sizes="160px"
+            loading="eager"
+            className="h-auto w-32 object-contain sm:w-40"
           />
         </Link>
 
@@ -85,7 +85,15 @@ export function Header() {
                 href={item.href}
                 className="text-md flex items-center gap-1 rounded-full px-4 py-2 font-medium tracking-tight text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 focus-visible:outline-2 focus-visible:outline-emerald-500"
               >
-                {item.href === '/' ? t('home') : item.href === '/services' ? t('services') : item.href === '/industries' ? t('industries') : item.href === '/why-letssai' ? t('why') : t('contact')}
+                {item.href === "/"
+                  ? t("home")
+                  : item.href === "/services"
+                    ? t("services")
+                    : item.href === "/industries"
+                      ? t("industries")
+                      : item.href === "/why-letssai"
+                        ? t("why")
+                        : t("contact")}
                 {item.children && <CaretDown size={14} />}
               </Link>
               {item.children && open === item.label && (
@@ -121,7 +129,10 @@ export function Header() {
                       href={item.href}
                       className="mt-3 inline-flex rounded-full bg-emerald-950 px-4 py-2 text-sm font-semibold tracking-tight text-white"
                     >
-                      {t('explore')} {item.href === '/services' ? t('services') : t('industries')}
+                      {t("explore")}{" "}
+                      {item.href === "/services"
+                        ? t("services")
+                        : t("industries")}
                     </Link>
                   </div>
                 </div>
@@ -165,7 +176,15 @@ export function Header() {
                       href={item.href}
                       className="block flex-1 px-5 py-4 font-semibold tracking-tight"
                     >
-                      {item.href === '/' ? t('home') : item.href === '/services' ? t('services') : item.href === '/industries' ? t('industries') : item.href === '/why-letssai' ? t('why') : t('contact')}
+                      {item.href === "/"
+                        ? t("home")
+                        : item.href === "/services"
+                          ? t("services")
+                          : item.href === "/industries"
+                            ? t("industries")
+                            : item.href === "/why-letssai"
+                              ? t("why")
+                              : t("contact")}
                     </Link>
                     {item.children && (
                       <button

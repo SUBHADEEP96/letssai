@@ -66,7 +66,8 @@ export function OrbBackground({
     }
 
     let frame = 0
-    let visible = true
+    let intersecting = false
+    let documentVisible = !document.hidden
     let mouseX = 0
     let mouseY = 0
 
@@ -107,11 +108,37 @@ export function OrbBackground({
         mouseY =
           ((event.clientY - bounds.top) / bounds.height - 0.5) * hoverIntensity
       }
+      const render = (now: number) => {
+        frame = 0
+        if (!intersecting || !documentVisible) return
+        program.uniforms.uTime.value = (now - start) / 1000
+        program.uniforms.uMouse.value = [
+          mouseX,
+          mouseY + (rotateOnHover ? mouseX * 0.25 : 0),
+        ]
+        renderer.render({ scene: mesh })
+        frame = requestAnimationFrame(render)
+      }
+      const resume = () => {
+        if (intersecting && documentVisible && !frame) {
+          frame = requestAnimationFrame(render)
+        }
+      }
       const visibility = () => {
-        visible = !document.hidden
+        documentVisible = !document.hidden
+        if (documentVisible) resume()
+        else if (frame) {
+          cancelAnimationFrame(frame)
+          frame = 0
+        }
       }
       const intersectionObserver = new IntersectionObserver(([entry]) => {
-        visible = entry.isIntersecting
+        intersecting = entry.isIntersecting
+        if (intersecting) resume()
+        else if (frame) {
+          cancelAnimationFrame(frame)
+          frame = 0
+        }
       })
       const resizeObserver = new ResizeObserver(resize)
 
@@ -122,18 +149,6 @@ export function OrbBackground({
       resize()
 
       const start = performance.now()
-      const tick = (now: number) => {
-        if (visible) {
-          program.uniforms.uTime.value = (now - start) / 1000
-          program.uniforms.uMouse.value = [
-            mouseX,
-            mouseY + (rotateOnHover ? mouseX * 0.25 : 0),
-          ]
-          renderer.render({ scene: mesh })
-        }
-        frame = requestAnimationFrame(tick)
-      }
-      frame = requestAnimationFrame(tick)
 
       return () => {
         cancelAnimationFrame(frame)
