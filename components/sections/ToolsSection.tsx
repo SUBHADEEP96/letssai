@@ -3,9 +3,9 @@ import type { ComponentType } from "react"
 import {
   Browser,
   CalendarDots,
-  ChartBar,
   EnvelopeSimple,
   Files,
+  PhoneCall,
   Table,
   UsersThree,
   WhatsappLogo,
@@ -18,7 +18,7 @@ type Tool = {
 
 const tools: Tool[] = [
   { label: "Website/Web App", icon: Browser },
-  { label: "Dashboards", icon: ChartBar },
+  { label: "Tele Calling", icon: PhoneCall },
   { label: "WhatsApp", icon: WhatsappLogo },
   { label: "Email", icon: EnvelopeSimple },
   { label: "CRM", icon: UsersThree },
