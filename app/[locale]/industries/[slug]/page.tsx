@@ -8,6 +8,8 @@ import { CTASection } from "@/components/site/CTASection"
 import { JsonLd } from "@/components/seo/JsonLd"
 import { fallbackIndustries } from "@/lib/content/fallback-industries"
 import { getIndustryPage } from "@/lib/sanity/page-data"
+import type { Locale } from "@/i18n/routing"
+import { localizedIndustryTitle } from "@/lib/localized-content"
 import {
   absoluteUrl,
   breadcrumbsSchema,
@@ -26,10 +28,13 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>
+  params: Promise<{ locale: Locale; slug: string }>
 }) {
-  const slug = (await params).slug
-  const industry = await getIndustryPage(slug)
+  const { locale, slug } = await params
+  const source = await getIndustryPage(slug)
+  const industry = source
+    ? { ...source, title: localizedIndustryTitle(slug, locale) ?? source.title }
+    : null
   return industry
     ? pageMetadata(
         industry.metaTitle,
@@ -43,10 +48,13 @@ export async function generateMetadata({
 export default async function IndustryPage({
   params,
 }: {
-  params: Promise<{ slug: string }>
+  params: Promise<{ locale: Locale; slug: string }>
 }) {
-  const slug = (await params).slug
-  const industry = await getIndustryPage(slug)
+  const { locale, slug } = await params
+  const source = await getIndustryPage(slug)
+  const industry = source
+    ? { ...source, title: localizedIndustryTitle(slug, locale) ?? source.title }
+    : null
   const conversationScenario = getIndustryConversationScenario(slug)
   if (!industry) return notFound()
   return (
