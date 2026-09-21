@@ -65,7 +65,13 @@
     "submit": "Enviar solicitud",
     "sending": "Enviando…",
     "success": "Gracias: su solicitud se ha enviado.",
-    "error": "No pudimos enviar su solicitud. Inténtelo de nuevo."
+    "error": "No pudimos enviar su solicitud. Inténtelo de nuevo.",
+    "helpTitle": "¿En qué ayuda esto?",
+    "helpText": "Identifique tareas repetitivas de soporte, clientes potenciales, documentos, reservas o procesos internos que podrían simplificarse.",
+    "workTitle": "¿Cómo funciona?",
+    "workText": "Describa el flujo actual, las herramientas implicadas y dónde pierde tiempo su equipo. LetssAI revisará el siguiente paso práctico.",
+    "reviewTitle": "¿Dónde interviene una persona?",
+    "reviewText": "Indíquenos qué decisiones o excepciones necesitan una persona. El flujo propuesto puede conservar esos puntos de aprobación."
   },
   "chat": {
     "open": "Abrir asistente de AI",
@@ -84,5 +90,22 @@
   },
   "delivery": {
     "title": "Creado en India, entregado en todo el mundo"
+  },
+  "catalog": {
+    "services": {
+      "ai-customer-support": "Atención al cliente con IA",
+      "ai-calling-appointment-booking": "Llamadas y reserva de citas con IA",
+      "ai-sales-lead-follow-up": "Ventas y seguimiento de clientes potenciales con IA",
+      "ai-crm-development": "Desarrollo de CRM con IA",
+      "ai-system-integration": "Integración de sistemas de IA"
+    },
+    "industries": {
+      "real-estate": "Bienes raíces",
+      "healthcare-clinics": "Salud y clínicas",
+      "legal-firms": "Bufetes jurídicos",
+      "education-coaching": "Educación y formación",
+      "retail-ecommerce": "Comercio y comercio electrónico",
+      "finance-accounting": "Finanzas y contabilidad"
+    }
   }
 }

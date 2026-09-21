@@ -1,26 +1,17 @@
-import Image from "next/image"
 import { getTranslations } from "next-intl/server"
 import { Link } from "@/i18n/navigation"
 import { OrbBackground } from "@/components/ui/OrbBackground"
 export async function HomeHero() {
   const t = await getTranslations("home.hero")
   return (
-    <section className="relative isolate flex min-h-[calc(100svh-4rem)] items-center justify-center overflow-hidden px-4 py-10 sm:px-6 lg:min-h-[calc(100svh-4.5rem)] lg:px-8">
-      <Image
-        src="/media/home-hero.jpg"
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        className="-z-30 object-cover object-[center_45%]"
-      />
-      <div className="absolute inset-0 -z-20 bg-[linear-gradient(180deg,rgba(4,30,25,.48),rgba(2,22,18,.68)),radial-gradient(circle_at_center,rgba(20,83,65,.08),rgba(1,15,12,.34))]" />
+    <section className="relative isolate flex min-h-[calc(100svh-4rem)] items-center justify-center overflow-hidden bg-emerald-950 px-4 py-16 sm:px-6 lg:min-h-[calc(100svh-4.5rem)] lg:px-8">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,rgba(52,211,153,.20),transparent_68%)]" />
       <OrbBackground
-        backgroundColor="#5a9f7a"
+        backgroundColor="#6ee7b7"
         hoverIntensity={2}
         rotateOnHover
       />
-      <div className="relative z-10 mx-auto w-full max-w-5xl rounded-[2rem] border border-white/20 bg-slate-950/50 px-5 py-8 text-center text-white shadow-2xl shadow-black/30 backdrop-blur-xl sm:px-10 sm:py-12 lg:px-14">
+      <div className="relative z-10 mx-auto w-full max-w-5xl px-2 py-8 text-center text-white sm:px-8 sm:py-12 lg:px-12">
         <h1 className="mx-auto max-w-4xl text-[clamp(2.625rem,7vw,5.5rem)] leading-[.98] font-semibold tracking-[-.045em] text-balance">
           {t("titleBefore")}{" "}
           <span className="text-emerald-300">{t("titleHighlight")}</span>,{" "}

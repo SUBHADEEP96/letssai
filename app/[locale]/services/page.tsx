@@ -3,6 +3,8 @@ import { CTASection } from "@/components/site/CTASection"
 import { JsonLd } from "@/components/seo/JsonLd"
 import { faqSchema, pageMetadata } from "@/lib/seo"
 import { services } from "@/lib/site"
+import { localizeService } from "@/lib/localized-content"
+import type { Locale } from "@/i18n/routing"
 import { ServiceHero } from "@/components/services/ServiceHero"
 
 const faqs = [
@@ -22,9 +24,14 @@ export const metadata = pageMetadata(
   "Explore practical AI services for customer support, calling, CRM development, sales follow-up, workflows, and system integration.",
   "/services"
 )
-export default async function Services() {
-  const {getTranslations}=await import("next-intl/server")
-  const t=await getTranslations("services")
+export default async function Services({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>
+}) {
+  const { locale } = await params
+  const { getTranslations } = await import("next-intl/server")
+  const t = await getTranslations("services")
   return (
     <>
       <JsonLd data={faqSchema(faqs)} />
@@ -36,9 +43,11 @@ export default async function Services() {
       />
       <section className="section">
         <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => (
-            <ServiceCard key={s.slug} {...s} />
-          ))}
+          {services
+            .map((item) => localizeService(item, locale))
+            .map((s) => (
+              <ServiceCard key={s.slug} {...s} />
+            ))}
         </div>
       </section>
       <FAQSectionLocal />
