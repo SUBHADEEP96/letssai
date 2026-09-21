@@ -1,14 +1,22 @@
 import { getTranslations } from "next-intl/server"
 import { Link } from "@/i18n/navigation"
 import { OrbBackground } from "@/components/ui/OrbBackground"
+import Image from "next/image"
+import heroImage from "@/public/media/home-hero.jpg"
 export async function HomeHero() {
   const t = await getTranslations("home.hero")
 
   return (
     <section className="relative isolate flex min-h-[calc(100svh-4rem)] items-center justify-center overflow-hidden bg-[#dce9e3] px-4 py-16 sm:px-6 lg:min-h-[calc(100svh-4.5rem)] lg:px-8">
-      <div
-        aria-hidden
-        className="absolute inset-0 z-0 bg-[url('/media/home-hero.jpg')] bg-cover bg-center"
+      <Image
+        src={heroImage}
+        alt=""
+        fill
+        sizes="100vw"
+        quality={75}
+        preload
+        placeholder="blur"
+        className="absolute inset-0 z-0 object-cover object-center"
       />
       <div
         aria-hidden
