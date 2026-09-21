@@ -2,6 +2,33 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+@keyframes hero-sparkle-blink {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.88) rotate(-4deg);
+  }
+  45% {
+    opacity: 1;
+    transform: scale(1.08) rotate(3deg);
+  }
+  60% {
+    opacity: 0.72;
+    transform: scale(0.98) rotate(0deg);
+  }
+}
+
+.hero-sparkle {
+  animation: hero-sparkle-blink 1.8s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-sparkle {
+    animation: none;
+  }
+}
+
 /* @custom-variant dark (&:is(.dark *)); */
 
 @theme inline {
