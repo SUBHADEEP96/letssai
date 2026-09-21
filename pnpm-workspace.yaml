@@ -4,6 +4,8 @@ allowBuilds:
   unrs-resolver: true
   msw: false
   esbuild: true
+  '@parcel/watcher': true
+  '@swc/core': true
 minimumReleaseAgeExclude:
   - '@langchain/core@1.2.10'
   - '@langchain/openai@1.5.12'
