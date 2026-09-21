@@ -17,6 +17,8 @@ import {
   serviceSchema,
 } from "@/lib/seo"
 import { services } from "@/lib/site"
+import type { Locale } from "@/i18n/routing"
+import { localizeService } from "@/lib/localized-content"
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }))
@@ -24,10 +26,11 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>
+  params: Promise<{ locale: Locale; slug: string }>
 }) {
-  const { slug } = await params
-  const s = services.find((x) => x.slug === slug)
+  const { locale, slug } = await params
+  const source = services.find((x) => x.slug === slug)
+  const s = source ? localizeService(source, locale) : undefined
   return s
     ? pageMetadata(
         s.seoTitle,
@@ -44,10 +47,11 @@ export async function generateMetadata({
 export default async function ServicePage({
   params,
 }: {
-  params: Promise<{ slug: string }>
+  params: Promise<{ locale: Locale; slug: string }>
 }) {
-  const { slug } = await params
-  const s = services.find((x) => x.slug === slug)
+  const { locale, slug } = await params
+  const source = services.find((x) => x.slug === slug)
+  const s = source ? localizeService(source, locale) : undefined
   if (!s) notFound()
   return (
     <>

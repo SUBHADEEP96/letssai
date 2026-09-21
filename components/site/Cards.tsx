@@ -1,4 +1,6 @@
-import Link from "next/link"
+"use client"
+import {Link} from "@/i18n/navigation"
+import {useTranslations} from "next-intl"
 export function ServiceCard({
   title,
   description,
@@ -8,6 +10,7 @@ export function ServiceCard({
   description: string
   href: string
 }) {
+  const t=useTranslations("common")
   return (
     <Link
       href={href}
@@ -18,7 +21,7 @@ export function ServiceCard({
       </h3>
       <p className="mt-3 leading-relaxed text-slate-600">{description}</p>
       <span className="mt-5 inline-flex text-sm font-semibold text-emerald-700">
-        Learn more →
+        {t("learnMore")}
       </span>
     </Link>
   )

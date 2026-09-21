@@ -7,7 +7,9 @@ export const metadata = pageMetadata(
   "Contact LetssAI to request a free AI workflow review for customer support, lead follow-up, documents, appointments, and workflow automation.",
   "/contact"
 )
-export default function Contact() {
+export default async function Contact() {
+  const { getTranslations } = await import("next-intl/server")
+  const t = await getTranslations("contact")
   return (
     <>
       <JsonLd
@@ -33,11 +35,10 @@ export default function Contact() {
       <section className="section bg-emerald-50">
         <div className="mx-auto max-w-5xl">
           <h1 className="text-4xl leading-tight font-semibold tracking-tight md:text-6xl">
-            Request a free AI workflow review
+            {t("title")}
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-slate-600">
-            Tell us what you want to automate. We’ll help you identify the
-            safest and most useful first step.
+            {t("description")}
           </p>
           {/* <p className="mt-3 font-mono text-xs leading-relaxed text-slate-500">
             Contact email can be configured with NEXT_PUBLIC_CONTACT_EMAIL.
@@ -48,28 +49,21 @@ export default function Contact() {
       <section className="border-y border-emerald-950/10 bg-white px-4 py-10 md:px-6">
         <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
           <div>
-            <h2 className="font-semibold tracking-tight">
-              What does this help with?
-            </h2>
+            <h2 className="font-semibold tracking-tight">{t("helpTitle")}</h2>
             <p className="mt-2 text-sm leading-6 text-slate-600">
-              Identify repetitive support, lead, document, booking, or internal
-              tasks that could be simpler.
+              {t("helpText")}
             </p>
           </div>
           <div>
-            <h2 className="font-semibold tracking-tight">How does it work?</h2>
+            <h2 className="font-semibold tracking-tight">{t("workTitle")}</h2>
             <p className="mt-2 text-sm leading-6 text-slate-600">
-              Describe the current workflow, the tools involved, and where your
-              team loses time. LetssAI will review the practical next step.
+              {t("workText")}
             </p>
           </div>
           <div>
-            <h2 className="font-semibold tracking-tight">
-              Where does human review happen?
-            </h2>
+            <h2 className="font-semibold tracking-tight">{t("reviewTitle")}</h2>
             <p className="mt-2 text-sm leading-6 text-slate-600">
-              Tell us which decisions or exceptions need a person. The proposed
-              workflow can preserve those approval points.
+              {t("reviewText")}
             </p>
           </div>
         </div>
