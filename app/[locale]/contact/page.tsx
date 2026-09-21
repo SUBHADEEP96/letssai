@@ -8,8 +8,8 @@ export const metadata = pageMetadata(
   "/contact"
 )
 export default async function Contact() {
-  const {getTranslations}=await import("next-intl/server")
-  const t=await getTranslations("contact")
+  const { getTranslations } = await import("next-intl/server")
+  const t = await getTranslations("contact")
   return (
     <>
       <JsonLd
@@ -49,28 +49,21 @@ export default async function Contact() {
       <section className="border-y border-emerald-950/10 bg-white px-4 py-10 md:px-6">
         <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
           <div>
-            <h2 className="font-semibold tracking-tight">
-              What does this help with?
-            </h2>
+            <h2 className="font-semibold tracking-tight">{t("helpTitle")}</h2>
             <p className="mt-2 text-sm leading-6 text-slate-600">
-              Identify repetitive support, lead, document, booking, or internal
-              tasks that could be simpler.
+              {t("helpText")}
             </p>
           </div>
           <div>
-            <h2 className="font-semibold tracking-tight">How does it work?</h2>
+            <h2 className="font-semibold tracking-tight">{t("workTitle")}</h2>
             <p className="mt-2 text-sm leading-6 text-slate-600">
-              Describe the current workflow, the tools involved, and where your
-              team loses time. LetssAI will review the practical next step.
+              {t("workText")}
             </p>
           </div>
           <div>
-            <h2 className="font-semibold tracking-tight">
-              Where does human review happen?
-            </h2>
+            <h2 className="font-semibold tracking-tight">{t("reviewTitle")}</h2>
             <p className="mt-2 text-sm leading-6 text-slate-600">
-              Tell us which decisions or exceptions need a person. The proposed
-              workflow can preserve those approval points.
+              {t("reviewText")}
             </p>
           </div>
         </div>

@@ -65,7 +65,13 @@
     "submit": "Anfrage senden",
     "sending": "Wird gesendet…",
     "success": "Vielen Dank — Ihre Anfrage wurde gesendet.",
-    "error": "Ihre Anfrage konnte nicht gesendet werden. Bitte erneut versuchen."
+    "error": "Ihre Anfrage konnte nicht gesendet werden. Bitte erneut versuchen.",
+    "helpTitle": "Wobei hilft das?",
+    "helpText": "Erkennen Sie wiederkehrende Support-, Lead-, Dokument-, Buchungs- oder interne Aufgaben, die einfacher werden können.",
+    "workTitle": "Wie funktioniert es?",
+    "workText": "Beschreiben Sie den aktuellen Workflow, die beteiligten Werkzeuge und wo Ihr Team Zeit verliert. LetssAI prüft den praktischen nächsten Schritt.",
+    "reviewTitle": "Wo findet die menschliche Prüfung statt?",
+    "reviewText": "Nennen Sie uns Entscheidungen oder Ausnahmen, die einen Menschen erfordern. Der vorgeschlagene Workflow kann diese Freigabepunkte bewahren."
   },
   "chat": {
     "open": "AI-Assistenten öffnen",
@@ -84,5 +90,22 @@
   },
   "delivery": {
     "title": "In Indien entwickelt, weltweit bereitgestellt"
+  },
+  "catalog": {
+    "services": {
+      "ai-customer-support": "AI-Kundensupport",
+      "ai-calling-appointment-booking": "AI-Anrufe & Terminbuchung",
+      "ai-sales-lead-follow-up": "AI-Vertrieb & Lead-Nachverfolgung",
+      "ai-crm-development": "AI-CRM-Entwicklung",
+      "ai-system-integration": "AI-Systemintegration"
+    },
+    "industries": {
+      "real-estate": "Immobilien",
+      "healthcare-clinics": "Gesundheitswesen & Kliniken",
+      "legal-firms": "Anwaltskanzleien",
+      "education-coaching": "Bildung & Coaching",
+      "retail-ecommerce": "Einzelhandel & E-Commerce",
+      "finance-accounting": "Finanzen & Buchhaltung"
+    }
   }
 }

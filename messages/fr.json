@@ -65,7 +65,13 @@
     "submit": "Envoyer la demande",
     "sending": "Envoi en cours…",
     "success": "Merci — votre demande a été envoyée.",
-    "error": "Impossible d’envoyer votre demande. Veuillez réessayer."
+    "error": "Impossible d’envoyer votre demande. Veuillez réessayer.",
+    "helpTitle": "À quoi cela sert-il ?",
+    "helpText": "Identifiez les tâches répétitives d’assistance, de prospects, de documents, de réservation ou internes qui pourraient être simplifiées.",
+    "workTitle": "Comment cela fonctionne-t-il ?",
+    "workText": "Décrivez le processus actuel, les outils concernés et les pertes de temps de votre équipe. LetssAI étudiera la prochaine étape pratique.",
+    "reviewTitle": "Où intervient la validation humaine ?",
+    "reviewText": "Indiquez-nous les décisions ou exceptions qui nécessitent une personne. Le processus proposé préservera ces points de validation."
   },
   "chat": {
     "open": "Ouvrir l’assistant AI",
@@ -84,5 +90,22 @@
   },
   "delivery": {
     "title": "Conçu en Inde, déployé dans le monde entier"
+  },
+  "catalog": {
+    "services": {
+      "ai-customer-support": "Assistance client par IA",
+      "ai-calling-appointment-booking": "Appels et prise de rendez-vous par IA",
+      "ai-sales-lead-follow-up": "Vente et suivi des prospects par IA",
+      "ai-crm-development": "Développement CRM avec IA",
+      "ai-system-integration": "Intégration de systèmes IA"
+    },
+    "industries": {
+      "real-estate": "Immobilier",
+      "healthcare-clinics": "Santé et cliniques",
+      "legal-firms": "Cabinets juridiques",
+      "education-coaching": "Éducation et coaching",
+      "retail-ecommerce": "Commerce et e-commerce",
+      "finance-accounting": "Finance et comptabilité"
+    }
   }
 }
