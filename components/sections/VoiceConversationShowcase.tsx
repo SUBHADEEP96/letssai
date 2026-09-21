@@ -163,11 +163,30 @@ function ConversationPlayer({
   const [duration, setDuration] = useState(0)
   const [muted, setMuted] = useState(false)
   const [waveformFailed, setWaveformFailed] = useState(false)
+  const [shouldLoadAudio, setShouldLoadAudio] = useState(false)
+  const playerRef = useRef<HTMLDivElement>(null)
   const audioRef = useRef<HTMLAudioElement>(null)
   const waveformRef = useRef<HTMLDivElement>(null)
   const reduceMotion = useReducedMotion()
 
   useEffect(() => {
+    const player = playerRef.current
+    if (!player || shouldLoadAudio) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldLoadAudio(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: "240px 0px" }
+    )
+    observer.observe(player)
+    return () => observer.disconnect()
+  }, [shouldLoadAudio])
+
+  useEffect(() => {
+    if (!shouldLoadAudio) return
     const audio = audioRef.current
     const container = waveformRef.current
     if (!audio || !container) return
@@ -236,7 +255,7 @@ function ConversationPlayer({
       localWave?.destroy()
       container.replaceChildren()
     }
-  }, [scenario])
+  }, [scenario, shouldLoadAudio])
 
   const activeSpeaker =
     playback === "playing"
@@ -287,6 +306,7 @@ function ConversationPlayer({
               : "Ready to play"
   return (
     <motion.div
+      ref={playerRef}
       id="voice-conversation-panel"
       role={labelledBy ? "tabpanel" : undefined}
       aria-labelledby={labelledBy}
@@ -322,6 +342,7 @@ function ConversationPlayer({
           </div>
           <div
             className="mt-4 min-h-20"
+            role="group"
             aria-label="Interactive audio waveform"
           >
             <div
@@ -397,7 +418,7 @@ function ConversationPlayer({
           </div>
           <audio
             ref={audioRef}
-            preload="metadata"
+            preload={shouldLoadAudio ? "metadata" : "none"}
             aria-label={`${scenario.title} audio`}
             className="sr-only"
           />
