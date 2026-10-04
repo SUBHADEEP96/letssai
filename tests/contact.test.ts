@@ -83,6 +83,10 @@ test("phone is required and rejects unsupported countries, letters, and invalid 
 })
 
 test("industry accepts every configured value and rejects missing or arbitrary values", () => {
+  assert.deepEqual(
+    INDUSTRIES.find(({ value }) => value === "media-entertainment"),
+    { value: "media-entertainment", label: "Media & Entertainment" }
+  )
   for (const { value } of INDUSTRIES)
     assert.equal(
       contactSubmissionSchema.safeParse({ ...validPayload, industry: value })
