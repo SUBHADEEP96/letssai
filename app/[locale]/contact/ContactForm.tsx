@@ -118,7 +118,7 @@ export function ContactForm() {
 
       <div className="grid min-w-0 gap-2 text-sm font-semibold text-slate-800">
         <span>{t("phone")}</span>
-        <div className="flex min-h-12 w-full rounded-xl border border-slate-300 bg-white transition focus-within:border-[#016630] focus-within:ring-2 focus-within:ring-[#016630]/15 hover:border-slate-400 has-[:invalid]:border-red-500">
+        <div className="flex min-h-12 w-full rounded-xl border border-slate-300 bg-white transition focus-within:border-[#016630] focus-within:ring-2 focus-within:ring-[#016630]/15 hover:border-slate-400">
           <label className="sr-only" htmlFor="phone-country">
             {t("countryLabel")}
           </label>
