@@ -133,7 +133,7 @@ export function ContactForm() {
           >
             {PHONE_COUNTRIES.map((country) => (
               <option key={country.code} value={country.code}>
-                {country.flag} {country.dialCode} {country.code}
+                {country.flag} {country.dialCode}
               </option>
             ))}
           </select>
