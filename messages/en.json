@@ -76,7 +76,7 @@
     "phoneInputLabel": "Phone number",
     "phonePlaceholder": "Enter your phone number",
     "industry": "Industry *",
-    "industryPlaceholder": "Select your industry"
+    "industryPlaceholder": "Your industry"
   },
   "chat": {
     "open": "Open AI assistant",
