@@ -22,7 +22,7 @@ export const PHONE_COUNTRY_CODES = PHONE_COUNTRIES.map(({ code }) => code) as [
 
 export const INDUSTRIES = [
   { value: "real-estate", label: "Real Estate" },
-  { value: "ecommerce", label: "Ecommerce" },
+  { value: "ecommerce", label: "E-commerce" },
   { value: "legal-firms", label: "Legal Firms" },
   { value: "healthcare-clinics", label: "Healthcare and Clinics" },
   { value: "automotive", label: "Automotive" },
@@ -34,6 +34,7 @@ export const INDUSTRIES = [
   { value: "logistics", label: "Logistics" },
   { value: "tourism", label: "Tourism" },
   { value: "manufacturing", label: "Manufacturing" },
+  { value: "media-entertainment", label: "Media & Entertainment" },
   { value: "other", label: "Other" },
 ] as const
 
