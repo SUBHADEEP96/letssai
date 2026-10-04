@@ -7,7 +7,7 @@ export const siteConfig = {
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL,
   contactCta: "Talk to LetssAI",
   brand: {
-    color: "#006452",
+    color: "#016630",
   },
   assets: {
     logoPrimary: "/media/letssai_logo.png",

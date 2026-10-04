@@ -57,10 +57,10 @@
     "formTitle": "Tell us about your workflow",
     "formIntro": "Share the manual process you want to improve. Fields marked * are required.",
     "name": "Name *",
-    "email": "Email *",
+    "email": "Business Email *",
     "company": "Company *",
-    "phone": "Phone (optional)",
-    "need": "What do you want to automate? *",
+    "phone": "Phone number *",
+    "need": "What do you want to automate? (optional)",
     "method": "Preferred contact method *",
     "submit": "Send request",
     "sending": "Sending…",
@@ -71,7 +71,12 @@
     "workTitle": "How does it work?",
     "workText": "Describe the current workflow, the tools involved, and where your team loses time. LetssAI will review the practical next step.",
     "reviewTitle": "Where does human review happen?",
-    "reviewText": "Tell us which decisions or exceptions need a person. The proposed workflow can preserve those approval points."
+    "reviewText": "Tell us which decisions or exceptions need a person. The proposed workflow can preserve those approval points.",
+    "countryLabel": "Phone country",
+    "phoneInputLabel": "Phone number",
+    "phonePlaceholder": "Enter your phone number",
+    "industry": "Industry *",
+    "industryPlaceholder": "Select your industry"
   },
   "chat": {
     "open": "Open AI assistant",
