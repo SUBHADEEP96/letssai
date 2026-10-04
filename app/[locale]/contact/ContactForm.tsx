@@ -40,7 +40,7 @@ export function ContactForm() {
       form.reset()
       setPhoneCountry("IN")
       startedAt.current = 0
-      setStatus({ kind: "success", message: result.message || t("success") })
+      setStatus({ kind: "success", message: t("success") })
     } catch (error) {
       setStatus({
         kind: "error",
