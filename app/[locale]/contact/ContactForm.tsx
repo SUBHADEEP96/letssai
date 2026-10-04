@@ -65,9 +65,6 @@ export function ContactForm() {
         >
           {t("formTitle")}
         </h2>
-        <p className="mt-2 text-sm leading-6 text-slate-600">
-          {t("formIntro")}
-        </p>
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
