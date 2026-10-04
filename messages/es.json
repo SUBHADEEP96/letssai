@@ -57,10 +57,10 @@
     "formTitle": "Cuéntenos sobre su flujo de trabajo",
     "formIntro": "Comparta el proceso manual que quiere mejorar. Los campos con * son obligatorios.",
     "name": "Nombre *",
-    "email": "Correo electrónico *",
+    "email": "Correo electrónico profesional *",
     "company": "Empresa *",
-    "phone": "Teléfono (opcional)",
-    "need": "¿Qué desea automatizar? *",
+    "phone": "Número de teléfono *",
+    "need": "¿Qué desea automatizar? (opcional)",
     "method": "Método de contacto preferido *",
     "submit": "Enviar solicitud",
     "sending": "Enviando…",
@@ -71,7 +71,12 @@
     "workTitle": "¿Cómo funciona?",
     "workText": "Describa el flujo actual, las herramientas implicadas y dónde pierde tiempo su equipo. LetssAI revisará el siguiente paso práctico.",
     "reviewTitle": "¿Dónde interviene una persona?",
-    "reviewText": "Indíquenos qué decisiones o excepciones necesitan una persona. El flujo propuesto puede conservar esos puntos de aprobación."
+    "reviewText": "Indíquenos qué decisiones o excepciones necesitan una persona. El flujo propuesto puede conservar esos puntos de aprobación.",
+    "countryLabel": "País del teléfono",
+    "phoneInputLabel": "Número de teléfono",
+    "phonePlaceholder": "Ingrese su número de teléfono",
+    "industry": "Industria *",
+    "industryPlaceholder": "Seleccione su industria"
   },
   "chat": {
     "open": "Abrir asistente de AI",

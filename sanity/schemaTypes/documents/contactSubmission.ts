@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity"
+import { INDUSTRIES } from "../../../lib/contact/options"
 
 export const contactSubmission = defineType({
   name: "contactSubmission",
@@ -12,6 +13,7 @@ export const contactSubmission = defineType({
     }),
     defineField({
       name: "email",
+      title: "Business Email",
       type: "email",
       validation: (rule) => rule.required(),
     }),
@@ -20,7 +22,25 @@ export const contactSubmission = defineType({
       type: "string",
       validation: (rule) => rule.required(),
     }),
-    defineField({ name: "phone", type: "string" }),
+    defineField({
+      name: "industry",
+      type: "string",
+      options: {
+        list: INDUSTRIES.map(({ label, value }) => ({ title: label, value })),
+      },
+    }),
+    defineField({ name: "phone", title: "Full phone number", type: "string" }),
+    defineField({
+      name: "phoneCountry",
+      title: "Phone country",
+      type: "string",
+    }),
+    defineField({ name: "phoneDialCode", title: "Dial code", type: "string" }),
+    defineField({
+      name: "phoneNational",
+      title: "National phone number",
+      type: "string",
+    }),
     defineField({
       name: "preferredContactMethod",
       type: "string",
@@ -32,7 +52,6 @@ export const contactSubmission = defineType({
       title: "Automation need",
       type: "text",
       rows: 5,
-      validation: (rule) => rule.required(),
     }),
     defineField({ name: "sourcePage", type: "string" }),
     defineField({ name: "userAgent", type: "string", readOnly: true }),
@@ -56,5 +75,16 @@ export const contactSubmission = defineType({
       readOnly: true,
     }),
   ],
-  preview: { select: { title: "name", subtitle: "email" } },
+  preview: {
+    select: { title: "name", email: "email", industry: "industry" },
+    prepare: ({ title, email, industry }) => ({
+      title,
+      subtitle: [
+        industry && INDUSTRIES.find((item) => item.value === industry)?.label,
+        email,
+      ]
+        .filter(Boolean)
+        .join(" · "),
+    }),
+  },
 })
