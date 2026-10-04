@@ -6,7 +6,7 @@ export function ProductGallery({ industry, items }: { industry: string; items: s
     "Healthcare & Clinics": ["Appointment booking board", "Patient FAQ assistant", "Reminder timeline", "Feedback summary dashboard"],
     "Legal Firms": ["Client intake tracker", "Case document finder", "Hearing and task reminder panel", "Draft review checklist"],
     "Education & Coaching": ["Admission inquiry dashboard", "Demo class booking flow", "Student FAQ assistant", "Payment reminder panel"],
-    "Retail & E-commerce": ["Order support panel", "Product FAQ assistant", "Returns and exchange workflow", "Review collection dashboard"],
+    "E-commerce": ["Order support panel", "Product FAQ assistant", "Returns and exchange workflow", "Review collection dashboard"],
     "Finance & Accounting": ["Invoice intake dashboard", "Document collection tracker", "Client reminder assistant", "Monthly report preparation panel"],
   }
   items = named[industry] ?? items

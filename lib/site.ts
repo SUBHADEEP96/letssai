@@ -101,7 +101,7 @@ export const services: Service[] = [
       "Clear escalation when humans are needed",
     ],
     industries: [
-      "Retail & E-commerce",
+      "E-commerce",
       "Healthcare & Clinics",
       "Education & Coaching",
       "Real Estate",
@@ -215,7 +215,7 @@ export const services: Service[] = [
       "Real Estate",
       "Education & Coaching",
       "Finance & Accounting",
-      "Retail & E-commerce",
+      "E-commerce",
     ],
     faqs: [
       {
@@ -269,7 +269,7 @@ export const services: Service[] = [
       "Real Estate",
       "Healthcare & Clinics",
       "Education & Coaching",
-      "Retail & E-commerce",
+      "E-commerce",
     ],
     faqs: [
       {
@@ -336,7 +336,7 @@ export const services: Service[] = [
       "Real Estate",
       "Healthcare & Clinics",
       "Finance & Accounting",
-      "Retail & E-commerce",
+      "E-commerce",
     ],
     faqs: [
       {
@@ -499,13 +499,13 @@ export const industries: Industry[] = [
   },
   {
     slug: "retail-ecommerce",
-    title: "Retail & E-commerce",
+    title: "E-commerce",
     href: "/industries/retail-ecommerce",
     useCase:
       "Answer order questions, product FAQs, returns, exchanges, and review requests.",
-    seoTitle: "AI Customer Support for Retail and E-commerce | LetssAI",
+    seoTitle: "AI Customer Support for E-commerce | LetssAI",
     metaDescription:
-      "AI support for retail and e-commerce order questions, product FAQs, returns and exchange support, review collection, and inventory inquiries when connected.",
+      "AI support for e-commerce order questions, product FAQs, returns and exchange support, review collection, and inventory inquiries when connected.",
     icon: "ShoppingCart",
     problems: [
       "Order status questions repeat often",
