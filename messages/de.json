@@ -57,10 +57,10 @@
     "formTitle": "Erzählen Sie uns von Ihrem Workflow",
     "formIntro": "Beschreiben Sie den manuellen Prozess, den Sie verbessern möchten. * kennzeichnet Pflichtfelder.",
     "name": "Name *",
-    "email": "E-Mail *",
+    "email": "Geschäftliche E-Mail *",
     "company": "Unternehmen *",
-    "phone": "Telefon (optional)",
-    "need": "Was möchten Sie automatisieren? *",
+    "phone": "Telefonnummer *",
+    "need": "Was möchten Sie automatisieren? (optional)",
     "method": "Bevorzugter Kontaktweg *",
     "submit": "Anfrage senden",
     "sending": "Wird gesendet…",
@@ -71,7 +71,12 @@
     "workTitle": "Wie funktioniert es?",
     "workText": "Beschreiben Sie den aktuellen Workflow, die beteiligten Werkzeuge und wo Ihr Team Zeit verliert. LetssAI prüft den praktischen nächsten Schritt.",
     "reviewTitle": "Wo findet die menschliche Prüfung statt?",
-    "reviewText": "Nennen Sie uns Entscheidungen oder Ausnahmen, die einen Menschen erfordern. Der vorgeschlagene Workflow kann diese Freigabepunkte bewahren."
+    "reviewText": "Nennen Sie uns Entscheidungen oder Ausnahmen, die einen Menschen erfordern. Der vorgeschlagene Workflow kann diese Freigabepunkte bewahren.",
+    "countryLabel": "Telefonland",
+    "phoneInputLabel": "Telefonnummer",
+    "phonePlaceholder": "Telefonnummer eingeben",
+    "industry": "Branche *",
+    "industryPlaceholder": "Branche auswählen"
   },
   "chat": {
     "open": "AI-Assistenten öffnen",
