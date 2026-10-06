@@ -3,6 +3,7 @@ import { services, industries } from "@/lib/site"
 import Image from "next/image"
 import footerLogo from "@/public/media/letssai-logo-footer.svg"
 import { getTranslations } from "next-intl/server"
+import { AISummaryLinks } from "@/components/site/AISummaryLinks"
 
 export async function Footer() {
   const t = await getTranslations()
@@ -25,6 +26,7 @@ export async function Footer() {
           <p className="mt-4 text-sm text-emerald-50/75">
             {t("footer.tagline")}
           </p>
+          <AISummaryLinks />
         </div>
         <div>
           <h3 className="text-sm font-semibold uppercase">
