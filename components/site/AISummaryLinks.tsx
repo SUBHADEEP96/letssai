@@ -1,5 +1,4 @@
 import { Gemini, Grok, OpenAI, Perplexity, type IconType } from "@lobehub/icons"
-import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr"
 import { getTranslations } from "next-intl/server"
 import {
   aiSummaryProviders,
@@ -40,11 +39,6 @@ export async function AISummaryLinks() {
                 >
                   <Icon size={20} />
                 </span>
-                <ArrowUpRightIcon
-                  aria-hidden="true"
-                  size={10}
-                  className="absolute top-1.5 right-1.5"
-                />
               </a>
             </li>
           )
