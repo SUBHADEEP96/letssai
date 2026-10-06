@@ -37,7 +37,15 @@
   "footer": {
     "tagline": "AI aplicada para empresas en crecimiento.",
     "company": "Empresa",
-    "copyright": "Para equipos que quieren AI dentro de sus herramientas actuales."
+    "copyright": "Para equipos que quieren AI dentro de sus herramientas actuales.",
+    "aiSummary": {
+      "eyebrow": "PERSPECTIVAS INDEPENDIENTES DE IA",
+      "title": "Descubre cómo la IA resume LetssAI",
+      "description": "Abre tu asistente de IA preferido con una pregunta preparada sobre LetssAI. El servicio seleccionado genera la respuesta de forma independiente.",
+      "disclaimer": "Estás saliendo de LetssAI para abrir un servicio de IA de terceros. Las respuestas pueden variar y no representan un respaldo por parte de LetssAI.",
+      "opensNewTab": "se abre en una pestaña nueva",
+      "askProvider": "Pide a {provider} que resuma LetssAI"
+    }
   },
   "services": {
     "title": "Servicios de AI basados en flujos empresariales reales",

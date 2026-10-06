@@ -5,6 +5,7 @@ import { notFound } from "next/navigation"
 import "../globals.css"
 import { Header } from "@/components/site/Header"
 import { Footer } from "@/components/site/Footer"
+import { AISummaryLinks } from "@/components/site/AISummaryLinks"
 import { ChatbotWidget } from "@/components/site/ChatbotWidget"
 import { JsonLd } from "@/components/seo/JsonLd"
 import { organizationSchema, websiteSchema } from "@/lib/seo"
@@ -37,6 +38,7 @@ export default async function LocaleLayout({
           <Header />
           <main>{children}</main>
           <Footer />
+          <AISummaryLinks />
           <ChatbotWidget />
           <JsonLd data={organizationSchema} />
           <JsonLd data={websiteSchema} />
