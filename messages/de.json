@@ -37,7 +37,15 @@
   "footer": {
     "tagline": "Angewandte AI für wachsende Unternehmen.",
     "company": "Unternehmen",
-    "copyright": "Für Teams, die AI in ihren bestehenden Werkzeugen nutzen möchten."
+    "copyright": "Für Teams, die AI in ihren bestehenden Werkzeugen nutzen möchten.",
+    "aiSummary": {
+      "eyebrow": "UNABHÄNGIGE KI-PERSPEKTIVEN",
+      "title": "So fasst KI LetssAI zusammen",
+      "description": "Öffnen Sie Ihren bevorzugten KI-Assistenten mit einer vorbereiteten Frage zu LetssAI. Die Antwort wird unabhängig vom ausgewählten Dienst erstellt.",
+      "disclaimer": "Sie verlassen LetssAI und öffnen einen KI-Dienst eines Drittanbieters. Die Antworten können variieren und stellen keine Empfehlung durch LetssAI dar.",
+      "opensNewTab": "öffnet in einem neuen Tab",
+      "askProvider": "Bitten Sie {provider}, LetssAI zusammenzufassen"
+    }
   },
   "services": {
     "title": "AI-Leistungen für echte Geschäftsabläufe",

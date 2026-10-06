@@ -37,7 +37,15 @@
   "footer": {
     "tagline": "Applied AI for growing businesses.",
     "company": "Company",
-    "copyright": "Built for teams that want AI inside their existing tools."
+    "copyright": "Built for teams that want AI inside their existing tools.",
+    "aiSummary": {
+      "eyebrow": "INDEPENDENT AI PERSPECTIVES",
+      "title": "See how AI summarizes LetssAI",
+      "description": "Open your preferred AI assistant with a ready-to-use question about LetssAI. The response is generated independently by the selected service.",
+      "disclaimer": "You are leaving LetssAI and opening a third-party AI service. Responses may vary and do not represent an endorsement by LetssAI.",
+      "opensNewTab": "opens in a new tab",
+      "askProvider": "Ask {provider} to summarize LetssAI"
+    }
   },
   "services": {
     "title": "AI services built around real business workflows",
