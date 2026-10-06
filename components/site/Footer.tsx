@@ -70,8 +70,9 @@ export async function Footer() {
           </div>
         </div>
       </div>
+      {/* {t("footer.copyright")} */}
       <div className="border-t border-white/10 px-4 py-6 text-center text-sm text-emerald-50/70">
-        © {new Date().getFullYear()} LetssAI. {t("footer.copyright")}
+        © {new Date().getFullYear()} <b>LetssAi</b>. All rights reserved.
       </div>
     </footer>
   )
