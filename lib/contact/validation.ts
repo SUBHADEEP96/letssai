@@ -19,6 +19,7 @@ const rawContactSubmissionSchema = z.object({
   industry: z.enum(INDUSTRY_VALUES),
   preferredContactMethod: z.enum(["email", "phone", "whatsapp"]),
   automationNeed: z.string().trim().max(3000).optional().or(z.literal("")),
+  consent: z.any().optional(),
   sourcePage: z.string().trim().max(300).optional(),
   website: z.string().max(0).optional(),
   formStartedAt: z.number().int().positive(),

@@ -16,15 +16,18 @@ export function ContactForm() {
   const t = useTranslations("contact")
   const [status, setStatus] = useState<Status>({ kind: "idle" })
   const [phoneCountry, setPhoneCountry] = useState("IN")
+  const [agreed, setAgreed] = useState(false)
   const startedAt = useRef(0)
   const sending = status.kind === "sending"
 
   async function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    if (sending) return
+    if (sending || !agreed) return
     setStatus({ kind: "sending" })
     const form = event.currentTarget
-    const fields = Object.fromEntries(new FormData(form))
+    const { consent: _ignoredConsent, ...fields } = Object.fromEntries(
+      new FormData(form)
+    )
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -38,6 +41,7 @@ export function ContactForm() {
       if (!response.ok || !result.ok)
         throw new Error(result.message || t("error"))
       form.reset()
+      setAgreed(false)
       setPhoneCountry("IN")
       startedAt.current = 0
       setStatus({ kind: "success", message: t("success") })
@@ -181,10 +185,34 @@ export function ContactForm() {
         Website
         <input name="website" tabIndex={-1} autoComplete="off" />
       </label>
+
+      <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-xs leading-relaxed text-slate-600 sm:p-5 sm:text-sm">
+        <p className="text-slate-700">
+          <strong className="font-semibold text-slate-900">
+            {t("consentTitle")}
+          </strong>{" "}
+          {t("consentText")}
+        </p>
+        <label className="mt-3.5 flex cursor-pointer items-start gap-3 select-none">
+          <input
+            type="checkbox"
+            name="consent"
+            checked={agreed}
+            onChange={(event) => setAgreed(event.target.checked)}
+            disabled={sending}
+            required
+            className="mt-0.5 size-4.5 shrink-0 rounded border-slate-300 text-[#016630] focus:ring-[#016630] accent-[#016630]"
+          />
+          <span className="text-xs text-slate-800 sm:text-sm">
+            {t("consentAgreement")} <span className="text-red-500">*</span>
+          </span>
+        </label>
+      </div>
+
       <button
         type="submit"
-        disabled={sending}
-        className="min-h-12 rounded-full bg-[#016630] px-6 py-3.5 font-semibold text-white shadow-lg shadow-emerald-900/10 transition hover:bg-emerald-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#016630] disabled:cursor-wait disabled:opacity-60"
+        disabled={sending || !agreed}
+        className="min-h-12 rounded-full bg-[#016630] px-6 py-3.5 font-semibold text-white shadow-lg shadow-emerald-900/10 transition hover:bg-emerald-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#016630] disabled:cursor-not-allowed disabled:bg-slate-200 disabled:text-slate-400 disabled:shadow-none"
       >
         {sending ? t("sending") : t("submit")}
       </button>
