@@ -51,9 +51,6 @@ export default async function Contact() {
       <main className="bg-[#f7f8f4] px-4 py-14 sm:px-6 sm:py-20 lg:py-24">
         <div className="mx-auto grid max-w-7xl items-start gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(34rem,1.1fr)] lg:gap-16 xl:gap-24">
           <div className="min-w-0 lg:sticky lg:top-28">
-            {/* <p className="text-sm font-semibold tracking-[0.14em] text-[#016630] uppercase">
-              LetssAI
-            </p> */}
             <h1 className="mt-4 max-w-xl text-4xl leading-[1.08] font-semibold tracking-tight text-slate-950 sm:text-5xl xl:text-6xl">
               {t("title")}
             </h1>
