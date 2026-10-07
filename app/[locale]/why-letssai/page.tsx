@@ -104,40 +104,27 @@ export default async function WhyPage({
       />
 
       {/* Hero Section */}
-      <section className="relative isolate flex min-h-[75vh] items-center justify-center overflow-hidden bg-slate-950 px-4 py-24 sm:px-6 lg:min-h-[82vh] lg:px-8">
+      <section className="relative isolate flex min-h-[40vh] items-center justify-center overflow-hidden bg-slate-950 px-4 py-24 sm:px-6 lg:min-h-[60vh] lg:px-8">
         <Image
-          src={heroAbout}
+          src="/media/about-hero.jpg"
           alt="LetssAI AI transformation and business operations"
           fill
           priority
-          placeholder="blur"
-          className="absolute inset-0 z-0 object-cover object-center opacity-35 mix-blend-luminosity brightness-90"
+          className="absolute inset-0 z-2 object-cover object-center"
         />
         <div
           aria-hidden="true"
           className="absolute inset-0 z-[1] bg-gradient-to-b from-emerald-950/80 via-slate-950/85 to-slate-950"
         />
 
-        <div className="relative z-10 mx-auto max-w-4xl text-center text-white">
-          <div className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-950/60 px-4 py-1.5 text-xs font-semibold tracking-[0.16em] text-emerald-300 uppercase backdrop-blur-md">
-            <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            {t("heroBadge")}
-          </div>
+        {/* <div className="relative z-10 mx-auto max-w-4xl text-center text-white">
           <h1 className="text-4xl font-semibold tracking-tight text-balance sm:text-5xl md:text-6xl lg:text-7xl">
             {t("heroHeadline")}
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-emerald-100/80 sm:text-lg sm:leading-8">
             {t("heroSubheadline")}
           </p>
-          <div className="mt-8 flex justify-center">
-            <Link
-              href="/contact"
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-emerald-500 px-7 py-3.5 text-sm font-semibold text-slate-950 shadow-xl shadow-emerald-950/40 transition hover:bg-emerald-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
-            >
-              {t("heroCta")}
-            </Link>
-          </div>
-        </div>
+        </div> */}
       </section>
 
       {/* Section 1: The Modern Enterprise */}
