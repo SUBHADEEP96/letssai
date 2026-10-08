@@ -9,23 +9,10 @@ export const metadata = pageMetadata(
   "/contact"
 )
 
-const icons = [
-  <path key="one" d="M5 12h14M12 5l7 7-7 7" />,
-  <path key="two" d="M4 7h16M7 4v6m10 4v6m-3-3H4" />,
-  <path
-    key="three"
-    d="M12 3l8 4v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7l8-4zm-3 9 2 2 4-4"
-  />,
-]
-
 export default async function Contact() {
   const { getTranslations } = await import("next-intl/server")
   const t = await getTranslations("contact")
-  const details = [
-    [t("helpTitle"), t("helpText")],
-    [t("workTitle"), t("workText")],
-    [t("reviewTitle"), t("reviewText")],
-  ]
+
   return (
     <>
       <JsonLd
@@ -49,43 +36,78 @@ export default async function Contact() {
         }}
       />
       <main className="bg-[#f7f8f4] px-4 py-14 sm:px-6 sm:py-20 lg:py-24">
-        <div className="mx-auto grid max-w-7xl items-start gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(34rem,1.1fr)] lg:gap-16 xl:gap-24">
+        <div className="mx-auto grid max-w-7xl items-start gap-12 lg:grid-cols-[minmax(0,0.95fr)_minmax(34rem,1.05fr)] lg:gap-16 xl:gap-24">
           <div className="min-w-0 lg:sticky lg:top-28">
-            <h1 className="mt-4 max-w-xl text-4xl leading-[1.08] font-semibold tracking-tight text-slate-950 sm:text-5xl xl:text-6xl">
-              {t("title")}
+            <h1 className="max-w-xl text-2xl leading-[1.18] font-semibold tracking-tight text-slate-900 xl:text-3xl">
+              {t("headline")}
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">
-              {t("description")}
-            </p>
-            <div className="mt-10 divide-y divide-emerald-950/10 border-y border-emerald-950/10">
-              {details.map(([title, text], index) => (
-                <div key={title} className="flex gap-4 py-6">
-                  <span className="mt-0.5 grid size-10 shrink-0 place-items-center rounded-full bg-emerald-100 text-[#016630]">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="size-5"
-                      aria-hidden="true"
-                    >
-                      {icons[index]}
-                    </svg>
-                  </span>
-                  <div>
-                    <h2 className="font-semibold tracking-tight text-slate-950">
-                      {title}
-                    </h2>
-                    <p className="mt-1.5 text-sm leading-6 text-slate-600">
-                      {text}
-                    </p>
-                  </div>
-                </div>
-              ))}
+
+            <div className="mt-8 max-w-xl space-y-7 sm:mt-10 sm:space-y-8">
+              <div className="flex items-start gap-4">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="mt-0.5 size-6 shrink-0 text-slate-900"
+                  aria-hidden="true"
+                >
+                  <path d="m14.5 4 1.4 3.4 3.6.4-2.7 2.4.7 3.6-3.1-1.8-3.1 1.8.7-3.6-2.7-2.4 3.6-.4z" />
+                  <path d="M4 17l3.5-3.5" />
+                  <path d="M3 21l5-5" />
+                  <path d="M7 21l3-3" />
+                </svg>
+                <p className="text-base leading-relaxed text-slate-700 sm:text-lg sm:leading-snug">
+                  {t("valueProp1")}
+                </p>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="mt-0.5 size-6 shrink-0 text-slate-900"
+                  aria-hidden="true"
+                >
+                  <path d="M3 18h18" />
+                  <path d="M8 18a4 4 0 0 1 8 0" />
+                  <path d="M12 5v3" />
+                  <path d="m6.5 9.5 2 2" />
+                  <path d="m17.5 9.5-2 2" />
+                </svg>
+                <p className="text-base leading-relaxed text-slate-700 sm:text-lg sm:leading-snug">
+                  {t("valueProp2")}
+                </p>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="mt-0.5 size-6 shrink-0 text-slate-900"
+                  aria-hidden="true"
+                >
+                  <path d="M11 3c0 4-2 6-6 6 4 0 6 2 6 6 0-4 2-6 6-6-4 0-6-2-6-6Z" />
+                  <path d="M18 4v3" />
+                  <path d="M16.5 5.5h3" />
+                </svg>
+                <p className="text-base leading-relaxed text-slate-700 sm:text-lg sm:leading-snug">
+                  {t("valueProp3")}
+                </p>
+              </div>
             </div>
           </div>
+
           <ContactForm />
         </div>
       </main>
