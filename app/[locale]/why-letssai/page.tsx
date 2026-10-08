@@ -7,7 +7,6 @@ import { absoluteUrl, breadcrumbsSchema } from "@/lib/seo"
 import { JsonLd } from "@/components/seo/JsonLd"
 import { CTASection } from "@/components/site/CTASection"
 import { GlobalDeliveryMap } from "@/components/site/GlobalDeliveryMap"
-import heroAbout from "@/public/media/hero-about.avif"
 import {
   WhyPrinciplesAccordion,
   type PrincipleItem,
@@ -103,77 +102,222 @@ export default async function WhyPage({
         ])}
       />
 
-      {/* Hero Section */}
-      <section className="relative isolate flex min-h-[40vh] items-center justify-center overflow-hidden bg-slate-950 px-4 py-24 sm:px-6 lg:min-h-[60vh] lg:px-8">
-        <Image
-          src="/media/about-hero.jpg"
-          alt="LetssAI AI transformation and business operations"
-          fill
-          priority
-          className="absolute inset-0 z-2 object-cover object-center"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 z-[1] bg-gradient-to-b from-emerald-950/80 via-slate-950/85 to-slate-950"
-        />
-
-        {/* <div className="relative z-10 mx-auto max-w-4xl text-center text-white">
-          <h1 className="text-4xl font-semibold tracking-tight text-balance sm:text-5xl md:text-6xl lg:text-7xl">
-            {t("heroHeadline")}
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-emerald-100/80 sm:text-lg sm:leading-8">
-            {t("heroSubheadline")}
-          </p>
-        </div> */}
-      </section>
-
-      {/* Section 1: The Modern Enterprise */}
-      <section className="section bg-[#f7f8f4]">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_1.35fr] lg:gap-16">
-          <div>
-            <p className="font-mono text-xs font-bold tracking-[0.18em] text-emerald-700 uppercase">
-              {t("futureEyebrow")}
-            </p>
-            <h2 className="mt-4 text-2xl font-semibold tracking-tight text-slate-950 lg:text-3xl">
-              {t("futureTitle")}
-            </h2>
+      {/* =========================================================================
+          NEWSPAPER MASTHEAD & FRONT-PAGE HEADLINE BANNER
+          ========================================================================= */}
+      <section className="border-b border-emerald-950/15 bg-[#f7f8f4] pt-8 sm:pt-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Top Editorial Wire & Dateline Rule */}
+          <div className="flex flex-wrap items-center justify-between gap-3 border-y border-emerald-950/15 py-2.5 font-mono text-[11px] font-semibold tracking-[0.22em] text-slate-700 uppercase sm:text-xs">
+            <span className="flex items-center gap-2">
+              The LetssAI Chronicle
+            </span>
+            <span className="hidden text-slate-500 md:inline">
+              Special Report · Operations Architecture
+            </span>
+            <span>Worldwide Edition · {new Date().getFullYear()}</span>
           </div>
-          <div className="space-y-6 text-base leading-relaxed text-slate-600 sm:text-lg sm:leading-8">
-            <p>{t("futureP1")}</p>
-            <p>{t("futureP2")}</p>
-            <p>{t("futureP3")}</p>
-          </div>
-        </div>
-      </section>
 
-      {/* Section 2: AI Transformation Principles */}
-      <section className="section bg-[#f7f8f4]">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_1.35fr] lg:gap-16">
-          <div>
-            <p className="font-mono text-xs font-bold tracking-[0.18em] text-emerald-700 uppercase">
-              {t("principlesEyebrow")}
-            </p>
-            <h2 className="mt-4 text-2xl font-semibold tracking-tight text-slate-950 lg:text-3xl">
-              {t("principlesTitle")}
-            </h2>
-            {/* <p className="mt-5 max-w-md text-base leading-relaxed text-slate-600 sm:text-lg sm:leading-8">
-              {t("principlesIntro")}
+          {/* Front-Page Main Headline */}
+          <div className="py-10 text-center sm:py-14 lg:py-16">
+            {/* <p className="font-mono text-xs font-bold tracking-[0.25em] text-[#016630] uppercase">
+              {t("heroBadge")}
             </p> */}
+            <h1 className="mx-auto mt-4 max-w-5xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl lg:leading-[1.12]">
+              {t("heroHeadline")}
+            </h1>
+            <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-slate-600 sm:text-lg sm:leading-8">
+              {t("heroSubheadline")}
+            </p>
+            {/* <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+              <Link
+                href="/contact"
+                className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#016630] px-8 py-3.5 text-sm font-semibold text-white shadow-md shadow-emerald-950/10 transition hover:bg-emerald-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#016630]"
+              >
+                {t("heroCta")}
+              </Link>
+            </div> */}
           </div>
-          <div>
-            <WhyPrinciplesAccordion items={principles} />
+
+          {/* Front-Page Wire Dispatches (3 Key Metrics) */}
+          <div className="grid border-t border-emerald-950/15 py-6 sm:grid-cols-3 sm:divide-x sm:divide-emerald-950/15">
+            <div className="px-4 py-3 text-center sm:text-left">
+              <span className="font-mono text-[11px] font-bold tracking-wider text-[#016630] uppercase">
+                Dispatch 01 · Latency
+              </span>
+              <p className="mt-1 text-sm font-semibold text-slate-900">
+                Sub-60s autonomous response across chat, voice & WhatsApp
+              </p>
+            </div>
+            <div className="border-t border-emerald-950/15 px-4 py-3 text-center sm:border-t-0 sm:text-left">
+              <span className="font-mono text-[11px] font-bold tracking-wider text-[#016630] uppercase">
+                Dispatch 02 · Integration
+              </span>
+              <p className="mt-1 text-sm font-semibold text-slate-900">
+                Zero stack disruption — embeds natively into your tools
+              </p>
+            </div>
+            <div className="border-t border-emerald-950/15 px-4 py-3 text-center sm:border-t-0 sm:text-left">
+              <span className="font-mono text-[11px] font-bold tracking-wider text-[#016630] uppercase">
+                Dispatch 03 · Velocity
+              </span>
+              <p className="mt-1 text-sm font-semibold text-slate-900">
+                40%+ repetitive manual operations reclaimed from day one
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Section 3: Measurable Outcomes */}
-      <section className="section bg-[#f7f8f4]">
+      {/* =========================================================================
+          HERO EYE VISUAL WITH CURVY LOWER TRANSITION & PUPIL GIF
+          ========================================================================= */}
+      <section
+        className="relative w-full overflow-hidden bg-slate-950"
+        aria-label="LetssAI Autonomous Intelligence Eye Visual"
+      >
+        <div className="relative mx-auto aspect-[16/11] max-h-[580px] min-h-[380px] w-full sm:aspect-[16/9] lg:aspect-[21/9]">
+          <Image
+            src="/media/about-hero.jpg"
+            alt="LetssAI AI Vision and Autonomous Agent Intelligence"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[48.5%_49.5%]"
+          />
+
+          {/* Vignette overlays for depth and focus */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-slate-950/40"
+          />
+
+          {/* GIF positioned directly in the middle of the eye pupil */}
+          <div
+            className="pointer-events-none absolute z-10 flex flex-col items-center"
+            style={{
+              left: "48.5%",
+              top: "49.5%",
+              transform: "translate(-50%, -50%)",
+            }}
+          >
+            {/* Luminous Agent Icon */}
+            <div className="relative flex items-center justify-center">
+              <span className="absolute -inset-3 animate-pulse rounded-full bg-cyan-400/25 blur-md" />
+              <span className="absolute -inset-1 rounded-full bg-emerald-400/35 blur-sm" />
+              <Image
+                src="/media/agent_icon.gif"
+                alt="LetssAI Autonomous Agent"
+                width={68}
+                height={68}
+                unoptimized
+                className="relative size-12 rounded-full drop-shadow-[0_0_20px_rgba(34,211,238,0.75)] sm:size-14 lg:size-16"
+              />
+            </div>
+          </div>
+
+          {/* Curvy lower part of the hero image */}
+          <div className="pointer-events-none absolute inset-x-0 -bottom-px z-20">
+            <svg
+              viewBox="0 0 1440 96"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="block h-10 w-full text-[#f7f8f4] sm:h-16 lg:h-24"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M0,0 C480,96 960,96 1440,0 L1440,96 L0,96 Z"
+                fill="currentColor"
+              />
+              <path
+                d="M0,0 C480,96 960,96 1440,0"
+                stroke="rgba(1,102,48,0.25)"
+                strokeWidth="1.5"
+                fill="none"
+              />
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          SECTION I: THE EDITORIAL PERSPECTIVE (THE MODERN ENTERPRISE)
+          ========================================================================= */}
+      <section className="section border-b border-emerald-950/15 bg-[#f7f8f4]">
         <div className="mx-auto max-w-7xl">
-          <div className="max-w-3xl">
-            <p className="font-mono text-xs font-bold tracking-[0.18em] text-emerald-700 uppercase">
-              {t("outcomesEyebrow")}
-            </p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
+          {/* Section Masthead Header */}
+          <div className="mb-10 flex flex-wrap items-center justify-between gap-2 border-b border-emerald-950/15 pb-4">
+            <span className="font-mono text-xs font-bold tracking-[0.2em] text-[#016630] uppercase">
+              Section I · {t("futureEyebrow")}
+            </span>
+            <span className="font-mono text-xs tracking-wider text-slate-500 uppercase">
+              Special Analysis
+            </span>
+          </div>
+
+          <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
+            {/* Left Column (5 cols): Title, Byline & Pull Quote */}
+            <div className="space-y-6 lg:col-span-5">
+              <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+                {t("futureTitle")}
+              </h2>
+            </div>
+
+            {/* Right Column (7 cols): Editorial Two-Column Body Copy */}
+            <div className="space-y-6 text-base leading-relaxed text-slate-700 sm:text-lg sm:leading-8 lg:col-span-7">
+              <p className="first-letter:float-left first-letter:mr-3 first-letter:font-serif first-letter:text-5xl first-letter:leading-none first-letter:font-bold first-letter:text-[#016630]">
+                {t("futureP1")}
+              </p>
+              <p>{t("futureP2")}</p>
+              <p>{t("futureP3")}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          SECTION II: AI TRANSFORMATION PRINCIPLES (ARCHITECTURAL DOCTRINE)
+          ========================================================================= */}
+      <section className="section border-b border-emerald-950/15 bg-[#f7f8f4]">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 flex flex-wrap items-center justify-between gap-2 border-b border-emerald-950/15 pb-4">
+            <span className="font-mono text-xs font-bold tracking-[0.2em] text-[#016630] uppercase">
+              Section II · {t("principlesEyebrow")}
+            </span>
+            <span className="font-mono text-xs tracking-wider text-slate-500 uppercase">
+              Methodological Doctrine
+            </span>
+          </div>
+
+          <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
+            <div className="lg:col-span-5">
+              <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+                {t("principlesTitle")}
+              </h2>
+            </div>
+            <div className="lg:col-span-7">
+              <WhyPrinciplesAccordion items={principles} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          SECTION III: MEASURABLE OUTCOMES (THE PERFORMANCE LEDGER)
+          ========================================================================= */}
+      <section className="section border-b border-emerald-950/15 bg-[#f7f8f4]">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 flex flex-wrap items-center justify-between gap-2 border-b border-emerald-950/15 pb-4">
+            <span className="font-mono text-xs font-bold tracking-[0.2em] text-[#016630] uppercase">
+              Section III · {t("outcomesEyebrow")}
+            </span>
+            <span className="font-mono text-xs tracking-wider text-slate-500 uppercase">
+              Performance Ledger
+            </span>
+          </div>
+
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl md:text-5xl">
               {t("outcomesTitle")}
             </h2>
             <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg sm:leading-8">
@@ -182,13 +326,18 @@ export default async function WhyPage({
           </div>
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {outcomes.map(({ icon: Icon, title, text }) => (
+            {outcomes.map(({ icon: Icon, title, text }, i) => (
               <div
                 key={title}
-                className="group rounded-3xl border border-emerald-950/10 bg-[#f7f8f4] p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-950/5"
+                className="group rounded-3xl border border-emerald-950/15 bg-[#f7f8f4] p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#016630] hover:shadow-xl hover:shadow-emerald-950/5"
               >
-                <div className="flex size-12 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200/60 transition-colors group-hover:bg-[#016630] group-hover:text-white">
-                  <Icon size={24} weight="duotone" />
+                <div className="flex items-center justify-between">
+                  <div className="flex size-12 items-center justify-center rounded-2xl bg-emerald-50 text-[#016630] ring-1 ring-emerald-200/60 transition-colors group-hover:bg-[#016630] group-hover:text-white">
+                    <Icon size={24} weight="duotone" />
+                  </div>
+                  <span className="font-mono text-xs font-bold text-slate-400">
+                    0{i + 1}
+                  </span>
                 </div>
                 <h3 className="mt-5 text-xl font-semibold tracking-tight text-slate-900">
                   {title}
@@ -202,10 +351,14 @@ export default async function WhyPage({
         </div>
       </section>
 
-      {/* Section 4: Global Delivery Map */}
+      {/* =========================================================================
+          SECTION IV: GLOBAL DELIVERY DISPATCH MAP
+          ========================================================================= */}
       <GlobalDeliveryMap />
 
-      {/* Section 5: CTA */}
+      {/* =========================================================================
+          SECTION V: FINAL CALL TO ACTION
+          ========================================================================= */}
       <CTASection
         title="Ready to transform your business operations with practical AI?"
         text="Tell us what takes too much manual time today. We’ll map a high-impact, reviewable first workflow tailored to your tools."
