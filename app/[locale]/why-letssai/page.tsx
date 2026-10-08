@@ -134,7 +134,7 @@ export default async function WhyPage({
             <p className="font-mono text-xs font-bold tracking-[0.18em] text-emerald-700 uppercase">
               {t("futureEyebrow")}
             </p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
+            <h2 className="mt-4 text-2xl font-semibold tracking-tight text-slate-950 lg:text-3xl">
               {t("futureTitle")}
             </h2>
           </div>
@@ -153,12 +153,12 @@ export default async function WhyPage({
             <p className="font-mono text-xs font-bold tracking-[0.18em] text-emerald-700 uppercase">
               {t("principlesEyebrow")}
             </p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
+            <h2 className="mt-4 text-2xl font-semibold tracking-tight text-slate-950 lg:text-3xl">
               {t("principlesTitle")}
             </h2>
-            <p className="mt-5 max-w-md text-base leading-relaxed text-slate-600 sm:text-lg">
+            {/* <p className="mt-5 max-w-md text-base leading-relaxed text-slate-600 sm:text-lg sm:leading-8">
               {t("principlesIntro")}
-            </p>
+            </p> */}
           </div>
           <div>
             <WhyPrinciplesAccordion items={principles} />
@@ -176,7 +176,7 @@ export default async function WhyPage({
             <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
               {t("outcomesTitle")}
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
+            <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg sm:leading-8">
               {t("outcomesIntro")}
             </p>
           </div>
