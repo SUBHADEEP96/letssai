@@ -108,35 +108,31 @@ export default async function WhyPage({
       <section className="border-b border-emerald-950/15 bg-[#f7f8f4] pt-8 sm:pt-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Top Editorial Wire & Dateline Rule */}
-          <div className="flex flex-wrap items-center justify-between gap-3 border-y border-emerald-950/15 py-2.5 font-mono text-[11px] font-semibold tracking-[0.22em] text-slate-700 uppercase sm:text-xs">
-            <span className="flex items-center gap-2">
-              The LetssAI Chronicle
+          <div className="flex w-full items-center justify-between border-y border-emerald-950/15 py-2.5 font-mono text-[10px] font-semibold tracking-wider whitespace-nowrap text-slate-700 uppercase sm:text-xs sm:tracking-[0.2em]">
+            <span className="flex shrink-0 items-center gap-1.5">
+              <span>The LetssAI Chronicle</span>
             </span>
-            <span className="hidden text-slate-500 md:inline">
+            <span className="hidden text-slate-500 lg:inline">
               Special Report · Operations Architecture
             </span>
-            <span>Worldwide Edition · {new Date().getFullYear()}</span>
+            <span className="shrink-0 text-right">
+              <span className="sm:hidden">
+                Global · {new Date().getFullYear()}
+              </span>
+              <span className="hidden sm:inline">
+                Worldwide Edition · {new Date().getFullYear()}
+              </span>
+            </span>
           </div>
 
           {/* Front-Page Main Headline */}
-          <div className="py-10 text-center sm:py-14 lg:py-16">
-            {/* <p className="font-mono text-xs font-bold tracking-[0.25em] text-[#016630] uppercase">
-              {t("heroBadge")}
-            </p> */}
-            <h1 className="mx-auto mt-4 max-w-5xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl lg:leading-[1.12]">
+          <div className="py-8 text-center sm:py-12 lg:py-16">
+            <h1 className="mx-auto max-w-5xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl lg:leading-[1.12]">
               {t("heroHeadline")}
             </h1>
-            <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-slate-600 sm:text-lg sm:leading-8">
+            <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-slate-600 sm:mt-6 sm:text-lg sm:leading-8">
               {t("heroSubheadline")}
             </p>
-            {/* <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#016630] px-8 py-3.5 text-sm font-semibold text-white shadow-md shadow-emerald-950/10 transition hover:bg-emerald-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#016630]"
-              >
-                {t("heroCta")}
-              </Link>
-            </div> */}
           </div>
 
           {/* Front-Page Wire Dispatches (3 Key Metrics) */}
@@ -246,11 +242,11 @@ export default async function WhyPage({
       <section className="section border-b border-emerald-950/15 bg-[#f7f8f4]">
         <div className="mx-auto max-w-7xl">
           {/* Section Masthead Header */}
-          <div className="mb-10 flex flex-wrap items-center justify-between gap-2 border-b border-emerald-950/15 pb-4">
-            <span className="font-mono text-xs font-bold tracking-[0.2em] text-[#016630] uppercase">
+          <div className="mb-10 flex w-full items-center justify-between gap-2 border-b border-emerald-950/15 pb-4 font-mono text-[10px] whitespace-nowrap uppercase sm:text-xs">
+            <span className="font-bold tracking-wider text-[#016630] sm:tracking-[0.2em]">
               Section I · {t("futureEyebrow")}
             </span>
-            <span className="font-mono text-xs tracking-wider text-slate-500 uppercase">
+            <span className="shrink-0 tracking-wider text-slate-500">
               Special Analysis
             </span>
           </div>
@@ -280,11 +276,11 @@ export default async function WhyPage({
           ========================================================================= */}
       <section className="section border-b border-emerald-950/15 bg-[#f7f8f4]">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-10 flex flex-wrap items-center justify-between gap-2 border-b border-emerald-950/15 pb-4">
-            <span className="font-mono text-xs font-bold tracking-[0.2em] text-[#016630] uppercase">
+          <div className="mb-10 flex w-full items-center justify-between gap-2 border-b border-emerald-950/15 pb-4 font-mono text-[10px] whitespace-nowrap uppercase sm:text-xs">
+            <span className="font-bold tracking-wider text-[#016630] sm:tracking-[0.2em]">
               Section II · {t("principlesEyebrow")}
             </span>
-            <span className="font-mono text-xs tracking-wider text-slate-500 uppercase">
+            <span className="shrink-0 tracking-wider text-slate-500">
               Methodological Doctrine
             </span>
           </div>
@@ -307,11 +303,11 @@ export default async function WhyPage({
           ========================================================================= */}
       <section className="section border-b border-emerald-950/15 bg-[#f7f8f4]">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-10 flex flex-wrap items-center justify-between gap-2 border-b border-emerald-950/15 pb-4">
-            <span className="font-mono text-xs font-bold tracking-[0.2em] text-[#016630] uppercase">
+          <div className="mb-10 flex w-full items-center justify-between gap-2 border-b border-emerald-950/15 pb-4 font-mono text-[10px] whitespace-nowrap uppercase sm:text-xs">
+            <span className="font-bold tracking-wider text-[#016630] sm:tracking-[0.2em]">
               Section III · {t("outcomesEyebrow")}
             </span>
-            <span className="font-mono text-xs tracking-wider text-slate-500 uppercase">
+            <span className="shrink-0 tracking-wider text-slate-500">
               Performance Ledger
             </span>
           </div>
