@@ -131,7 +131,7 @@ export default function ChatbotDialog({ onClose }: { onClose: () => void }) {
               aria-hidden
               width={42}
               height={42}
-              className="size-10 rounded-xl bg-white object-contain p-1"
+              className="size-10 rounded-xl bg-[#f7f8f4] object-contain p-1"
             />
             <div>
               <h2 className="font-semibold tracking-tight">Nora 👧🏻</h2>
@@ -147,13 +147,13 @@ export default function ChatbotDialog({ onClose }: { onClose: () => void }) {
           </button>
         </header>
         <div
-          className="flex-1 overflow-y-auto bg-[#f7fbfa] p-4 text-slate-900"
+          className="flex-1 overflow-y-auto bg-[#f7f8f4] p-4 text-slate-900"
           aria-live="polite"
         >
           {messages.map((message, index) => (
             <div
               key={index}
-              className={`mb-3 max-w-[88%] rounded-2xl px-4 py-3 text-sm leading-6 ${message.role === "user" ? "ml-auto bg-[#006452] whitespace-pre-wrap text-white" : "border border-emerald-950/5 bg-white shadow-sm"}`}
+              className={`mb-3 max-w-[88%] rounded-2xl px-4 py-3 text-sm leading-6 ${message.role === "user" ? "ml-auto bg-[#006452] whitespace-pre-wrap text-white" : "border border-emerald-950/10 bg-[#f7f8f4] shadow-sm"}`}
             >
               {message.role === "user" ? (
                 message.content
@@ -182,7 +182,7 @@ export default function ChatbotDialog({ onClose }: { onClose: () => void }) {
             </div>
           ))}
           {loading && !messages.at(-1)?.content && (
-            <div className="mb-3 inline-flex rounded-2xl bg-white px-4 py-3 text-sm text-slate-600 shadow-sm">
+            <div className="mb-3 inline-flex rounded-2xl border border-emerald-950/10 bg-[#f7f8f4] px-4 py-3 text-sm text-slate-600 shadow-sm">
               <span className="animate-pulse">Thinking…</span>
             </div>
           )}
@@ -201,7 +201,7 @@ export default function ChatbotDialog({ onClose }: { onClose: () => void }) {
               </button>
             ))}
           </div>
-          <div className="flex items-end gap-2 rounded-2xl bg-white p-2">
+          <div className="flex items-end gap-2 rounded-2xl bg-[#f7f8f4] p-2">
             <textarea
               ref={inputRef}
               value={input}

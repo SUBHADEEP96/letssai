@@ -36,7 +36,7 @@ export function AnimatedCallCharacter({
   return (
     <motion.article
       aria-label={`${label}: ${stateLabels[state]}`}
-      className={`relative flex min-w-0 flex-col items-center rounded-[1.75rem] border bg-white/90 px-3 py-5 text-center shadow-[0_18px_55px_-34px_rgba(0,100,82,.55)] sm:px-5 ${speaking ? "border-emerald-400 ring-4 ring-emerald-100" : "border-emerald-950/10"}`}
+      className={`relative flex min-w-0 flex-col items-center rounded-[1.75rem] border bg-[#f7f8f4] px-3 py-5 text-center shadow-[0_18px_55px_-34px_rgba(0,100,82,.55)] sm:px-5 ${speaking ? "border-emerald-400 ring-4 ring-emerald-100" : "border-emerald-950/10"}`}
       animate={
         speaking && !reduceMotion
           ? { y: [0, -3, 0], scale: [1, 1.015, 1] }

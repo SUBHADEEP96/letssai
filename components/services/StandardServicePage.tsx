@@ -44,7 +44,7 @@ function ServiceArtwork({
   alt: string
 }) {
   return (
-    <div className="relative aspect-[4/3] w-full bg-slate-50">
+    <div className="relative aspect-[4/3] w-full bg-[#f7f8f4]">
       <Image
         src={`/media/services/${service.slug}/${file}`}
         alt={alt}
@@ -149,7 +149,7 @@ function IntegrationBody() {
       </section>
       <section className="mx-auto mt-20 max-w-6xl md:mt-28">
         <div className="border-t border-slate-300 pt-5">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-slate-800">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-[#f7f8f4] px-3 py-1.5 text-xs font-semibold text-slate-800">
             <Sparkle size={13} weight="fill" aria-hidden /> Features
           </span>
         </div>
@@ -217,7 +217,7 @@ function StandardBody({ service }: { service: Service }) {
             {service.benefits.slice(0, 3).map((benefit, index) => (
               <article
                 key={benefit}
-                className="overflow-hidden rounded-[1.75rem] border border-emerald-950/10 bg-white shadow-[0_16px_45px_rgba(2,44,34,0.06)]"
+                className="overflow-hidden rounded-[1.75rem] border border-emerald-950/10 bg-[#f7f8f4] shadow-[0_16px_45px_rgba(2,44,34,0.06)]"
               >
                 <ServiceArtwork
                   service={service}
@@ -296,7 +296,7 @@ function StandardBody({ service }: { service: Service }) {
             {[...service.problems, ...service.tools].slice(0, 8).map((item) => (
               <li
                 key={item}
-                className="flex gap-3 rounded-2xl border border-emerald-950/10 bg-white p-5 shadow-sm"
+                className="flex gap-3 rounded-2xl border border-emerald-950/10 bg-[#f7f8f4] p-5 shadow-sm"
               >
                 <CheckCircle
                   className="mt-0.5 shrink-0 text-[#016630]"

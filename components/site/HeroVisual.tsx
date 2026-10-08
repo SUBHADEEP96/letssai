@@ -3,7 +3,7 @@ export function HeroVisual() {
     <div
       role="img"
       aria-label="Abstract LetssAI graphic showing business complexity becoming clarity"
-      className="relative min-h-[360px] overflow-hidden rounded-[2rem] border border-emerald-950/10 bg-[radial-gradient(circle_at_20%_20%,#bbf7d0,transparent_28%),linear-gradient(135deg,#ffffff,#ecfdf5)] p-6 shadow-2xl shadow-emerald-950/10"
+      className="relative min-h-[360px] overflow-hidden rounded-[2rem] border border-emerald-950/10 bg-[radial-gradient(circle_at_20%_20%,#bbf7d0,transparent_28%),linear-gradient(135deg,#f7f8f4,#ecfdf5)] p-6 shadow-2xl shadow-emerald-950/10"
     >
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(6,78,59,.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(6,78,59,.08)_1px,transparent_1px)] bg-[size:34px_34px]" />
       <svg className="absolute inset-0 h-full w-full" viewBox="0 0 600 420">
@@ -42,7 +42,7 @@ export function HeroVisual() {
         ))}
       </svg>
       <div className="relative ml-auto grid max-w-sm gap-3 pt-12">
-        <div className="rounded-3xl bg-white/80 p-4 shadow-xl backdrop-blur">
+        <div className="rounded-3xl border border-emerald-950/10 bg-[#f7f8f4]/90 p-4 shadow-xl backdrop-blur">
           <p className="font-mono text-xs font-semibold tracking-[0.14em] text-emerald-900 uppercase">
             Incoming work
           </p>
@@ -58,7 +58,7 @@ export function HeroVisual() {
             Routes, replies, summarizes, hands off
           </p>
         </div>
-        <div className="ml-16 rounded-3xl bg-white/90 p-4 shadow-xl">
+        <div className="ml-16 rounded-3xl border border-emerald-950/10 bg-[#f7f8f4]/90 p-4 shadow-xl">
           <p className="font-mono text-xs font-semibold tracking-[0.14em] text-emerald-900 uppercase">
             Clear next step
           </p>

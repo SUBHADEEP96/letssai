@@ -147,7 +147,7 @@ export function CustomerSupportServicePage({ service }: { service: Service }) {
             {benefits.map((benefit) => (
               <article
                 key={benefit.title}
-                className="overflow-hidden rounded-[1.75rem] border border-emerald-950/10 bg-white shadow-[0_16px_45px_rgba(2,44,34,0.06)]"
+                className="overflow-hidden rounded-[1.75rem] border border-emerald-950/10 bg-[#f7f8f4] shadow-[0_16px_45px_rgba(2,44,34,0.06)]"
               >
                 <div className="aspect-[4/3] overflow-hidden bg-emerald-50">
                   <Image

@@ -60,13 +60,13 @@ export default async function Services({
 }
 function FAQSectionLocal() {
   return (
-    <section className="section bg-slate-50">
+    <section className="section bg-[#f7f8f4]">
       <div className="mx-auto max-w-4xl">
         <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
           How should you choose an AI service?
         </h2>
         {faqs.map((f) => (
-          <article className="mt-5 rounded-3xl bg-white p-6" key={f.question}>
+          <article className="mt-5 rounded-3xl border border-emerald-950/10 bg-[#f7f8f4] p-6 shadow-sm" key={f.question}>
             <h3 className="text-xl font-semibold tracking-tight">
               {f.question}
             </h3>

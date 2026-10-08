@@ -10,7 +10,7 @@ type Status = {
 }
 
 const fieldClass =
-  "min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-base text-slate-900 outline-none transition placeholder:text-slate-400 hover:border-slate-400 focus:border-[#016630] focus:ring-2 focus:ring-[#016630]/15 disabled:cursor-not-allowed disabled:bg-slate-50"
+  "min-h-12 w-full rounded-xl border border-slate-300 bg-[#f7f8f4] px-4 py-3 text-base text-slate-900 outline-none transition placeholder:text-slate-400 hover:border-slate-400 focus:border-[#016630] focus:ring-2 focus:ring-[#016630]/15 disabled:cursor-not-allowed disabled:bg-slate-50"
 
 export function ContactForm() {
   const t = useTranslations("contact")
@@ -59,7 +59,7 @@ export function ContactForm() {
       onFocusCapture={() => {
         if (!startedAt.current) startedAt.current = Date.now()
       }}
-      className="grid min-w-0 gap-5 rounded-[1.75rem] border border-emerald-950/10 bg-white p-5 shadow-[0_24px_70px_-32px_rgba(1,102,48,0.35)] sm:p-8 lg:p-10"
+      className="grid min-w-0 gap-5 rounded-[1.75rem] border border-emerald-950/10 bg-[#f7f8f4] p-5 shadow-[0_24px_70px_-32px_rgba(1,102,48,0.35)] sm:p-8 lg:p-10"
       aria-labelledby="contact-form-title"
     >
       <div className="mx-auto max-w-md text-center">
@@ -122,7 +122,7 @@ export function ContactForm() {
 
       <div className="grid min-w-0 gap-2 text-sm font-semibold text-slate-800">
         <span>{t("phone")}</span>
-        <div className="flex min-h-12 w-full rounded-xl border border-slate-300 bg-white transition focus-within:border-[#016630] focus-within:ring-2 focus-within:ring-[#016630]/15 hover:border-slate-400">
+        <div className="flex min-h-12 w-full rounded-xl border border-slate-300 bg-[#f7f8f4] transition focus-within:border-[#016630] focus-within:ring-2 focus-within:ring-[#016630]/15 hover:border-slate-400">
           <label className="sr-only" htmlFor="phone-country">
             {t("countryLabel")}
           </label>
@@ -186,7 +186,7 @@ export function ContactForm() {
         <input name="website" tabIndex={-1} autoComplete="off" />
       </label>
 
-      <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-xs leading-relaxed text-slate-600 sm:p-5 sm:text-sm">
+      <div className="rounded-2xl border border-emerald-950/10 bg-[#f7f8f4] p-4 text-xs leading-relaxed text-slate-600 sm:p-5 sm:text-sm">
         <p className="text-slate-700">
           <strong className="font-semibold text-slate-900">
             {t("consentTitle")}

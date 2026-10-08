@@ -197,7 +197,7 @@ export function CallingServicePage({ service }: { service: Service }) {
             {benefits.map((benefit) => (
               <article
                 key={benefit.title}
-                className="group overflow-hidden rounded-[1.75rem] border border-emerald-950/10 bg-white shadow-[0_16px_45px_rgba(2,44,34,0.06)] transition duration-300 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-[0_20px_55px_rgba(2,44,34,0.10)]"
+                className="group overflow-hidden rounded-[1.75rem] border border-emerald-950/10 bg-[#f7f8f4] shadow-[0_16px_45px_rgba(2,44,34,0.06)] transition duration-300 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-[0_20px_55px_rgba(2,44,34,0.10)]"
               >
                 <div className="aspect-[4/3] overflow-hidden bg-emerald-50">
                   <Image
@@ -262,7 +262,7 @@ export function CallingServicePage({ service }: { service: Service }) {
               {useCases.map(([title, description]) => (
                 <li
                   key={title}
-                  className="rounded-2xl border border-emerald-950/10 bg-white p-5 shadow-sm"
+                  className="rounded-2xl border border-emerald-950/10 bg-[#f7f8f4] p-5 shadow-sm"
                 >
                   <div className="flex gap-3">
                     <CheckCircle

@@ -267,7 +267,7 @@ export function EcommerceCaseStudies() {
                 className={`flex items-center gap-3 rounded-full border px-5 py-2.5 text-sm font-semibold transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#016630] ${
                   isActive
                     ? "border-[#016630] bg-[#016630] text-white shadow-md shadow-emerald-950/10"
-                    : "border-emerald-950/15 bg-white text-slate-700 hover:border-[#016630] hover:text-[#016630]"
+                    : "border-emerald-950/15 bg-[#f7f8f4] text-slate-700 hover:border-[#016630] hover:text-[#016630]"
                 }`}
               >
                 <span>{study.brandName}</span>
@@ -290,12 +290,12 @@ export function EcommerceCaseStudies() {
           id={`study-panel-${currentStudy.id}`}
           role="tabpanel"
           aria-labelledby={`study-tab-${currentStudy.id}`}
-          className="mt-8 overflow-hidden rounded-3xl border border-emerald-950/10 bg-white p-6 shadow-sm sm:p-8 lg:p-10"
+          className="mt-8 overflow-hidden rounded-3xl border border-emerald-950/10 bg-[#f7f8f4] p-6 shadow-sm sm:p-8 lg:p-10"
         >
           {/* Top Brand Banner */}
           <div className="flex flex-wrap items-center justify-between gap-4 border-b border-emerald-950/10 pb-6">
             <div className="flex items-center gap-4">
-              <div className="flex h-12 w-32 items-center justify-center rounded-xl border border-slate-200/80 bg-slate-50 p-2">
+              <div className="flex h-12 w-32 items-center justify-center rounded-xl border border-emerald-950/10 bg-[#f7f8f4] p-2">
                 <Image
                   src={currentStudy.logoUrl}
                   alt={currentStudy.logoAlt}
@@ -412,7 +412,7 @@ export function EcommerceCaseStudies() {
                   {currentStudy.aiCapabilities.map((cap) => (
                     <div
                       key={cap.title}
-                      className="flex items-start gap-3 rounded-xl border border-slate-200/80 bg-white p-4 shadow-sm"
+                      className="flex items-start gap-3 rounded-xl border border-emerald-950/10 bg-[#f7f8f4] p-4 shadow-sm"
                     >
                       <CheckCircle
                         size={18}
@@ -472,7 +472,7 @@ export function EcommerceCaseStudies() {
                 </div>
 
                 <div className="mt-4 space-y-3">
-                  <div className="flex items-start gap-3 rounded-xl bg-white p-3 text-xs shadow-sm">
+                  <div className="flex items-start gap-3 rounded-xl border border-emerald-950/10 bg-[#f7f8f4] p-3 text-xs shadow-sm">
                     <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-[#016630] text-[10px] font-bold text-white">
                       1
                     </span>
@@ -487,7 +487,7 @@ export function EcommerceCaseStudies() {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3 rounded-xl bg-white p-3 text-xs shadow-sm">
+                  <div className="flex items-start gap-3 rounded-xl border border-emerald-950/10 bg-[#f7f8f4] p-3 text-xs shadow-sm">
                     <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-[#016630] text-[10px] font-bold text-white">
                       2
                     </span>
@@ -502,7 +502,7 @@ export function EcommerceCaseStudies() {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3 rounded-xl bg-white p-3 text-xs shadow-sm">
+                  <div className="flex items-start gap-3 rounded-xl border border-emerald-950/10 bg-[#f7f8f4] p-3 text-xs shadow-sm">
                     <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-[#016630] text-[10px] font-bold text-white">
                       3
                     </span>
