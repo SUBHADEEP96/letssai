@@ -13,14 +13,16 @@ export function FAQSection({
   return (
     <section className="py-16">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
-          {title}
-        </h2>
-        {intro && (
-          <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-600">
-            {intro}
-          </p>
-        )}
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
+            {title}
+          </h2>
+          {intro && (
+            <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg sm:leading-8">
+              {intro}
+            </p>
+          )}
+        </div>
         <div className="mt-8">
           <FAQAccordion faqs={faqs} />
         </div>

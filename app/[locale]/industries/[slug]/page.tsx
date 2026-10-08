@@ -79,12 +79,17 @@ export default async function IndustryPage({
       {conversationScenario ? (
         <IndustryConversationSection scenarioId={conversationScenario} />
       ) : null}
-      <IndustryUseCaseGrid
-        title={`What slows down ${industry.title.toLowerCase()} teams?`}
-        intro="The strongest starting points are repetitive, rules-based tasks where information already exists and a clear owner can review exceptions."
-        items={industry.commonProblems}
-      />
-      <IndustryGallery title={industry.title} items={industry.galleryItems} />
+      {slug !== "retail-ecommerce" ? (
+        <IndustryUseCaseGrid
+          title={`What slows down ${industry.title.toLowerCase()} teams?`}
+          intro="The strongest starting points are repetitive, rules-based tasks where information already exists and a clear owner can review exceptions."
+          items={industry.commonProblems}
+        />
+      ) : null}
+      {slug !== "retail-ecommerce" ? (
+        <IndustryGallery title={industry.title} items={industry.galleryItems} />
+      ) : null}
+
       {slug === "retail-ecommerce" ? (
         <EcommerceCaseStudies />
       ) : (

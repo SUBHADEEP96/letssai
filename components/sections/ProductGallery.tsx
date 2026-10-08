@@ -13,9 +13,11 @@ export function ProductGallery({ industry, items }: { industry: string; items: s
   return (
     <section className="section bg-slate-950 text-white" aria-labelledby="gallery-title">
       <div className="mx-auto max-w-7xl">
-        <p className="font-mono text-xs font-bold tracking-[.18em] text-emerald-300 uppercase">Original interface concepts</p>
-        <h2 id="gallery-title" className="mt-3 text-3xl font-semibold tracking-tight md:text-5xl">What could AI for {industry} look like?</h2>
-        <p className="mt-4 max-w-3xl leading-7 text-slate-300">These illustrative product views show how everyday work could be organized. Final interfaces are designed around your approved workflow and connected systems.</p>
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="font-mono text-xs font-bold tracking-[.18em] text-emerald-300 uppercase">Original interface concepts</p>
+          <h2 id="gallery-title" className="mt-3 text-3xl font-semibold tracking-tight md:text-5xl">What could AI for {industry} look like?</h2>
+          <p className="mt-4 leading-7 text-slate-300">These illustrative product views show how everyday work could be organized. Final interfaces are designed around your approved workflow and connected systems.</p>
+        </div>
         <div className="mt-10 grid gap-5 md:grid-cols-2">
           {items.map((title, index) => (
             <article key={title} className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-3">

@@ -230,7 +230,7 @@ export function EcommerceCaseStudies() {
     >
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}
-        <div className="max-w-3xl">
+        <div className="mx-auto max-w-3xl text-center">
           <p className="font-mono text-xs font-bold tracking-[0.18em] text-[#016630] uppercase">
             Proven D2C Case Studies
           </p>
@@ -249,7 +249,7 @@ export function EcommerceCaseStudies() {
 
         {/* Brand Selector Tabs */}
         <div
-          className="mt-10 flex flex-wrap items-center gap-3"
+          className="mt-10 flex flex-wrap items-center justify-center gap-3"
           role="tablist"
           aria-label="Brand Case Studies"
         >
