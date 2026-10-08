@@ -14,9 +14,9 @@ export default async function Industries({
   return (
     <>
       <section className="section bg-emerald-50">
-        <div className="mx-auto max-w-5xl">
-          <h1 className="text-4xl font-semibold md:text-6xl">{t("title")}</h1>
-          <p className="mt-5 text-lg text-slate-600">{t("description")}</p>
+        <div className="mx-auto max-w-3xl text-center">
+          <h1 className="text-4xl font-semibold tracking-tight text-slate-950 md:text-6xl">{t("title")}</h1>
+          <p className="mt-5 text-lg leading-8 text-slate-600">{t("description")}</p>
         </div>
       </section>
       <section className="section">

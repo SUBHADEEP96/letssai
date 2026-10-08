@@ -3,6 +3,7 @@ import { IndustryConversationSection } from "@/components/sections/VoiceConversa
 import { getIndustryConversationScenario } from "@/components/sections/voice-conversation-data"
 import { IndustryGallery } from "@/components/industry/IndustryGallery"
 import { IndustryUseCaseGrid } from "@/components/industry/IndustryUseCaseGrid"
+import { EcommerceCaseStudies } from "@/components/industry/EcommerceCaseStudies"
 import { FAQSection } from "@/components/site/FAQSection"
 import { CTASection } from "@/components/site/CTASection"
 import { JsonLd } from "@/components/seo/JsonLd"
@@ -78,27 +79,38 @@ export default async function IndustryPage({
       {conversationScenario ? (
         <IndustryConversationSection scenarioId={conversationScenario} />
       ) : null}
-      <IndustryUseCaseGrid
-        title={`What slows down ${industry.title.toLowerCase()} teams?`}
-        intro="The strongest starting points are repetitive, rules-based tasks where information already exists and a clear owner can review exceptions."
-        items={industry.commonProblems}
-      />
-      <IndustryGallery title={industry.title} items={industry.galleryItems} />
-      <IndustryUseCaseGrid
-        title="Which LetssAI services fit best?"
-        intro="Choose a service around the business outcome first. The technology and integrations follow from that goal."
-        items={industry.bestFitServices}
-      />
-      <IndustryUseCaseGrid
-        title="How could the first workflow work?"
-        intro="These examples show a practical sequence with a visible handoff—not an unmonitored replacement for your team."
-        items={industry.exampleWorkflowsText}
-      />
-      <IndustryUseCaseGrid
-        title="What outcomes should the team review?"
-        intro="Measure whether work becomes clearer, faster and easier to hand off, without making unsupported performance claims."
-        items={industry.benefits}
-      />
+      {slug !== "retail-ecommerce" ? (
+        <IndustryUseCaseGrid
+          title={`What slows down ${industry.title.toLowerCase()} teams?`}
+          intro="The strongest starting points are repetitive, rules-based tasks where information already exists and a clear owner can review exceptions."
+          items={industry.commonProblems}
+        />
+      ) : null}
+      {slug !== "retail-ecommerce" ? (
+        <IndustryGallery title={industry.title} items={industry.galleryItems} />
+      ) : null}
+
+      {slug === "retail-ecommerce" ? (
+        <EcommerceCaseStudies />
+      ) : (
+        <>
+          <IndustryUseCaseGrid
+            title="Which LetssAI services fit best?"
+            intro="Choose a service around the business outcome first. The technology and integrations follow from that goal."
+            items={industry.bestFitServices}
+          />
+          <IndustryUseCaseGrid
+            title="How could the first workflow work?"
+            intro="These examples show a practical sequence with a visible handoff—not an unmonitored replacement for your team."
+            items={industry.exampleWorkflowsText}
+          />
+          <IndustryUseCaseGrid
+            title="What outcomes should the team review?"
+            intro="Measure whether work becomes clearer, faster and easier to hand off, without making unsupported performance claims."
+            items={industry.benefits}
+          />
+        </>
+      )}
       <FAQSection faqs={industry.faqs} />
       <CTASection
         title={industry.finalCta.heading}

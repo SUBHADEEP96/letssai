@@ -128,7 +128,7 @@ export default async function WhyPage({
       </section>
 
       {/* Section 1: The Modern Enterprise */}
-      <section className="section bg-white">
+      <section className="section bg-[#f7f8f4]">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_1.35fr] lg:gap-16">
           <div>
             <p className="font-mono text-xs font-bold tracking-[0.18em] text-emerald-700 uppercase">
@@ -147,7 +147,7 @@ export default async function WhyPage({
       </section>
 
       {/* Section 2: AI Transformation Principles */}
-      <section className="section bg-[#f4f9f6]">
+      <section className="section bg-[#f7f8f4]">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_1.35fr] lg:gap-16">
           <div>
             <p className="font-mono text-xs font-bold tracking-[0.18em] text-emerald-700 uppercase">
@@ -167,7 +167,7 @@ export default async function WhyPage({
       </section>
 
       {/* Section 3: Measurable Outcomes */}
-      <section className="section bg-white">
+      <section className="section bg-[#f7f8f4]">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
             <p className="font-mono text-xs font-bold tracking-[0.18em] text-emerald-700 uppercase">
@@ -185,7 +185,7 @@ export default async function WhyPage({
             {outcomes.map(({ icon: Icon, title, text }) => (
               <div
                 key={title}
-                className="group rounded-3xl border border-emerald-950/10 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-950/5"
+                className="group rounded-3xl border border-emerald-950/10 bg-[#f7f8f4] p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-950/5"
               >
                 <div className="flex size-12 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200/60 transition-colors group-hover:bg-[#016630] group-hover:text-white">
                   <Icon size={24} weight="duotone" />

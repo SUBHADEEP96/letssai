@@ -83,7 +83,7 @@ export function VoiceConversationShowcase() {
                   .getElementById(`voice-tab-${voiceScenarios[next].id}`)
                   ?.focus()
               }}
-              className={`min-h-11 shrink-0 rounded-full border px-4 text-sm font-semibold transition focus-visible:ring-2 focus-visible:ring-[#016630] focus-visible:ring-offset-2 focus-visible:outline-none ${item.id === selectedId ? "border-[#016630] bg-[#016630] text-white shadow-md shadow-emerald-900/20 hover:bg-emerald-800" : "border-emerald-950/15 bg-white text-slate-700 hover:border-[#016630] hover:text-[#016630]"}`}
+              className={`min-h-11 shrink-0 rounded-full border px-4 text-sm font-semibold transition focus-visible:ring-2 focus-visible:ring-[#016630] focus-visible:ring-offset-2 focus-visible:outline-none ${item.id === selectedId ? "border-[#016630] bg-[#016630] text-white shadow-md shadow-emerald-900/20 hover:bg-emerald-800" : "border-emerald-950/15 bg-[#f7f8f4] text-slate-700 hover:border-[#016630] hover:text-[#016630]"}`}
             >
               {item.label}
             </button>
@@ -128,7 +128,7 @@ function ConversationSection({
   return (
     <section
       aria-labelledby={`conversation-heading-${heading.replaceAll(" ", "-").toLowerCase()}`}
-      className="overflow-hidden bg-white px-4 py-16 sm:px-6 md:py-24 lg:px-8"
+      className="overflow-hidden bg-[#f7f8f4] px-4 py-16 sm:px-6 md:py-24 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
@@ -313,7 +313,7 @@ function ConversationPlayer({
       initial={reduceMotion ? undefined : { opacity: 0, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="relative mt-5 min-w-0 rounded-[2rem] border border-emerald-950/10 bg-[radial-gradient(circle_at_top,#ecfdf5,transparent_45%),linear-gradient(135deg,#ffffff,#f8fafc)] p-3 shadow-[0_30px_90px_-55px_rgba(0,100,82,.5)] sm:p-6 lg:p-8"
+      className="relative mt-5 min-w-0 rounded-[2rem] border border-emerald-950/10 bg-[radial-gradient(circle_at_top,#ecfdf5,transparent_45%),linear-gradient(135deg,#f7f8f4,#f8fafc)] p-3 shadow-[0_30px_90px_-55px_rgba(0,100,82,.5)] sm:p-6 lg:p-8"
     >
       <div className="relative grid min-w-0 grid-cols-2 items-center gap-3 lg:grid-cols-[minmax(150px,1fr)_minmax(340px,2.4fr)_minmax(150px,1fr)] lg:gap-6">
         <AnimatedCallCharacter
@@ -323,7 +323,7 @@ function ConversationPlayer({
           image={scenario.customerImage}
           imageAlt={`${scenario.label} customer`}
         />
-        <div className="relative z-10 col-span-2 row-start-2 min-w-0 rounded-[1.5rem] border border-emerald-950/10 bg-white p-4 shadow-sm sm:p-5 lg:col-span-1 lg:row-start-1">
+        <div className="relative z-10 col-span-2 row-start-2 min-w-0 rounded-[1.5rem] border border-emerald-950/10 bg-[#f7f8f4] p-4 shadow-sm sm:p-5 lg:col-span-1 lg:row-start-1">
           <div className="flex items-start gap-3">
             <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-800">
               <PhoneCall size={20} weight="fill" />
@@ -462,7 +462,7 @@ function ControlButton({
       aria-pressed={pressed}
       onClick={onClick}
       disabled={disabled}
-      className="flex size-11 items-center justify-center rounded-full border border-emerald-950/15 bg-white text-emerald-950 hover:bg-emerald-50 focus-visible:ring-2 focus-visible:ring-[#016630] focus-visible:outline-none disabled:opacity-40"
+      className="flex size-11 items-center justify-center rounded-full border border-emerald-950/15 bg-[#f7f8f4] text-emerald-950 hover:bg-emerald-50 focus-visible:ring-2 focus-visible:ring-[#016630] focus-visible:outline-none disabled:opacity-40"
     >
       {children}
     </button>
