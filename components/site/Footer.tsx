@@ -65,8 +65,30 @@ export async function Footer() {
             {t("footer.company")}
           </h3>
           <div className="mt-4 grid gap-2">
-            <Link href="/why-letssai">{t("nav.why")}</Link>
-            <Link href="/contact">{t("nav.contact")}</Link>
+            <Link
+              className="text-sm text-emerald-50/75 hover:text-white"
+              href="/why-letssai"
+            >
+              {t("nav.why")}
+            </Link>
+            <Link
+              className="text-sm text-emerald-50/75 hover:text-white"
+              href="/contact"
+            >
+              {t("nav.contact")}
+            </Link>
+            <Link
+              className="text-sm text-emerald-50/75 hover:text-white"
+              href="/privacy-policy"
+            >
+              {t("footer.privacyPolicy")}
+            </Link>
+            <Link
+              className="text-sm text-emerald-50/75 hover:text-white"
+              href="/terms-and-conditions"
+            >
+              {t("footer.termsAndConditions")}
+            </Link>
           </div>
         </div>
       </div>
