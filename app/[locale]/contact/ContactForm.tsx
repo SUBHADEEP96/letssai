@@ -3,6 +3,7 @@
 import { useRef, useState } from "react"
 import { useTranslations } from "next-intl"
 import { INDUSTRIES, PHONE_COUNTRIES } from "@/lib/contact/options"
+import Link from "next/link"
 
 type Status = {
   kind: "idle" | "sending" | "success" | "error"
@@ -191,7 +192,15 @@ export function ContactForm() {
           <strong className="font-semibold text-slate-900">
             {t("consentTitle")}
           </strong>{" "}
-          {t("consentText")}
+          {t("consentText")}{" "}
+          <Link
+            href="/terms-and-conditions"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-[#016630] underline"
+          >
+            Terms and Conditions
+          </Link>
         </p>
         <label className="mt-3.5 flex cursor-pointer items-start gap-3 select-none">
           <input
@@ -201,10 +210,12 @@ export function ContactForm() {
             onChange={(event) => setAgreed(event.target.checked)}
             disabled={sending}
             required
-            className="mt-0.5 size-4.5 shrink-0 rounded border-slate-300 text-[#016630] focus:ring-[#016630] accent-[#016630]"
+            className="mt-0.5 size-4.5 shrink-0 rounded border-slate-300 text-[#016630] accent-[#016630] focus:ring-[#016630]"
           />
           <span className="text-xs text-slate-800 sm:text-sm">
-            {t("consentAgreement")} <span className="text-red-500">*</span>
+            {t("consentAgreement")}
+
+            <span className="text-red-500">*</span>
           </span>
         </label>
       </div>
