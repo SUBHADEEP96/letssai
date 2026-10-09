@@ -1,9 +1,10 @@
 "use client"
 
 import { useRef, useState } from "react"
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
 import { INDUSTRIES, PHONE_COUNTRIES } from "@/lib/contact/options"
-import Link from "next/link"
+import { localizePath, type Locale } from "@/i18n/routing"
+import { TermsModal } from "./TermsModal"
 
 type Status = {
   kind: "idle" | "sending" | "success" | "error"
@@ -15,9 +16,12 @@ const fieldClass =
 
 export function ContactForm() {
   const t = useTranslations("contact")
+  const locale = useLocale() as Locale
   const [status, setStatus] = useState<Status>({ kind: "idle" })
   const [phoneCountry, setPhoneCountry] = useState("IN")
   const [agreed, setAgreed] = useState(false)
+  const [showTermsModal, setShowTermsModal] = useState(false)
+  const termsUrl = localizePath("/terms-and-conditions", locale)
   const startedAt = useRef(0)
   const sending = status.kind === "sending"
 
@@ -193,14 +197,23 @@ export function ContactForm() {
             {t("consentTitle")}
           </strong>{" "}
           {t("consentText")}{" "}
-          <Link
-            href="/terms-and-conditions"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-semibold text-[#016630] underline"
+          <a
+            href={termsUrl}
+            onClick={(event) => {
+              if (
+                event.button === 0 &&
+                !event.ctrlKey &&
+                !event.metaKey &&
+                !event.shiftKey
+              ) {
+                event.preventDefault()
+                setShowTermsModal(true)
+              }
+            }}
+            className="font-semibold text-[#016630] underline hover:text-emerald-900 cursor-pointer"
           >
             Terms and Conditions
-          </Link>
+          </a>
         </p>
         <label className="mt-3.5 flex cursor-pointer items-start gap-3 select-none">
           <input
@@ -237,6 +250,13 @@ export function ContactForm() {
           </p>
         )}
       </div>
+
+      <TermsModal
+        isOpen={showTermsModal}
+        onClose={() => setShowTermsModal(false)}
+        url={termsUrl}
+        title="Terms and Conditions"
+      />
     </form>
   )
 }

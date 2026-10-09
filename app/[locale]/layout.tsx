@@ -31,8 +31,16 @@ export default async function LocaleLayout({
   if (!hasLocale(routing.locales, locale)) notFound()
   setRequestLocale(locale)
   return (
-    <html lang={locale}>
-      <body className="font-sans antialiased">
+    <html lang={locale} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{if(window.self!==window.top){document.documentElement.classList.add('is-embedded');}}catch(e){}",
+          }}
+        />
+      </head>
+      <body className="font-sans antialiased" suppressHydrationWarning>
         <NextIntlClientProvider key={locale} locale={locale}>
           <Header />
           <main>{children}</main>

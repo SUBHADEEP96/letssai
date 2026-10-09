@@ -225,3 +225,14 @@ body {
     display: none;
   }
 }
+
+html.is-embedded header,
+html.is-embedded footer,
+html.is-embedded button[aria-label="Open LetssAI support assistant"] {
+  display: none !important;
+}
+html.is-embedded article {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
