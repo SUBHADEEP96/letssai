@@ -58,40 +58,16 @@ export function TermsModal({
           <div className="min-w-0 pr-4">
             <h2
               id="terms-modal-title"
-              className="text-base font-semibold tracking-tight text-slate-900 sm:text-lg truncate"
+              className="truncate text-base font-semibold tracking-tight text-slate-900 sm:text-lg"
             >
               {title}
             </h2>
             <p className="text-xs text-slate-500">
-              LetssAI Technologies &bull; Official Document
+              LetssAI &bull; Official Document
             </p>
           </div>
 
           <div className="flex items-center gap-2">
-            <a
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Open in new window"
-              className="inline-flex size-9 items-center justify-center rounded-lg text-slate-500 transition hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-[#016630]"
-              aria-label="Open in new window"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="size-4"
-                aria-hidden="true"
-              >
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                <polyline points="15 3 21 3 21 9" />
-                <line x1="10" y1="14" x2="21" y2="3" />
-              </svg>
-            </a>
-
             <button
               type="button"
               onClick={onClose}
