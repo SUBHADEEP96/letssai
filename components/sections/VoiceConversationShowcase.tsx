@@ -132,9 +132,6 @@ function ConversationSection({
     >
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="font-mono text-sm font-semibold tracking-[0.18em] text-emerald-700 uppercase">
-            See LetssAI AI agents in action
-          </p>
           <h2
             id={`conversation-heading-${heading.replaceAll(" ", "-").toLowerCase()}`}
             className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl"
