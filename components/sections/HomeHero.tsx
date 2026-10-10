@@ -3,6 +3,36 @@ import { Link } from "@/i18n/navigation"
 import { OrbBackground } from "@/components/ui/OrbBackground"
 import Image from "next/image"
 import heroImage from "@/public/media/home-hero.jpg"
+
+function renderHighlightedAI(text: string) {
+  const parts = text.split(/(AI)/g)
+  return parts.map((part, index) =>
+    part === "AI" ? (
+      <span key={index} className="text-[#016630]">
+        AI
+      </span>
+    ) : (
+      part
+    )
+  )
+}
+
+function renderDescriptionSentences(text: string) {
+  const match = text.match(/^(.*?[.।])\s+([\s\S]+)$/)
+  if (!match) {
+    return <span className="block">{text}</span>
+  }
+  const [, firstSentence, secondSentence] = match
+  return (
+    <>
+      <span className="block">{firstSentence}</span>
+      <span className="mt-2 block text-slate-100/90">
+        {secondSentence}
+      </span>
+    </>
+  )
+}
+
 export async function HomeHero() {
   const t = await getTranslations("home.hero")
 
@@ -51,14 +81,18 @@ export async function HomeHero() {
             />
           </svg>
         </div>
-        <h1 className="mx-auto max-w-4xl text-[clamp(2.625rem,7vw,5.5rem)] leading-[.98] font-semibold tracking-[-.045em] text-balance">
-          {t("titleBefore")}{" "}
-          <span className="text-[#016630]">{t("titleHighlight")}</span>,{" "}
-          {t("titleAfter")}
+        <h1 className="mx-auto max-w-5xl text-[clamp(1.85rem,5.2vw,4.5rem)] leading-[1.08] font-semibold tracking-[-.035em]">
+          <span className="block whitespace-normal md:whitespace-nowrap">
+            {t("titleBefore")}{" "}
+            <span className="text-[#016630]">{t("titleHighlight")},</span>
+          </span>
+          <span className="mt-1 block sm:mt-2">
+            {renderHighlightedAI(t("titleAfter"))}
+          </span>
         </h1>
-        <p className="mx-auto mt-6 max-w-3xl text-base leading-7 text-slate-100 sm:text-lg sm:leading-8">
-          {t("description")}
-        </p>
+        <div className="mx-auto mt-6 w-fit max-w-[39rem] text-left text-base leading-7 text-slate-100 sm:text-lg sm:leading-8">
+          {renderDescriptionSentences(t("description"))}
+        </div>
         <Link
           href="/contact"
           className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-bold text-emerald-950 transition focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white active:scale-[.98]"

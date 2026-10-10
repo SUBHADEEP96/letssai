@@ -20,7 +20,7 @@
       "titleHighlight": "OUTCOMES",
       "titleAfter": "not just AI.",
       "description": "Forget complicated platforms your team has to learn and implement. LetssAI builds custom AI systems that plug directly into how you already work—generating real business results from day one.",
-      "cta": "Request a free AI workflow review"
+      "cta": "Book a Free AI Consultation"
     },
     "toolsTitle": "Built for your existing tools",
     "toolsText": "LetssAI connects AI support to the everyday channels where work already happens."
@@ -31,7 +31,7 @@
     "ctaTitle": "Ready to see where AI can save time in your business?",
     "ctaText": "Tell us what your team does manually today. We’ll help identify practical places AI can support your workflow.",
     "faqTitle": "Questions business owners ask",
-    "cta": "Request a free AI workflow review",
+    "cta": "Book a Free AI Consultation",
     "breadcrumb": "Breadcrumb"
   },
   "footer": {
@@ -65,7 +65,7 @@
     "heroBadge": "AI TRANSFORMATION",
     "heroHeadline": "AI is not a technology you adopt. It’s a change to how your business operates.",
     "heroSubheadline": "LetssAI engineers custom, practical AI systems that integrate directly into your day-to-day operations—turning hours of manual friction into automated velocity without disrupting how your team works.",
-    "heroCta": "Request a free AI workflow review",
+    "heroCta": "Book a Free AI Consultation",
     "futureEyebrow": "OPERATING MODEL",
     "futureTitle": "The enterprise of the future",
     "futureP1": "Every prior technology wave led to software proliferation: buying another tool for support, another for sales, and spreadsheets everywhere. The result is fragmented systems where teams spend half their days acting as manual glue.",
@@ -102,7 +102,7 @@
     "outcome4Text": "We handle process mapping, system design, testing, deployment, and ongoing optimization—so you don't need an internal AI engineering team."
   },
   "contact": {
-    "title": "Request a free AI workflow review",
+    "title": "Book a Free AI Workflow Consultation",
     "description": "Tell us what you want to automate. We’ll help you identify the safest and most useful first step.",
     "formTitle": "Tell us about your workflow",
     "formIntro": "Share the manual process you want to improve. Fields marked * are required.",
