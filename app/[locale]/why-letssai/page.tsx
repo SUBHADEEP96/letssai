@@ -105,10 +105,10 @@ export default async function WhyPage({
       {/* =========================================================================
           NEWSPAPER MASTHEAD & FRONT-PAGE HEADLINE BANNER
           ========================================================================= */}
-      <section className="border-b border-emerald-950/15 bg-[#f7f8f4] pt-8 sm:pt-12">
+      <section className="border-b border-emerald-950/15 bg-[#f7f8f4] pt-8 pb-4 sm:pt-12 sm:pb-8">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Top Editorial Wire & Dateline Rule */}
-          <div className="flex w-full items-center justify-between border-y border-emerald-950/15 py-2.5 font-mono text-[10px] font-semibold tracking-wider whitespace-nowrap text-slate-700 uppercase sm:text-xs sm:tracking-[0.2em]">
+          <div className="mb-6 flex w-full items-center justify-between border-y border-emerald-950/15 py-2.5 font-mono text-[10px] font-semibold tracking-wider whitespace-nowrap text-slate-700 uppercase sm:mb-8 sm:text-xs sm:tracking-[0.2em]">
             <span className="flex shrink-0 items-center gap-1.5">
               <span>The LetssAI Chronicle</span>
             </span>
@@ -126,7 +126,7 @@ export default async function WhyPage({
           </div>
 
           {/* Front-Page Main Headline */}
-          <div className="py-8 text-center sm:py-12 lg:py-16">
+          <div className="py-4 text-center sm:py-10 lg:py-14">
             <h1 className="mx-auto max-w-5xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl lg:leading-[1.12]">
               {t("heroHeadline")}
             </h1>

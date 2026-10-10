@@ -35,7 +35,7 @@ export default async function Contact() {
           },
         }}
       />
-      <main className="bg-[#f7f8f4] px-4 py-14 sm:px-6 sm:py-20 lg:py-24">
+      <section className="bg-[#f7f8f4] px-4 pt-10 pb-16 sm:px-6 sm:py-20 lg:py-24">
         <div className="mx-auto grid max-w-7xl items-start gap-12 lg:grid-cols-[minmax(0,0.95fr)_minmax(34rem,1.05fr)] lg:gap-16 xl:gap-24">
           <div className="min-w-0 lg:sticky lg:top-28">
             <h1 className="max-w-xl text-2xl leading-[1.18] font-semibold tracking-tight text-slate-900 xl:text-3xl">
@@ -110,7 +110,7 @@ export default async function Contact() {
 
           <ContactForm />
         </div>
-      </main>
+      </section>
     </>
   )
 }

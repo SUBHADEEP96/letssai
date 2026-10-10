@@ -53,8 +53,18 @@ export function Header() {
       document.body.style.overflow = ""
     }
   }, [mobile])
+
+  const closeMobile = () => {
+    setMobile(false)
+    setOpen(null)
+    document.body.style.overflow = ""
+  }
+
   return (
-    <header className="sticky top-0 z-40 border-b border-emerald-950/10 bg-white/85 backdrop-blur-xl">
+    <header
+      className="sticky top-0 z-40 border-b border-emerald-950/10 bg-white/95 backdrop-blur-xl supports-[backdrop-filter]:bg-white/85"
+      style={{ WebkitTransform: "translate3d(0, 0, 0)" }}
+    >
       <nav
         aria-label={t("main")}
         className="mx-auto flex h-16 max-w-7xl min-w-0 items-center justify-between gap-3 px-4 sm:gap-5 sm:px-6 lg:h-18 lg:px-8"
@@ -172,7 +182,7 @@ export function Header() {
                 >
                   <div className="flex items-center justify-between">
                     <Link
-                      onClick={() => !item.children && setMobile(false)}
+                      onClick={() => !item.children && closeMobile()}
                       href={item.href}
                       className="block flex-1 px-5 py-4 font-semibold tracking-tight"
                     >
@@ -210,7 +220,7 @@ export function Header() {
                         const I = icons[c.icon as keyof typeof icons]
                         return (
                           <Link
-                            onClick={() => setMobile(false)}
+                            onClick={closeMobile}
                             className="flex gap-3 rounded-2xl bg-emerald-50 p-4"
                             key={c.href}
                             href={c.href}

@@ -37,7 +37,7 @@ export async function HomeHero() {
   const t = await getTranslations("home.hero")
 
   return (
-    <section className="relative isolate flex min-h-[calc(100svh-4rem)] items-center justify-center overflow-hidden bg-[#dce9e3] px-4 py-16 sm:px-6 lg:min-h-[calc(100svh-4.5rem)] lg:px-8">
+    <section className="relative isolate flex min-h-[calc(100svh-4rem)] items-center justify-center overflow-hidden bg-[#dce9e3] px-2.5 py-8 sm:px-6 sm:py-16 lg:min-h-[calc(100svh-4.5rem)] lg:px-8">
       <Image
         src={heroImage}
         alt=""
@@ -58,14 +58,14 @@ export async function HomeHero() {
         rotateOnHover
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-5xl rounded-[1.75rem] border border-white/25 bg-emerald-950/25 px-5 py-9 text-center text-white shadow-[0_24px_90px_rgba(0,38,30,.22)] backdrop-blur-[3px] sm:rounded-[2.25rem] sm:px-10 sm:py-12 lg:px-14">
+      <div className="relative z-10 mx-auto w-full max-w-5xl rounded-[1.5rem] border border-white/25 bg-emerald-950/25 px-3.5 py-7 text-center text-white shadow-[0_24px_90px_rgba(0,38,30,.22)] backdrop-blur-[3px] sm:rounded-[2.25rem] sm:px-10 sm:py-12 lg:px-14">
         <div
           aria-hidden="true"
-          className="hero-sparkle mx-auto mb-5 w-fit text-white drop-shadow-[0_0_14px_rgba(255,255,255,.55)] sm:mb-6"
+          className="hero-sparkle mx-auto mb-4 w-fit text-white drop-shadow-[0_0_14px_rgba(255,255,255,.55)] sm:mb-6"
         >
           <svg
             viewBox="0 0 64 64"
-            className="h-12 w-12 sm:h-14 sm:w-14"
+            className="h-10 w-10 sm:h-14 sm:w-14"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -81,8 +81,8 @@ export async function HomeHero() {
             />
           </svg>
         </div>
-        <h1 className="mx-auto max-w-5xl text-[clamp(1.85rem,5.2vw,4.5rem)] leading-[1.08] font-semibold tracking-[-.035em]">
-          <span className="block whitespace-normal md:whitespace-nowrap">
+        <h1 className="mx-auto max-w-5xl text-[clamp(1.22rem,5vw,4.5rem)] leading-[1.1] sm:leading-[1.08] font-semibold tracking-[-.035em]">
+          <span className="block whitespace-nowrap">
             {t("titleBefore")}{" "}
             <span className="text-[#016630]">{t("titleHighlight")},</span>
           </span>
@@ -90,12 +90,12 @@ export async function HomeHero() {
             {renderHighlightedAI(t("titleAfter"))}
           </span>
         </h1>
-        <div className="mx-auto mt-6 w-fit max-w-[39rem] text-left text-base leading-7 text-slate-100 sm:text-lg sm:leading-8">
+        <div className="mx-auto mt-5 sm:mt-6 w-full sm:w-fit max-w-[39rem] text-left text-sm leading-6 sm:text-lg sm:leading-8 text-slate-100">
           {renderDescriptionSentences(t("description"))}
         </div>
         <Link
           href="/contact"
-          className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-bold text-emerald-950 transition focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white active:scale-[.98]"
+          className="mt-6 sm:mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-bold text-emerald-950 transition focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white active:scale-[.98]"
         >
           {t("cta")}
         </Link>

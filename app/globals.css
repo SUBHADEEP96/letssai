@@ -185,9 +185,10 @@
 }
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
 }
 body {
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 ::selection {
   background: #bbf7d0;
