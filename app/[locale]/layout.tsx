@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import localFont from "next/font/local"
 import { hasLocale, NextIntlClientProvider } from "next-intl"
 import { setRequestLocale } from "next-intl/server"
 import { notFound } from "next/navigation"
@@ -10,6 +11,23 @@ import { JsonLd } from "@/components/seo/JsonLd"
 import { organizationSchema, websiteSchema } from "@/lib/seo"
 import { siteConfig } from "@/lib/site"
 import { routing } from "@/i18n/routing"
+
+const plusJakartaSans = localFont({
+  src: [
+    {
+      path: "../fonts/plus-jakarta-sans-latin.woff2",
+      weight: "200 800",
+      style: "normal",
+    },
+    {
+      path: "../fonts/plus-jakarta-sans-italic.woff2",
+      weight: "200 800",
+      style: "italic",
+    },
+  ],
+  variable: "--font-plus-jakarta",
+  display: "swap",
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -40,7 +58,7 @@ export default async function LocaleLayout({
           }}
         />
       </head>
-      <body className="font-sans antialiased" suppressHydrationWarning>
+      <body className={`${plusJakartaSans.variable} font-sans antialiased`} suppressHydrationWarning>
         <NextIntlClientProvider key={locale} locale={locale}>
           <Header />
           <main>{children}</main>
