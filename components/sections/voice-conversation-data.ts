@@ -31,7 +31,7 @@ export const voiceScenarios: VoiceScenario[] = [
     audioPath: "/media/voice/01-automotive-drop-off-recovery-call.mp3",
     description:
       "A helpful follow-up that gets a delayed service visit moving again.",
-    customerImage: "/media/conversation/automotive-customer.jpeg",
+    customerImage: "/media/conversation/automotive-customer.png",
     agentImage: "/media/conversation/automotive-agent.png",
     cues: [
       { start: 0, end: 15, speaker: "agent" },
