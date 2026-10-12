@@ -26,9 +26,7 @@ function renderDescriptionSentences(text: string) {
   return (
     <>
       <span className="block">{firstSentence}</span>
-      <span className="mt-2 block text-slate-100/90">
-        {secondSentence}
-      </span>
+      <span className="mt-2 block text-slate-100/90">{secondSentence}</span>
     </>
   )
 }
@@ -81,21 +79,21 @@ export async function HomeHero() {
             />
           </svg>
         </div>
-        <h1 className="mx-auto max-w-5xl text-[clamp(1.22rem,5vw,4.5rem)] leading-[1.1] sm:leading-[1.08] font-semibold tracking-[-.035em]">
+        <h1 className="mx-auto max-w-5xl text-[clamp(1.22rem,5vw,4.5rem)] leading-[1.1] font-semibold tracking-[-.035em] sm:leading-[1.08]">
           <span className="block whitespace-nowrap">
             {t("titleBefore")}{" "}
-            <span className="text-[#016630]">{t("titleHighlight")},</span>
+            <span className="text-[#016630]">{t("titleHighlight")}</span>,
           </span>
           <span className="mt-1 block sm:mt-2">
             {renderHighlightedAI(t("titleAfter"))}
           </span>
         </h1>
-        <div className="mx-auto mt-5 sm:mt-6 w-full sm:w-fit max-w-[39rem] text-left text-sm leading-6 sm:text-lg sm:leading-8 text-slate-100">
+        <div className="mx-auto mt-5 w-full max-w-[39rem] text-left text-base leading-6 text-slate-100 sm:mt-6 sm:w-fit sm:text-lg sm:leading-8">
           {renderDescriptionSentences(t("description"))}
         </div>
         <Link
           href="/contact"
-          className="mt-6 sm:mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-bold text-emerald-950 transition focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white active:scale-[.98]"
+          className="mt-6 inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-bold text-emerald-950 transition focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white active:scale-[.98] sm:mt-8"
         >
           {t("cta")}
         </Link>
