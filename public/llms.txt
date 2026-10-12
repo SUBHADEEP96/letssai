@@ -1,0 +1,33 @@
+# LetssAI
+
+> Practical AI assistants, autonomous voice telephony, and deterministic workflow systems engineered for growing businesses.
+
+LetssAI builds high-impact, production-ready artificial intelligence systems that integrate directly into existing enterprise workflows and communication tools. Our platform capabilities include autonomous voice AI telephony, multi-channel customer support assistants, inbound sales qualification pipelines, bespoke AI-ready CRM architectures, and event-driven API middleware integrations. All systems operate with strict deterministic guardrails, zero unconsented foundation model training on customer data, and seamless human-in-the-loop escalation.
+
+## Core Services
+
+- [AI Customer Support](https://www.letssai.com/services/ai-customer-support): Multichannel automated support across website chat, WhatsApp Business API, and inbound email with verified knowledge base (RAG) grounding and safe operator handoff.
+- [AI Calling & Appointment Booking](https://www.letssai.com/services/ai-calling-appointment-booking): Low-latency voice AI agents handling inbound/outbound telephony, calendar availability checks, automated multi-channel confirmations, and structured call transcript synchronization.
+- [AI Sales & Lead Follow-up](https://www.letssai.com/services/ai-sales-lead-follow-up): Sub-60-second speed-to-lead qualification, dynamic qualification dialogues, automated consultation scheduling, and real-time CRM deal stage synchronization.
+- [AI CRM Development](https://www.letssai.com/services/ai-crm-development): Bespoke AI-ready CRM architectures with customized schemas, unified omnichannel communications, automated deal tracking, and role-based access control.
+- [AI System Integration](https://www.letssai.com/services/ai-system-integration): Bidirectional API middleware connecting language models to internal databases, ERPs, accounting tools, webhooks, and event-driven workflow automation pipelines.
+
+## Industry Solutions
+
+- [Real Estate](https://www.letssai.com/industries/real-estate): Property inquiry qualification, site visit scheduling, WhatsApp follow-up, and automated CRM deal progression.
+- [Healthcare & Clinics](https://www.letssai.com/industries/healthcare-clinics): Patient intake triage, calendar slot reservations, automated appointment reminders, and clinic phone reception.
+- [Retail & E-commerce](https://www.letssai.com/industries/retail-ecommerce): Order status tracking, product recommendations, multi-tier customer service, and post-purchase review workflows.
+- [Education & Coaching](https://www.letssai.com/industries/education-coaching): Course admissions inquiries, student consultation booking, and multi-channel student support.
+- [Finance & Accounting](https://www.letssai.com/industries/finance-accounting): Client document collection, appointment coordination, compliance-aware data triage, and reporting workflows.
+- [Legal Firms](https://www.letssai.com/industries/legal-firms): Case intake triage, initial consultation booking, and secure client communication workflows.
+
+## Architecture & Principles
+
+- [Why LetssAI](https://www.letssai.com/why-letssai): Architectural doctrine, rapid autonomous response, minimal stack disruption, and human-in-the-loop oversight.
+- [Privacy Policy](https://www.letssai.com/privacy-policy): Zero foundation model training on confidential customer data, encryption in transit and at rest, and strict data retention controls.
+- [Terms & Conditions](https://www.letssai.com/terms-and-conditions): Service specifications, deterministic AI boundaries, and client data ownership.
+- [Contact & Consultation](https://www.letssai.com/contact): Request a free workflow review to evaluate automation feasibility.
+
+## Optional
+
+- [Full Documentation (llms-full.txt)](https://www.letssai.com/llms-full.txt): Complete, consolidated documentation of all LetssAI services, industries, architectural principles, workflows, and FAQs in a single file.
