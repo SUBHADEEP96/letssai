@@ -1,26 +1,51 @@
 import { ContactForm } from "./ContactForm"
 import { JsonLd } from "@/components/seo/JsonLd"
-import { absoluteUrl, pageMetadata } from "@/lib/seo"
+import { absoluteUrl, breadcrumbsSchema } from "@/lib/seo"
 import { siteConfig } from "@/lib/site"
+import type { Locale } from "@/i18n/routing"
+import { localizePath } from "@/i18n/routing"
+import { localizedMetadata } from "@/lib/i18n-seo"
 
-export const metadata = pageMetadata(
-  "Contact LetssAI | Book a Free AI Workflow Consultation",
-  "Contact LetssAI to Book a Free AI Workflow Consultation for customer support, lead follow-up, documents, appointments, and workflow automation.",
-  "/contact"
-)
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>
+}) {
+  const { locale } = await params
+  const { getTranslations } = await import("next-intl/server")
+  const t = await getTranslations({ locale, namespace: "contact" })
+  return localizedMetadata(
+    locale,
+    t("title") || "Contact LetssAI | Book a Free AI Workflow Consultation",
+    t("description") ||
+      "Contact LetssAI to Book a Free AI Workflow Consultation for customer support, lead follow-up, documents, appointments, and workflow automation.",
+    "/contact"
+  )
+}
 
-export default async function Contact() {
+export default async function Contact({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>
+}) {
+  const { locale } = await params
   const { getTranslations } = await import("next-intl/server")
   const t = await getTranslations("contact")
 
   return (
     <>
       <JsonLd
+        data={breadcrumbsSchema([
+          { name: "Home", url: absoluteUrl(localizePath("/", locale)) },
+          { name: "Contact", url: absoluteUrl(localizePath("/contact", locale)) },
+        ])}
+      />
+      <JsonLd
         data={{
           "@context": "https://schema.org",
           "@type": "ContactPage",
           name: "Contact LetssAI",
-          url: absoluteUrl("/contact"),
+          url: absoluteUrl(localizePath("/contact", locale)),
           description:
             "Request a workflow review for practical business automation.",
           mainEntity: {

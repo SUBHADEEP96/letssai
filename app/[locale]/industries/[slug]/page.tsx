@@ -15,9 +15,10 @@ import {
   absoluteUrl,
   breadcrumbsSchema,
   faqSchema,
-  pageMetadata,
   serviceSchema,
 } from "@/lib/seo"
+import { localizePath } from "@/i18n/routing"
+import { localizedMetadata } from "@/lib/i18n-seo"
 
 function notFound(): never {
   throw new Error("Industry not found")
@@ -37,12 +38,12 @@ export async function generateMetadata({
     ? { ...source, title: localizedIndustryTitle(slug, locale) ?? source.title }
     : null
   return industry
-    ? pageMetadata(
+    ? localizedMetadata(
+        locale,
         industry.metaTitle,
         industry.metaDescription,
         industry.href,
-        industry.ogImage,
-        industry.canonicalUrl
+        industry.ogImage
       )
     : {}
 }
@@ -70,9 +71,9 @@ export default async function IndustryPage({
       <JsonLd data={faqSchema(industry.faqs)} />
       <JsonLd
         data={breadcrumbsSchema([
-          { name: "Home", url: absoluteUrl("/") },
-          { name: "Industries", url: absoluteUrl("/industries") },
-          { name: industry.title, url: absoluteUrl(industry.href) },
+          { name: "Home", url: absoluteUrl(localizePath("/", locale)) },
+          { name: "Industries", url: absoluteUrl(localizePath("/industries", locale)) },
+          { name: industry.title, url: absoluteUrl(localizePath(industry.href, locale)) },
         ])}
       />
       <IndustryHero industry={industry} />

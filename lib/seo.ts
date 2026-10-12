@@ -68,6 +68,8 @@ export function serviceSchema(name: string, description: string, path: string) {
     "@type": "Service",
     name,
     description,
+    serviceType: "Artificial Intelligence Solutions & Workflow Automation",
+    areaServed: "Worldwide",
     provider: {
       "@type": "Organization",
       name: siteConfig.name,
@@ -79,20 +81,41 @@ export function serviceSchema(name: string, description: string, path: string) {
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": `${siteConfig.url}/#organization`,
   name: siteConfig.name,
   url: siteConfig.url,
   description: siteConfig.description,
-  email: siteConfig.contactEmail,
-  logo: absoluteUrl(siteConfig.assets.icon),
+  email: siteConfig.contactEmail || "contact@letssai.com",
+  logo: {
+    "@type": "ImageObject",
+    url: absoluteUrl(siteConfig.assets.icon),
+    width: "512",
+    height: "512",
+  },
+  image: absoluteUrl(siteConfig.assets.logoPrimary),
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer service",
+    email: siteConfig.contactEmail || "contact@letssai.com",
+    availableLanguage: ["English", "Hindi", "German", "Spanish", "French"],
+  },
 }
 export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": `${siteConfig.url}/#website`,
   name: siteConfig.name,
   url: siteConfig.url,
+  description: siteConfig.description,
+  publisher: {
+    "@id": `${siteConfig.url}/#organization`,
+  },
   potentialAction: {
     "@type": "SearchAction",
-    target: `${siteConfig.url}/?q={search_term_string}`,
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${siteConfig.url}/?q={search_term_string}`,
+    },
     "query-input": "required name=search_term_string",
   },
 }

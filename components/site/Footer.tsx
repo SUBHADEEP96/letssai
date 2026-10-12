@@ -42,6 +42,12 @@ export async function Footer() {
                 {service.title}
               </Link>
             ))}
+            <Link
+              className="text-sm text-emerald-50/75 hover:text-white"
+              href="/services/ai-system-integration"
+            >
+              AI Workflow Automation
+            </Link>
           </div>
         </div>
         <div>
