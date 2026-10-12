@@ -69,9 +69,12 @@ export function serviceSchema(name: string, description: string, path: string) {
     name,
     description,
     serviceType: "Artificial Intelligence Solutions & Workflow Automation",
+    category: "AI & Automation Services",
     areaServed: "Worldwide",
+    termsOfService: absoluteUrl("/terms-and-conditions"),
     provider: {
       "@type": "Organization",
+      "@id": `${siteConfig.url}/#organization`,
       name: siteConfig.name,
       url: siteConfig.url,
     },
@@ -86,6 +89,63 @@ export const organizationSchema = {
   url: siteConfig.url,
   description: siteConfig.description,
   email: siteConfig.contactEmail || "contact@letssai.com",
+  areaServed: "Worldwide",
+  knowsAbout: [
+    "Artificial Intelligence Solutions",
+    "Autonomous AI Agents",
+    "Voice AI Telephony & Appointment Booking",
+    "AI Customer Support Automation",
+    "AI Sales Follow-Up Systems",
+    "Custom AI CRM Development",
+    "AI System Integration & Middleware",
+    "Deterministic Workflow Automation",
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "LetssAI Enterprise AI Solutions",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "AI Customer Support",
+          url: absoluteUrl("/services/ai-customer-support"),
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "AI Calling & Appointment Booking",
+          url: absoluteUrl("/services/ai-calling-appointment-booking"),
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "AI Sales & Lead Follow-up",
+          url: absoluteUrl("/services/ai-sales-lead-follow-up"),
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "AI CRM Development",
+          url: absoluteUrl("/services/ai-crm-development"),
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "AI System Integration",
+          url: absoluteUrl("/services/ai-system-integration"),
+        },
+      },
+    ],
+  },
   logo: {
     "@type": "ImageObject",
     url: absoluteUrl(siteConfig.assets.icon),
@@ -107,6 +167,7 @@ export const websiteSchema = {
   name: siteConfig.name,
   url: siteConfig.url,
   description: siteConfig.description,
+  inLanguage: ["en", "hi", "de", "es", "fr"],
   publisher: {
     "@id": `${siteConfig.url}/#organization`,
   },
