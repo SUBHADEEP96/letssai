@@ -22,7 +22,7 @@ const en: LegalDocument = {
       heading: "2. Description of AI Services",
       paragraphs: [
         "LetssAI develops practical, high-impact artificial intelligence systems engineered to integrate directly into existing enterprise workflows and communication tools. Our platform capabilities include autonomous voice AI agents, customer support assistants, lead qualification pipelines, CRM integrations, and automated workflow triggers.",
-        "Because AI technologies and underlying language models evolve continuously, LetssAI reserves the right to enhance, upgrade, or modify elements of the Services at any time to guarantee stability, security, and superior performance.",
+        "Because AI technologies and underlying language models evolve continuously, LetssAI reserves the right to enhance, upgrade, or modify elements of the Services at any time to maintain stability, security, and superior performance.",
       ],
     },
     {

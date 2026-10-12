@@ -135,15 +135,25 @@ export function Header() {
                         )
                       })}
                     </div>
-                    <Link
-                      href={item.href}
-                      className="mt-3 inline-flex rounded-full bg-emerald-950 px-4 py-2 text-sm font-semibold tracking-tight text-white"
-                    >
-                      {t("explore")}{" "}
-                      {item.href === "/services"
-                        ? t("services")
-                        : t("industries")}
-                    </Link>
+                    <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-emerald-950/10 pt-3">
+                      <Link
+                        href={item.href}
+                        className="inline-flex rounded-full bg-emerald-950 px-4 py-2 text-sm font-semibold tracking-tight text-white transition hover:bg-emerald-900"
+                      >
+                        {t("explore")}{" "}
+                        {item.href === "/services"
+                          ? t("services")
+                          : t("industries")}
+                      </Link>
+                      {item.href === "/services" && (
+                        <Link
+                          href="/services/ai-system-integration"
+                          className="text-xs font-semibold text-emerald-800 transition hover:text-emerald-950 hover:underline"
+                        >
+                          Looking for AI Workflow Automation? Discover System Integration →
+                        </Link>
+                      )}
+                    </div>
                   </div>
                 </div>
               )}
@@ -239,6 +249,16 @@ export function Header() {
                           </Link>
                         )
                       })}
+                      {item.href === "/services" && (
+                        <Link
+                          onClick={closeMobile}
+                          className="flex items-center justify-between rounded-2xl border border-dashed border-emerald-950/20 bg-emerald-100/60 p-4 text-xs font-semibold text-emerald-900"
+                          href="/services/ai-system-integration"
+                        >
+                          <span>Need Custom AI Workflow Automation?</span>
+                          <span>Explore Integration →</span>
+                        </Link>
+                      )}
                     </div>
                   )}
                 </div>

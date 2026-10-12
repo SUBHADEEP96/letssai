@@ -13,12 +13,13 @@ import {
   absoluteUrl,
   breadcrumbsSchema,
   faqSchema,
-  pageMetadata,
   serviceSchema,
 } from "@/lib/seo"
 import { services } from "@/lib/site"
 import type { Locale } from "@/i18n/routing"
+import { localizePath } from "@/i18n/routing"
 import { localizeService } from "@/lib/localized-content"
+import { localizedMetadata } from "@/lib/i18n-seo"
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }))
@@ -31,17 +32,14 @@ export async function generateMetadata({
   const { locale, slug } = await params
   const source = services.find((x) => x.slug === slug)
   const s = source ? localizeService(source, locale) : undefined
+  const image =
+    s?.slug === "ai-customer-support"
+      ? "/media/services/ai-customer-support/csstep5.webp"
+      : s?.slug === "ai-calling-appointment-booking"
+        ? "/media/services/hero-letssai.webp"
+        : undefined
   return s
-    ? pageMetadata(
-        s.seoTitle,
-        s.metaDescription,
-        s.href,
-        s.slug === "ai-customer-support"
-          ? "/media/services/ai-customer-support/csstep5.webp"
-          : s.slug === "ai-calling-appointment-booking"
-            ? "/media/services/hero-letssai.webp"
-            : undefined
-      )
+    ? localizedMetadata(locale, s.seoTitle, s.metaDescription, s.href, image)
     : {}
 }
 export default async function ServicePage({
@@ -67,9 +65,9 @@ export default async function ServicePage({
       />
       <JsonLd
         data={breadcrumbsSchema([
-          { name: "Home", url: absoluteUrl("/") },
-          { name: "Services", url: absoluteUrl("/services") },
-          { name: s.title, url: absoluteUrl(s.href) },
+          { name: "Home", url: absoluteUrl(localizePath("/", locale)) },
+          { name: "Services", url: absoluteUrl(localizePath("/services", locale)) },
+          { name: s.title, url: absoluteUrl(localizePath(s.href, locale)) },
         ])}
       />
       {s.slug === "ai-calling-appointment-booking" ? (

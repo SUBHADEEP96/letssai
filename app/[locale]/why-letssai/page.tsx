@@ -2,6 +2,7 @@ import Image from "next/image"
 import { getTranslations, setRequestLocale } from "next-intl/server"
 import { Link } from "@/i18n/navigation"
 import type { Locale } from "@/i18n/routing"
+import { localizePath } from "@/i18n/routing"
 import { localizedMetadata } from "@/lib/i18n-seo"
 import { absoluteUrl, breadcrumbsSchema } from "@/lib/seo"
 import { JsonLd } from "@/components/seo/JsonLd"
@@ -97,8 +98,8 @@ export default async function WhyPage({
     <>
       <JsonLd
         data={breadcrumbsSchema([
-          { name: "Home", url: absoluteUrl("/") },
-          { name: "Why LetssAI", url: absoluteUrl("/why-letssai") },
+          { name: "Home", url: absoluteUrl(localizePath("/", locale)) },
+          { name: "Why LetssAI", url: absoluteUrl(localizePath("/why-letssai", locale)) },
         ])}
       />
 
@@ -142,7 +143,7 @@ export default async function WhyPage({
                 Dispatch 01 · Latency
               </span>
               <p className="mt-1 text-sm font-semibold text-slate-900">
-                Sub-60s autonomous response across chat, voice & WhatsApp
+                Rapid autonomous response across chat, voice & WhatsApp
               </p>
             </div>
             <div className="border-t border-emerald-950/15 px-4 py-3 text-center sm:border-t-0 sm:text-left">
@@ -150,7 +151,7 @@ export default async function WhyPage({
                 Dispatch 02 · Integration
               </span>
               <p className="mt-1 text-sm font-semibold text-slate-900">
-                Zero stack disruption — embeds natively into your tools
+                Minimal stack disruption — embeds natively into your tools
               </p>
             </div>
             <div className="border-t border-emerald-950/15 px-4 py-3 text-center sm:border-t-0 sm:text-left">
@@ -158,7 +159,7 @@ export default async function WhyPage({
                 Dispatch 03 · Velocity
               </span>
               <p className="mt-1 text-sm font-semibold text-slate-900">
-                40%+ repetitive manual operations reclaimed from day one
+                Substantial repetitive manual operations reclaimed from day one
               </p>
             </div>
           </div>
