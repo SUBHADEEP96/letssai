@@ -1,16 +1,7 @@
 "use client"
 
-import dynamic from "next/dynamic"
-import { HeroVideoSkeleton } from "./HeroVideoSkeleton"
+import { HeroVideoPlayer } from "./HeroVideoPlayer"
 import { Link } from "@/i18n/navigation"
-
-const HeroVideoPlayer = dynamic(
-  () => import("./HeroVideoPlayer").then((mod) => mod.HeroVideoPlayer),
-  {
-    loading: () => <HeroVideoSkeleton />,
-    ssr: false,
-  }
-)
 
 export function HomeHero() {
   return (
