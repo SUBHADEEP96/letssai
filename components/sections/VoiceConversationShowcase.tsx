@@ -10,6 +10,7 @@ import {
   SpeakerHigh,
   SpeakerSlash,
   Waveform,
+  RocketIcon,
 } from "@phosphor-icons/react"
 import { motion, useReducedMotion } from "motion/react"
 import { useCallback, useEffect, useRef, useState } from "react"
@@ -42,7 +43,7 @@ export function VoiceConversationShowcase() {
   const select = (id: VoiceScenarioId) => setSelectedId(id)
   return (
     <ConversationSection
-      heading="Real conversations. Real outcomes 🚀"
+      heading="Real conversations, Real outcomes"
       copy="Choose a business scenario and listen to an example AI-assisted phone conversation designed to turn everyday follow-up into a clear next step."
     >
       <div
@@ -128,16 +129,21 @@ function ConversationSection({
   return (
     <section
       aria-labelledby={`conversation-heading-${heading.replaceAll(" ", "-").toLowerCase()}`}
-      className="overflow-hidden bg-[#f7f8f4] px-4 py-16 sm:px-6 md:py-24 lg:px-8"
+      className="overflow-hidden bg-[#f7f8f4] px-3.5 py-16 sm:px-6 md:py-24 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
           <h2
             id={`conversation-heading-${heading.replaceAll(" ", "-").toLowerCase()}`}
-            className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl"
+            className="mt-4 mx-auto flex w-fit max-w-full flex-nowrap items-center justify-center gap-1.5 sm:gap-2.5 text-center text-[clamp(1.02rem,4.3vw,2.25rem)] font-semibold tracking-tight text-slate-950 whitespace-nowrap"
           >
-            {heading}
+            <span className="leading-tight">{heading}</span>
+            <RocketIcon
+              className="size-[1.15em] shrink-0 text-slate-950"
+              aria-hidden="true"
+            />
           </h2>
+
           <p className="mx-auto mt-4 max-w-2xl leading-7 text-slate-600">
             {copy}
           </p>
