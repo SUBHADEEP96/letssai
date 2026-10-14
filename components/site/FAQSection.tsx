@@ -18,7 +18,7 @@ export function FAQSection({
             {title}
           </h2>
           {intro && (
-            <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg sm:leading-8">
+            <p className="mx-auto mt-3 max-w-2xl text-base leading-relaxed text-slate-600 sm:mt-4 sm:text-lg sm:leading-8">
               {intro}
             </p>
           )}

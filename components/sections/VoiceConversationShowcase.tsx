@@ -43,7 +43,7 @@ export function VoiceConversationShowcase() {
   const select = (id: VoiceScenarioId) => setSelectedId(id)
   return (
     <ConversationSection
-      heading="Real conversations, Real outcomes"
+      heading="Real conversations. Real outcomes"
       copy="Choose a business scenario and listen to an example AI-assisted phone conversation designed to turn everyday follow-up into a clear next step."
     >
       <div
@@ -117,6 +117,34 @@ export function IndustryConversationSection({
   )
 }
 
+function renderHeadingWithIcon(heading: string) {
+  const match = heading.match(/^(.*?)[,.]\s*(.*)$/)
+  if (match) {
+    const [, firstPart, secondPart] = match
+    return (
+      <>
+        <span className="inline">{firstPart},</span>{" "}
+        <span className="inline-flex items-center gap-1.5 align-middle whitespace-nowrap sm:gap-2">
+          <span>{secondPart}</span>
+          <RocketIcon
+            className="size-[1.1em] shrink-0 text-slate-950"
+            aria-hidden="true"
+          />
+        </span>
+      </>
+    )
+  }
+  return (
+    <span className="inline-flex items-center gap-1.5 align-middle sm:gap-2">
+      <span>{heading}</span>
+      <RocketIcon
+        className="size-[1.1em] shrink-0 text-slate-950"
+        aria-hidden="true"
+      />
+    </span>
+  )
+}
+
 function ConversationSection({
   heading,
   copy,
@@ -129,22 +157,18 @@ function ConversationSection({
   return (
     <section
       aria-labelledby={`conversation-heading-${heading.replaceAll(" ", "-").toLowerCase()}`}
-      className="overflow-hidden bg-[#f7f8f4] px-3.5 py-16 sm:px-6 md:py-24 lg:px-8"
+      className="overflow-hidden bg-[#f7f8f4] px-4 py-16 sm:px-6 md:py-24 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
           <h2
             id={`conversation-heading-${heading.replaceAll(" ", "-").toLowerCase()}`}
-            className="mt-4 mx-auto flex w-fit max-w-full flex-nowrap items-center justify-center gap-1.5 sm:gap-2.5 text-center text-[clamp(1.02rem,4.3vw,2.25rem)] font-semibold tracking-tight text-slate-950 whitespace-nowrap"
+            className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl"
           >
-            <span className="leading-tight">{heading}</span>
-            <RocketIcon
-              className="size-[1.15em] shrink-0 text-slate-950"
-              aria-hidden="true"
-            />
+            {renderHeadingWithIcon(heading)}
           </h2>
 
-          <p className="mx-auto mt-4 max-w-2xl leading-7 text-slate-600">
+          <p className="mx-auto mt-3 max-w-2xl text-base leading-relaxed text-slate-600 sm:mt-4 sm:text-lg sm:leading-8">
             {copy}
           </p>
         </div>

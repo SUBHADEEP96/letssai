@@ -36,10 +36,10 @@ export function ToolsSection({ title, description }: ToolsSectionProps) {
   return (
     <section className="section bg-gradient-to-b from-[#f7f8f4] via-emerald-50/30 to-[#f7f8f4]">
       <div className="mx-auto max-w-6xl text-center">
-        <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
+        <h2 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
           {title}
         </h2>
-        <p className="mx-auto mt-3 max-w-2xl leading-relaxed text-slate-600">
+        <p className="mx-auto mt-3 max-w-2xl text-base leading-relaxed text-slate-600 sm:mt-4 sm:text-lg sm:leading-8">
           {description}
         </p>
 
