@@ -118,16 +118,19 @@ export function IndustryConversationSection({
 }
 
 function renderHeadingWithIcon(heading: string) {
-  const match = heading.match(/^(.*?)[,.]\s*(.*)$/)
+  const match = heading.match(/^(.*?)([,.])\s*(.*)$/)
   if (match) {
-    const [, firstPart, secondPart] = match
+    const [, firstPart, separator, secondPart] = match
     return (
       <>
-        <span className="inline">{firstPart},</span>{" "}
-        <span className="inline-flex items-center gap-1.5 align-middle whitespace-nowrap sm:gap-2">
-          <span>{secondPart}</span>
+        <span>
+          {firstPart}
+          {separator}
+        </span>{" "}
+        <span className="whitespace-nowrap">
+          {secondPart}
           <RocketIcon
-            className="size-[1.1em] shrink-0 text-slate-950"
+            className="ml-1.5 inline-block size-[0.92em] text-slate-950 align-[-0.08em] sm:ml-2"
             aria-hidden="true"
           />
         </span>
@@ -135,10 +138,10 @@ function renderHeadingWithIcon(heading: string) {
     )
   }
   return (
-    <span className="inline-flex items-center gap-1.5 align-middle sm:gap-2">
-      <span>{heading}</span>
+    <span className="whitespace-nowrap">
+      {heading}
       <RocketIcon
-        className="size-[1.1em] shrink-0 text-slate-950"
+        className="ml-1.5 inline-block size-[0.92em] text-slate-950 align-[-0.08em] sm:ml-2"
         aria-hidden="true"
       />
     </span>
