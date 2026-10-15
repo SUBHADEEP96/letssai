@@ -19,6 +19,7 @@ import {
 } from "@/lib/seo"
 import { localizePath } from "@/i18n/routing"
 import { localizedMetadata } from "@/lib/i18n-seo"
+import { AgenticSupportSuite } from "@/components/sections/AgenticSupportSuite"
 
 function notFound(): never {
   throw new Error("Industry not found")
@@ -72,8 +73,14 @@ export default async function IndustryPage({
       <JsonLd
         data={breadcrumbsSchema([
           { name: "Home", url: absoluteUrl(localizePath("/", locale)) },
-          { name: "Industries", url: absoluteUrl(localizePath("/industries", locale)) },
-          { name: industry.title, url: absoluteUrl(localizePath(industry.href, locale)) },
+          {
+            name: "Industries",
+            url: absoluteUrl(localizePath("/industries", locale)),
+          },
+          {
+            name: industry.title,
+            url: absoluteUrl(localizePath(industry.href, locale)),
+          },
         ])}
       />
       <IndustryHero industry={industry} />
@@ -92,7 +99,10 @@ export default async function IndustryPage({
       ) : null}
 
       {slug === "retail-ecommerce" ? (
-        <EcommerceCaseStudies />
+        <>
+          <AgenticSupportSuite />
+          <EcommerceCaseStudies />
+        </>
       ) : (
         <>
           <IndustryUseCaseGrid

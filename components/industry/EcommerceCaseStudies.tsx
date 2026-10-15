@@ -18,12 +18,12 @@ import {
 } from "@phosphor-icons/react"
 
 interface CaseStudy {
-  id: "off-duty" | "mokobara"
+  id: "fashion-lifestyle" | "travel-lifestyle"
   brandName: string
   industry: string
   subCategory: string
-  logoUrl: string
-  logoAlt: string
+  categoryBadge: string
+  categoryIcon: typeof Storefront
   heroImageUrl: string
   heroImageAlt: string
   secondaryImageUrl?: string
@@ -56,19 +56,18 @@ interface CaseStudy {
 
 const CASE_STUDIES: CaseStudy[] = [
   {
-    id: "off-duty",
-    brandName: "Off Duty India",
+    id: "fashion-lifestyle",
+    brandName: "Leading Fashion and Lifestyle",
     industry: "Fashion & Lifestyle",
     subCategory: "Premium Denim & Streetwear",
-    logoUrl: "/media/case-studies/off-duty-logo.jpg",
-    logoAlt: "Off Duty India Brand Logo",
-    heroImageUrl: "/media/case-studies/off-duty-web.jpg",
-    heroImageAlt: "Off Duty India E-Commerce Store and Denim Collection",
-    secondaryImageUrl: "/media/case-studies/off-duty-feature.jpg",
+    categoryBadge: "D2C Fashion",
+    categoryIcon: Storefront,
+    heroImageUrl: "/media/case-studies/fashion-lifestyle-hero.jpg",
+    heroImageAlt: "Leading Fashion and Lifestyle Brand E-Commerce Collection",
     headline:
-      "How Off Duty Converted 13% of Abandoned Carts and Recovered ₹16.9L in Under 30 Days",
+      "How a Leading Fashion and Lifestyle Brand Converted 13% of Abandoned Carts and Recovered ₹16.9L in Under 30 Days",
     summary:
-      "By deploying autonomous Voice AI to reach shoppers within minutes of checkout abandonment, Off Duty overcame manual calling capacity constraints and drastically cut COD return risks.",
+      "By deploying autonomous Voice AI to reach shoppers within minutes of checkout abandonment, this leading fashion and lifestyle brand overcame manual calling capacity constraints and drastically cut COD return risks.",
     metrics: [
       {
         value: "13%",
@@ -98,7 +97,7 @@ const CASE_STUDIES: CaseStudy[] = [
     beforeAI: {
       title: "Before AI: The Manual Outreach Bottleneck",
       description:
-        "Off Duty had an active manual calling team, but as online traffic and sale drops grew, the team could not reach abandoners fast enough. Calls placed hours later saw low answer rates, and after-hours shoppers went uncontacted, leaking significant revenue.",
+        "The brand had an active manual calling team, but as online traffic and sale drops grew, the team could not reach abandoners fast enough. Calls placed hours later saw low answer rates, and after-hours shoppers went uncontacted, leaking significant revenue.",
     },
     afterAI: {
       title: "Positive Impact After Voice AI Adoption",
@@ -135,19 +134,18 @@ const CASE_STUDIES: CaseStudy[] = [
     ],
   },
   {
-    id: "mokobara",
-    brandName: "Mokobara",
+    id: "travel-lifestyle",
+    brandName: "Leading Travel and Lifestyle",
     industry: "Travel & Lifestyle",
     subCategory: "Luggage, Bags & Travel Gear",
-    logoUrl: "/media/case-studies/mokobara-logo.png",
-    logoAlt: "Mokobara Brand Logo",
-    heroImageUrl: "/media/case-studies/mokobara-feature.jpg",
-    heroImageAlt: "Mokobara Flagship Retail Storefront",
-    secondaryImageUrl: "/media/case-studies/mokobara-hero.jpg",
+    categoryBadge: "D2C Travel",
+    categoryIcon: Sparkle,
+    heroImageUrl: "/media/case-studies/travel-lifestyle-hero.jpg",
+    heroImageAlt: "Leading Travel and Lifestyle Brand Luggage Collection",
     headline:
-      "How Mokobara Achieved 13% Cart Conversion & Recovered ₹9.93L at 1/3rd Manual Cost",
+      "How a Leading Travel and Lifestyle Brand Achieved 13% Cart Conversion & Recovered ₹9.93L at 1/3rd Manual Cost",
     summary:
-      "Mokobara integrated conversational Voice AI to engage high-ticket luggage shoppers within 30 minutes, cutting operational recovery costs by 67% compared to manual calling teams.",
+      "A leading travel and lifestyle brand integrated conversational Voice AI to engage high-ticket luggage shoppers within 30 minutes, cutting operational recovery costs by 67% compared to manual calling teams.",
     metrics: [
       {
         value: "13%",
@@ -177,12 +175,12 @@ const CASE_STUDIES: CaseStudy[] = [
     beforeAI: {
       title: "Before AI: High Cost & Limited Capacity",
       description:
-        "Mokobara needed an automated, reliable way to recover high-value luggage orders. Their human calling team handled routine inquiries well, but scaling manual calling bandwidth to cover every cart drop-off was cost-prohibitive and operationally difficult.",
+        "The brand needed an automated, reliable way to recover high-value luggage orders. Their human calling team handled routine inquiries well, but scaling manual calling bandwidth to cover every cart drop-off was cost-prohibitive and operationally difficult.",
     },
     afterAI: {
       title: "Positive Impact After Voice AI Adoption",
       description:
-        "Deploying an automated Voice AI agent allowed Mokobara to reach abandoners within 30 minutes. The agent sounds brand-aligned, clarifies dimensions, warranty, and delivery timelines, and offers personalized discounts alongside instant WhatsApp completion links.",
+        "Deploying an automated Voice AI agent allowed the brand to reach abandoners within 30 minutes. The agent sounds brand-aligned, clarifies dimensions, warranty, and delivery timelines, and offers personalized discounts alongside instant WhatsApp completion links.",
     },
     scaleFact: {
       number: "6,026",
@@ -194,7 +192,7 @@ const CASE_STUDIES: CaseStudy[] = [
       {
         title: "Brand Tone & Style Alignment",
         description:
-          "Tailored voice profile that reflects Mokobara's modern, premium travel identity.",
+          "Tailored voice profile that reflects the brand's modern, premium travel identity.",
       },
       {
         title: "Product & Warranty Knowledge",
@@ -216,12 +214,13 @@ const CASE_STUDIES: CaseStudy[] = [
 ]
 
 export function EcommerceCaseStudies() {
-  const [activeTab, setActiveTab] = useState<"off-duty" | "mokobara">(
-    "off-duty"
-  )
+  const [activeTab, setActiveTab] = useState<
+    "fashion-lifestyle" | "travel-lifestyle"
+  >("fashion-lifestyle")
 
   const currentStudy =
     CASE_STUDIES.find((study) => study.id === activeTab) ?? CASE_STUDIES[0]
+  const CategoryIcon = currentStudy.categoryIcon
 
   return (
     <section
@@ -295,14 +294,15 @@ export function EcommerceCaseStudies() {
           {/* Top Brand Banner */}
           <div className="flex flex-wrap items-center justify-between gap-4 border-b border-emerald-950/10 pb-6">
             <div className="flex items-center gap-4">
-              <div className="flex h-12 w-32 items-center justify-center rounded-xl border border-emerald-950/10 bg-[#f7f8f4] p-2">
-                <Image
-                  src={currentStudy.logoUrl}
-                  alt={currentStudy.logoAlt}
-                  width={110}
-                  height={36}
-                  className="max-h-8 w-auto object-contain"
+              <div className="flex h-12 items-center justify-center gap-2 rounded-xl border border-emerald-950/10 bg-white px-3.5 py-2 shadow-2xs">
+                <CategoryIcon
+                  size={20}
+                  className="text-[#016630]"
+                  weight="fill"
                 />
+                <span className="font-mono text-xs font-bold tracking-tight text-slate-900 uppercase">
+                  {currentStudy.categoryBadge}
+                </span>
               </div>
               <div>
                 <span className="font-mono text-xs font-bold tracking-wider text-[#016630] uppercase">
@@ -435,7 +435,7 @@ export function EcommerceCaseStudies() {
 
             {/* Right Column: Visual Imagery from PDF + Workflow Card (5 cols) */}
             <div className="space-y-6 lg:col-span-5">
-              {/* Product / Store Visual from PDF */}
+              {/* Product Visual */}
               <div className="overflow-hidden rounded-2xl border border-emerald-950/10 bg-slate-100 shadow-sm">
                 <div className="relative aspect-[16/10] w-full">
                   <Image
