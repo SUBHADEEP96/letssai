@@ -8,6 +8,7 @@ import { faqSchema } from "@/lib/seo"
 import { homeFaqs } from "@/lib/site"
 import { GlobalDeliveryMap } from "@/components/site/GlobalDeliveryMap"
 import { VoiceConversationShowcase } from "@/components/sections/VoiceConversationShowcase"
+import { AgenticSupportSuite } from "@/components/sections/AgenticSupportSuite"
 import { ToolsSection } from "@/components/sections/ToolsSection"
 import { localizedMetadata } from "@/lib/i18n-seo"
 export async function generateMetadata({
@@ -32,6 +33,7 @@ export default async function Home({
       <JsonLd data={faqSchema(homeFaqs)} />
       <HomeHero />
       <VoiceConversationShowcase />
+      <AgenticSupportSuite />
       <ToolsSection title={t("toolsTitle")} description={t("toolsText")} />
       <FAQSection faqs={homeFaqs} />
       <GlobalDeliveryMap />
