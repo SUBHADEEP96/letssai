@@ -94,7 +94,10 @@ function GmailLogo({ className = "size-5" }: { className?: string }) {
         d="M28 8.5v15c0 1.4-1.1 2.5-2.5 2.5h-4.5V14.5L28 8.5z"
         fill="#4CAF50"
       />
-      <path d="M4 8.5v15C4 24.9 5.1 26 6.5 26H11V14.5L4 8.5z" fill="#1E88E5" />
+      <path
+        d="M4 8.5v15C4 24.9 5.1 26 6.5 26H11V14.5L4 8.5z"
+        fill="#1E88E5"
+      />
       <path d="M21 26V14.5l-5 4-5-4V26H21z" fill="#EA4335" />
       <path
         d="M28 8.5l-12 9.5-12-9.5C4 7.1 5.1 6 6.5 6h19c1.4 0 2.5 1.1 2.5 2.5z"
@@ -142,20 +145,20 @@ function MessengerLogo({ className = "size-5" }: { className?: string }) {
 
 function UnifiedInboxCardContent() {
   return (
-    <div className="flex flex-col">
+    <div className="flex w-full min-w-0 flex-col">
       {/* Block Header */}
-      <div className="mb-5 flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
-        <div>
-          <h3 className="text-xl font-semibold tracking-tight text-slate-950 sm:text-2xl">
+      <div className="mb-4 flex flex-col gap-2.5 sm:mb-5 sm:flex-row sm:items-center sm:justify-between">
+        <div className="min-w-0 flex-1">
+          <h3 className="text-lg font-semibold tracking-tight text-slate-950 sm:text-2xl">
             Unified Support Inbox
           </h3>
-          <p className="mt-1 text-xs leading-relaxed text-slate-600 sm:text-sm">
+          <p className="mt-0.5 text-xs leading-relaxed text-slate-600 sm:mt-1 sm:text-sm">
             Manage WhatsApp, Email, Instagram, and website chat from one dynamic
             dashboard so your team responds instantly.
           </p>
         </div>
-        <div className="flex shrink-0 items-center gap-2 rounded-xl border border-slate-200/80 bg-slate-50/80 px-3 py-1.5 shadow-2xs">
-          <span className="text-xs font-semibold text-slate-600">
+        <div className="flex shrink-0 items-center gap-1.5 self-start rounded-xl border border-slate-200/80 bg-slate-50/80 px-2.5 py-1 shadow-2xs sm:self-auto sm:px-3 sm:py-1.5">
+          <span className="text-[11px] font-semibold text-slate-600 sm:text-xs">
             Channels:
           </span>
           <WhatsAppLogo className="size-4 sm:size-4.5" />
@@ -166,29 +169,29 @@ function UnifiedInboxCardContent() {
       </div>
 
       {/* Software Window Mockup */}
-      <div className="overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-xl shadow-slate-950/5">
+      <div className="w-full min-w-0 overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-xl shadow-slate-950/5">
         {/* Window Bar */}
-        <div className="flex items-center justify-between border-b border-slate-200/80 bg-slate-50/90 px-4 py-2.5">
+        <div className="flex items-center justify-between border-b border-slate-200/80 bg-slate-50/90 px-3 py-2 sm:px-4 sm:py-2.5">
           <div className="flex items-center gap-1.5">
-            <div className="size-2.5 rounded-full bg-[#ff5f56]" />
-            <div className="size-2.5 rounded-full bg-[#ffbd2e]" />
-            <div className="size-2.5 rounded-full bg-[#27c93f]" />
+            <div className="size-2 rounded-full bg-[#ff5f56]" />
+            <div className="size-2 rounded-full bg-[#ffbd2e]" />
+            <div className="size-2 rounded-full bg-[#27c93f]" />
           </div>
-          <div className="flex items-center gap-1.5 rounded-md border border-slate-200 bg-white px-2.5 py-0.5 text-[11px] text-slate-600 shadow-2xs">
-            <span className="text-slate-400">app.letssai.com</span>
+          <div className="flex items-center gap-1 rounded-md border border-slate-200 bg-white px-2 py-0.5 text-[10px] text-slate-600 shadow-2xs sm:text-[11px]">
+            <span className="truncate text-slate-400">app.letssai.com</span>
             <span className="text-slate-300">/</span>
             <span className="font-medium text-slate-800">inbox</span>
           </div>
-          <div className="flex items-center gap-1.5 text-[11px] text-slate-500">
+          <div className="flex items-center gap-1.5 text-[10px] text-slate-500 sm:text-[11px]">
             <span className="size-2 rounded-full bg-emerald-500" />
-            <span className="hidden sm:inline">Active Session</span>
+            <span className="hidden xs:inline">Active Session</span>
           </div>
         </div>
 
-        {/* 3-Column Interface */}
-        <div className="grid min-h-[420px] grid-cols-1 lg:grid-cols-12">
-          {/* Left: Conversations List */}
-          <div className="border-b border-slate-200/70 p-3.5 lg:col-span-4 lg:border-r lg:border-b-0">
+        {/* Responsive Multi-pane Interface */}
+        <div className="grid min-h-[380px] w-full min-w-0 grid-cols-1 lg:grid-cols-12">
+          {/* Left: Conversations List (Hidden on small mobile to give full stage to the live AI conversation, visible on lg) */}
+          <div className="hidden border-b border-slate-200/70 p-3.5 lg:col-span-4 lg:block lg:border-r lg:border-b-0">
             <div className="relative mb-2.5">
               <MagnifyingGlass
                 size={14}
@@ -289,17 +292,29 @@ function UnifiedInboxCardContent() {
             </div>
           </div>
 
-          {/* Middle: Active Conversation */}
-          <div className="flex flex-col justify-between border-b border-slate-200/70 p-3.5 lg:col-span-5 lg:border-r lg:border-b-0">
+          {/* Middle: Active Conversation Thread (Primary View on all screens) */}
+          <div className="flex min-w-0 flex-1 flex-col justify-between p-3.5 sm:p-4 lg:col-span-5 lg:border-r">
             <div>
               {/* Customer Info Header */}
               <div className="flex items-center justify-between border-b border-slate-100 pb-2.5">
                 <div className="flex items-center gap-2">
-                  <div className="flex size-7 items-center justify-center rounded-full bg-slate-900 text-[11px] font-semibold text-white">
-                    SS
+                  <div className="relative">
+                    <div className="flex size-7 items-center justify-center rounded-full bg-slate-900 text-[11px] font-semibold text-white sm:size-8">
+                      SS
+                    </div>
+                    <div className="absolute -right-1 -bottom-1 lg:hidden">
+                      <WhatsAppLogo className="size-3" />
+                    </div>
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-slate-900">Sam S.</p>
+                    <div className="flex items-center gap-1.5">
+                      <p className="text-xs font-bold text-slate-900 sm:text-sm">
+                        Sam S.
+                      </p>
+                      <span className="rounded bg-emerald-50 px-1 py-0.5 text-[9px] font-semibold text-emerald-800 lg:hidden">
+                        WhatsApp
+                      </span>
+                    </div>
                     <p className="text-[10px] text-slate-500">
                       +1 (555) 392-8190
                     </p>
@@ -322,7 +337,7 @@ function UnifiedInboxCardContent() {
               <div className="mt-3.5 space-y-3">
                 {/* Outbound Agent message */}
                 <div className="flex justify-start">
-                  <div className="max-w-[85%] rounded-2xl rounded-tl-sm bg-slate-100 px-3.5 py-2 text-xs text-slate-800">
+                  <div className="max-w-[88%] rounded-2xl rounded-tl-sm bg-slate-100 px-3.5 py-2 text-xs text-slate-800 break-words sm:max-w-[85%]">
                     <p>
                       Hi Sam, how can I help you with the product you shared?
                     </p>
@@ -334,7 +349,7 @@ function UnifiedInboxCardContent() {
 
                 {/* Customer inquiry */}
                 <div className="flex justify-end">
-                  <div className="max-w-[85%] rounded-2xl rounded-tr-sm bg-slate-900 px-3.5 py-2 text-xs text-white">
+                  <div className="max-w-[88%] rounded-2xl rounded-tr-sm bg-slate-900 px-3.5 py-2 text-xs text-white break-words sm:max-w-[85%]">
                     <div className="mb-1.5 rounded-lg border border-white/10 bg-slate-800/80 p-2 text-[10px]">
                       <p className="font-semibold text-slate-200">
                         Ceramic Stoneware Mug Set
@@ -353,7 +368,7 @@ function UnifiedInboxCardContent() {
 
                 {/* LetssAI Bot Auto-Response */}
                 <div className="flex justify-start">
-                  <div className="max-w-[85%] rounded-2xl rounded-tl-sm border border-emerald-200 bg-emerald-50/60 px-3.5 py-2 text-xs text-emerald-950">
+                  <div className="max-w-[88%] rounded-2xl rounded-tl-sm border border-emerald-200 bg-emerald-50/70 px-3.5 py-2 text-xs text-emerald-950 break-words sm:max-w-[85%]">
                     <div className="flex items-center gap-1.5 text-[10px] font-bold text-emerald-800">
                       <Sparkle size={12} weight="fill" />
                       <span>LetssAI Bot</span>
@@ -373,6 +388,20 @@ function UnifiedInboxCardContent() {
                   </div>
                 </div>
               </div>
+
+              {/* Mobile Embedded Order Drawer Preview */}
+              <div className="mt-3 rounded-xl border border-emerald-200/80 bg-emerald-50/40 p-2.5 text-xs text-emerald-950 lg:hidden">
+                <div className="flex items-center justify-between font-semibold">
+                  <span>Cart #84920 · 3x Ceramic Mug Sets</span>
+                  <span className="font-mono font-bold">$65.00</span>
+                </div>
+                <div className="mt-1 flex items-center justify-between text-[11px] text-emerald-800">
+                  <span>Discount: STUDIO10 (-$10.00)</span>
+                  <span className="font-medium text-emerald-900 underline">
+                    Payment link sent
+                  </span>
+                </div>
+              </div>
             </div>
 
             {/* Text Input */}
@@ -382,12 +411,12 @@ function UnifiedInboxCardContent() {
                   type="text"
                   readOnly
                   value="Type a reply or press '/' for shortcuts..."
-                  className="w-full bg-transparent text-slate-700 focus:outline-none"
+                  className="w-full min-w-0 bg-transparent text-slate-700 focus:outline-none"
                 />
                 <button
                   type="button"
                   aria-label="Send message"
-                  className="rounded-lg bg-emerald-900 p-1.5 text-white transition hover:bg-emerald-800"
+                  className="shrink-0 rounded-lg bg-emerald-900 p-1.5 text-white transition hover:bg-emerald-800"
                 >
                   <PaperPlaneTilt size={13} weight="fill" />
                 </button>
@@ -395,13 +424,11 @@ function UnifiedInboxCardContent() {
             </div>
           </div>
 
-          {/* Right: Cart Drawer */}
-          <div className="bg-slate-50/50 p-3.5 lg:col-span-3">
+          {/* Right: Cart Drawer (Desktop 3-column view) */}
+          <div className="hidden bg-slate-50/50 p-3.5 lg:col-span-3 lg:block">
             <div className="rounded-xl border border-slate-200 bg-white p-3.5 shadow-2xs">
               <div className="flex items-center justify-between border-b border-slate-100 pb-2">
-                <p className="text-xs font-bold text-slate-900">
-                  Order Summary
-                </p>
+                <p className="text-xs font-bold text-slate-900">Order Summary</p>
                 <span className="text-[10px] text-slate-500">#84920</span>
               </div>
 
@@ -449,42 +476,46 @@ function UnifiedInboxCardContent() {
 
 function LiveAgentAnalyticsCardContent() {
   return (
-    <div className="flex flex-col">
+    <div className="flex w-full min-w-0 flex-col">
       {/* Block Header */}
-      <div className="mb-5">
-        <h3 className="text-xl font-semibold tracking-tight text-slate-950 sm:text-2xl">
+      <div className="mb-4 sm:mb-5">
+        <h3 className="text-lg font-semibold tracking-tight text-slate-950 sm:text-2xl">
           Live Agent Analytics
         </h3>
-        <p className="mt-1 text-xs leading-relaxed text-slate-600 sm:text-sm">
-          Track conversation volume, monitor unattended and unassigned chats,
-          and view real-time agent performance.
+        <p className="mt-0.5 text-xs leading-relaxed text-slate-600 sm:mt-1 sm:text-sm">
+          Track conversation volume, monitor unattended and unassigned chats, and
+          view real-time agent performance.
         </p>
       </div>
 
       {/* Analytics Dashboard Content */}
-      <div className="overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-4 shadow-xl shadow-slate-950/5 sm:p-5">
-        {/* Clean Metrics Table */}
-        <div className="[scrollbar-width:none] overflow-x-auto [&::-webkit-scrollbar]:hidden">
-          <table className="w-full text-left text-xs">
+      <div className="w-full min-w-0 overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-3.5 shadow-xl shadow-slate-950/5 sm:p-5">
+        {/* Responsive Metrics Table with clean horizontal scrolling on mobile */}
+        <div className="w-full max-w-full overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden touch-pan-x">
+          <table className="w-full min-w-[340px] text-left text-xs sm:min-w-[480px]">
             <thead>
               <tr className="border-b border-slate-200 text-[10px] font-bold tracking-wider text-slate-500 uppercase">
-                <th className="pr-4 pb-2.5">Agent Name</th>
-                <th className="px-4 pb-2.5">Resolved</th>
-                <th className="px-4 pb-2.5">Avg First Response</th>
-                <th className="px-4 pb-2.5">Avg Resolution Time</th>
-                <th className="pb-2.5 pl-4">Avg Response Time</th>
+                <th className="pr-3 pb-2.5 sm:pr-4">Agent Name</th>
+                <th className="px-2 pb-2.5 sm:px-4">Resolved</th>
+                <th className="px-2 pb-2.5 sm:px-4">Avg First Response</th>
+                <th className="hidden px-2 pb-2.5 sm:table-cell sm:px-4">
+                  Avg Resolution
+                </th>
+                <th className="hidden pl-2 pb-2.5 sm:table-cell sm:pl-4">
+                  Avg Response
+                </th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100 font-medium text-slate-800">
               {/* LetssAI Bot Row */}
               <tr className="bg-emerald-50/50">
-                <td className="py-3 pr-4">
+                <td className="py-2.5 pr-3 sm:py-3 sm:pr-4">
                   <div className="flex items-center gap-2">
-                    <div className="flex size-7 items-center justify-center rounded-lg bg-emerald-950 text-white">
+                    <div className="flex size-6 shrink-0 items-center justify-center rounded-lg bg-emerald-950 text-white sm:size-7">
                       <Sparkle size={13} weight="fill" />
                     </div>
-                    <div>
-                      <span className="font-bold text-emerald-950">
+                    <div className="min-w-0">
+                      <span className="block truncate font-bold text-emerald-950">
                         LetssAI Bot
                       </span>
                       <span className="block text-[10px] text-slate-400">
@@ -493,71 +524,83 @@ function LiveAgentAnalyticsCardContent() {
                     </div>
                   </div>
                 </td>
-                <td className="px-4 py-3 font-mono font-bold text-slate-900">
+                <td className="px-2 py-2.5 font-mono font-bold text-slate-900 sm:px-4 sm:py-3">
                   798
                 </td>
-                <td className="px-4 py-3 font-mono font-semibold text-emerald-800">
+                <td className="px-2 py-2.5 font-mono font-semibold text-emerald-800 sm:px-4 sm:py-3">
                   1 Min
                 </td>
-                <td className="px-4 py-3 font-mono text-slate-700">
+                <td className="hidden px-2 py-2.5 font-mono text-slate-700 sm:table-cell sm:px-4 sm:py-3">
                   0 Hr 22 Min
                 </td>
-                <td className="py-3 pl-4 font-mono font-bold text-emerald-900">
+                <td className="hidden pl-2 py-2.5 font-mono font-bold text-emerald-900 sm:table-cell sm:pl-4 sm:py-3">
                   1 Min
                 </td>
               </tr>
 
               {/* Phoenix Baker */}
               <tr>
-                <td className="py-2.5 pr-4">
+                <td className="py-2 pr-3 sm:py-2.5 sm:pr-4">
                   <span className="font-semibold text-slate-900">
                     Phoenix Baker
                   </span>
                 </td>
-                <td className="px-4 py-2.5 font-mono">566</td>
-                <td className="px-4 py-2.5 font-mono">5 Min</td>
-                <td className="px-4 py-2.5 font-mono">4 Hr 19 Min</td>
-                <td className="py-2.5 pl-4 font-mono">26 Min</td>
+                <td className="px-2 py-2 font-mono sm:px-4 sm:py-2.5">566</td>
+                <td className="px-2 py-2 font-mono sm:px-4 sm:py-2.5">5 Min</td>
+                <td className="hidden px-2 py-2 font-mono sm:table-cell sm:px-4 sm:py-2.5">
+                  4 Hr 19 Min
+                </td>
+                <td className="hidden pl-2 py-2 font-mono sm:table-cell sm:pl-4 sm:py-2.5">
+                  26 Min
+                </td>
               </tr>
 
               {/* Lana Steiner */}
               <tr>
-                <td className="py-2.5 pr-4">
+                <td className="py-2 pr-3 sm:py-2.5 sm:pr-4">
                   <span className="font-semibold text-slate-900">
                     Lana Steiner
                   </span>
                 </td>
-                <td className="px-4 py-2.5 font-mono">451</td>
-                <td className="px-4 py-2.5 font-mono">2 Min</td>
-                <td className="px-4 py-2.5 font-mono">3 Hr 35 Min</td>
-                <td className="py-2.5 pl-4 font-mono">2 Hr 11 Min</td>
+                <td className="px-2 py-2 font-mono sm:px-4 sm:py-2.5">451</td>
+                <td className="px-2 py-2 font-mono sm:px-4 sm:py-2.5">2 Min</td>
+                <td className="hidden px-2 py-2 font-mono sm:table-cell sm:px-4 sm:py-2.5">
+                  3 Hr 35 Min
+                </td>
+                <td className="hidden pl-2 py-2 font-mono sm:table-cell sm:pl-4 sm:py-2.5">
+                  2 Hr 11 Min
+                </td>
               </tr>
 
               {/* Demi Wilkinson */}
               <tr>
-                <td className="py-2.5 pr-4">
+                <td className="py-2 pr-3 sm:py-2.5 sm:pr-4">
                   <span className="font-semibold text-slate-900">
                     Demi Wilkinson
                   </span>
                 </td>
-                <td className="px-4 py-2.5 font-mono">335</td>
-                <td className="px-4 py-2.5 font-mono">4 Min</td>
-                <td className="px-4 py-2.5 font-mono">7 Hr 19 Min</td>
-                <td className="py-2.5 pl-4 font-mono">4 Hr 35 Min</td>
+                <td className="px-2 py-2 font-mono sm:px-4 sm:py-2.5">335</td>
+                <td className="px-2 py-2 font-mono sm:px-4 sm:py-2.5">4 Min</td>
+                <td className="hidden px-2 py-2 font-mono sm:table-cell sm:px-4 sm:py-2.5">
+                  7 Hr 19 Min
+                </td>
+                <td className="hidden pl-2 py-2 font-mono sm:table-cell sm:pl-4 sm:py-2.5">
+                  4 Hr 35 Min
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
 
         {/* Bottom Live Metrics Overview */}
-        <div className="mt-5 grid grid-cols-1 gap-3.5 sm:grid-cols-2">
+        <div className="mt-4 grid grid-cols-1 gap-3 sm:mt-5 sm:grid-cols-2">
           {/* Live Queue Overview */}
-          <div className="rounded-xl border border-slate-200 bg-slate-50/60 p-3.5">
+          <div className="rounded-xl border border-slate-200 bg-slate-50/60 p-3 sm:p-3.5">
             <div className="flex items-center justify-between border-b border-slate-200/80 pb-2">
               <p className="text-xs font-bold text-slate-900">Queue Overview</p>
               <span className="text-[10px] text-slate-500">Last 30 days</span>
             </div>
-            <div className="mt-2.5 grid grid-cols-3 gap-2">
+            <div className="mt-2.5 grid grid-cols-3 gap-1.5 sm:gap-2">
               <div>
                 <p className="text-[10px] text-slate-500">Open</p>
                 <p className="font-mono text-sm font-bold text-slate-900 sm:text-base">
@@ -580,7 +623,7 @@ function LiveAgentAnalyticsCardContent() {
           </div>
 
           {/* CSAT Reports */}
-          <div className="rounded-xl border border-slate-200 bg-slate-50/60 p-3.5">
+          <div className="rounded-xl border border-slate-200 bg-slate-50/60 p-3 sm:p-3.5">
             <div className="flex items-center justify-between border-b border-slate-200/80 pb-2">
               <p className="text-xs font-bold text-slate-900">CSAT Telemetry</p>
               <span className="text-[10px] text-slate-500">
@@ -610,23 +653,23 @@ function LiveAgentAnalyticsCardContent() {
 
 function WorkflowAutomationsCardContent() {
   return (
-    <div className="flex flex-col">
+    <div className="flex w-full min-w-0 flex-col">
       {/* Block Header */}
-      <div className="mb-5">
-        <h3 className="text-xl font-semibold tracking-tight text-slate-950 sm:text-2xl">
+      <div className="mb-4 sm:mb-5">
+        <h3 className="text-lg font-semibold tracking-tight text-slate-950 sm:text-2xl">
           Workflow Automations
         </h3>
-        <p className="mt-1 text-xs leading-relaxed text-slate-600 sm:text-sm">
+        <p className="mt-0.5 text-xs leading-relaxed text-slate-600 sm:mt-1 sm:text-sm">
           Auto-resolve repetitive queries and route conversations to the right
           agent to speed up responses and improve efficiency.
         </p>
       </div>
 
       {/* Workflow Interface Mockup */}
-      <div className="overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-4 shadow-xl shadow-slate-950/5 sm:p-5">
-        <div className="grid grid-cols-1 items-start gap-5 lg:grid-cols-12">
+      <div className="w-full min-w-0 overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-3.5 shadow-xl shadow-slate-950/5 sm:p-5">
+        <div className="grid grid-cols-1 items-start gap-4 sm:gap-5 lg:grid-cols-12">
           {/* Left: Multi-channel Inbound Stream */}
-          <div className="rounded-xl border border-slate-200 bg-slate-50/60 p-3.5 lg:col-span-5">
+          <div className="w-full min-w-0 rounded-xl border border-slate-200 bg-slate-50/60 p-3 sm:p-3.5 lg:col-span-5">
             <div className="border-b border-slate-200/80 pb-2">
               <p className="text-xs font-bold text-slate-900">
                 Multi-channel Support Inbox
@@ -673,8 +716,8 @@ function WorkflowAutomationsCardContent() {
                 </p>
               </div>
 
-              {/* Ticket 3 */}
-              <div className="rounded-lg border border-slate-200 bg-white p-2.5 shadow-2xs">
+              {/* Ticket 3 (shown on sm and above) */}
+              <div className="hidden rounded-lg border border-slate-200 bg-white p-2.5 shadow-2xs sm:block">
                 <div className="flex items-center justify-between text-xs">
                   <span className="flex items-center gap-1.5 font-semibold text-slate-800">
                     <InstagramLogo className="size-3.5" />
@@ -694,67 +737,64 @@ function WorkflowAutomationsCardContent() {
           </div>
 
           {/* Right: 4 Workflow Action Cards */}
-          <div className="lg:col-span-7">
-            <div className="space-y-2.5">
+          <div className="w-full min-w-0 lg:col-span-7">
+            <div className="space-y-2 sm:space-y-2.5">
               {/* Card 1 */}
-              <div className="flex items-center gap-3 rounded-xl border border-slate-200/90 bg-white p-3 shadow-2xs transition hover:border-emerald-300">
-                <div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-purple-50 text-purple-600">
-                  <Sparkle size={18} weight="fill" />
+              <div className="flex items-center gap-2.5 rounded-xl border border-slate-200/90 bg-white p-2.5 shadow-2xs transition hover:border-emerald-300 sm:gap-3 sm:p-3">
+                <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-purple-50 text-purple-600 sm:size-9">
+                  <Sparkle size={17} weight="fill" />
                 </div>
-                <div>
+                <div className="min-w-0 flex-1">
                   <h4 className="text-xs font-bold text-slate-900 sm:text-sm">
                     Automate routine order updates with AI
                   </h4>
-                  <p className="text-[11px] text-slate-500">
+                  <p className="text-[10px] text-slate-500 sm:text-[11px]">
                     Instantly resolves status, refunds, and delivery inquiries.
                   </p>
                 </div>
               </div>
 
               {/* Card 2 */}
-              <div className="flex items-center gap-3 rounded-xl border border-slate-200/90 bg-white p-3 shadow-2xs transition hover:border-emerald-300">
-                <div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
-                  <ArrowBendUpRight size={18} weight="bold" />
+              <div className="flex items-center gap-2.5 rounded-xl border border-slate-200/90 bg-white p-2.5 shadow-2xs transition hover:border-emerald-300 sm:gap-3 sm:p-3">
+                <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 sm:size-9">
+                  <ArrowBendUpRight size={17} weight="bold" />
                 </div>
-                <div>
+                <div className="min-w-0 flex-1">
                   <h4 className="text-xs font-bold text-slate-900 sm:text-sm">
                     Route technical issues to the right experts
                   </h4>
-                  <p className="text-[11px] text-slate-500">
-                    Classifies complexity and routes to specialized tier-2
-                    agents.
+                  <p className="text-[10px] text-slate-500 sm:text-[11px]">
+                    Classifies complexity and routes to specialized tier-2 agents.
                   </p>
                 </div>
               </div>
 
               {/* Card 3 */}
-              <div className="flex items-center gap-3 rounded-xl border border-slate-200/90 bg-white p-3 shadow-2xs transition hover:border-emerald-300">
-                <div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-red-50 text-red-600">
-                  <Flame size={18} weight="fill" />
+              <div className="flex items-center gap-2.5 rounded-xl border border-slate-200/90 bg-white p-2.5 shadow-2xs transition hover:border-emerald-300 sm:gap-3 sm:p-3">
+                <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-red-50 text-red-600 sm:size-9">
+                  <Flame size={17} weight="fill" />
                 </div>
-                <div>
+                <div className="min-w-0 flex-1">
                   <h4 className="text-xs font-bold text-slate-900 sm:text-sm">
                     Flag frustrated customers for priority handling
                   </h4>
-                  <p className="text-[11px] text-slate-500">
-                    Sentiment analysis flags churn risk for immediate human
-                    manager intervention.
+                  <p className="text-[10px] text-slate-500 sm:text-[11px]">
+                    Sentiment analysis flags churn risk for immediate human manager intervention.
                   </p>
                 </div>
               </div>
 
               {/* Card 4 */}
-              <div className="flex items-center gap-3 rounded-xl border border-slate-200/90 bg-white p-3 shadow-2xs transition hover:border-emerald-300">
-                <div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-amber-600">
-                  <Users size={18} weight="fill" />
+              <div className="flex items-center gap-2.5 rounded-xl border border-slate-200/90 bg-white p-2.5 shadow-2xs transition hover:border-emerald-300 sm:gap-3 sm:p-3">
+                <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-amber-600 sm:size-9">
+                  <Users size={17} weight="fill" />
                 </div>
-                <div>
+                <div className="min-w-0 flex-1">
                   <h4 className="text-xs font-bold text-slate-900 sm:text-sm">
                     Balance workload by sending tickets to available agents
                   </h4>
-                  <p className="text-[11px] text-slate-500">
-                    Evenly distributes queue load across active agents based on
-                    capacity.
+                  <p className="text-[10px] text-slate-500 sm:text-[11px]">
+                    Evenly distributes queue load across active agents based on capacity.
                   </p>
                 </div>
               </div>
@@ -767,7 +807,7 @@ function WorkflowAutomationsCardContent() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Main Agentic Support Suite: Spreaded Cards Scroll Carousel                 */
+/* Main AI Customer Support Suite: Spreaded Cards Scroll Carousel             */
 /* -------------------------------------------------------------------------- */
 
 export function AgenticSupportSuite() {
@@ -797,7 +837,7 @@ export function AgenticSupportSuite() {
     })
   }, [scrollYProgress])
 
-  // Smooth scroll to target card section
+  // Smooth scroll to target card section on desktop
   const scrollToCard = (index: number) => {
     if (!containerRef.current) return
     const containerTop = containerRef.current.offsetTop
@@ -855,19 +895,16 @@ export function AgenticSupportSuite() {
   const steps = [
     {
       id: 0,
-      number: "01",
       label: "Unified Support Inbox",
       icon: Chats,
     },
     {
       id: 1,
-      number: "02",
       label: "Live Agent Analytics",
       icon: ChartBar,
     },
     {
       id: 2,
-      number: "03",
       label: "Workflow Automations",
       icon: Robot,
     },
@@ -878,7 +915,7 @@ export function AgenticSupportSuite() {
       ref={containerRef}
       id="agentic-support-suite"
       aria-labelledby="agentic-suite-heading"
-      className="relative bg-[#f7f8f4] md:h-[320vh]"
+      className="relative w-full max-w-full overflow-x-clip bg-[#f7f8f4] md:h-[320vh]"
     >
       {/* Subtle depth lighting glow */}
       <div
@@ -887,15 +924,15 @@ export function AgenticSupportSuite() {
       />
 
       {/* ================================================================ */}
-      {/* DESKTOP & TABLET: Pinned Spreaded Cards Deck Carousel            */}
+      {/* DESKTOP & TABLET: Pinned Spreaded Cards Deck Carousel (md:)       */}
       {/* ================================================================ */}
       <div className="hidden px-4 py-10 sm:px-6 md:sticky md:top-14 md:flex md:min-h-[calc(100vh-4rem)] md:flex-col md:justify-center lg:px-8 lg:md:top-16">
         <div className="mx-auto w-full max-w-6xl">
-          {/* Section Heading & Category */}
+          {/* Section Heading & Subtitle */}
           <div className="mx-auto max-w-3xl text-center">
             <h2
               id="agentic-suite-heading"
-              className="mt-2 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl"
+              className="text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl"
             >
               AI Customer Support Suite
             </h2>
@@ -904,7 +941,7 @@ export function AgenticSupportSuite() {
               workflow routing across your customer channels.
             </p>
 
-            {/* Step Switcher Pill Bar (Synced to Scroll & Clickable) */}
+            {/* Step Switcher Pill Bar (Desktop) */}
             <div className="mt-6 inline-flex items-center gap-1.5 rounded-full border border-slate-200/90 bg-white/90 p-1 shadow-xs backdrop-blur-md">
               {steps.map((step) => {
                 const Icon = step.icon
@@ -943,9 +980,7 @@ export function AgenticSupportSuite() {
 
           {/* Spreaded Cards Stage Container */}
           <div className="relative mt-7 min-h-[520px] w-full">
-            {/* ------------------------------------------------------------ */}
-            {/* CARD 1: Unified Support Inbox                                */}
-            {/* ------------------------------------------------------------ */}
+            {/* CARD 1: Unified Support Inbox */}
             <motion.div
               style={
                 prefersReducedMotion
@@ -961,7 +996,6 @@ export function AgenticSupportSuite() {
               }
               className="absolute inset-0 overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-5 shadow-2xl shadow-slate-950/8 will-change-transform sm:p-6"
             >
-              {/* Occlusion shade when stacked behind */}
               <motion.div
                 style={{ opacity: card1Shade }}
                 className="pointer-events-none absolute inset-0 z-20 rounded-3xl bg-slate-950 transition-opacity"
@@ -971,9 +1005,7 @@ export function AgenticSupportSuite() {
               </div>
             </motion.div>
 
-            {/* ------------------------------------------------------------ */}
-            {/* CARD 2: Live Agent Analytics                                 */}
-            {/* ------------------------------------------------------------ */}
+            {/* CARD 2: Live Agent Analytics */}
             <motion.div
               style={
                 prefersReducedMotion
@@ -989,7 +1021,6 @@ export function AgenticSupportSuite() {
               }
               className="absolute inset-0 overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-5 shadow-2xl shadow-slate-950/8 will-change-transform sm:p-6"
             >
-              {/* Occlusion shade when stacked behind */}
               <motion.div
                 style={{ opacity: card2Shade }}
                 className="pointer-events-none absolute inset-0 z-20 rounded-3xl bg-slate-950 transition-opacity"
@@ -999,9 +1030,7 @@ export function AgenticSupportSuite() {
               </div>
             </motion.div>
 
-            {/* ------------------------------------------------------------ */}
-            {/* CARD 3: Workflow Automations                                 */}
-            {/* ------------------------------------------------------------ */}
+            {/* CARD 3: Workflow Automations */}
             <motion.div
               style={
                 prefersReducedMotion
@@ -1025,56 +1054,60 @@ export function AgenticSupportSuite() {
       </div>
 
       {/* ================================================================ */}
-      {/* MOBILE: Interactive Card Carousel (< md)                         */}
+      {/* MOBILE & SMALL TABLET: 100% Responsive Carousel (< md)           */}
       {/* ================================================================ */}
-      <div className="block px-4 py-16 md:hidden">
-        <div className="mx-auto max-w-xl">
-          {/* Header */}
+      <div className="block w-full max-w-full px-3.5 py-12 sm:px-6 md:hidden">
+        <div className="mx-auto w-full max-w-xl">
+          {/* Header (Identical copy & hierarchy to desktop) */}
           <div className="text-center">
-            <p className="font-mono text-xs font-bold tracking-[.18em] text-emerald-800 uppercase">
-              Support Suite
-            </p>
-            <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-950">
-              Agentic Support Suite
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+              AI Customer Support Suite
             </h2>
-            <p className="mt-2 text-xs leading-relaxed text-slate-600">
+            <p className="mx-auto mt-2 max-w-xl text-xs leading-relaxed text-slate-600 sm:text-sm">
               Unified inbox management, live response telemetry, and autonomous
-              workflow routing.
+              workflow routing across your customer channels.
             </p>
 
-            {/* Mobile Pill Switcher */}
-            <div className="mt-5 flex items-center justify-center gap-1 rounded-full border border-slate-200 bg-white p-1 shadow-2xs">
-              {steps.map((step) => {
-                const isActive = activeStep === step.id
-                return (
-                  <button
-                    key={step.id}
-                    onClick={() => setActiveStep(step.id)}
-                    type="button"
-                    className={`rounded-full px-3 py-1.5 text-[11px] font-semibold transition ${
-                      isActive
-                        ? "bg-emerald-950 text-white"
-                        : "text-slate-600 hover:text-slate-900"
-                    }`}
-                  >
-                    <span>{step.number}</span>
-                    <span className="xs:inline ml-1 hidden">{step.label}</span>
-                  </button>
-                )
-              })}
+            {/* Mobile Tab Bar (Full Names with Icons, Horizontally Scrollable without breaking page) */}
+            <div className="mt-5 w-full max-w-full overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              <div className="inline-flex min-w-max items-center justify-start gap-1.5 rounded-full border border-slate-200/90 bg-white p-1 shadow-2xs">
+                {steps.map((step) => {
+                  const Icon = step.icon
+                  const isActive = activeStep === step.id
+                  return (
+                    <button
+                      key={step.id}
+                      onClick={() => setActiveStep(step.id)}
+                      type="button"
+                      className={`flex shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold whitespace-nowrap transition-all ${
+                        isActive
+                          ? "bg-emerald-950 text-white shadow-2xs"
+                          : "text-slate-600 hover:text-slate-900"
+                      }`}
+                    >
+                      <Icon
+                        size={14}
+                        weight={isActive ? "fill" : "regular"}
+                        className="shrink-0"
+                      />
+                      <span>{step.label}</span>
+                    </button>
+                  )
+                })}
+              </div>
             </div>
           </div>
 
           {/* Active Mobile Card Display with Smooth Fade Transition */}
-          <div className="mt-6">
+          <div className="mt-5 w-full min-w-0">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeStep}
-                initial={{ opacity: 0, y: 12 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -12 }}
-                transition={{ duration: 0.25, ease: "easeOut" }}
-                className="rounded-2xl border border-slate-200/90 bg-white p-4 shadow-xl shadow-slate-950/5"
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.22, ease: "easeOut" }}
+                className="w-full min-w-0 overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-3.5 shadow-xl shadow-slate-950/5 sm:p-5"
               >
                 {activeStep === 0 && <UnifiedInboxCardContent />}
                 {activeStep === 1 && <LiveAgentAnalyticsCardContent />}
@@ -1083,24 +1116,33 @@ export function AgenticSupportSuite() {
             </AnimatePresence>
 
             {/* Mobile Next / Previous Controls */}
-            <div className="mt-4 flex items-center justify-between text-xs text-slate-600">
+            <div className="mt-3.5 flex items-center justify-between text-xs text-slate-600">
               <button
                 type="button"
                 onClick={() => setActiveStep((prev) => Math.max(0, prev - 1))}
                 disabled={activeStep === 0}
-                className="flex items-center gap-1 rounded-lg border border-slate-200 bg-white px-3 py-1.5 font-medium disabled:opacity-40"
+                className="flex items-center gap-1 rounded-lg border border-slate-200 bg-white px-3 py-1.5 font-medium shadow-2xs disabled:opacity-35"
               >
                 <CaretLeft size={14} />
                 <span>Previous</span>
               </button>
-              <span className="font-mono text-xs text-slate-400">
-                {activeStep + 1} / 3
-              </span>
+              <div className="flex items-center gap-1 text-[11px] font-medium text-slate-500">
+                {steps.map((s) => (
+                  <span
+                    key={s.id}
+                    className={`inline-block size-1.5 rounded-full transition-all ${
+                      activeStep === s.id
+                        ? "w-4 bg-emerald-900"
+                        : "bg-slate-300"
+                    }`}
+                  />
+                ))}
+              </div>
               <button
                 type="button"
                 onClick={() => setActiveStep((prev) => Math.min(2, prev + 1))}
                 disabled={activeStep === 2}
-                className="flex items-center gap-1 rounded-lg border border-slate-200 bg-white px-3 py-1.5 font-medium disabled:opacity-40"
+                className="flex items-center gap-1 rounded-lg border border-slate-200 bg-white px-3 py-1.5 font-medium shadow-2xs disabled:opacity-35"
               >
                 <span>Next</span>
                 <CaretRight size={14} />
