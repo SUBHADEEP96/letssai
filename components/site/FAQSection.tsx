@@ -4,26 +4,23 @@ import { FAQAccordion } from "./FAQAccordion"
 export function FAQSection({
   faqs,
   title = "Questions business owners ask",
-  intro,
 }: {
   faqs: FAQ[]
   title?: string
   intro?: string
 }) {
   return (
-    <section className="py-16">
+    <section id="faq" aria-labelledby="faq-heading" className="py-16 sm:py-20">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
+        <div className="text-center">
+          <h2
+            id="faq-heading"
+            className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl whitespace-normal sm:whitespace-nowrap"
+          >
             {title}
           </h2>
-          {intro && (
-            <p className="mx-auto mt-3 max-w-2xl text-base leading-relaxed text-slate-600 sm:mt-4 sm:text-lg sm:leading-8">
-              {intro}
-            </p>
-          )}
         </div>
-        <div className="mt-8">
+        <div className="mt-8 sm:mt-10">
           <FAQAccordion faqs={faqs} />
         </div>
       </div>

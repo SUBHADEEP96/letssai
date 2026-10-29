@@ -587,18 +587,70 @@ export const industries: Industry[] = [
 
 export const homeFaqs: FAQ[] = [
   {
-    question: "What does LetssAI help businesses automate?",
+    question: "What does LetssAI do as an AI transformation company?",
     answer:
-      "LetssAI helps with customer replies, lead follow-up, document questions, appointment booking, reminders, reports, and routine workflows across existing business tools.",
+      "LetssAI is an AI transformation and business automation company that helps businesses replace repetitive manual work with intelligent, production-ready AI solutions. We design and implement custom AI agents, conversational AI, voice AI, workflow automation, and applied AI systems that integrate with existing business processes.",
   },
   {
-    question: "Is LetssAI built for small and growing businesses?",
+    question: "How can LetssAI help my business run on autopilot?",
     answer:
-      "Yes. The website and services are designed for teams that want practical AI inside tools they already use.",
+      "LetssAI builds AI-powered workflows that can handle customer enquiries, qualify leads, make and answer calls, manage emails, schedule appointments, update CRM records, and execute routine business tasks with minimal manual intervention. These systems can operate around the clock, with human approvals and oversight for important decisions.",
   },
   {
-    question: "Can LetssAI include human handoff?",
+    question:
+      "Can LetssAI build AI agents that communicate like humans over voice, chat, and email?",
     answer:
-      "Yes. Human handoff is part of the design for sensitive, complex, or high-value conversations.",
+      "Yes. LetssAI develops conversational AI agents that communicate naturally through voice calls, website chat, email, and supported messaging channels. These agents can understand customer requests, respond using relevant business information, maintain conversation context, and take authorized actions such as booking appointments, creating tickets, or updating records.",
+  },
+  {
+    question: "What business processes can LetssAI automate with AI?",
+    answer:
+      "LetssAI can automate sales outreach, lead qualification, customer support, employee helpdesks, email handling, appointment scheduling, follow-ups, CRM updates, document processing, reporting, and multi-step business workflows. Each solution is designed around the business's existing tools, operational requirements, and desired outcomes.",
+  },
+  {
+    question: "How much does it cost to implement AI automation with LetssAI?",
+    answer:
+      "LetssAI offers tailored AI implementation pricing rather than a fixed one-size-fits-all package. Costs depend on the complexity of the workflow, integrations, AI models, usage volumes, hosting, security requirements, and ongoing support. After a discovery call, we define the scope and provide a proposal based on your business requirements.",
+  },
+  {
+    question:
+      "How quickly can LetssAI deploy a production-ready AI solution?",
+    answer:
+      "LetssAI targets implementation timelines ranging from approximately 2 weeks to 2 months, depending on the solution's complexity. Focused AI automations can often be delivered faster, while deeply customized applied AI systems involving multiple integrations, security controls, and testing require more time. The delivery schedule is finalized after discovery and technical assessment.",
+  },
+  {
+    question:
+      "How does LetssAI protect business data and customer information?",
+    answer:
+      "LetssAI designs AI solutions with data isolation and business-specific security requirements in mind. Where required, we provision a separate cloud cluster or isolated cloud environment for each business, with appropriate access controls, encryption, and data-handling policies. The final security architecture and deployment model are agreed during solution design.",
+  },
+  {
+    question: "Does LetssAI provide AI automation services worldwide?",
+    answer:
+      "Yes. LetssAI works with businesses across international markets and time zones. Our cloud-based AI solutions can support customer interactions, operational workflows, and automated responses around the clock. Project communication, deployment arrangements, and support coverage are planned around each client's location and requirements.",
+  },
+  {
+    question:
+      "Can LetssAI integrate AI agents with our existing CRM, website, and business tools?",
+    answer:
+      "Yes. LetssAI develops custom integrations to connect AI agents with compatible websites, CRMs, databases, email platforms, calendars, APIs, and enterprise applications. This allows AI systems to access approved information and perform authorized actions within existing workflows, rather than operating as disconnected chatbots.",
+  },
+  {
+    question:
+      "Can AI agents work autonomously while keeping humans in control?",
+    answer:
+      "Yes. LetssAI can design AI workflows that autonomously complete routine tasks while escalating complex, sensitive, or high-impact decisions to a human. Configurable approval steps, human handoffs, operational monitoring, and access restrictions help businesses maintain control while reducing manual workload.",
+  },
+  {
+    question:
+      "Is LetssAI suitable for small businesses, startups, and enterprises?",
+    answer:
+      "LetssAI designs AI automation solutions for businesses at different stages of growth, from startups and small businesses to organizations with complex enterprise workflows. Solutions can start with a focused use case and expand into wider AI transformation initiatives as requirements evolve.",
+  },
+  {
+    question:
+      "How do I get started with LetssAI's AI transformation services?",
+    answer:
+      "Start by booking an AI discovery call with LetssAI. We discuss your current workflows, repetitive tasks, business goals, systems, and integration requirements. From there, we identify suitable automation opportunities, define the implementation scope, and prepare a tailored proposal covering the solution, timeline, and estimated cost.",
   },
 ]
