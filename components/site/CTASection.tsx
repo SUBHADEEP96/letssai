@@ -1,6 +1,7 @@
 "use client"
 import { Link } from "@/i18n/navigation"
 import { useTranslations } from "next-intl"
+import { RainbowButton } from "../ui/rainbow-button"
 export function CTASection({
   eyebrow = "START WITH ONE PRACTICAL WORKFLOW",
   title,
@@ -19,12 +20,19 @@ export function CTASection({
         <p className="mt-5 max-w-3xl text-lg leading-8 text-emerald-50/75">
           {text || t("ctaText")}
         </p>
-        <Link
-          href="/ai-discovery"
-          className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-emerald-950 transition hover:bg-emerald-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+
+        <RainbowButton
+          variant="outline"
+          asChild
+          className="group h-11 w-fit rounded-full px-6 text-sm font-semibold shadow-xl transition-transform duration-300 hover:scale-[1.02] active:scale-[0.98] sm:h-14 sm:px-8 sm:text-base"
         >
-          {t("cta")}
-        </Link>
+          <Link
+            href="/ai-discovery"
+            className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-emerald-950 transition hover:bg-emerald-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          >
+            {t("cta")}
+          </Link>
+        </RainbowButton>
       </div>
     </section>
   )

@@ -2,6 +2,8 @@ import Image from "next/image"
 import heroImage from "@/public/media/services/hero-letssai.webp"
 import { Breadcrumbs } from "@/components/site/Breadcrumbs"
 import type { IndustryPageData } from "@/lib/content/types"
+import { RainbowButton } from "../ui/rainbow-button"
+import Link from "next/dist/client/link"
 
 export function IndustryHero({ industry }: { industry: IndustryPageData }) {
   return (
@@ -35,6 +37,18 @@ export function IndustryHero({ industry }: { industry: IndustryPageData }) {
             {industry.heroSubheadline}
           </p>
         </div>
+        <RainbowButton
+          variant="outline"
+          asChild
+          className="group h-11 w-fit rounded-full px-6 text-sm font-semibold shadow-xl transition-transform duration-300 hover:scale-[1.02] active:scale-[0.98] sm:h-14 sm:px-8 sm:text-base"
+        >
+          <Link
+            href="/ai-discovery"
+            className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-emerald-950 transition hover:bg-emerald-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          >
+            Book a Free AI Consultation
+          </Link>
+        </RainbowButton>
       </div>
     </section>
   )
