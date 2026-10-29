@@ -9,6 +9,11 @@ export const siteConfig = {
   brand: {
     color: "#016630",
   },
+  booking: {
+    calendarEmbedUrl:
+      process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_EMBED_URL ||
+      "https://calendar.google.com/calendar/appointments/schedules/AcZssZ3I6CFXf-OfEfTsQGuwVaNHE-ywcAblfkbI2BmqTAlhO6gW6Oji9tA42nFqSN_UgSTRfPiTVLOf?gv=true",
+  },
   assets: {
     logoPrimary: "/media/letssai_logo.png",
     logoWhite: "/media/letssai_logo_footer.png",
