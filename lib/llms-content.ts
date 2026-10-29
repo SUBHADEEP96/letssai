@@ -1,4 +1,4 @@
-import { siteConfig, services, industries } from "@/lib/site"
+import { siteConfig, services, industries, homeFaqs } from "@/lib/site"
 
 export function getLlmsTxt(): string {
   const baseUrl = siteConfig.url
