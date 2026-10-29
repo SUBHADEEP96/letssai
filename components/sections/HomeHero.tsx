@@ -6,10 +6,18 @@ import { HeroDialogueCard } from "./HeroDialogueCard"
 import { TextAnimate } from "@/components/magicui/text-animate"
 import { Link } from "@/i18n/navigation"
 import { RainbowButton } from "@/components/ui/rainbow-button"
-import { AuroraText } from "@/components/ui/aurora-text"
 import { WordRotate } from "@/components/ui/word-rotate"
-import { SparklesText } from "@/components/ui/sparkles-text"
 import { ComicText } from "@/components/ui/comic-text"
+const comicStyle = {
+  color: "#00a63e",
+  backgroundColor: "#00a63e",
+  backgroundImage: "radial-gradient(circle, #FF4040 1.5px, transparent 1.6px)",
+  backgroundSize: "10px 10px",
+  backgroundClip: "text" as const,
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
+  WebkitTextStroke: "2px #000000",
+}
 export function HomeHero() {
   const t = useTranslations("home.hero")
 
@@ -36,24 +44,28 @@ export function HomeHero() {
                   <TextAnimate animation="blurInUp" by="word" delay={0.35}>
                     Built on
                   </TextAnimate>
+                  <>
+                    {/* Mobile */}
+                    <div className="block md:hidden">
+                      <ComicText fontSize={2} style={comicStyle}>
+                        LetssAI.
+                      </ComicText>
+                    </div>
 
-                  {/* <SparklesText className=""></SparklesText> */}
-                  <ComicText
-                    fontSize={4}
-                    style={{
-                      color: "#00a63e",
-                      backgroundColor: "#00a63e",
-                      backgroundImage:
-                        "radial-gradient(circle, #FF4040 1.5px, transparent 1.6px)",
-                      backgroundSize: "10px 10px",
-                      backgroundClip: "text",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      WebkitTextStroke: "2px #000000",
-                    }}
-                  >
-                    LetssAi.
-                  </ComicText>
+                    {/* Tablet */}
+                    <div className="hidden md:block lg:hidden">
+                      <ComicText fontSize={3} style={comicStyle}>
+                        LetssAI.
+                      </ComicText>
+                    </div>
+
+                    {/* Desktop */}
+                    <div className="hidden lg:block">
+                      <ComicText fontSize={4} style={comicStyle}>
+                        LetssAI.
+                      </ComicText>
+                    </div>
+                  </>
                 </div>
               </h2>
             </div>
