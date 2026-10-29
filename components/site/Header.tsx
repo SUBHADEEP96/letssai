@@ -1,5 +1,5 @@
 "use client"
-import { Link } from "@/i18n/navigation"
+import { Link, usePathname } from "@/i18n/navigation"
 import { useEffect, useState } from "react"
 import { useTranslations } from "next-intl"
 import { LanguageSwitcher } from "./LanguageSwitcher"
@@ -36,6 +36,7 @@ const icons = {
   Receipt,
 } as const
 export function Header() {
+  const pathname = usePathname()
   const t = useTranslations("nav")
   const [mobile, setMobile] = useState(false)
   const [open, setOpen] = useState<string | null>(null)
@@ -58,6 +59,10 @@ export function Header() {
     setMobile(false)
     setOpen(null)
     document.body.style.overflow = ""
+  }
+
+  if (pathname === "/ai-discovery" || pathname?.startsWith("/ai-discovery/")) {
+    return null
   }
 
   return (
