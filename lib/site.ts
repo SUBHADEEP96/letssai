@@ -12,7 +12,7 @@ export const siteConfig = {
   booking: {
     calendarEmbedUrl:
       process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_EMBED_URL ||
-      "https://calendar.google.com/calendar/appointments/schedules/AcZssZ3I6CFXf-OfEfTsQGuwVaNHE-ywcAblfkbI2BmqTAlhO6gW6Oji9tA42nFqSN_UgSTRfPiTVLOf?gv=true",
+      "https://calendar.google.com/calendar/appointments/schedules/AcZssZ284hxXq5ihqo10WnFRXFi241D9Wu5ZOzslR9VcCTd6RlVWH7hSSrP0bz1ykB-Gq_z5G4jNnj6m?gv=true",
   },
   assets: {
     logoPrimary: "/media/letssai_logo.png",
@@ -613,8 +613,7 @@ export const homeFaqs: FAQ[] = [
       "LetssAI offers tailored AI implementation pricing rather than a fixed one-size-fits-all package. Costs depend on the complexity of the workflow, integrations, AI models, usage volumes, hosting, security requirements, and ongoing support. After a discovery call, we define the scope and provide a proposal based on your business requirements.",
   },
   {
-    question:
-      "How quickly can LetssAI deploy a production-ready AI solution?",
+    question: "How quickly can LetssAI deploy a production-ready AI solution?",
     answer:
       "LetssAI targets implementation timelines ranging from approximately 2 weeks to 2 months, depending on the solution's complexity. Focused AI automations can often be delivered faster, while deeply customized applied AI systems involving multiple integrations, security controls, and testing require more time. The delivery schedule is finalized after discovery and technical assessment.",
   },
@@ -648,8 +647,7 @@ export const homeFaqs: FAQ[] = [
       "LetssAI designs AI automation solutions for businesses at different stages of growth, from startups and small businesses to organizations with complex enterprise workflows. Solutions can start with a focused use case and expand into wider AI transformation initiatives as requirements evolve.",
   },
   {
-    question:
-      "How do I get started with LetssAI's AI transformation services?",
+    question: "How do I get started with LetssAI's AI transformation services?",
     answer:
       "Start by booking an AI discovery call with LetssAI. We discuss your current workflows, repetitive tasks, business goals, systems, and integration requirements. From there, we identify suitable automation opportunities, define the implementation scope, and prepare a tailored proposal covering the solution, timeline, and estimated cost.",
   },
