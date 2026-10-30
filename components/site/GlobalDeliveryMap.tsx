@@ -159,7 +159,7 @@ const CAROUSEL_SETS = [0, 1, 2, 3]
 
 export function GlobalDeliveryMap() {
   const reactId = useId()
-  const [activeCode, setActiveCode] = useState<string | null>(null)
+  const [activeCode, setActiveCode] = useState<string | null>("in")
   const [isPaused, setIsPaused] = useState(false)
 
   const viewportRef = useRef<HTMLDivElement | null>(null)
@@ -207,6 +207,35 @@ export function GlobalDeliveryMap() {
       window.removeEventListener("resize", updateWidth)
     }
   }, [])
+
+  // Auto-center mobile map on India by default on mount
+  useEffect(() => {
+    const centerMobileMapOnIndia = () => {
+      // If user has actively selected another country, do not reset on resize
+      if (activeCode && activeCode !== "in") return
+
+      const mapContainer = mapScrollRef.current
+      if (mapContainer && mapContainer.scrollWidth > mapContainer.clientWidth) {
+        const india = DELIVERY_COUNTRIES.find((c) => c.code === "in")
+        if (india) {
+          const lngRatio = (india.lng + 180) / 360
+          const targetMapLeft =
+            lngRatio * mapContainer.scrollWidth - mapContainer.clientWidth / 2
+          mapContainer.scrollLeft = Math.max(0, targetMapLeft)
+        }
+      }
+    }
+
+    centerMobileMapOnIndia()
+    // Re-run once DOM layout / SVG dimensions have stabilized
+    const timer = setTimeout(centerMobileMapOnIndia, 120)
+    window.addEventListener("resize", centerMobileMapOnIndia)
+
+    return () => {
+      clearTimeout(timer)
+      window.removeEventListener("resize", centerMobileMapOnIndia)
+    }
+  }, [activeCode])
 
   // Hardware-accelerated GPU translation loop with subpixel accuracy
   useEffect(() => {
