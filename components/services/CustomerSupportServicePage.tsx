@@ -87,44 +87,48 @@ const features: {
 
 export const customerSupportFaqs = [
   {
-    question: "What can the LetssAI customer-support assistant handle?",
+    question:
+      "What is the difference between an AI chatbot and an AI customer support agent?",
     answer:
-      "It can answer repeated questions, guide customers through defined next steps, capture useful details, and route conversations using the support workflows your team approves.",
+      "A basic chatbot follows scripts and answers a fixed set of questions. An AI customer support agent understands open-ended requests, draws on your approved knowledge, collects the details your team needs, and can take defined actions or hand them over to a person. LetssAI builds the second kind, shaped around your support workflow and connected channels.",
   },
   {
-    question: "Can it use our website, documents, and approved knowledge?",
+    question:
+      "Can AI handle customer support on WhatsApp, email and website chat from one place?",
     answer:
-      "Yes. The assistant can use approved website content, documents, FAQs, and connected knowledge sources. Its scope and source material are agreed as part of the workflow.",
+      "Yes. LetssAI's support suite brings WhatsApp, email, Instagram/Facebook, SMS and website chat into one unified inbox, so the AI and your team see the same conversations in one place. Channels are connected as part of the agreed scope.",
   },
   {
-    question: "Can it hand a conversation to a human?",
+    question:
+      "Can AI answer order status, refund and delivery questions automatically?",
     answer:
-      "Yes. Sensitive, unclear, complex, or high-value conversations can be routed to the right person with the useful context already gathered.",
+      "Yes, when the assistant is connected to the relevant order or customer data. Routine requests such as order updates, refund status and delivery enquiries can be resolved instantly, while exceptions go to an agent with the details already gathered.",
   },
   {
-    question: "Can the assistant match our brand voice?",
+    question: "How does the AI decide when to pass a conversation to a human?",
     answer:
-      "Yes. Its name, colors, visual identity, terminology, tone, greetings, and response rules can be shaped around your approved brand guidance.",
+      "Escalation rules are set during implementation. Typical triggers include complex or technical issues, sensitive topics, high-value customers and signs of frustration. LetssAI workflows can route technical issues to specialists and flag frustrated customers for priority handling. When the assistant is unsure, it asks a clarifying question, uses an approved fallback or hands over.",
   },
   {
-    question: "Which customer channels or business tools can it connect with?",
+    question:
+      "How can AI customer support reduce support costs without hurting service quality?",
     answer:
-      "LetssAI can support website chat, WhatsApp, and email, and can connect with tools such as CRM systems, forms, calendars, and Google Sheets where a suitable integration is available.",
+      "By absorbing repeated, predictable questions so your team spends its time on conversations that need judgment. Quality is protected through approved knowledge, scope limits and human handoff. Savings depend on your volumes, so the practical measures are the share of enquiries resolved without an agent, response time and customer satisfaction.",
   },
   {
-    question: "How are unclear or sensitive questions handled?",
+    question: "Can I see how the AI assistant is performing?",
     answer:
-      "The assistant can ask for clarification, use an approved fallback, or hand the conversation to a person. It is designed not to answer beyond its approved knowledge and business scope.",
+      "Yes. Live agent analytics track conversation volume, open, unattended and unassigned chats, average response and resolution times, and customer satisfaction, with the AI shown alongside human agents so you can compare them.",
   },
   {
-    question: "How long does setup take?",
+    question: "Can one setup support multiple brands or business lines?",
     answer:
-      "Setup depends on the workflow, content, channels, and systems involved. A workflow review is used to define a practical scope before implementation begins.",
+      "Yes. Separate assistants can be configured with their own name, styling, greetings and approved knowledge for different brands or workflows, with clear boundaries between them.",
   },
   {
-    question: "How do we start with a suitable support workflow?",
+    question: "Will AI customer support replace my support team?",
     answer:
-      "Start with a repeated, well-defined customer question or handoff. In a free AI workflow review, we map the current process, the approved knowledge required, and the points where your team should stay involved.",
+      "No. It handles repeat questions and prepares context so your people can focus on sensitive, complex or high-value conversations. Your team keeps control through approval steps, handoff rules and monitoring. It can reduce the number of support team members needed as most of the repeat tasks are handled by AI.",
   },
 ]
 

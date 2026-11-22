@@ -7,33 +7,51 @@ import { localizeService } from "@/lib/localized-content"
 import type { Locale } from "@/i18n/routing"
 import { ServiceHero } from "@/components/services/ServiceHero"
 import { localizedMetadata } from "@/lib/i18n-seo"
-import { Link } from "@/i18n/navigation"
 
 const faqs = [
   {
-    question: "What AI service should my business start with?",
+    question: "What AI services does LetssAI offer?",
     answer:
-      "Start with the workflow that creates the most repeated manual work, such as customer questions, lead follow-up, appointment booking, or document search.",
+      "LetssAI offers five core services: AI customer support, AI calling and appointment booking, AI sales and lead follow-up, AI CRM development and AI system integration. Underneath them sits AI workflow automation, which connects messaging, CRM, calendars and databases so routine work happens without manual coordination. Most clients begin with one service and add others once the first workflow proves useful.",
   },
   {
-    question: "Can LetssAI connect to existing tools?",
+    question:
+      "What is AI workflow automation, and how is it different from basic rule-based automation?",
     answer:
-      "Yes. LetssAI is designed to work with websites, email, CRM systems, calendars, dashboards, documents, and other business tools where integration is available.",
+      "AI workflow automation understands free-form requests, such as an email, a WhatsApp message or a phone call, and then triggers the right action across your tools. Rule-based automation only works when inputs are structured and predictable. With AI in the loop, a workflow can classify an enquiry, gather missing details, update the CRM and hand over to a person when judgment is needed.",
   },
   {
-    question: "How does LetssAI protect company data and prevent hallucinations?",
+    question: "Which LetssAI service fits which business problem?",
     answer:
-      "LetssAI grounds assistants strictly in your verified enterprise documentation with deterministic guardrails. Client data is never used to train public foundation models without explicit consent.",
+      "Slow replies to customers point to AI customer support. Missed calls, booking friction or phone follow-up point to AI calling and appointment booking. Leads going cold point to AI sales and lead follow-up. Scattered customer data and manual record-keeping point to AI CRM development. AI that has to work with the tools you already run points to AI system integration. When a problem spans several areas, we scope it as one connected workflow.",
   },
   {
-    question: "How does AI Workflow Automation work across disparate software?",
+    question: "Can I combine several AI services in one workflow?",
     answer:
-      "AI Workflow Automation unifies your stack via event-driven webhooks, custom API middleware, and CRM automations—triggering autonomous actions without manual double-entry.",
+      "Yes. For example, a lead can arrive through a web form, receive an instant follow-up, be qualified in conversation, be booked onto a sales calendar and be logged in the CRM, with a person taking over at the right moment. Combining services works best once the first workflow is stable and measurable, then extended.",
   },
   {
-    question: "What happens when an AI assistant encounters a complex or sensitive query?",
+    question:
+      "Do we need an in-house technical team to use LetssAI's AI services?",
     answer:
-      "All LetssAI agents include deterministic human-in-the-loop escalation gates. High-stakes requests, complex tickets, and sensitive cases are immediately routed to your team with full conversation context.",
+      "Not to get started. LetssAI scopes, builds and connects the workflow, while your team defines the process, approves the knowledge the AI can use and decides where people stay involved. A short discovery call shows what is needed from your side.",
+  },
+  {
+    question:
+      "How is a custom AI service from LetssAI different from buying a chatbot tool?",
+    answer:
+      "A chatbot tool typically answers questions in isolation. LetssAI designs assistants around your workflow and connects them to your CRM, calendars, email, WhatsApp and documents, so they can take approved actions as well as reply. Escalation rules, brand voice and knowledge boundaries are agreed up front.",
+  },
+  {
+    question: "How do I know whether an AI service is working?",
+    answer:
+      "By measuring outcomes you define before launch, such as response time, the share of enquiries resolved without a person, appointments booked, leads followed up or hours of manual work removed. LetssAI's support suite includes live analytics on conversation volume, response times and customer satisfaction, so results are visible rather than assumed.",
+  },
+  {
+    question:
+      "Are LetssAI's AI services suitable for regulated industries like Legal or Healthcare?",
+    answer:
+      "LetssAI works with industries including healthcare and clinics, legal firms, and finance and accounting. Assistants are grounded in approved documentation, kept within an agreed business scope, and escalate sensitive cases to people. The data-handling and deployment model is agreed during solution design, and your own compliance obligations should be reviewed as part of scoping. We provide private servers for businesses where you can run your own AI and own what it learns.",
   },
 ]
 
@@ -84,30 +102,6 @@ export default async function Services({
             .map((s) => (
               <ServiceCard key={s.slug} {...s} />
             ))}
-        </div>
-
-        <div className="mx-auto mt-10 max-w-7xl rounded-3xl border border-emerald-950/15 bg-[#f7f8f4] p-8 sm:p-10 shadow-sm">
-          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-            <div className="max-w-2xl">
-              <span className="font-mono text-xs font-bold uppercase tracking-wider text-[#016630]">
-                Core Operational Capability
-              </span>
-              <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">
-                AI Workflow Automation
-              </h2>
-              <p className="mt-2 text-base leading-relaxed text-slate-700">
-                Eliminate manual coordination across messaging channels, CRM status updates, calendar triggers, and databases. Our end-to-end autonomous workflow automations are engineered directly into your systems via AI System Integration.
-              </p>
-            </div>
-            <div className="shrink-0">
-              <Link
-                href="/services/ai-system-integration"
-                className="inline-flex items-center gap-2 rounded-full bg-[#016630] px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-800"
-              >
-                Explore System Integration →
-              </Link>
-            </div>
-          </div>
         </div>
       </section>
       <FAQSectionLocal />

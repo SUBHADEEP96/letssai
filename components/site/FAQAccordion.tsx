@@ -4,6 +4,37 @@ import { useId, useState } from "react"
 import { CaretDown } from "@phosphor-icons/react"
 import type { FAQ } from "@/lib/site"
 
+function renderFormattedAnswer(text: string) {
+  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g
+  if (!linkRegex.test(text)) return text
+
+  const parts = []
+  let lastIndex = 0
+  let match: RegExpExecArray | null
+  const regex = /\[([^\]]+)\]\(([^)]+)\)/g
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index))
+    }
+    const [, label, url] = match
+    parts.push(
+      <a
+        key={`${url}-${match.index}`}
+        href={url}
+        className="font-medium text-[#016630] underline underline-offset-2 hover:text-emerald-800"
+      >
+        {label}
+      </a>
+    )
+    lastIndex = regex.lastIndex
+  }
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex))
+  }
+  return parts
+}
+
 export function FAQAccordion({ faqs }: { faqs: FAQ[] }) {
   const prefix = useId()
   const [openIndex, setOpenIndex] = useState<number | null>(0)
@@ -65,7 +96,7 @@ export function FAQAccordion({ faqs }: { faqs: FAQ[] }) {
                     itemProp="text"
                     className="max-w-3xl leading-7 text-slate-600"
                   >
-                    {faq.answer}
+                    {renderFormattedAnswer(faq.answer)}
                   </p>
                 </div>
               </div>

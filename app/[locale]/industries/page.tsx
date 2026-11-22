@@ -1,12 +1,13 @@
 import { getTranslations } from "next-intl/server"
 import { IndustryCard } from "@/components/site/Cards"
+import { FAQSection } from "@/components/site/FAQSection"
 import { CTASection } from "@/components/site/CTASection"
-import { industries } from "@/lib/site"
+import { industries, industriesHubFaqs } from "@/lib/site"
 import { localizeIndustry } from "@/lib/localized-content"
 import type { Locale } from "@/i18n/routing"
 import { localizePath } from "@/i18n/routing"
 import { localizedMetadata } from "@/lib/i18n-seo"
-import { absoluteUrl, breadcrumbsSchema } from "@/lib/seo"
+import { absoluteUrl, breadcrumbsSchema, faqSchema } from "@/lib/seo"
 import { JsonLd } from "@/components/seo/JsonLd"
 
 export async function generateMetadata({
@@ -40,6 +41,7 @@ export default async function Industries({
           { name: "Industries", url: absoluteUrl(localizePath("/industries", locale)) },
         ])}
       />
+      <JsonLd data={faqSchema(industriesHubFaqs)} />
       <section className="section bg-emerald-50">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="text-4xl font-semibold tracking-tight text-slate-950 md:text-6xl">{t("title")}</h1>
@@ -60,6 +62,7 @@ export default async function Industries({
             ))}
         </div>
       </section>
+      <FAQSection faqs={industriesHubFaqs} />
       <CTASection
         title="Ready to automate workflows in your industry?"
         text="Tell us about your business model and operational bottlenecks. We’ll design an AI implementation plan tailored to your sector."
