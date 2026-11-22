@@ -20,6 +20,7 @@ import type { Locale } from "@/i18n/routing"
 import { localizePath } from "@/i18n/routing"
 import { localizeService } from "@/lib/localized-content"
 import { localizedMetadata } from "@/lib/i18n-seo"
+import { getPageSeo } from "@/lib/page-seo"
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }))
@@ -32,15 +33,21 @@ export async function generateMetadata({
   const { locale, slug } = await params
   const source = services.find((x) => x.slug === slug)
   const s = source ? localizeService(source, locale) : undefined
+  if (!s) return {}
+  const seo = getPageSeo(s.href, locale)
   const image =
-    s?.slug === "ai-customer-support"
+    s.slug === "ai-customer-support"
       ? "/media/services/ai-customer-support/csstep5.webp"
-      : s?.slug === "ai-calling-appointment-booking"
+      : s.slug === "ai-calling-appointment-booking"
         ? "/media/services/hero-letssai.webp"
         : undefined
-  return s
-    ? localizedMetadata(locale, s.seoTitle, s.metaDescription, s.href, image)
-    : {}
+  return localizedMetadata(
+    locale,
+    seo.title,
+    seo.description,
+    s.href,
+    image
+  )
 }
 export default async function ServicePage({
   params,
@@ -53,7 +60,7 @@ export default async function ServicePage({
   if (!s) notFound()
   return (
     <>
-      <JsonLd data={serviceSchema(s.title, s.description, s.href)} />
+      <JsonLd data={serviceSchema(s.title, s.description, localizePath(s.href, locale))} />
       <JsonLd
         data={faqSchema(
           s.slug === "ai-calling-appointment-booking"
@@ -71,11 +78,11 @@ export default async function ServicePage({
         ])}
       />
       {s.slug === "ai-calling-appointment-booking" ? (
-        <CallingServicePage service={s} />
+        <CallingServicePage service={s} locale={locale} />
       ) : s.slug === "ai-customer-support" ? (
-        <CustomerSupportServicePage service={s} />
+        <CustomerSupportServicePage service={s} locale={locale} />
       ) : (
-        <StandardServicePage service={s} />
+        <StandardServicePage service={s} locale={locale} />
       )}
     </>
   )

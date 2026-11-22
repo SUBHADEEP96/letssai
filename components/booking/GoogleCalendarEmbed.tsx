@@ -2,17 +2,25 @@
 
 import { useState } from "react"
 import { siteConfig } from "@/lib/site"
+import type { Locale } from "@/i18n/routing"
+import { discoveryTranslations } from "@/lib/service-content-translations"
 
 interface GoogleCalendarEmbedProps {
   embedUrl?: string
   className?: string
+  locale?: Locale
 }
 
 export function GoogleCalendarEmbed({
   embedUrl = siteConfig.booking.calendarEmbedUrl,
   className = "",
+  locale = "en",
 }: GoogleCalendarEmbedProps) {
   const [isLoading, setIsLoading] = useState(true)
+  const t = discoveryTranslations[locale] || discoveryTranslations.en
+  const localizedEmbedUrl = embedUrl.includes("hl=")
+    ? embedUrl
+    : `${embedUrl}&hl=${locale}`
 
   return (
     <div
@@ -28,15 +36,15 @@ export function GoogleCalendarEmbed({
       {isLoading && (
         <div
           role="status"
-          aria-label="Loading booking calendar"
+          aria-label={t.loadingTitle}
           className="absolute inset-x-0 top-1.5 bottom-0 z-10 flex flex-col items-center justify-center bg-white/95 p-6 backdrop-blur-xs transition-opacity duration-300"
         >
           <div className="size-10 animate-spin rounded-full border-3 border-emerald-100 border-t-[#016630]" />
           <p className="mt-4 text-sm font-medium text-slate-700">
-            Loading LetssAI Discovery Schedule...
+            {t.loadingTitle}
           </p>
           <p className="mt-1 text-xs text-slate-500">
-            Connecting to Google Calendar
+            {t.loadingSubtitle}
           </p>
         </div>
       )}
@@ -44,8 +52,8 @@ export function GoogleCalendarEmbed({
       {/* Embedded Google Calendar Appointment Scheduling Frame */}
       <div className="relative w-full">
         <iframe
-          src={embedUrl}
-          title="Schedule an AI Discovery Call with LetssAI"
+          src={localizedEmbedUrl}
+          title={t.calendarTitle}
           style={{ border: 0 }}
           width="100%"
           height="100%"

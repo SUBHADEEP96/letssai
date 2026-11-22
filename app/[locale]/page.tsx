@@ -11,14 +11,15 @@ import { VoiceConversationShowcase } from "@/components/sections/VoiceConversati
 import { AgenticSupportSuite } from "@/components/sections/AgenticSupportSuite"
 import { ToolsSection } from "@/components/sections/ToolsSection"
 import { localizedMetadata } from "@/lib/i18n-seo"
+import { getPageSeo } from "@/lib/page-seo"
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: Locale }>
 }) {
   const { locale } = await params
-  const t = await getTranslations({ locale, namespace: "home" })
-  return localizedMetadata(locale, t("metaTitle"), t("metaDescription"), "/")
+  const seo = getPageSeo("/", locale)
+  return localizedMetadata(locale, seo.title, seo.description, "/")
 }
 export default async function Home({
   params,

@@ -4,6 +4,91 @@ import type { Service } from "@/lib/site"
 import { CTASection } from "@/components/site/CTASection"
 import { FAQSection } from "@/components/site/FAQSection"
 import { ServiceHero } from "./ServiceHero"
+import type { Locale } from "@/i18n/routing"
+import { getSystemIntegrationContent } from "@/lib/service-content-translations"
+
+const integrationImages = [
+  { image: "03-integration-ecosystem-letssai.webp", reverse: false },
+  { image: "02-checkout-support-workflow-letssai.webp", reverse: true },
+  { image: "01-api-mcp-sip-integrations-letssai.webp", reverse: false },
+]
+
+function IntegrationBody({ locale = "en" }: { locale?: Locale }) {
+  const content = getSystemIntegrationContent(locale)
+
+  return (
+    <main className="overflow-hidden bg-[#f7f7f8] px-4 pb-20 sm:px-6 md:pb-28 lg:px-8">
+      <div className="mx-auto max-w-7xl py-10 sm:py-14 md:py-20">
+        <div className="relative aspect-[3/1] min-h-36 w-full">
+          <Image
+            src="/media/services/ai-system-integration/04-integrations-hero-letssai.webp"
+            alt="Mosaic of business platforms that can connect with LetssAI"
+            fill
+            priority
+            sizes="(min-width: 1280px) 1280px, 100vw"
+            className="object-contain"
+          />
+        </div>
+      </div>
+      <section className="mx-auto max-w-7xl rounded-[2rem] bg-[#090a0b] px-6 py-24 sm:px-10 md:py-36 lg:py-44">
+        <div className="mx-auto max-w-3xl space-y-7 text-center text-xl leading-relaxed font-medium sm:text-2xl md:text-3xl">
+          <p className="bg-gradient-to-r from-violet-300 via-fuchsia-300 to-orange-200 bg-clip-text text-transparent">
+            {content.quote1}
+          </p>
+          <p className="bg-gradient-to-r from-indigo-300 via-pink-300 to-rose-200 bg-clip-text text-transparent">
+            {content.quote2}
+          </p>
+        </div>
+      </section>
+      <section className="mx-auto mt-20 max-w-6xl md:mt-28">
+        <div className="border-t border-slate-300 pt-5">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-[#f7f8f4] px-3 py-1.5 text-xs font-semibold text-slate-800">
+            <Sparkle size={13} weight="fill" aria-hidden /> Features
+          </span>
+        </div>
+        <div className="mt-8 space-y-24 md:mt-12 md:space-y-32">
+          {content.blocks.map((block, index) => {
+            const meta = integrationImages[index] || {
+              image: "01-api-mcp-sip-integrations-letssai.webp",
+              reverse: false,
+            }
+            return (
+              <article
+                key={block.heading}
+                className="grid items-center gap-10 md:grid-cols-2 md:gap-16 lg:gap-24"
+              >
+                <div className={meta.reverse ? "md:order-2" : ""}>
+                  <h2 className="text-3xl leading-tight font-semibold tracking-[-0.035em] text-slate-950 sm:text-4xl lg:text-5xl">
+                    {block.heading}
+                  </h2>
+                  <div className="mt-7 divide-y divide-slate-300 border-y border-slate-300">
+                    {block.items.map(([title, copy]) => (
+                      <div key={title} className="py-5">
+                        <h3 className="font-semibold text-slate-950">{title}</h3>
+                        <p className="mt-2 leading-7 text-slate-600">{copy}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div
+                  className={`relative aspect-square overflow-hidden rounded-2xl ${meta.reverse ? "md:order-1" : ""}`}
+                >
+                  <Image
+                    src={`/media/services/ai-system-integration/${meta.image}`}
+                    alt={block.alt}
+                    fill
+                    sizes="(min-width: 1280px) 520px, (min-width: 768px) 45vw, 100vw"
+                    className="object-contain"
+                  />
+                </div>
+              </article>
+            )
+          })}
+        </div>
+      </section>
+    </main>
+  )
+}
 
 const pageCopy: Record<
   string,
@@ -53,141 +138,6 @@ function ServiceArtwork({
         className="object-contain"
       />
     </div>
-  )
-}
-
-const integrationFeatures = [
-  {
-    heading: "Seamlessly integrate with your support tools",
-    image: "03-integration-ecosystem-letssai.webp",
-    alt: "Integration ecosystem connecting support tools to LetssAI",
-    items: [
-      [
-        "CRM, helpdesk, and ticketing",
-        "Connect support tickets and customer context across the systems your team already uses.",
-      ],
-      [
-        "Knowledge-base synchronisation",
-        "Keep approved support knowledge available for accurate, useful responses.",
-      ],
-      [
-        "Calling or CPaaS integrations",
-        "Connect calling platforms for joined-up voice support and handoffs.",
-      ],
-    ],
-  },
-  {
-    heading: "Handle conversations and escalations across any channel",
-    image: "02-checkout-support-workflow-letssai.webp",
-    alt: "Customer support conversation and escalation workflow",
-    reverse: true,
-    items: [
-      [
-        "Live-chat escalations",
-        "Pass complex conversations to a person with the useful context already gathered.",
-      ],
-      [
-        "Automated email routing",
-        "Direct incoming support email to the right workflow or team.",
-      ],
-      [
-        "Call forwarding and human handoff",
-        "Route voice conversations to a person when escalation is required.",
-      ],
-    ],
-  },
-  {
-    heading:
-      "Extend your support stack by connecting with any system or custom endpoint",
-    image: "01-api-mcp-sip-integrations-letssai.webp",
-    alt: "API, MCP, and SIP connections for custom support systems",
-    items: [
-      [
-        "MCP connectivity",
-        "Connect approved tools and data sources through an extensible MCP layer.",
-      ],
-      [
-        "API integrations",
-        "Retrieve data and trigger permitted actions through secure APIs and endpoints.",
-      ],
-      [
-        "SIP trunking for voice workflows",
-        "Connect existing telephony infrastructure to supported voice workflows.",
-      ],
-    ],
-  },
-]
-
-function IntegrationBody() {
-  return (
-    <main className="overflow-hidden bg-[#f7f7f8] px-4 pb-20 sm:px-6 md:pb-28 lg:px-8">
-      <div className="mx-auto max-w-7xl py-10 sm:py-14 md:py-20">
-        <div className="relative aspect-[3/1] min-h-36 w-full">
-          <Image
-            src="/media/services/ai-system-integration/04-integrations-hero-letssai.webp"
-            alt="Mosaic of business platforms that can connect with LetssAI"
-            fill
-            priority
-            sizes="(min-width: 1280px) 1280px, 100vw"
-            className="object-contain"
-          />
-        </div>
-      </div>
-      <section className="mx-auto max-w-7xl rounded-[2rem] bg-[#090a0b] px-6 py-24 sm:px-10 md:py-36 lg:py-44">
-        <div className="mx-auto max-w-3xl space-y-7 text-center text-xl leading-relaxed font-medium sm:text-2xl md:text-3xl">
-          <p className="bg-gradient-to-r from-violet-300 via-fuchsia-300 to-orange-200 bg-clip-text text-transparent">
-            LetssAI integrations connect your AI support experience to the
-            systems your team already relies on—including CRMs, help desks, call
-            platforms, and knowledge bases.
-          </p>
-          <p className="bg-gradient-to-r from-indigo-300 via-pink-300 to-rose-200 bg-clip-text text-transparent">
-            Bring approved data, actions, and human escalation together across
-            chat, email, and voice, while keeping access and review points
-            clearly defined.
-          </p>
-        </div>
-      </section>
-      <section className="mx-auto mt-20 max-w-6xl md:mt-28">
-        <div className="border-t border-slate-300 pt-5">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-[#f7f8f4] px-3 py-1.5 text-xs font-semibold text-slate-800">
-            <Sparkle size={13} weight="fill" aria-hidden /> Features
-          </span>
-        </div>
-        <div className="mt-8 space-y-24 md:mt-12 md:space-y-32">
-          {integrationFeatures.map((feature) => (
-            <article
-              key={feature.heading}
-              className="grid items-center gap-10 md:grid-cols-2 md:gap-16 lg:gap-24"
-            >
-              <div className={feature.reverse ? "md:order-2" : ""}>
-                <h2 className="text-3xl leading-tight font-semibold tracking-[-0.035em] text-slate-950 sm:text-4xl lg:text-5xl">
-                  {feature.heading}
-                </h2>
-                <div className="mt-7 divide-y divide-slate-300 border-y border-slate-300">
-                  {feature.items.map(([title, copy]) => (
-                    <div key={title} className="py-5">
-                      <h3 className="font-semibold text-slate-950">{title}</h3>
-                      <p className="mt-2 leading-7 text-slate-600">{copy}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div
-                className={`relative aspect-square overflow-hidden rounded-2xl ${feature.reverse ? "md:order-1" : ""}`}
-              >
-                <Image
-                  src={`/media/services/ai-system-integration/${feature.image}`}
-                  alt={feature.alt}
-                  fill
-                  sizes="(min-width: 1280px) 520px, (min-width: 768px) 45vw, 100vw"
-                  className="object-contain"
-                />
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-    </main>
   )
 }
 
@@ -314,7 +264,13 @@ function StandardBody({ service }: { service: Service }) {
   )
 }
 
-export function StandardServicePage({ service }: { service: Service }) {
+export function StandardServicePage({
+  service,
+  locale = "en",
+}: {
+  service: Service
+  locale?: Locale
+}) {
   return (
     <>
       <ServiceHero
@@ -322,9 +278,10 @@ export function StandardServicePage({ service }: { service: Service }) {
         title={`${service.title} for faster, clearer business communication`}
         description={service.metaDescription}
         href={service.href}
+        locale={locale}
       />
       {service.slug === "ai-system-integration" ? (
-        <IntegrationBody />
+        <IntegrationBody locale={locale} />
       ) : (
         <StandardBody service={service} />
       )}

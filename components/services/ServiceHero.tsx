@@ -2,19 +2,55 @@ import Image from "next/image"
 import heroImage from "@/public/media/services/hero-letssai.webp"
 import { Breadcrumbs } from "@/components/site/Breadcrumbs"
 import { RainbowButton } from "../ui/rainbow-button"
-import Link from "next/dist/client/link"
+import { Link } from "@/i18n/navigation"
+import type { Locale } from "@/i18n/routing"
+
+const LABELS: Record<
+  Locale,
+  { home: string; services: string; cta: string }
+> = {
+  en: {
+    home: "Home",
+    services: "Services",
+    cta: "Book a Free AI Consultation",
+  },
+  fr: {
+    home: "Accueil",
+    services: "Services",
+    cta: "Réserver une consultation IA gratuite",
+  },
+  de: {
+    home: "Startseite",
+    services: "Leistungen",
+    cta: "Kostenlose KI-Beratung buchen",
+  },
+  es: {
+    home: "Inicio",
+    services: "Servicios",
+    cta: "Reserve una consulta de IA gratuita",
+  },
+  hi: {
+    home: "होम",
+    services: "सेवाएं",
+    cta: "निःशुल्क AI परामर्श बुक करें",
+  },
+}
 
 export function ServiceHero({
   eyebrow,
   title,
   description,
   href,
+  locale = "en",
 }: {
   eyebrow: string
   title: string
   description: string
   href: string
+  locale?: Locale
 }) {
+  const t = LABELS[locale] || LABELS.en
+
   return (
     <section className="relative isolate min-h-[590px] overflow-hidden bg-emerald-950 text-white sm:min-h-[620px]">
       <Image
@@ -30,8 +66,8 @@ export function ServiceHero({
         <Breadcrumbs
           light
           items={[
-            { label: "Home", href: "/" },
-            { label: "Services", href: "/services" },
+            { label: t.home, href: "/" },
+            { label: t.services, href: "/services" },
             ...(href === "/services" ? [] : [{ label: eyebrow, href }]),
           ]}
         />
@@ -55,7 +91,7 @@ export function ServiceHero({
             href="/ai-discovery"
             className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-emerald-950 transition hover:bg-emerald-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
-            Book a Free AI Consultation
+            {t.cta}
           </Link>
         </RainbowButton>
       </div>

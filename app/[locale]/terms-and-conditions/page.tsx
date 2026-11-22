@@ -14,7 +14,9 @@ export async function generateMetadata({
     locale,
     content.metaTitle,
     content.metaDescription,
-    "/terms-and-conditions"
+    "/terms-and-conditions",
+    undefined,
+    { index: false, follow: true }
   )
 }
 

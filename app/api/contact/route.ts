@@ -3,6 +3,7 @@ import { Resend } from "resend"
 import { autoReplyEmail, ownerEmail } from "@/lib/contact/email-templates"
 import { saveContactSubmission, saveEmailIds } from "@/lib/contact/sanity"
 import { contactSubmissionSchema } from "@/lib/contact/validation"
+import { siteConfig } from "@/lib/site"
 
 export const runtime = "nodejs"
 
@@ -75,10 +76,7 @@ export async function POST(request: Request) {
         subject: "Thanks for contacting LetssAI",
         html: autoReplyEmail(
           parsed.data.name,
-          (process.env.NEXT_PUBLIC_SITE_URL || "https://letssai.com").replace(
-            /\/$/,
-            ""
-          )
+          siteConfig.url
         ),
       })
       if (reply.error) throw new Error("Auto-reply failed")

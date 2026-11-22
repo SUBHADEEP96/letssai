@@ -14,7 +14,9 @@ export async function generateMetadata({
     locale,
     content.metaTitle,
     content.metaDescription,
-    "/privacy-policy"
+    "/privacy-policy",
+    undefined,
+    { index: false, follow: true }
   )
 }
 

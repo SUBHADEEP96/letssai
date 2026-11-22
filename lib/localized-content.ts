@@ -1,5 +1,6 @@
 import type { Locale } from "@/i18n/routing"
 import type { Industry, Service } from "@/lib/site"
+import { getServiceMetadata } from "@/lib/service-content-translations"
 import en from "@/messages/en.json"
 import de from "@/messages/de.json"
 import es from "@/messages/es.json"
@@ -9,12 +10,18 @@ import hi from "@/messages/hi.json"
 const messages = { en, de, es, fr, hi }
 
 export function localizeService(service: Service, locale: Locale): Service {
+  const meta = getServiceMetadata(service.slug, locale)
+  const catalogTitle =
+    messages[locale].catalog.services[
+      service.slug as keyof typeof en.catalog.services
+    ]
+
   return {
     ...service,
-    title:
-      messages[locale].catalog.services[
-        service.slug as keyof typeof en.catalog.services
-      ] ?? service.title,
+    title: meta?.title ?? catalogTitle ?? service.title,
+    seoTitle: meta?.seoTitle ?? service.seoTitle,
+    metaDescription: meta?.metaDescription ?? service.metaDescription,
+    description: meta?.description ?? service.description,
   }
 }
 
