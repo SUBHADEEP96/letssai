@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import { siteConfig } from './site'
 import type { Locale } from '@/i18n/routing'
-import { localizePath, locales } from '@/i18n/routing'
+import { defaultLocale, localizePath, locales } from '@/i18n/routing'
+import { absoluteUrl } from './seo'
 
 export function localizedMetadata(
   locale: Locale,
@@ -10,19 +11,26 @@ export function localizedMetadata(
   path: string,
   image?: string
 ): Metadata {
-  const canonical = localizePath(path, locale)
-  const languages = Object.fromEntries(locales.map((l) => [l, localizePath(path, l)]))
-  const socialImage = image || siteConfig.assets.ogImage
+  const canonical = absoluteUrl(localizePath(path, locale))
+  const languages = Object.fromEntries(
+    locales.map((l) => [l, absoluteUrl(localizePath(path, l))])
+  )
+  const xDefault = absoluteUrl(localizePath(path, defaultLocale))
+  const socialImage = image
+    ? image.startsWith('http')
+      ? image
+      : absoluteUrl(image)
+    : siteConfig.assets.ogImage
   return {
     title,
     description,
     alternates: {
       canonical,
-      languages: { ...languages, 'x-default': path },
+      languages: { ...languages, 'x-default': xDefault },
     },
     openGraph: {
       type: 'website',
-      url: new URL(canonical, siteConfig.url).toString(),
+      url: canonical,
       siteName: siteConfig.name,
       title,
       description,

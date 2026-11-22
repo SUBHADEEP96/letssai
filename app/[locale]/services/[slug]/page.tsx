@@ -53,7 +53,7 @@ export default async function ServicePage({
   if (!s) notFound()
   return (
     <>
-      <JsonLd data={serviceSchema(s.title, s.description, s.href)} />
+      <JsonLd data={serviceSchema(s.title, s.description, localizePath(s.href, locale))} />
       <JsonLd
         data={faqSchema(
           s.slug === "ai-calling-appointment-booking"
@@ -71,11 +71,11 @@ export default async function ServicePage({
         ])}
       />
       {s.slug === "ai-calling-appointment-booking" ? (
-        <CallingServicePage service={s} />
+        <CallingServicePage service={s} locale={locale} />
       ) : s.slug === "ai-customer-support" ? (
-        <CustomerSupportServicePage service={s} />
+        <CustomerSupportServicePage service={s} locale={locale} />
       ) : (
-        <StandardServicePage service={s} />
+        <StandardServicePage service={s} locale={locale} />
       )}
     </>
   )

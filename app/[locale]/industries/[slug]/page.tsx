@@ -66,7 +66,7 @@ export default async function IndustryPage({
         data={serviceSchema(
           `AI solutions for ${industry.title}`,
           industry.useCase,
-          industry.href
+          localizePath(industry.href, locale)
         )}
       />
       <JsonLd data={faqSchema(industry.faqs)} />

@@ -6,6 +6,7 @@ import { localizePath } from "@/i18n/routing"
 import { localizedMetadata } from "@/lib/i18n-seo"
 import { BackButton } from "@/components/booking/BackButton"
 import { GoogleCalendarEmbed } from "@/components/booking/GoogleCalendarEmbed"
+import { discoveryTranslations } from "@/lib/service-content-translations"
 
 export async function generateMetadata({
   params,
@@ -13,10 +14,11 @@ export async function generateMetadata({
   params: Promise<{ locale: Locale }>
 }) {
   const { locale } = await params
+  const t = discoveryTranslations[locale] || discoveryTranslations.en
   return localizedMetadata(
     locale,
-    "Book an AI Discovery Call | LetssAI",
-    "Schedule a free 30-minute AI Discovery consultation with LetssAI to uncover high-impact automation opportunities for your business workflows.",
+    t.metaTitle,
+    t.metaDescription,
     "/ai-discovery"
   )
 }
@@ -27,6 +29,7 @@ export default async function AIDiscoveryPage({
   params: Promise<{ locale: Locale }>
 }) {
   const { locale } = await params
+  const t = discoveryTranslations[locale] || discoveryTranslations.en
 
   return (
     <div className="ai-discovery-page relative flex min-h-screen flex-col bg-[#f7f8f4] selection:bg-emerald-500 selection:text-white">
@@ -35,7 +38,7 @@ export default async function AIDiscoveryPage({
         data={breadcrumbsSchema([
           { name: "Home", url: absoluteUrl(localizePath("/", locale)) },
           {
-            name: "AI Discovery",
+            name: t.breadcrumb,
             url: absoluteUrl(localizePath("/ai-discovery", locale)),
           },
         ])}
@@ -44,10 +47,9 @@ export default async function AIDiscoveryPage({
         data={{
           "@context": "https://schema.org",
           "@type": "ContactPage",
-          name: "Book an AI Discovery Consultation | LetssAI",
+          name: `${t.heading} | LetssAI`,
           url: absoluteUrl(localizePath("/ai-discovery", locale)),
-          description:
-            "Schedule a practical 30-minute AI workflow review and discovery call.",
+          description: t.description,
           mainEntity: {
             "@type": "Organization",
             name: siteConfig.name,
@@ -81,10 +83,8 @@ export default async function AIDiscoveryPage({
 
       {/* Main Booking Container */}
       <main className="relative z-10 flex flex-1 items-center justify-center px-3 py-4 sm:px-6 sm:py-6 lg:px-8 lg:pb-12">
-        <h1 className="sr-only">
-          Book an AI Discovery Consultation with LetssAI
-        </h1>
-        <GoogleCalendarEmbed />
+        <h1 className="sr-only">{t.heading}</h1>
+        <GoogleCalendarEmbed locale={locale} />
       </main>
     </div>
   )

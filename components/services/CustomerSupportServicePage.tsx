@@ -11,6 +11,83 @@ import { CTASection } from "@/components/site/CTASection"
 import { FAQSection } from "@/components/site/FAQSection"
 import { ServiceHero } from "./ServiceHero"
 import type { Service } from "@/lib/site"
+import type { Locale } from "@/i18n/routing"
+import { getCustomerSupportContent } from "@/lib/service-content-translations"
+
+const benefitImages = [cs1, cs2, cs3]
+const featureImages = [csstep1, csstep2, csstep3, csstep4, csstep5]
+
+const PAGE_TEXT: Record<
+  Locale,
+  {
+    benefitsHeading: string
+    featuresEyebrow: string
+    featuresHeading: string
+    faqTitle: string
+    faqIntro: string
+    ctaTitle: string
+    ctaText: string
+  }
+> = {
+  en: {
+    benefitsHeading: "From simple questions to lasting customer loyalty",
+    featuresEyebrow: "Designed around your customer journey",
+    featuresHeading:
+      "Helpful conversations that look and feel like your business",
+    faqTitle: "AI customer support FAQs",
+    faqIntro:
+      "Practical answers about knowledge, channels, handoff, and finding the right place to begin.",
+    ctaTitle: "Find the right starting point for customer support",
+    ctaText:
+      "Share the repeated questions and handoffs that take time today. We’ll help map a practical first workflow, the approved knowledge it needs, and where people should stay involved.",
+  },
+  fr: {
+    benefitsHeading: "Des questions simples à la fidélisation durable",
+    featuresEyebrow: "Conçu autour de votre parcours client",
+    featuresHeading:
+      "Des échanges utiles à l'image et aux couleurs de votre entreprise",
+    faqTitle: "FAQ sur le support client par IA",
+    faqIntro:
+      "Des réponses concrètes sur les connaissances, les canaux et les étapes de démarrage.",
+    ctaTitle: "Trouvez le bon point de départ pour votre support client",
+    ctaText:
+      "Partagez les questions répétitives qui prennent du temps aujourd'hui. Nous vous aiderons à définir un premier flux pratique, les connaissances requises et les points de contrôle humains.",
+  },
+  de: {
+    benefitsHeading: "Von einfachen Fragen zu langfristiger Kundentreue",
+    featuresEyebrow: "Abgestimmt auf Ihre Customer Journey",
+    featuresHeading:
+      "Hilfreiche Dialoge im Look & Feel Ihres Unternehmens",
+    faqTitle: "Häufige Fragen zum AI-Kundensupport",
+    faqIntro:
+      "Praxisnahe Antworten zu Wissen, Kanälen und den ersten Schritten.",
+    ctaTitle: "Finden Sie den richtigen Einstieg für Ihren Kundensupport",
+    ctaText:
+      "Nennen Sie uns zeitraubende Routinefragen. Wir definieren gemeinsam einen ersten Workflow, das nötige Wissen und die Übergabepunkte.",
+  },
+  es: {
+    benefitsHeading: "De consultas simples a la fidelidad duradera",
+    featuresEyebrow: "Diseñado para el recorrido de sus clientes",
+    featuresHeading:
+      "Conversaciones útiles que reflejan la identidad de su negocio",
+    faqTitle: "Preguntas frecuentes sobre soporte con IA",
+    faqIntro: "Respuestas prácticas sobre conocimiento, canales y cómo empezar.",
+    ctaTitle: "Encuentre el punto de partida ideal para su soporte",
+    ctaText:
+      "Comparta las preguntas repetitivas que consumen tiempo hoy. Le ayudaremos a diseñar un primer flujo práctico con control humano.",
+  },
+  hi: {
+    benefitsHeading: "सरल प्रश्नों से लेकर स्थायी ग्राहक निष्ठा तक",
+    featuresEyebrow: "आपकी ग्राहक यात्रा के अनुरूप डिज़ाइन किया गया",
+    featuresHeading: "उपयोगी बातचीत जो आपके व्यवसाय के अनुकूल लगे",
+    faqTitle: "AI ग्राहक सहायता से जुड़े अक्सर पूछे जाने वाले प्रश्न",
+    faqIntro:
+      "ज्ञान, चैनल, हैंडऑफ़ और शुरुआत के बारे में व्यावहारिक उत्तर।",
+    ctaTitle: "ग्राहक सहायता के लिए सही शुरुआत खोजें",
+    ctaText:
+      "उन दोहराए जाने वाले सवालों को साझा करें जिनमें आज समय लगता है। हम एक व्यावहारिक पहला वर्कफ़्लो तैयार करने में मदद करेंगे।",
+  },
+}
 
 const benefits = [
   {
@@ -132,30 +209,40 @@ export const customerSupportFaqs = [
   },
 ]
 
-export function CustomerSupportServicePage({ service }: { service: Service }) {
+export function CustomerSupportServicePage({
+  service,
+  locale = "en",
+}: {
+  service: Service
+  locale?: Locale
+}) {
+  const content = getCustomerSupportContent(locale)
+  const pageText = PAGE_TEXT[locale] || PAGE_TEXT.en
+
   return (
     <>
       <ServiceHero
-        eyebrow="AI Customer Support"
-        title="Give customers a faster answer—and your team a better handoff"
-        description="Reduce repeated support work across website chat, WhatsApp, and email while keeping sensitive, unclear, or high-value conversations with your people."
+        eyebrow={content.meta.heroEyebrow}
+        title={content.meta.heroTitle}
+        description={content.meta.heroDescription}
         href={service.href}
+        locale={locale}
       />
 
       <section className="px-4 py-20 sm:px-6 md:py-28 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <h2 className="max-w-3xl text-3xl leading-tight font-semibold tracking-[-0.035em] text-slate-950 sm:text-5xl">
-            From simple questions to lasting customer loyalty
+            {pageText.benefitsHeading}
           </h2>
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {benefits.map((benefit) => (
+            {content.benefits.map((benefit, index) => (
               <article
                 key={benefit.title}
                 className="overflow-hidden rounded-[1.75rem] border border-emerald-950/10 bg-[#f7f8f4] shadow-[0_16px_45px_rgba(2,44,34,0.06)]"
               >
                 <div className="aspect-[4/3] overflow-hidden bg-emerald-50">
                   <Image
-                    src={benefit.image}
+                    src={benefitImages[index] || cs1}
                     alt={benefit.alt}
                     sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1023px) 50vw, 33vw"
                     className="h-full w-full object-cover"
@@ -179,14 +266,14 @@ export function CustomerSupportServicePage({ service }: { service: Service }) {
         <div className="mx-auto max-w-6xl">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold tracking-[0.14em] text-[#016630] uppercase">
-              Designed around your customer journey
+              {pageText.featuresEyebrow}
             </p>
             <h2 className="mt-4 text-3xl leading-tight font-semibold tracking-[-0.03em] text-slate-950 sm:text-5xl">
-              Helpful conversations that look and feel like your business
+              {pageText.featuresHeading}
             </h2>
           </div>
           <div className="mt-12 divide-y divide-emerald-950/10">
-            {features.map((feature, index) => (
+            {content.features.map((feature, index) => (
               <article
                 key={feature.title}
                 className="grid items-center gap-9 py-14 first:pt-4 md:grid-cols-2 md:gap-14 lg:gap-20"
@@ -206,7 +293,7 @@ export function CustomerSupportServicePage({ service }: { service: Service }) {
                   className={`overflow-hidden rounded-[1.75rem] border border-emerald-950/10 bg-emerald-100 shadow-[0_18px_50px_rgba(2,44,34,0.08)] ${index % 2 ? "md:order-1" : ""}`}
                 >
                   <Image
-                    src={feature.image}
+                    src={featureImages[index] || csstep1}
                     alt={feature.alt}
                     sizes="(max-width: 767px) calc(100vw - 32px), 50vw"
                     className="h-auto w-full"
@@ -221,13 +308,13 @@ export function CustomerSupportServicePage({ service }: { service: Service }) {
       <div className="bg-emerald-50/60 py-4 md:py-10">
         <FAQSection
           faqs={customerSupportFaqs}
-          title="AI customer support FAQs"
-          intro="Practical answers about knowledge, channels, handoff, and finding the right place to begin."
+          title={pageText.faqTitle}
+          intro={pageText.faqIntro}
         />
       </div>
       <CTASection
-        title="Find the right starting point for customer support"
-        text="Share the repeated questions and handoffs that take time today. We’ll help map a practical first workflow, the approved knowledge it needs, and where people should stay involved."
+        title={pageText.ctaTitle}
+        text={pageText.ctaText}
       />
     </>
   )

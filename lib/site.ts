@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "LetssAI",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.letssai.com",
+  url: "https://letssai.com",
   title: "LetssAI | Practical AI Solutions for Growing Businesses",
   description:
     "LetssAI builds practical AI assistants for customer support, calling, CRM development, sales follow-up, workflows, and system integrations.",
