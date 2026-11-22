@@ -138,34 +138,53 @@ const useCases = [
 const callingFaqs = [
   {
     question:
-      "Can the AI calling assistant handle both inbound and outbound calls?",
+      "How is an AI voice agent different from a traditional phone menu (IVR)?",
     answer:
-      "Yes, within the approved implementation scope. It can answer inbound enquiries and support permitted outbound workflows such as follow-up, reminders, confirmations, and customer updates.",
+      "A phone menu forces callers through numbered options. An AI voice agent holds a natural conversation: callers say what they need in their own words, the assistant asks clarifying questions, and then takes an agreed next step such as booking, qualifying or transferring to a person.",
   },
   {
-    question: "Can it book appointments in our existing calendar?",
+    question:
+      "Can the AI call back missed calls and follow up on new enquiries?",
     answer:
-      "It can check availability, book, reschedule, or cancel appointments when a suitable calendar integration is available. A workflow review confirms the systems and rules involved.",
+      "Yes, within the approved scope. Missed-call follow-up reconnects with callers and captures why they got in touch, and outbound workflows can follow up enquiries, confirm appointments and send reminders. Audience, consent and timing rules are agreed during implementation.",
   },
   {
-    question: "Can it transfer a conversation to a human team member?",
+    question: "Can AI calling help reduce missed appointments?",
     answer:
-      "Yes. Qualified, sensitive, or complex calls can be routed to an agreed person or queue, with context and a concise summary where the connected systems support it.",
+      "It can help. Confirmation and reminder calls give customers a simple way to confirm, reschedule or cancel, and changes are flagged for your team and reflected in connected calendars. Results depend on your process, so we suggest tracking confirmation rates and missed appointments before and after launch.",
   },
   {
-    question: "Can the voice and conversation style match our brand?",
+    question: "Does the voice assistant work in more than one language?",
     answer:
-      "Voice, pace, tone, terminology, and conversational rules can be selected for the use case. Your team reviews and approves the experience before wider use.",
+      "LetssAI can support multilingual conversations and route enquiries by language, location, intent and team availability. The languages and voices for your use case are confirmed during the workflow review. Our intelligent voice assistants can also auto detect and switch languages mid conversation as needed.",
   },
   {
-    question: "What happens when the assistant does not know an answer?",
+    question:
+      "How does the assistant cope with accents, background noise and interruptions?",
     answer:
-      "It can ask for clarification, use an approved fallback, take a message, or escalate to a person. It should not answer beyond the knowledge and business scope agreed for the workflow.",
+      "The workflow is designed to handle natural pauses, interruptions, overlapping speech, incomplete sentences and background noise, and it asks for clarification instead of guessing. If it still cannot be sure, it escalates to a person rather than inventing an answer.",
   },
   {
-    question: "How does LetssAI protect customer and business information?",
+    question: "What happens after the call ends?",
     answer:
-      "Data access, retention, integrations, review steps, and escalation rules are defined for the approved implementation scope. We recommend a workflow review to identify the information required and minimize unnecessary access.",
+      "The outcome is recorded: a concise summary, the customer's next step, and updates to connected calendars or CRM fields where integrations are in place. Auditable call outcomes let your team review what was said and decided.",
+  },
+  {
+    question:
+      "Are AI phone calls legal, and how are consent and call rules handled?",
+    answer:
+      "Rules on automated, recorded and outbound calls differ by country and by industry. LetssAI builds consent-aware workflows and agrees audience, timing and escalation rules during implementation, but each business remains responsible for meeting the regulations in the regions it calls, so we recommend reviewing requirements as part of scoping.",
+  },
+  {
+    question:
+      "Which businesses get the most from AI calling and appointment booking?",
+    answer:
+      "Businesses that depend on phone enquiries and bookings, such as clinics, real estate, automotive and finance teams, hospitality and service businesses. The best fit is a repeated, well-defined conversation where a clear outcome and a safe handoff can be designed.",
+  },
+  {
+    question: "Can I hear what an AI call sounds like before committing?",
+    answer:
+      "Yes. The LetssAI home page includes example AI-assisted phone conversations for automotive, finance, real estate, ecommerce and hospitality scenarios, and a discovery call can map a similar conversation to your business.",
   },
 ]
 
