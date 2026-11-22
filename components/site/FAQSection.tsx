@@ -3,7 +3,7 @@ import { FAQAccordion } from "./FAQAccordion"
 
 export function FAQSection({
   faqs,
-  title = "Questions business owners ask",
+  title = "FAQ – AI transformation",
 }: {
   faqs: FAQ[]
   title?: string
@@ -15,7 +15,7 @@ export function FAQSection({
         <div className="text-center">
           <h2
             id="faq-heading"
-            className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl whitespace-normal sm:whitespace-nowrap"
+            className="text-3xl font-semibold tracking-tight whitespace-normal text-slate-950 sm:text-4xl sm:whitespace-nowrap"
           >
             {title}
           </h2>
