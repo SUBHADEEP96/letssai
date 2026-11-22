@@ -5,6 +5,7 @@ import { siteConfig } from "@/lib/site"
 import type { Locale } from "@/i18n/routing"
 import { localizePath } from "@/i18n/routing"
 import { localizedMetadata } from "@/lib/i18n-seo"
+import { getPageSeo } from "@/lib/page-seo"
 
 export async function generateMetadata({
   params,
@@ -12,13 +13,11 @@ export async function generateMetadata({
   params: Promise<{ locale: Locale }>
 }) {
   const { locale } = await params
-  const { getTranslations } = await import("next-intl/server")
-  const t = await getTranslations({ locale, namespace: "contact" })
+  const seo = getPageSeo("/contact", locale)
   return localizedMetadata(
     locale,
-    t("title") || "Contact LetssAI | Book a Free AI Workflow Consultation",
-    t("description") ||
-      "Contact LetssAI to Book a Free AI Workflow Consultation for customer support, lead follow-up, documents, appointments, and workflow automation.",
+    seo.title,
+    seo.description,
     "/contact"
   )
 }

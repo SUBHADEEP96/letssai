@@ -9,7 +9,8 @@ export function localizedMetadata(
   title: string,
   description: string,
   path: string,
-  image?: string
+  image?: string,
+  robots?: Metadata['robots']
 ): Metadata {
   const canonical = absoluteUrl(localizePath(path, locale))
   const languages = Object.fromEntries(
@@ -24,6 +25,7 @@ export function localizedMetadata(
   return {
     title,
     description,
+    ...(robots ? { robots } : {}),
     alternates: {
       canonical,
       languages: { ...languages, 'x-default': xDefault },

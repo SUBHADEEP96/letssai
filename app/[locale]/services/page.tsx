@@ -7,6 +7,7 @@ import { localizeService } from "@/lib/localized-content"
 import type { Locale } from "@/i18n/routing"
 import { ServiceHero } from "@/components/services/ServiceHero"
 import { localizedMetadata } from "@/lib/i18n-seo"
+import { getPageSeo } from "@/lib/page-seo"
 
 const faqs = [
   {
@@ -61,13 +62,11 @@ export async function generateMetadata({
   params: Promise<{ locale: Locale }>
 }) {
   const { locale } = await params
-  const { getTranslations } = await import("next-intl/server")
-  const t = await getTranslations({ locale, namespace: "services" })
+  const seo = getPageSeo("/services", locale)
   return localizedMetadata(
     locale,
-    "AI Services for Customer Support, Calling, CRM & Automation | LetssAI",
-    t("description") ||
-      "Explore practical AI services for customer support, calling, CRM development, sales follow-up, workflows, and system integration.",
+    seo.title,
+    seo.description,
     "/services"
   )
 }

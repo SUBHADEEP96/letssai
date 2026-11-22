@@ -4,6 +4,7 @@ import { Link } from "@/i18n/navigation"
 import type { Locale } from "@/i18n/routing"
 import { localizePath } from "@/i18n/routing"
 import { localizedMetadata } from "@/lib/i18n-seo"
+import { getPageSeo } from "@/lib/page-seo"
 import { absoluteUrl, breadcrumbsSchema } from "@/lib/seo"
 import { JsonLd } from "@/components/seo/JsonLd"
 import { CTASection } from "@/components/site/CTASection"
@@ -25,11 +26,11 @@ export async function generateMetadata({
   params: Promise<{ locale: Locale }>
 }) {
   const { locale } = await params
-  const t = await getTranslations({ locale, namespace: "why" })
+  const seo = getPageSeo("/why-letssai", locale)
   return localizedMetadata(
     locale,
-    t("metaTitle"),
-    t("metaDescription"),
+    seo.title,
+    seo.description,
     "/why-letssai"
   )
 }

@@ -66,8 +66,8 @@ const customerSupportData: Record<Locale, CustomerSupportContent> = {
   en: {
     meta: {
       title: "AI Customer Support",
-      seoTitle: "AI Customer Support Assistant | 24/7 Multilingual Support | LetssAI",
-      metaDescription: "Deliver fast, reliable customer support across website chat, WhatsApp, and email with LetssAI.",
+      seoTitle: "Automate Customer Support Workflows with AI | LetssAI",
+      metaDescription: "AI customer support that answers repeat questions on website chat, WhatsApp and email, and call then hands sensitive cases to your team with full context.",
       description: "Automate website, WhatsApp, and email support with human handoff.",
       heroEyebrow: "AI Customer Support",
       heroTitle: "Deliver always-on, personalized support at scale",
@@ -126,8 +126,8 @@ const customerSupportData: Record<Locale, CustomerSupportContent> = {
   fr: {
     meta: {
       title: "Assistance client par IA",
-      seoTitle: "Assistant de support client IA | Support multilingue 24/7 | LetssAI",
-      metaDescription: "Offrez un support client rapide et fiable sur votre site web, WhatsApp et par e-mail avec LetssAI.",
+      seoTitle: "Automatiser les flux de support client avec l'IA | LetssAI",
+      metaDescription: "Support client IA qui répond aux questions répétitives sur site, WhatsApp et e-mail, puis transfère les cas délicats à votre équipe avec contexte.",
       description: "Automatisez le support sur site web, WhatsApp et e-mail avec transfert humain garanti.",
       heroEyebrow: "Support client IA",
       heroTitle: "Un support client rapide et fiable sur vos canaux habituels",
@@ -186,8 +186,8 @@ const customerSupportData: Record<Locale, CustomerSupportContent> = {
   de: {
     meta: {
       title: "AI-Kundensupport",
-      seoTitle: "KI-Kundensupport-Assistent | 24/7 Mehrsprachiger Support | LetssAI",
-      metaDescription: "Bieten Sie schnellen, zuverlässigen Kundenservice über Website-Chat, WhatsApp und E-Mail mit LetssAI.",
+      seoTitle: "Kundensupport-Workflows mit KI automatisieren | LetssAI",
+      metaDescription: "KI-Kundensupport für Website-Chat, WhatsApp und E-Mail beantwortet Routinefragen und übergibt komplexe Fälle kontextbezogen an Ihr Team.",
       description: "Automatisieren Sie Website-, WhatsApp- und E-Mail-Support mit nahtloser Mitarbeiter-Übergabe.",
       heroEyebrow: "AI-Kundensupport",
       heroTitle: "Schneller, verlässlicher Kundensupport auf Ihren gewohnten Kanälen",
@@ -246,8 +246,8 @@ const customerSupportData: Record<Locale, CustomerSupportContent> = {
   es: {
     meta: {
       title: "Atención al cliente con IA",
-      seoTitle: "Asistente de atención al cliente con IA | Soporte multilingüe 24/7 | LetssAI",
-      metaDescription: "Ofrezca una atención al cliente rápida y confiable a través del chat web, WhatsApp y correo electrónico con LetssAI.",
+      seoTitle: "Automatice los flujos de soporte al cliente con IA | LetssAI",
+      metaDescription: "Atención al cliente con IA que responde preguntas frecuentes en web, WhatsApp y correo, derivando casos complejos a su equipo con contexto.",
       description: "Automatice soporte en sitio web, WhatsApp y correo con transferencia humana garantizada.",
       heroEyebrow: "Atención al cliente con IA",
       heroTitle: "Atención al cliente rápida y confiable en los canales que ya utiliza",
@@ -306,8 +306,8 @@ const customerSupportData: Record<Locale, CustomerSupportContent> = {
   hi: {
     meta: {
       title: "AI ग्राहक सहायता",
-      seoTitle: "AI ग्राहक सहायता सहायक | 24/7 बहुभाषी सहायता | LetssAI",
-      metaDescription: "वेबसाइट चैट, व्हाट्सएप और ईमेल पर LetssAI के साथ तेज़ और विश्वसनीय ग्राहक सहायता प्रदान करें।",
+      seoTitle: "AI के साथ कस्टमर सपोर्ट वर्कफ़्लो को ऑटोमेट करें | LetssAI",
+      metaDescription: "वेबसाइट चैट, WhatsApp और ईमेल पर दोहराए जाने वाले सवालों के जवाब देने वाला AI ग्राहक सहायता सिस्टम, जो संवेदनशील मामले टीम को सौंपता है।",
       description: "वेबसाइट, व्हाट्सएप और ईमेल सहायता को स्वचालित करें और मानवीय सहायता की सुविधा रखें।",
       heroEyebrow: "AI ग्राहक सहायता",
       heroTitle: "आपके मौजूदा चैनलों पर तेज़ और भरोसेमंद ग्राहक सेवा",
@@ -372,8 +372,8 @@ const callingData: Record<Locale, CallingContent> = {
   en: {
     meta: {
       title: "AI Calling & Appointment Booking",
-      seoTitle: "AI Calling and Appointment Booking Assistant | LetssAI",
-      metaDescription: "Automate appointment requests, reminders, feedback collection, call summaries, and calendar updates with LetssAI.",
+      seoTitle: "AI Voice Agent for Calls & Appointment Booking | LetssAI",
+      metaDescription: "Automate inbound and outbound calls, appointment booking, reminders and feedback with a multilingual AI voice agent and safe human handoff.",
       description: "Automate outbound calls, appointment booking, and feedback collection.",
       heroEyebrow: "AI Calling & Appointment Booking",
       heroTitle: "Turn inbound and outbound calls into confirmed calendar bookings",
@@ -438,8 +438,8 @@ const callingData: Record<Locale, CallingContent> = {
   fr: {
     meta: {
       title: "Appels et prise de rendez-vous par IA",
-      seoTitle: "Assistant d'appels et de prise de rendez-vous IA | LetssAI",
-      metaDescription: "Automatisez les demandes de rendez-vous, rappels, retours clients, résumés d'appels et mises à jour de calendrier avec LetssAI.",
+      seoTitle: "Agent vocal IA pour appels & prise de rendez-vous | LetssAI",
+      metaDescription: "Automatisez les appels entrants et sortants, la prise de rendez-vous, les rappels et le recueil d'avis avec un agent vocal IA multilingue.",
       description: "Automatisez les appels sortants, la prise de rendez-vous et la collecte d'avis clients.",
       heroEyebrow: "Appels et prise de rendez-vous par IA",
       heroTitle: "Transformez vos appels entrants et sortants en rendez-vous confirmés",
@@ -504,8 +504,8 @@ const callingData: Record<Locale, CallingContent> = {
   de: {
     meta: {
       title: "AI-Anrufe & Terminbuchung",
-      seoTitle: "KI-Telefonassistent & Terminbuchung | LetssAI",
-      metaDescription: "Automatisieren Sie Terminanfragen, Erinnerungen, Feedback, Anrufzusammenfassungen und Kalenderaktualisierungen mit LetssAI.",
+      seoTitle: "KI-Sprachagent für Telefonate & Terminbuchung | LetssAI",
+      metaDescription: "Automatisieren Sie Inbound- und Outbound-Anrufe, Terminbuchung, Erinnerungen und Feedback mit einem mehrsprachigen KI-Sprachassistenten.",
       description: "Automatisieren Sie Outbound-Anrufe, Terminvereinbarungen und Kundenbefragungen.",
       heroEyebrow: "AI-Anrufe & Terminbuchung",
       heroTitle: "Verwandeln Sie Telefonanrufe in bestätigte Kalendertermine",
@@ -570,8 +570,8 @@ const callingData: Record<Locale, CallingContent> = {
   es: {
     meta: {
       title: "Llamadas y reserva de citas con IA",
-      seoTitle: "Asistente de llamadas y reserva de citas con IA | LetssAI",
-      metaDescription: "Automatice solicitudes de citas, recordatorios, encuestas de satisfacción, resúmenes de llamadas y calendarios con LetssAI.",
+      seoTitle: "Agente de voz con IA para llamadas y citas | LetssAI",
+      metaDescription: "Automatice llamadas entrantes y salientes, reserva de citas, recordatorios y encuestas con un agente de voz multilingüe y traspaso humano seguro.",
       description: "Automatice llamadas salientes, programación de citas y recolección de opiniones.",
       heroEyebrow: "Llamadas y reserva de citas con IA",
       heroTitle: "Convierta llamadas en citas confirmadas en su calendario",
@@ -636,8 +636,8 @@ const callingData: Record<Locale, CallingContent> = {
   hi: {
     meta: {
       title: "AI कॉलिंग और अपॉइंटमेंट बुकिंग",
-      seoTitle: "AI कॉलिंग और अपॉइंटमेंट बुकिंग सहायक | LetssAI",
-      metaDescription: "LetssAI के साथ अपॉइंटमेंट अनुरोध, रिमाइंडर, फीडबैक संग्रह, कॉल सारांश और कैलेंडर अपडेट स्वचालित करें।",
+      seoTitle: "कॉल्स और अपॉइंटमेंट बुकिंग के लिए AI वॉइस एजेंट | LetssAI",
+      metaDescription: "इनबाउंड और आउटबाउंड कॉल्स, अपॉइंटमेंट बुकिंग, रिमाइंडर और फ़ीडबैक को बहुभाषी AI वॉइस एजेंट और सुरक्षित ह्यूमन हैंडऑफ़ के साथ ऑटोमेट करें।",
       description: "आउटबाउंड कॉल, अपॉइंटमेंट बुकिंग और फीडबैक संग्रह को स्वचालित करें।",
       heroEyebrow: "AI कॉलिंग और अपॉइंटमेंट बुकिंग",
       heroTitle: "इनबाउंड और आउटबाउंड कॉल को कन्फर्म्ड कैलेंडर बुकिंग में बदलें",
@@ -708,8 +708,8 @@ const systemIntegrationData: Record<Locale, SystemIntegrationContent> = {
   en: {
     meta: {
       title: "AI System Integration",
-      seoTitle: "AI System Integration | Connect AI to CRM, Email & APIs | LetssAI",
-      metaDescription: "Connect AI assistants and automations to your existing business systems, databases, CRM, calendars, and APIs with LetssAI.",
+      seoTitle: "AI System Integration: CRM, API & MCP Connectors | LetssAI",
+      metaDescription: "Connect AI agents to your CRM, email, calendars, databases and WhatsApp via APIs, MCP and SIP, without replacing the tools your team uses.",
       description: "Connect AI with CRM, email, dashboards, databases, and APIs.",
       heroEyebrow: "AI System Integration",
       heroTitle: "Connect AI to the systems your business already depends on",
@@ -750,8 +750,8 @@ const systemIntegrationData: Record<Locale, SystemIntegrationContent> = {
   fr: {
     meta: {
       title: "Intégration de systèmes IA",
-      seoTitle: "Intégration de systèmes IA | Connectez l'IA à vos CRM, e-mails et API | LetssAI",
-      metaDescription: "Connectez les assistants et automatisations IA à vos systèmes d'entreprise, bases de données, CRM, calendriers et API avec LetssAI.",
+      seoTitle: "Intégration de systèmes IA : connecteurs CRM, API & MCP | LetssAI",
+      metaDescription: "Connectez des agents IA à votre CRM, e-mails, calendriers, bases de données et WhatsApp via APIs, MCP et SIP, sans remplacer vos outils.",
       description: "Connectez l'IA à votre CRM, messagerie, tableaux de bord, bases de données et API.",
       heroEyebrow: "Intégration de systèmes IA",
       heroTitle: "Connectez l'IA aux outils sur lesquels repose votre entreprise",
@@ -792,8 +792,8 @@ const systemIntegrationData: Record<Locale, SystemIntegrationContent> = {
   de: {
     meta: {
       title: "AI-Systemintegration",
-      seoTitle: "AI-Systemintegration | KI mit CRM, E-Mail & APIs verbinden | LetssAI",
-      metaDescription: "Verbinden Sie KI-Assistenten und Automatisierungen mit Ihren bestehenden Unternehmenssystemen, Datenbanken, CRM und Schnittstellen mit LetssAI.",
+      seoTitle: "KI-Systemintegration: CRM-, API- & MCP-Konnektoren | LetssAI",
+      metaDescription: "Verbinden Sie KI-Agenten über APIs, MCP und SIP mit CRM, E-Mail, Kalendern und Datenbanken, ohne bestehende Software ersetzen zu müssen.",
       description: "Verbinden Sie KI mit CRM, E-Mail, Dashboards, Datenbanken und APIs.",
       heroEyebrow: "AI-Systemintegration",
       heroTitle: "Verbinden Sie KI mit den Systemen, auf die Ihr Unternehmen täglich baut",
@@ -834,8 +834,8 @@ const systemIntegrationData: Record<Locale, SystemIntegrationContent> = {
   es: {
     meta: {
       title: "Integración de sistemas de IA",
-      seoTitle: "Integración de sistemas de IA | Conecte IA con CRM, correo y API | LetssAI",
-      metaDescription: "Conecte asistentes y automatizaciones de IA con sus sistemas comerciales existentes, bases de datos, CRM, calendarios y API con LetssAI.",
+      seoTitle: "Integración de sistemas de IA: CRM, API y conectores MCP | LetssAI",
+      metaDescription: "Conecte agentes de IA a su CRM, correo, calendarios, bases de datos y WhatsApp mediante APIs, MCP y SIP, sin reemplazar sus herramientas.",
       description: "Conecte la IA con CRM, correo electrónico, paneles, bases de datos y API.",
       heroEyebrow: "Integración de sistemas de IA",
       heroTitle: "Conecte la IA con los sistemas esenciales de su negocio",
@@ -876,8 +876,8 @@ const systemIntegrationData: Record<Locale, SystemIntegrationContent> = {
   hi: {
     meta: {
       title: "AI सिस्टम इंटीग्रेशन",
-      seoTitle: "AI सिस्टम इंटीग्रेशन | AI को CRM, ईमेल और API से जोड़ें | LetssAI",
-      metaDescription: "LetssAI के साथ AI सहायकों और ऑटोमेशन को अपने मौजूदा व्यावसायिक सिस्टम, डेटाबेस, CRM, कैलेंडर और API से सुरक्षित रूप से जोड़ें।",
+      seoTitle: "AI सिस्टम एकीकरण: CRM, API और MCP कनेक्टर्स | LetssAI",
+      metaDescription: "मौजूदा टूल्स को बदले बिना अपने CRM, ईमेल, कैलेंडर, डेटाबेस और WhatsApp से AI एजेंट्स को APIs, MCP और SIP के माध्यम से जोड़ें।",
       description: "AI को CRM, ईमेल, डैशबोर्ड, डेटाबेस और API से कनेक्ट करें।",
       heroEyebrow: "AI सिस्टम इंटीग्रेशन",
       heroTitle: "AI को उन प्रणालियों से जोड़ें जिन पर आपका व्यवसाय निर्भर है",
@@ -927,8 +927,8 @@ const otherServicesData: Record<
   "ai-sales-lead-follow-up": {
     en: {
       title: "AI Sales & Lead Follow-up",
-      seoTitle: "AI Sales and Lead Follow-up Automation | LetssAI",
-      metaDescription: "Qualify leads instantly, automate follow-up across email and WhatsApp, and schedule sales calls with LetssAI.",
+      seoTitle: "AI Lead Follow-Up & Qualification Automation | LetssAI",
+      metaDescription: "Respond to every lead fast. AI qualifies enquiries, books consultations and updates HubSpot, Pipedrive or Zoho so reps only talk to ready buyers.",
       description: "Qualify leads, follow up automatically, and update CRM records.",
       heroEyebrow: "AI Sales & Lead Follow-up",
       heroTitle: "Turn every new enquiry into a clear next action",
@@ -936,8 +936,8 @@ const otherServicesData: Record<
     },
     fr: {
       title: "Vente et suivi des prospects par IA",
-      seoTitle: "Automatisation des ventes et du suivi des prospects par IA | LetssAI",
-      metaDescription: "Qualifiez les prospects instantanément, automatisez les relances par e-mail et WhatsApp, et planifiez des appels avec LetssAI.",
+      seoTitle: "Suivi et qualification de prospects avec l'IA | LetssAI",
+      metaDescription: "Répondez vite à chaque prospect. L'IA qualifie les demandes, planifie des rendez-vous et met à jour votre CRM pour vos équipes commerciales.",
       description: "Qualifiez les prospects, effectuez des relances automatiques et mettez à jour votre CRM.",
       heroEyebrow: "Vente et suivi des prospects par IA",
       heroTitle: "Transformez chaque nouvelle demande en opportunité concrète",
@@ -945,8 +945,8 @@ const otherServicesData: Record<
     },
     de: {
       title: "AI-Vertrieb & Lead-Nachverfolgung",
-      seoTitle: "KI-Vertrieb & Lead-Nachverfolgung Automatisierung | LetssAI",
-      metaDescription: "Qualifizieren Sie Leads sofort, automatisieren Sie Nachfassaktionen per E-Mail und WhatsApp und buchen Sie Verkaufsgespräche mit LetssAI.",
+      seoTitle: "KI-Lead-Follow-up & Qualifizierungs-Automatisierung | LetssAI",
+      metaDescription: "Schnell auf jede Anfrage reagieren. KI qualifiziert Leads, bucht Termine und aktualisiert CRM-Systeme, damit Ihr Vertrieb mit echten Käufern spricht.",
       description: "Qualifizieren Sie Leads, fassen Sie automatisch nach und pflegen Sie CRM-Daten.",
       heroEyebrow: "AI-Vertrieb & Lead-Nachverfolgung",
       heroTitle: "Verwandeln Sie jede neue Anfrage in konkrete Verkaufschancen",
@@ -954,8 +954,8 @@ const otherServicesData: Record<
     },
     es: {
       title: "Ventas y seguimiento de clientes potenciales con IA",
-      seoTitle: "Automatización de ventas y seguimiento de prospectos con IA | LetssAI",
-      metaDescription: "Califique prospectos de inmediato, automatice el seguimiento por correo y WhatsApp, y agende llamadas comerciales con LetssAI.",
+      seoTitle: "Seguimiento y calificación de leads con IA | LetssAI",
+      metaDescription: "Responda a cada lead al instante. La IA califica consultas, agenda citas y actualiza su CRM para que sus comerciales hablen con compradores listos.",
       description: "Califique clientes potenciales, haga seguimiento automático y actualice su CRM.",
       heroEyebrow: "Ventas y seguimiento de clientes potenciales con IA",
       heroTitle: "Convierta cada nueva consulta en una acción comercial clara",
@@ -963,8 +963,8 @@ const otherServicesData: Record<
     },
     hi: {
       title: "AI बिक्री और लीड फ़ॉलो-अप",
-      seoTitle: "AI बिक्री और लीड फ़ॉलो-अप ऑटोमेशन | LetssAI",
-      metaDescription: "लीड्स को तुरंत योग्य बनाएं, ईमेल और व्हाट्सएप पर स्वचालित फ़ॉलो-अप करें और LetssAI के साथ सेल्स कॉल शेड्यूल करें।",
+      seoTitle: "AI लीड फ़ॉलो-अप और योग्यता ऑटोमेशन | LetssAI",
+      metaDescription: "हर लीड को तुरंत जवाब दें। AI पूछताछ को योग्य बनाता है, परामर्श बुक करता है और CRM अपडेट करता है ताकि प्रतिनिधि केवल तैयार खरीदारों से बात करें।",
       description: "लीड को योग्य बनाएं, स्वचालित रूप से फ़ॉलो-अप करें और CRM रिकॉर्ड अपडेट करें।",
       heroEyebrow: "AI बिक्री और लीड फ़ॉलो-अप",
       heroTitle: "हर नई पूछताछ को एक स्पष्ट अगले कदम में बदलें",
@@ -974,8 +974,8 @@ const otherServicesData: Record<
   "ai-crm-development": {
     en: {
       title: "AI CRM Development",
-      seoTitle: "AI CRM Development & Custom Workflow Architecture | LetssAI",
-      metaDescription: "Build practical, AI-ready CRMs shaped around your sales, service, and operations workflows with LetssAI.",
+      seoTitle: "Custom AI CRM Development for Sales Teams | LetssAI",
+      metaDescription: "Design an AI-ready CRM around your sales process: unified conversations, auto-logged notes, AI summaries and reliable pipeline reporting.",
       description: "Build an AI-ready CRM around your sales, service, and follow-up workflows.",
       heroEyebrow: "AI CRM Development",
       heroTitle: "Build a CRM that works the way your team does",
@@ -983,8 +983,8 @@ const otherServicesData: Record<
     },
     fr: {
       title: "Développement CRM avec IA",
-      seoTitle: "Développement de CRM avec IA & Architecture sur mesure | LetssAI",
-      metaDescription: "Créez des CRM prêts pour l'IA, façonnés autour de vos flux de vente, de support et d'opérations avec LetssAI.",
+      seoTitle: "Développement de CRM IA sur mesure pour les ventes | LetssAI",
+      metaDescription: "Concevez un CRM prêt pour l'IA selon vos processus : conversations unifiées, notes automatiques, résumés IA et rapports fiables de pipeline.",
       description: "Créez un CRM intelligent adapté à vos processus de vente, service client et suivi.",
       heroEyebrow: "Développement CRM avec IA",
       heroTitle: "Bâtissez un CRM qui fonctionne exactement comme votre équipe",
@@ -992,8 +992,8 @@ const otherServicesData: Record<
     },
     de: {
       title: "AI-CRM-Entwicklung",
-      seoTitle: "KI-CRM-Entwicklung & Maßgeschneiderte Workflow-Architektur | LetssAI",
-      metaDescription: "Entwickeln Sie zukunftsfähige, KI-gestützte CRMs abgestimmt auf Vertrieb, Service und Unternehmensabläufe mit LetssAI.",
+      seoTitle: "Individuelle KI-CRM-Entwicklung für Vertriebsteams | LetssAI",
+      metaDescription: "Ein KI-fähiges CRM nach Ihrem Verkaufsprozess: gebündelte Konversationen, automatische Notizen, KI-Zusammenfassungen und verlässliche Berichte.",
       description: "Bauen Sie ein KI-fähiges CRM rund um Ihre Vertriebs-, Service- und Follow-up-Prozesse auf.",
       heroEyebrow: "AI-CRM-Entwicklung",
       heroTitle: "Bauen Sie ein CRM, das genau so arbeitet wie Ihr Team",
@@ -1001,8 +1001,8 @@ const otherServicesData: Record<
     },
     es: {
       title: "Desarrollo de CRM con IA",
-      seoTitle: "Desarrollo de CRM con IA y Arquitectura de flujos | LetssAI",
-      metaDescription: "Diseñe CRM adaptados a la IA para optimizar ventas, atención al cliente y operaciones diarias con LetssAI.",
+      seoTitle: "Desarrollo de CRM con IA para equipos de ventas | LetssAI",
+      metaDescription: "Diseñe un CRM adaptado a sus ventas: conversaciones unificadas, notas automáticas, resúmenes con IA y análisis fiable de su canal comercial.",
       description: "Cree un CRM adaptado a la IA para sus ventas, servicio y seguimiento.",
       heroEyebrow: "Desarrollo de CRM con IA",
       heroTitle: "Cree un CRM que funcione al ritmo de su equipo",
@@ -1010,8 +1010,8 @@ const otherServicesData: Record<
     },
     hi: {
       title: "AI CRM विकास",
-      seoTitle: "AI CRM विकास और कस्टम वर्कफ़्लो आर्किटेक्चर | LetssAI",
-      metaDescription: "अपनी बिक्री, सेवा और संचालन वर्कफ़्लो के अनुसार डिज़ाइन किए गए AI-तैयार CRM का निर्माण LetssAI के साथ करें।",
+      seoTitle: "सेल्स टीमों के लिए कस्टम AI CRM डेवलपमेंट | LetssAI",
+      metaDescription: "अपनी बिक्री प्रक्रिया के अनुरूप AI-सक्षम CRM तैयार करें: एकीकृत बातचीत, स्वतः सहेजे गए नोट्स, AI सारांश और सटीक पाइपलाइन रिपोर्टिंग।",
       description: "अपनी बिक्री, सेवा और फ़ॉलो-अप वर्कफ़्लो के आसपास एक AI-तैयार CRM बनाएं।",
       heroEyebrow: "AI CRM विकास",
       heroTitle: "एक ऐसा CRM बनाएं जो आपकी टीम के काम करने के तरीके के अनुकूल हो",
@@ -1025,8 +1025,8 @@ const otherServicesData: Record<
 // ==========================================
 export const discoveryTranslations: Record<Locale, DiscoveryContent> = {
   en: {
-    metaTitle: "Book an AI Discovery Call | LetssAI",
-    metaDescription: "Schedule a free 30-minute AI Discovery consultation with LetssAI to uncover high-impact automation opportunities for your business workflows.",
+    metaTitle: "Book a Free 30-Minute AI Discovery Call | LetssAI",
+    metaDescription: "Book a free 30-minute AI discovery call. We'll review your workflows, find high-impact automation opportunities and map a practical first step.",
     heading: "Book an AI Discovery Consultation with LetssAI",
     description: "Schedule a practical 30-minute AI workflow review and discovery call.",
     calendarTitle: "Schedule an AI Discovery Call with LetssAI",
@@ -1035,8 +1035,8 @@ export const discoveryTranslations: Record<Locale, DiscoveryContent> = {
     breadcrumb: "AI Discovery",
   },
   fr: {
-    metaTitle: "Réserver un appel de découverte IA | LetssAI",
-    metaDescription: "Planifiez une consultation gratuite de 30 minutes avec LetssAI pour identifier les opportunités d'automatisation à fort impact pour vos flux de travail.",
+    metaTitle: "Réserver un appel découverte IA gratuit de 30 minutes | LetssAI",
+    metaDescription: "Réservez un appel gratuit de 30 minutes. Nous examinerons vos processus, identifierons les opportunités clés et tracerons une première étape concrète.",
     heading: "Réservez une consultation de découverte IA avec LetssAI",
     description: "Planifiez une séance pratique de 30 minutes d'examen de vos flux de travail et de découverte de l'IA.",
     calendarTitle: "Planifier un appel de découverte IA avec LetssAI",
@@ -1045,8 +1045,8 @@ export const discoveryTranslations: Record<Locale, DiscoveryContent> = {
     breadcrumb: "Découverte IA",
   },
   de: {
-    metaTitle: "AI-Discovery-Call buchen | LetssAI",
-    metaDescription: "Vereinbaren Sie eine kostenlose 30-minütige KI-Erstberatung mit LetssAI, um lohnende Automatisierungspotenziale für Ihre Unternehmensabläufe zu ermitteln.",
+    metaTitle: "Kostenlosen 30-minütigen KI-Discovery-Call buchen | LetssAI",
+    metaDescription: "Buchen Sie ein kostenloses 30-minütiges KI-Gespräch. Wir prüfen Ihre Arbeitsabläufe, identifizieren Potenziale und definieren den ersten Schritt.",
     heading: "Buchen Sie ein KI-Entwicklungs- und Beratungsgespräch mit LetssAI",
     description: "Vereinbaren Sie eine praxisnahe 30-minütige Workflow-Analyse und ein KI-Discovery-Gespräch.",
     calendarTitle: "Einen AI-Discovery-Call mit LetssAI vereinbaren",
@@ -1055,8 +1055,8 @@ export const discoveryTranslations: Record<Locale, DiscoveryContent> = {
     breadcrumb: "KI-Discovery",
   },
   es: {
-    metaTitle: "Reservar llamada de descubrimiento de IA | LetssAI",
-    metaDescription: "Programe una consulta gratuita de 30 minutos de descubrimiento de IA con LetssAI para identificar oportunidades de automatización de alto impacto en su empresa.",
+    metaTitle: "Reserve una llamada de descubrimiento de IA de 30 minutos | LetssAI",
+    metaDescription: "Reserve una llamada gratuita de 30 minutos. Analizaremos sus flujos, detectaremos oportunidades clave y definiremos un primer paso práctico.",
     heading: "Reserve una consulta de descubrimiento de IA con LetssAI",
     description: "Programe una revisión práctica de flujos de trabajo de 30 minutos y una llamada de descubrimiento de IA.",
     calendarTitle: "Programar una llamada de descubrimiento de IA con LetssAI",
@@ -1065,8 +1065,8 @@ export const discoveryTranslations: Record<Locale, DiscoveryContent> = {
     breadcrumb: "Descubrimiento de IA",
   },
   hi: {
-    metaTitle: "AI डिस्कवरी कॉल बुक करें | LetssAI",
-    metaDescription: "अपने बिज़नेस वर्कफ़्लो के लिए ऑटोमेशन के बेहतरीन अवसरों को जानने हेतु LetssAI के साथ 30 मिनट का निःशुल्क परामर्श बुक करें।",
+    metaTitle: "30 मिनट का निःशुल्क AI डिस्कवरी कॉल बुक करें | LetssAI",
+    metaDescription: "30 मिनट का निःशुल्क AI डिस्कवरी कॉल बुक करें। हम आपके वर्कफ़्लो की समीक्षा करेंगे, उच्च-प्रभाव वाले अवसर खोजेंगे और पहला कदम तय करेंगे।",
     heading: "LetssAI के साथ एक AI डिस्कवरी परामर्श बुक करें",
     description: "30 मिनट की व्यावहारिक वर्कफ़्लो समीक्षा और AI परामर्श सत्र तय करें।",
     calendarTitle: "LetssAI के साथ AI डिस्कवरी कॉल तय करें",

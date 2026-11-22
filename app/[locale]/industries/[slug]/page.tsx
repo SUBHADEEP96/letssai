@@ -19,6 +19,7 @@ import {
 } from "@/lib/seo"
 import { localizePath } from "@/i18n/routing"
 import { localizedMetadata } from "@/lib/i18n-seo"
+import { getPageSeo } from "@/lib/page-seo"
 import { AgenticSupportSuite } from "@/components/sections/AgenticSupportSuite"
 
 function notFound(): never {
@@ -35,18 +36,15 @@ export async function generateMetadata({
 }) {
   const { locale, slug } = await params
   const source = await getIndustryPage(slug)
-  const industry = source
-    ? { ...source, title: localizedIndustryTitle(slug, locale) ?? source.title }
-    : null
-  return industry
-    ? localizedMetadata(
-        locale,
-        industry.metaTitle,
-        industry.metaDescription,
-        industry.href,
-        industry.ogImage
-      )
-    : {}
+  if (!source) return {}
+  const seo = getPageSeo(`/industries/${slug}`, locale)
+  return localizedMetadata(
+    locale,
+    seo.title,
+    seo.description,
+    source.href,
+    source.ogImage
+  )
 }
 export default async function IndustryPage({
   params,

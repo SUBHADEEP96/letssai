@@ -4,6 +4,7 @@ import { siteConfig } from "@/lib/site"
 import type { Locale } from "@/i18n/routing"
 import { localizePath } from "@/i18n/routing"
 import { localizedMetadata } from "@/lib/i18n-seo"
+import { getPageSeo } from "@/lib/page-seo"
 import { BackButton } from "@/components/booking/BackButton"
 import { GoogleCalendarEmbed } from "@/components/booking/GoogleCalendarEmbed"
 import { discoveryTranslations } from "@/lib/service-content-translations"
@@ -14,11 +15,11 @@ export async function generateMetadata({
   params: Promise<{ locale: Locale }>
 }) {
   const { locale } = await params
-  const t = discoveryTranslations[locale] || discoveryTranslations.en
+  const seo = getPageSeo("/ai-discovery", locale)
   return localizedMetadata(
     locale,
-    t.metaTitle,
-    t.metaDescription,
+    seo.title,
+    seo.description,
     "/ai-discovery"
   )
 }

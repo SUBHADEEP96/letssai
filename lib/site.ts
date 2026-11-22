@@ -69,9 +69,9 @@ export const services: Service[] = [
     href: "/services/ai-customer-support",
     description:
       "Automate website, WhatsApp, and email support with human handoff.",
-    seoTitle: "AI Customer Support for Website, WhatsApp & Email | LetssAI",
+    seoTitle: "Automate Customer Support Workflows with AI | LetssAI",
     metaDescription:
-      "Use LetssAI to answer repeated customer questions across website chat, WhatsApp, and email with safe human handoff.",
+      "AI customer support that answers repeat questions on website chat, WhatsApp and email, and call then hands sensitive cases to your team with full context.",
     icon: "ChatCircleText",
     tools: [
       "Website Chatbot Widget",
@@ -166,9 +166,9 @@ export const services: Service[] = [
     href: "/services/ai-calling-appointment-booking",
     description:
       "Automate outbound calls, appointment booking, and feedback collection.",
-    seoTitle: "AI Calling and Appointment Booking Assistant | LetssAI",
+    seoTitle: "AI Voice Agent for Calls & Appointment Booking | LetssAI",
     metaDescription:
-      "Automate appointment requests, reminders, feedback collection, call summaries, and calendar updates with LetssAI.",
+      "Automate inbound and outbound calls, appointment booking, reminders and feedback with a multilingual AI voice agent and safe human handoff.",
     icon: "PhoneCall",
     tools: [
       "Twilio & SIP Telephony",
@@ -269,10 +269,9 @@ export const services: Service[] = [
     href: "/services/ai-sales-lead-follow-up",
     description:
       "Qualify leads, follow up automatically, and update CRM records.",
-    seoTitle:
-      "AI Sales Follow-up Assistant for Lead Qualification & CRM Updates | LetssAI",
+    seoTitle: "AI Lead Follow-Up & Qualification Automation | LetssAI",
     metaDescription:
-      "Improve lead response time with AI follow-up, qualification, reminders, appointment booking, and CRM updates.",
+      "Respond to every lead fast. AI qualifies enquiries, books consultations and updates HubSpot, Pipedrive or Zoho so reps only talk to ready buyers.",
     icon: "TrendUp",
     tools: [
       "Web Form Webhooks",
@@ -365,9 +364,9 @@ export const services: Service[] = [
     href: "/services/ai-crm-development",
     description:
       "Build an AI-ready CRM around your sales, service, and follow-up workflows.",
-    seoTitle: "AI CRM Development for Sales & Customer Operations | LetssAI",
+    seoTitle: "Custom AI CRM Development for Sales Teams | LetssAI",
     metaDescription:
-      "Design and develop an AI-ready CRM that unifies leads, customer conversations, follow-ups, reporting, and team workflows.",
+      "Design an AI-ready CRM around your sales process: unified conversations, auto-logged notes, AI summaries and reliable pipeline reporting.",
     icon: "Database",
     tools: [
       "Custom CRM Schemas",
@@ -454,10 +453,9 @@ export const services: Service[] = [
     title: "AI System Integration",
     href: "/services/ai-system-integration",
     description: "Connect AI with CRM, email, dashboards, databases, and APIs.",
-    seoTitle:
-      "AI System Integration for CRM, Email, Dashboards & Business Tools | LetssAI",
+    seoTitle: "AI System Integration: CRM, API & MCP Connectors | LetssAI",
     metaDescription:
-      "Make AI work with the tools you already use, including CRM, email, databases, Google Sheets, WhatsApp, calendars, and dashboards.",
+      "Connect AI agents to your CRM, email, calendars, databases and WhatsApp via APIs, MCP and SIP, without replacing the tools your team uses.",
     icon: "PlugsConnected",
     tools: [
       "REST & GraphQL APIs",
@@ -550,9 +548,9 @@ export const industries: Industry[] = [
     href: "/industries/real-estate",
     useCase:
       "Follow up property inquiries, book site visits, and update CRM records.",
-    seoTitle: "AI Solutions for Real Estate Lead Follow-up | LetssAI",
+    seoTitle: "AI for Real Estate: Lead Follow-Up & Site Visits | LetssAI",
     metaDescription:
-      "AI support for real estate lead follow-up, property inquiries, site visit reminders, CRM updates, calls, and WhatsApp follow-up.",
+      "AI that follows up property enquiries fast, qualifies buyers, books site visits over WhatsApp or calls, and keeps your CRM up to date.",
     icon: "HouseLine",
     problems: [
       "Property inquiries need fast follow-up",
@@ -626,9 +624,9 @@ export const industries: Industry[] = [
     href: "/industries/healthcare-clinics",
     useCase:
       "Reduce front desk workload with appointment support, FAQs, reminders, and feedback.",
-    seoTitle: "AI Solutions for Healthcare Clinics | LetssAI",
+    seoTitle: "AI Appointment Booking & Patient FAQs for Clinics | LetssAI",
     metaDescription:
-      "AI workflow support for clinics: appointment booking, patient FAQs, reminders, feedback collection, and front desk workload reduction.",
+      "Reduce front desk workload with AI appointment booking, reminders, patient FAQs and feedback collection. Admin support only, with human handoff.",
     icon: "FirstAidKit",
     problems: [
       "Appointment calls overload the front desk",
@@ -703,9 +701,9 @@ export const industries: Industry[] = [
     href: "/industries/legal-firms",
     useCase:
       "Support client intake, scheduling, document organization, and internal document search.",
-    seoTitle: "AI Workflow Support for Legal Firms | LetssAI",
+    seoTitle: "AI Client Intake & Scheduling for Law Firms | LetssAI",
     metaDescription:
-      "Administrative AI support for legal firms: client intake, appointment scheduling, document organization, and knowledge search without legal advice.",
+      "Automate client intake, consultation scheduling and document search for law firms. Administrative AI with lawyer review, never legal advice.",
     icon: "Scales",
     problems: [
       "Client intake details are scattered",
@@ -774,9 +772,9 @@ export const industries: Industry[] = [
     href: "/industries/education-coaching",
     useCase:
       "Automate admission inquiries, student FAQs, payment reminders, and demo class booking.",
-    seoTitle: "AI Solutions for Education and Coaching | LetssAI",
+    seoTitle: "AI Admission Follow-Up & Demo Booking for Coaching | LetssAI",
     metaDescription:
-      "AI assistants for admission inquiry follow-up, student support, course FAQs, payment reminders, demo class booking, and WhatsApp automation.",
+      "Reply to admission enquiries fast, answer course FAQs, book demo classes and send payment reminders by WhatsApp and calls with AI assistants.",
     icon: "GraduationCap",
     problems: [
       "Admission inquiries need quick replies",
@@ -850,9 +848,9 @@ export const industries: Industry[] = [
     href: "/industries/retail-ecommerce",
     useCase:
       "Answer order questions, product FAQs, returns, exchanges, and review requests.",
-    seoTitle: "AI Customer Support for E-commerce | LetssAI",
+    seoTitle: "AI Customer Support & Cart Recovery for E-commerce | LetssAI",
     metaDescription:
-      "AI support for e-commerce order questions, product FAQs, returns and exchange support, review collection, and inventory inquiries when connected.",
+      "Answer order and returns questions, recover abandoned carts with voice AI calls and verify COD orders. AI support built for online stores.",
     icon: "ShoppingCart",
     problems: [
       "Order status questions repeat often",
@@ -922,9 +920,9 @@ export const industries: Industry[] = [
     href: "/industries/finance-accounting",
     useCase:
       "Support invoice handling, document collection, client reminders, and report preparation.",
-    seoTitle: "AI Workflow Support for Finance and Accounting | LetssAI",
+    seoTitle: "AI Workflow Automation for Accounting & Finance | LetssAI",
     metaDescription:
-      "AI workflow support for finance and accounting teams: invoice handling, document collection, client reminders, internal knowledge, and reports.",
+      "Cut manual follow-up with AI for document collection, invoice data extraction, client reminders and report prep. Admin automation, not financial advice.",
     icon: "Receipt",
     problems: [
       "Document collection needs repeated reminders",
