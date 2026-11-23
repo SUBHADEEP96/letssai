@@ -159,11 +159,11 @@ test("robots.txt explicitly allows /_next/static/ for crawling fonts and assets"
   assert.ok(allowList.includes("/"))
 })
 
-test("sitemap outputs 95 canonical URLs with deterministic lastmod and alternates", () => {
+test("sitemap outputs 85 canonical URLs excluding non-indexable legal pages", () => {
   const sm1 = sitemap()
   const sm2 = sitemap()
 
-  assert.equal(sm1.length, 95, "Sitemap must have 95 URLs")
+  assert.equal(sm1.length, 85, "Sitemap must have 85 indexable URLs (17 pages * 5 locales)")
 
   for (let i = 0; i < sm1.length; i++) {
     assert.equal(
@@ -174,6 +174,14 @@ test("sitemap outputs 95 canonical URLs with deterministic lastmod and alternate
 
     assert.ok(sm1[i]!.url.startsWith("https://letssai.com"))
     assert.ok(!sm1[i]!.url.includes("www.letssai.com"))
+    assert.ok(
+      !sm1[i]!.url.includes("privacy-policy"),
+      "Privacy policy must not be in sitemap"
+    )
+    assert.ok(
+      !sm1[i]!.url.includes("terms-and-conditions"),
+      "Terms and conditions must not be in sitemap"
+    )
 
     const languages = sm1[i]!.alternates?.languages as Record<string, string>
     assert.ok(languages, "Sitemap entry must have alternates.languages")

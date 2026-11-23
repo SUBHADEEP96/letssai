@@ -19,8 +19,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/why-letssai',
     '/contact',
     '/ai-discovery',
-    '/privacy-policy',
-    '/terms-and-conditions',
     ...services.map((s) => s.href),
     ...industries.map((i) => i.href),
   ]
