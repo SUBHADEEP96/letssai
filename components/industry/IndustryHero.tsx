@@ -10,7 +10,7 @@ export function IndustryHero({ industry }: { industry: IndustryPageData }) {
     <section className="relative isolate min-h-[590px] overflow-hidden bg-emerald-950 text-white sm:min-h-[620px]">
       <Image
         src={heroImage}
-        alt=""
+        alt={`LetssAI custom AI workflows and automation for ${industry.title}`}
         fill
         priority
         sizes="100vw"

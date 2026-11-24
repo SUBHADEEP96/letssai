@@ -18,8 +18,7 @@ export function CTAButton({
     >
       <Image
         src={siteConfig.assets.buttonIcon}
-        alt=""
-        aria-hidden="true"
+        alt="LetssAI icon"
         width={22}
         height={22}
         className="size-[22px] shrink-0 object-contain"

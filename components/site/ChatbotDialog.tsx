@@ -127,8 +127,7 @@ export default function ChatbotDialog({ onClose }: { onClose: () => void }) {
           <div className="flex items-center gap-3">
             <Image
               src={siteConfig.assets.icon}
-              alt=""
-              aria-hidden
+              alt="LetssAI Nora AI assistant avatar"
               width={42}
               height={42}
               className="size-10 rounded-xl bg-[#f7f8f4] object-contain p-1"

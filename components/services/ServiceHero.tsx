@@ -55,7 +55,7 @@ export function ServiceHero({
     <section className="relative isolate min-h-[590px] overflow-hidden bg-emerald-950 text-white sm:min-h-[620px]">
       <Image
         src={heroImage}
-        alt=""
+        alt={title ? `${title} - LetssAI practical AI solutions` : "LetssAI practical AI workflow automation and custom AI services"}
         fill
         priority
         sizes="100vw"

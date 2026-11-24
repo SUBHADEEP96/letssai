@@ -10,6 +10,7 @@ import { localizedMetadata } from "@/lib/i18n-seo"
 import { getPageSeo } from "@/lib/page-seo"
 import { absoluteUrl, breadcrumbsSchema, faqSchema } from "@/lib/seo"
 import { JsonLd } from "@/components/seo/JsonLd"
+import { IndustriesHero } from "@/components/industry/IndustriesHero"
 
 export async function generateMetadata({
   params,
@@ -42,12 +43,11 @@ export default async function Industries({
         ])}
       />
       <JsonLd data={faqSchema(industriesHubFaqs)} />
-      <section className="section bg-emerald-50">
-        <div className="mx-auto max-w-3xl text-center">
-          <h1 className="text-4xl font-semibold tracking-tight text-slate-950 md:text-6xl">{t("title")}</h1>
-          <p className="mt-5 text-lg leading-8 text-slate-600">{t("description")}</p>
-        </div>
-      </section>
+      <IndustriesHero
+        title={t("title")}
+        description={t("description")}
+        locale={locale}
+      />
       <section className="section">
         <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 lg:grid-cols-3">
           {industries

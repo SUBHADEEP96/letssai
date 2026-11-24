@@ -659,7 +659,7 @@ export function GlobalDeliveryMap() {
                       >
                         <img
                           src={`https://flagcdn.com/w40/${c.code}.png`}
-                          alt=""
+                          alt={`${c.name} flag`}
                           width={18}
                           height={13}
                           className="h-3.5 w-4.5 rounded-2xs object-cover shadow-2xs"

@@ -31,7 +31,7 @@ export function ChatbotWidget() {
     >
       <Image
         src={siteConfig.assets.buttonIcon}
-        alt=""
+        alt="LetssAI Assistant Icon"
         width={26}
         height={26}
         sizes="24px"

@@ -93,6 +93,7 @@ export default async function Services({
         title={t("title")}
         description={t("description")}
         href="/services"
+        locale={locale}
       />
       <section className="section">
         <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 lg:grid-cols-3">
